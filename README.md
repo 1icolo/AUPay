@@ -1,2 +1,2 @@
 # AUPay
-Payment System Using RFID Smart Cards for AUP Students and Employees
+AUP Payment System Using RFID Smart Cards
