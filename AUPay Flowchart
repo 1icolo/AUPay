@@ -1,40 +1,134 @@
-<mxfile host="app.diagrams.net" modified="2022-12-10T16:08:34.645Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.46" etag="zlrEYdLRs-e-f9kytbcl" version="20.6.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-12-12T12:45:15.689Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.46" etag="8NA3bP0KZ5NPYT0KQ0Zo" version="20.6.2" type="github" pages="5">
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Payment Process">
-    <mxGraphModel dx="981" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="tBge6L44hxKh2gQSTph2-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tvNCmk0iYPsiMGSgwvTy-55" target="tBge6L44hxKh2gQSTph2-12">
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tvNCmk0iYPsiMGSgwvTy-55" target="HPsjYcUWnoOo99uJpjyN-31">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tvNCmk0iYPsiMGSgwvTy-55" value="Start" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
-          <mxGeometry x="240" y="20" width="80" height="30" as="geometry" />
+        <mxCell id="tvNCmk0iYPsiMGSgwvTy-55" value="Start" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" parent="1" vertex="1">
+          <mxGeometry x="340" y="30" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-6" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tvNCmk0iYPsiMGSgwvTy-58" target="tBge6L44hxKh2gQSTph2-5">
+        <mxCell id="tBge6L44hxKh2gQSTph2-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tvNCmk0iYPsiMGSgwvTy-58" target="tBge6L44hxKh2gQSTph2-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tvNCmk0iYPsiMGSgwvTy-58" target="tBge6L44hxKh2gQSTph2-10">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-15" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="tBge6L44hxKh2gQSTph2-11">
+        <mxCell id="tBge6L44hxKh2gQSTph2-15" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tBge6L44hxKh2gQSTph2-11" vertex="1" connectable="0">
           <mxGeometry x="0.2" y="-3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="tvNCmk0iYPsiMGSgwvTy-58" value="Is card &lt;br&gt;registered on database?&lt;br&gt;&lt;br&gt;verify_login.py" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="180" y="185" width="200" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-5" value="Is card &lt;br&gt;registered on database" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="230" y="360" width="100" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-10" value="" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="470" y="210" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBge6L44hxKh2gQSTph2-12" target="tvNCmk0iYPsiMGSgwvTy-58">
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-11" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tvNCmk0iYPsiMGSgwvTy-58" target="HPsjYcUWnoOo99uJpjyN-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tBge6L44hxKh2gQSTph2-12" value="Login" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="90" width="120" height="60" as="geometry" />
+        <mxCell id="tvNCmk0iYPsiMGSgwvTy-58" value="Is card &lt;br&gt;registered on database?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="320" y="345" width="120" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBge6L44hxKh2gQSTph2-10" target="HPsjYcUWnoOo99uJpjyN-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBge6L44hxKh2gQSTph2-10" value="Show a message that the card is unrecognized." style="whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="540" y="357.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBge6L44hxKh2gQSTph2-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HPsjYcUWnoOo99uJpjyN-16" target="tvNCmk0iYPsiMGSgwvTy-58" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-10" target="HPsjYcUWnoOo99uJpjyN-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-10" value="Place card id to current_card_id" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-16" value="User taps card" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="330" y="240" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-17" target="HPsjYcUWnoOo99uJpjyN-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-17" value="How much to be deducted from the card" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="330" y="610" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-19" target="HPsjYcUWnoOo99uJpjyN-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-19" value="Did the operator press &quot;c&quot; to cancel the current transaction?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="566.25" width="120" height="127.5" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-31" target="HPsjYcUWnoOo99uJpjyN-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-31" value="Idle/Wait" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="125" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-36" target="HPsjYcUWnoOo99uJpjyN-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-36" value="clear current_card_id and amount" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-41" target="HPsjYcUWnoOo99uJpjyN-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="810" />
+              <mxPoint x="530" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-45" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HPsjYcUWnoOo99uJpjyN-43">
+          <mxGeometry x="-0.684" y="3" relative="1" as="geometry">
+            <mxPoint x="-11" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-51" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-41" target="HPsjYcUWnoOo99uJpjyN-52">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-41" value="Is the card balance enough for the transaction?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="325" y="760" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-52" target="HPsjYcUWnoOo99uJpjyN-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="965" />
+              <mxPoint x="530" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-55" value="Cancel" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HPsjYcUWnoOo99uJpjyN-54">
+          <mxGeometry x="-0.7327" y="1" relative="1" as="geometry">
+            <mxPoint x="-17" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-57" value="Confirm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-52" target="HPsjYcUWnoOo99uJpjyN-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-52" value="Prompt the operator for confirmation" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="330" y="920" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HPsjYcUWnoOo99uJpjyN-56" target="HPsjYcUWnoOo99uJpjyN-36">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="1135" />
+              <mxPoint x="110" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-56" value="Transaction complete" style="whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1105" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HPsjYcUWnoOo99uJpjyN-58" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="280" width="50" height="700" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -60,6 +154,23 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5HQtCaxwNU_aU5jqCvG1" name="verify_login.py">
+    <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tUG_GYsqf3MZLruoTD7h-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tUG_GYsqf3MZLruoTD7h-3" target="tUG_GYsqf3MZLruoTD7h-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tUG_GYsqf3MZLruoTD7h-3" value="Start" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tUG_GYsqf3MZLruoTD7h-4" value="Receives Username and Password in Parameter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
