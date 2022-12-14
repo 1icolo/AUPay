@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-14T10:04:01.854Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.46" etag="5dZKdGDybDqon3X0TWd4" version="20.6.2" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-12-14T10:07:40.191Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.46" etag="LnuSqIRusjIGpsnfgoNx" version="20.6.2" type="github" pages="11">
   <diagram id="hCtM9y0RMGifUUl_RX75" name="Application Flow">
     <mxGraphModel dx="1422" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -705,6 +705,9 @@
         </mxCell>
         <mxCell id="dGFkLgq-muARQjPI1FD3-8" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Online General Merchandise Store&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;Instead of students having to go to the department store or the AUP factory to come up-front, choose the products, and pay in the cashier, they could just order the things they need online and make it available for pick up in a certain location.&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=1;glass=0;strokeWidth=1;fillColor=none;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="90" y="360" width="270" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="dGFkLgq-muARQjPI1FD3-9" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=1;glass=0;strokeWidth=1;fillColor=none;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="460" y="360" width="270" height="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
