@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-18T07:43:11.466Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54" etag="gBd2U7yyx9nyiIWR0gV1" version="20.7.3" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-12-18T09:13:16.405Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54" etag="xyVTMuGfPswFkJppPFnd" version="20.7.3" type="github" pages="11">
   <diagram id="hCtM9y0RMGifUUl_RX75" name="Application Flow">
     <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -126,6 +126,15 @@
         </mxCell>
         <mxCell id="xAtRO2zCqhHwcdbKaXVL-12" value="See All&lt;br&gt;Transactions" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" parent="1" vertex="1">
           <mxGeometry x="640" y="610" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="K4yRkiaUMuyDyAmElLu4-3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="K4yRkiaUMuyDyAmElLu4-1" target="K4yRkiaUMuyDyAmElLu4-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K4yRkiaUMuyDyAmElLu4-1" value="Did the operator &lt;br&gt;close the application?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="K4yRkiaUMuyDyAmElLu4-2" value="End" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
+          <mxGeometry x="140" y="220" width="80" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
