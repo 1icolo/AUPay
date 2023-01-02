@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-29T11:05:35.687Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54" etag="4RSiq0WVJa8kmro6zto0" version="20.7.4" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2023-01-02T15:15:52.083Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54" etag="CAJW-qa5eJPDaLCUw_H-" version="20.7.4" type="github" pages="12">
   <diagram id="hCtM9y0RMGifUUl_RX75" name="Application Flow">
-    <mxGraphModel dx="472" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -140,7 +140,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="KycTivLKhUA2HDrQFwje" name="Deposit Process">
-    <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -302,7 +302,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Charging Process">
-    <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -426,7 +426,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Xti1-zlDYNrMRii6McsF" name="Withdrawal Process">
-    <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -565,8 +565,81 @@
       </root>
     </mxGraphModel>
   </diagram>
+  <diagram id="I6cGsr1gNoo0xEXNmhX9" name="Manage Users">
+    <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NWN5CDatz5z_fLja-Z7W-1" target="NWN5CDatz5z_fLja-Z7W-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NWN5CDatz5z_fLja-Z7W-1" target="NWN5CDatz5z_fLja-Z7W-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NWN5CDatz5z_fLja-Z7W-1" target="9X_sL4ZNBiDENpqz8LXh-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NWN5CDatz5z_fLja-Z7W-1" target="jEoLfGGmKswzhUcdbHU7-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NWN5CDatz5z_fLja-Z7W-1" value="Start" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
+          <mxGeometry x="399.97" y="30" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NWN5CDatz5z_fLja-Z7W-2" target="jEoLfGGmKswzhUcdbHU7-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NWN5CDatz5z_fLja-Z7W-2" value="Create User" style="rhombus;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="230.00000000000006" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NWN5CDatz5z_fLja-Z7W-4" value="Edit User" style="rhombus;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="340.0400000000001" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9X_sL4ZNBiDENpqz8LXh-1" value="See User Transaction" style="rhombus;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="450.00000000000006" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-1" value="Delete User" style="rhombus;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="555.04" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jEoLfGGmKswzhUcdbHU7-6" target="jEoLfGGmKswzhUcdbHU7-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-6" value="Enter the user creation setup" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="210.00000000000006" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qOpPHhUo8-w_Ze3C4rGd-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jEoLfGGmKswzhUcdbHU7-8" target="qOpPHhUo8-w_Ze3C4rGd-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jEoLfGGmKswzhUcdbHU7-8" value="input School ID" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="210.00000000000006" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JaHtYbqizV4aiPPBVofq-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qOpPHhUo8-w_Ze3C4rGd-1" target="JaHtYbqizV4aiPPBVofq-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qOpPHhUo8-w_Ze3C4rGd-1" value="Input user type &lt;br&gt;from list" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="210.00000000000006" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ciSlGARJxTNmGQYzC_ej-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="JaHtYbqizV4aiPPBVofq-1" target="ciSlGARJxTNmGQYzC_ej-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JaHtYbqizV4aiPPBVofq-1" value="Tap ID to input &lt;br&gt;card ID" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="210.00000000000006" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ciSlGARJxTNmGQYzC_ej-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ciSlGARJxTNmGQYzC_ej-1" target="NWN5CDatz5z_fLja-Z7W-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="840" />
+              <mxPoint x="110" y="45" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ciSlGARJxTNmGQYzC_ej-1" value="Done" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="210.00000000000006" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
   <diagram id="18aDKGUVEk9Y9dcjfA-Q" name="ERD">
-    <mxGraphModel dx="1154" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -936,7 +1009,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="UC - User" id="BgN8ERDsiRo_1nnj_NXi">
-    <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1674" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="5DW0AtQfSDs8HevvP00U-0" />
         <mxCell id="5DW0AtQfSDs8HevvP00U-1" parent="5DW0AtQfSDs8HevvP00U-0" />
