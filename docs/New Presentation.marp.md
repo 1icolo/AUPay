@@ -3,7 +3,7 @@ marp: true
 theme: uncover
 class: invert
 
-header: ![h:1in](media/aupay-icon.png)
+header: 'AUPay'
 ---
 
 # AUPay
