@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-29T03:06:41.903Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70" etag="7IZ-jt0uFGXtvOlTRHqh" version="20.8.13" type="github" pages="12">
+<mxfile host="app.diagrams.net" modified="2023-02-10T08:13:29.846Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.78" etag="jysGwMTKjZdbC3XbEnhV" version="20.8.19" type="github" pages="13">
   <diagram id="hCtM9y0RMGifUUl_RX75" name="Application Flow">
     <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -302,7 +302,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Charging Process">
-    <mxGraphModel dx="1194" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1687" dy="948" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -426,7 +426,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Xti1-zlDYNrMRii6McsF" name="Withdrawal Process">
-    <mxGraphModel dx="1194" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1260,10 +1260,10 @@
         <mxCell id="d1kzcddfodD-PjQ_Cg0n-22" value="User&#39;s transaction" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.016;entryY=0.138;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="d1kzcddfodD-PjQ_Cg0n-3" target="d1kzcddfodD-PjQ_Cg0n-21" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_06HmOt5JGbxQs3wBBa5-2" value="Transaction Processing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_06HmOt5JGbxQs3wBBa5-1" target="d1kzcddfodD-PjQ_Cg0n-12">
+        <mxCell id="_06HmOt5JGbxQs3wBBa5-2" value="Transaction Processing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_06HmOt5JGbxQs3wBBa5-1" target="d1kzcddfodD-PjQ_Cg0n-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_06HmOt5JGbxQs3wBBa5-1" value="Teller" style="html=1;dashed=0;whitespace=wrap;rounded=0;sketch=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="_06HmOt5JGbxQs3wBBa5-1" value="Teller" style="html=1;dashed=0;whitespace=wrap;rounded=0;sketch=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="602" y="70" width="100" height="50" as="geometry" />
         </mxCell>
       </root>
@@ -1427,6 +1427,41 @@
           <mxGeometry x="-0.5565" y="1" relative="1" as="geometry">
             <mxPoint x="44" as="offset" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="KtixJEMu6nUpIen1G6Wx" name="Page-13">
+    <mxGraphModel dx="1195" dy="672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ONehQelM0lcVBQvoJGxS-2" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=default;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.scanner;" vertex="1" parent="1">
+          <mxGeometry x="230" y="440" width="100" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#999999;shape=link;" edge="1" parent="1" source="ONehQelM0lcVBQvoJGxS-6" target="ONehQelM0lcVBQvoJGxS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#999999;shape=link;" edge="1" parent="1" source="ONehQelM0lcVBQvoJGxS-6" target="ONehQelM0lcVBQvoJGxS-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-6" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#999999;shape=mxgraph.azure.computer;pointerEvents=1;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="410" y="382.5" width="211.11" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-10" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/vecico-connectivity/288/nfc-128.png;strokeColor=default;fontColor=#999999;fillColor=#999999;rotation=-60;" vertex="1" parent="1">
+          <mxGeometry x="271.5" y="478.63" width="17" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-11" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=http://s3-eu-west-1.amazonaws.com/qt-files/logos/Qt-logo-large.png;" vertex="1" parent="1">
+          <mxGeometry x="452.41999999999996" y="410" width="126.27" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-13" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="720" y="380" width="141.99999999999994" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-5" value="" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;strokeColor=default;fillColor=#000000;" vertex="1" parent="ONehQelM0lcVBQvoJGxS-13">
+          <mxGeometry width="142" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ONehQelM0lcVBQvoJGxS-9" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.mongodb;strokeColor=default;fontColor=#999999;fillColor=#999999;" vertex="1" parent="ONehQelM0lcVBQvoJGxS-13">
+          <mxGeometry x="75.44" y="70" width="30.16" height="63.1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
