@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-10T08:19:33.878Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.78" etag="DseEO3gxQMPHQGCo7fQu" version="20.8.19" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2023-02-10T08:56:43.997Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.78" etag="axUJ5b0t_CkoKsB9bN1H" version="20.8.19" type="github" pages="13">
   <diagram id="hCtM9y0RMGifUUl_RX75" name="Application Flow">
     <mxGraphModel dx="1434" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1484,7 +1484,7 @@
             <mxPoint x="760" y="285.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ONehQelM0lcVBQvoJGxS-21" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/660277-Python_logo-128.png;strokeColor=default;fontColor=#999999;fillColor=#999999;" vertex="1" parent="1">
+        <mxCell id="ONehQelM0lcVBQvoJGxS-21" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/660277-Python_logo-128.png;strokeColor=default;fontColor=#999999;fillColor=#999999;imageBorder=none;imageBackground=none;labelBorderColor=none;fillStyle=hatch;" vertex="1" parent="1">
           <mxGeometry x="530" y="221" width="128" height="128" as="geometry" />
         </mxCell>
       </root>
