@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>786</width>
+    <height>572</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AUPay Admin</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../src/resources/aupay-icon.png</normaloff>../src/resources/aupay-icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tabUsers">
+       <attribute name="title">
+        <string>Users</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetFixedSize</enum>
+          </property>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string>Add User</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>Edit User</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>Delete User</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="placeholderText">
+             <string>Search</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <row>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>card_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>school_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>password</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>otp_key</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>user_type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>balance</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>63cbf5e5947050d54c2ce880</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>2052522</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>~@FV7HMg++Aq[4&amp;H/}.</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>sJuoYtp%|-+YgQcjdyb</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>student</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>12403.00</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabTransactions">
+       <attribute name="title">
+        <string>Transactions</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>Delete Transaction</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidget_2">
+          <row>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>timestamp</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>source_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>destination_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>amount</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>description</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>63cbf5e5947050d54c2ce880</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>1651363200</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>2052522</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>CAFETERIA</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>65</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>burger</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>786</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
