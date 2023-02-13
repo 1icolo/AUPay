@@ -1,26 +1,151 @@
 ---
 marp: true
 theme: uncover
-class: invert
+# class: invert
 
-header: ![h:1in](media/aupay-icon.png)
----
-
-# AUPay
-
-AUP Payment System Using RFID Smart Cards
+header: ![h:0.7in](media/aupay-icon.png)
 
 ---
 
+# <!--fit--> AUPay
 
-# What is AUPay set out to achieve?
+#### AUP Payment System Using RFID Smart Cards
+
+---
+<!-- Objectives of the project -->
+
+The AUPay project aims to streamline the process, improve the efficiency, security, and convenience of financial transactions in AUP.
+
+---
+<!-- Brief overview of the system architecture -->
+These project has three main components.
+- RFID Scanner
+- Computer
+- Database Server
+
+![h:3in](media/AUPay%20Diagrams-Architecture.png)
+
+---
+<!-- Explanation of the current payment process -->
+
+The current payment process within the campus varies. 
+- RFID in the cafeteria
+- Laundry balance in the launderette
+- Cash for the rest of the campus businesses
+
+---
+<!-- Discussion of the challenges faced by the current payment process -->
+Several problems faced by the current payment process are mainly:
+- Time-consuming payment process
+- Inconsistent record-keeping(especially for the launderette)
+- Lack of security
+- Difficulty in tracking purchases
+
+---
+<!-- Justification for the need for an RFID payment system -->
+
+Why do we need AUPay?
+- Improved efficiency
+- Increased security
+- Data collection
+- Convenience
+- Cost-effectiveness
+- Scalability
+
+---
+<!-- Overview of the components of the system -->
+
+![h:3in](media/AUPay%20Diagrams-Architecture.png)
+
+---
+<!-- Explanation of the data flow between the components -->
+
+![h:7in](media/dfd-0.png)
 
 ---
 
-# Project Plan 
-(Methodology) 
+![h:7in](media/dfd-1.png)
 
 ---
-![h:5in](media/cat.jpg)
+
+![h:4.5in](media/dfd-2.1.png)
+
+---
+
+![h:7in](media/dfd-2.2.png)
+
+---
+Entity Relationship Diagram
+![h:4.5in](media/erd.png)
+
+---
+<!-- Overview of the hardware components -->
+
+# Component Overview
+
+---
+
+![h:2.7in](media/AUPay%20Diagrams-Architecture.png)
+
+Hardware components:
+
+- MiFare Classic 1k Smart Card
+- Sony RC-S380/S NFC Reader
+
+---
+
+![h:2.7in](media/AUPay%20Diagrams-Architecture.png)
+
+Software components:
+- Python
+- MongoDB
+- Qt5
+
+---
+
+<!-- Security considerations -->
+# <!--fit--> Security Considerations
+
+- Physical Security
+- One-time-password
+
+---
+
+# <!--fit--> Benefits and Advantages
+
+<!-- Explanation of the benefits to students and staff -->
+- Improved efficiency
+- Increased security
+- Data collection
+- Convenience
+- Cost-effectiveness
+- Scalability
+
+<!-- Comparison with the current payment process -->
 
 
+---
+<!-- Discussion of the potential for future improvements -->
+# Future Improvements
+Since the project itself is designed to be a core software, better reliability and fast APIs can be developed for better integrability.
+
+---
+
+# <!--fit--> Summary
+
+---
+<!-- Summary of the project -->
+
+
+---
+
+<!-- Expected Outcome -->
+# Expected Outcome
+The successful implementation of the RFID payment system will result in a faster, more secure, and convenient payment process for students and staff, reducing the time and effort required to make payments and improving overall efficiency and accuracy.
+
+---
+<!-- Future scope of the project -->
+
+
+---
+<!-- Recommendations for the implementation of the system -->
