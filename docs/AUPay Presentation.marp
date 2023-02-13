@@ -53,6 +53,30 @@ Why do we need AUPay?
 - Scalability
 
 ---
+
+![h:5in](media/loginDialog.png)
+
+---
+
+![h:6in](media/userDashboard.png)
+
+---
+
+![h:6in](media/tellerDashboard.png)
+
+---
+
+![h:6in](media/businessDashboard.png)
+
+---
+
+![h:6in](media/adminDashboardUsers.png)
+
+---
+
+![h:6in](media/adminDashboardTransactions.png)
+
+---
 <!-- Overview of the components of the system -->
 
 ![h:3in](media/AUPay%20Diagrams-Architecture.png)
@@ -79,9 +103,28 @@ Entity Relationship Diagram
 ![h:4.5in](media/erd.png)
 
 ---
+<!-- Development Method -->
+
+# Development Method: Kanban
+
+---
+
+![h:5in](media/kanban.png)
+
+---
+
+![bg left h:3in](media/kanban.png)
+
+- Visualization of the workflow
+- Flexibility
+- Focus on continuous improvement
+- Collaboration and communication
+- Reduced lead time
+
+---
 <!-- Overview of the hardware components -->
 
-# Component Overview
+# <!--fit-->  Component Overview
 
 ---
 
@@ -116,17 +159,12 @@ Since the project itself is designed to be a core software, better reliability a
 
 ---
 
-# <!--fit--> Summary
-
----
-<!-- Summary of the project -->
-
-
----
-
 <!-- Expected Outcome -->
 # Expected Outcome
 The successful implementation of the RFID payment system will result in a faster, more secure, and convenient payment process for students and staff, reducing the time and effort required to make payments and improving overall efficiency and accuracy.
 
 ---
-<!-- Recommendations for the implementation of the system -->
+
+# <!--fit--> AUPay
+
+#### AUP Payment System Using RFID Smart Cards
