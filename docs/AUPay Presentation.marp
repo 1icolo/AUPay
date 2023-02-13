@@ -110,21 +110,6 @@ Software components:
 - One-time-password
 
 ---
-
-# <!--fit--> Benefits and Advantages
-
-<!-- Explanation of the benefits to students and staff -->
-- Improved efficiency
-- Increased security
-- Data collection
-- Convenience
-- Cost-effectiveness
-- Scalability
-
-<!-- Comparison with the current payment process -->
-
-
----
 <!-- Discussion of the potential for future improvements -->
 # Future Improvements
 Since the project itself is designed to be a core software, better reliability and fast APIs can be developed for better integrability.
@@ -142,10 +127,6 @@ Since the project itself is designed to be a core software, better reliability a
 <!-- Expected Outcome -->
 # Expected Outcome
 The successful implementation of the RFID payment system will result in a faster, more secure, and convenient payment process for students and staff, reducing the time and effort required to make payments and improving overall efficiency and accuracy.
-
----
-<!-- Future scope of the project -->
-
 
 ---
 <!-- Recommendations for the implementation of the system -->
