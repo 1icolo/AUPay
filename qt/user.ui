@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>624</height>
+    <width>758</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,14 +21,24 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
       <property name="leftMargin">
-       <number>20</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>20</number>
+       <number>0</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>School ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineSchoolId">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -50,6 +60,9 @@
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
         <property name="text">
          <string>2052522</string>
         </property>
@@ -62,10 +75,36 @@
         <property name="placeholderText">
          <string>Source</string>
         </property>
+        <property name="clearButtonEnabled">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Balance</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineBalance">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -112,7 +151,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="buttonLogout">
         <property name="maximumSize">
          <size>
           <width>158</width>
@@ -256,7 +295,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>644</width>
+     <width>758</width>
      <height>21</height>
     </rect>
    </property>

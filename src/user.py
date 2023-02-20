@@ -1,19 +1,15 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from login_ui import Ui_Dialog
+from user_ui import Ui_MainWindow
 
 
-class MainWindow(QDialog, Ui_Dialog):
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent = None):
         super(MainWindow, self).__init__(parent)
         
         self.setupUi(self)
-        self.loginButton.clicked.connect(lambda: self.loginAttempt())
-
-    def loginAttempt(self):
-        print(self.passwordLine.text())
-        
+        self.buttonLogout.clicked.connect(lambda: print("Logout"))
 
 
 

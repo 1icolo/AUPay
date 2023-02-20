@@ -44,7 +44,13 @@ class Database:
         self.collection['users'].insert_one(documents['user'])
         self.collection['transactions'].insert_one(documents['transaction'])
         print("Initial database created.")
-Database()
+
+    def to_dict(self):
+        database = {
+            
+        }
+        return database
+
 
 user_validator = {
     '$jsonSchema': {
@@ -59,3 +65,5 @@ user_validator = {
         }
     }
 }
+
+Database()

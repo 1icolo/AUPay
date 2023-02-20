@@ -1,37 +1,16 @@
-from time import sleep
-
-from smartcard.CardMonitoring import CardMonitor, CardObserver
+from smartcard.CardType import CardType
+from smartcard.CardRequest import CardRequest
 from smartcard.util import toHexString
 
+class DCCardType(CardType):
+    def matches( self, atr, reader=None ):
+        return atr[0]==0x3B
 
-# a simple card observer that prints inserted/removed cards
-class PrintObserver(CardObserver):
-    """A simple card observer that is notified
-    when cards are inserted/removed from the system and
-    prints the list of cards
-    """
+cardtype = DCCardType()
+cardrequest = CardRequest( timeout=1, cardType=cardtype )
+cardservice = cardrequest.waitforcard()
 
-    def update(self, observable, actions):
-        (addedcards, removedcards) = actions
-        for card in addedcards:
-            print("+Inserted: ", toHexString(card.atr))
-        for card in removedcards:
-            print("-Removed: ", toHexString(card.atr))
+cardservice.connection.connect()
+print (toHexString( cardservice.connection.getATR() ))
 
-if __name__ == '__main__':
-    print("Insert or remove a smartcard in the system.\n")
-    cardmonitor = CardMonitor()
-    cardobserver = PrintObserver()
-    cardmonitor.addObserver(cardobserver)
-
-
-    while True: sleep(1000)
-
-    # don't forget to remove observer, or the
-    # monitor will poll forever...
-    cardmonitor.deleteObserver(cardobserver)
-
-    import sys
-    if 'win32' == sys.platform:
-        print('press Enter to continue')
-        sys.stdin.read(1)
+print (cardservice.connection.getReader())

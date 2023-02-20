@@ -37,7 +37,7 @@ The current payment process within the campus varies.
 <!-- Discussion of the challenges faced by the current payment process -->
 Several problems faced by the current payment process are mainly:
 - Time-consuming payment process
-- Inconsistent record-keeping(especially for the launderette)
+- Inconsistent record-keeping (especially for the launderette)
 - Lack of security
 - Difficulty in tracking purchases
 
@@ -53,6 +53,8 @@ Why do we need AUPay?
 - Scalability
 
 ---
+
+<!-- Initial UI Design -->
 
 ![h:5in](media/loginDialog.png)
 

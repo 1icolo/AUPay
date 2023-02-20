@@ -1,4 +1,5 @@
 import pyotp
 
-totp = pyotp.TOTP('elcidelcidelcid')
-print(totp.now())
+class OTPAuthenticate():
+    totp = pyotp.TOTP('elcidelcidelcid')
+    print(totp.now())

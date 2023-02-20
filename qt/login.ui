@@ -58,6 +58,9 @@
         </property>
         <item row="0" column="0" colspan="2">
          <widget class="QLineEdit" name="idLine">
+          <property name="maxLength">
+           <number>15</number>
+          </property>
           <property name="placeholderText">
            <string>School ID</string>
           </property>

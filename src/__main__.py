@@ -1,5 +1,5 @@
 def main():
-    import login
+    import aupCard
 
 
 if __name__ == "__main__":
