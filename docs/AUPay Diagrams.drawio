@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-22T05:17:56.551Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.50" etag="d3dV8Fh0q7nUqEUfSApY" version="20.8.21" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2023-02-22T05:21:59.264Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.50" etag="gKPyn4r85WxK_t95xhHk" version="20.8.21" type="github" pages="14">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
     <mxGraphModel dx="1195" dy="672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="0">
       <root>
@@ -32,8 +32,8 @@
             <mxGeometry x="20" y="360" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="Nico" status="In progress" id="sQsjrjN2aDBts0AqB7bt-6">
-          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
+        <object label="NICO" status="In progress" id="sQsjrjN2aDBts0AqB7bt-6">
+          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
             <mxGeometry x="230" y="28" width="190" height="952" as="geometry" />
           </mxCell>
         </object>
@@ -42,18 +42,18 @@
             <mxGeometry x="20" y="21" width="150" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="Elcid" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-5">
-          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-1">
+        <object label="ELCID" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-5">
+          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-1">
             <mxGeometry x="420" y="28" width="190" height="952" as="geometry" />
           </mxCell>
         </object>
-        <object label="Kenneth" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-31">
-          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-1">
+        <object label="KENNETH" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-31">
+          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-1">
             <mxGeometry x="610" y="28" width="180" height="952" as="geometry" />
           </mxCell>
         </object>
         <object label="DONE" status="Completed" id="sQsjrjN2aDBts0AqB7bt-9">
-          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
+          <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
             <mxGeometry x="790" y="28" width="230" height="952" as="geometry" />
           </mxCell>
         </object>
