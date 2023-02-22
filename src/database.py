@@ -32,24 +32,33 @@ class Database:
                 'password': "12345",
                 'otp_key': "1a2b3c4b5d",
                 'user_type': 'user',
+                'balance': '35',
             },
             'transaction': {
                 'timestamp': Timestamp(1651363200, 0),
                 'source_id': ObjectId("63abc434a689ea6865853eb8"),
                 'destination_id': ObjectId("63abc435a689ea6865853eb9"),
                 'amount': 0,
-                'description': "Initial transaction"
+                'description': "Initial transaction",
             }
         }
         self.collection['users'].insert_one(documents['user'])
         self.collection['transactions'].insert_one(documents['transaction'])
         print("Initial database created.")
 
-    def to_dict(self):
-        database = {
-            
-        }
-        return database
+    def findUser(self, id, password):
+        output = self.collection['users'].find_one(
+            # {"school_id": id},
+            {"school_id": id, "password": password}
+        )
+        if output is None:
+            print("Login failed")
+        else:
+            if password == output["password"]:
+                print("Login successful")
+                print(output['card_id'])
+            else:
+                print("Login failed")
 
 
 user_validator = {
@@ -65,5 +74,3 @@ user_validator = {
         }
     }
 }
-
-Database()
