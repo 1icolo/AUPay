@@ -60,6 +60,56 @@ class Database:
             else:
                 print("Login failed")
 
+    def add_user(self, user):
+        if user is None:
+            print("Add user failed.")
+            return None
+        new_user = self.collection['users'].insert_one(
+            user
+        )
+        print(f"User {new_user['school_id']} added.")
+        return new_user.inserted_id
+
+    def update_user(self, user):
+        self.collection['users'].update_one(
+            {"_id": user['_id']},
+            {"$set": {
+                user
+            }}
+        )
+        print(f"User {user['school_id']} updated")
+        return True
+
+    def delete_user(self, user_id):
+        try:
+            self.collection['users'].delete_one(
+                {"_id": user_id}
+            )
+            print("User deleted")
+            return True
+        except:
+            print("User delete failed")
+            return None
+
+    def find_transaction(self, transaction_id):
+        try:
+            transaction = self.collection['transactions'].find_one(
+                {"_id": ObjectId(transaction_id)}
+            )
+            return transaction
+        except:
+            print("Transaction doesn't exist")
+            return None
+
+    def add_transaction(self, transaction):
+        if transaction is None:
+            print("Add transaction failed.")
+            return None
+        new_transaction = self.collection['transactions'].insert_one(
+            transaction
+        )
+        print(f"Transaction {new_transaction.inserted_id} added.")
+        return new_transaction.inserted_id
 
 user_validator = {
     '$jsonSchema': {
