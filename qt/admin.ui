@@ -47,7 +47,7 @@
            <enum>QLayout::SetFixedSize</enum>
           </property>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="userSearchLine">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -60,21 +60,21 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="addUserButton">
             <property name="text">
              <string>Add User</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="editUserButton">
             <property name="text">
              <string>Edit User</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="deleteUserButton">
             <property name="text">
              <string>Delete User</string>
             </property>
@@ -96,7 +96,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableWidget">
+         <widget class="QTableWidget" name="usersTable">
           <property name="sizePolicy">
            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -196,7 +196,7 @@
            <enum>QLayout::SetFixedSize</enum>
           </property>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="transactionSearchButton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -209,7 +209,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="addTransactionButton">
             <property name="text">
              <string>Add Transaction</string>
             </property>
@@ -231,7 +231,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableWidget_2">
+         <widget class="QTableWidget" name="transactionsTable">
           <row>
            <property name="text">
             <string>1</string>
