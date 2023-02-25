@@ -2,16 +2,17 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from database import Database
-from _ui import Ui_MainWindow
+from admin_ui import Ui_AdminMainWindow
 
 
-class MainWindow(QMainWindow, Ui_MainWindow):
+class AdminMainWindow(QMainWindow, Ui_AdminMainWindow):
     def __init__(self, parent = None):
-        super(MainWindow, self).__init__(parent)
+        super(AdminMainWindow, self).__init__(parent)
 
         self.setupUi(self)
+        
 
 app = QApplication([])
-window = MainWindow()
+window = AdminMainWindow()
 window.show()
 app.exec()

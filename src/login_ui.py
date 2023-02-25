@@ -11,16 +11,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(205, 187)
-        MainWindow.setMinimumSize(QtCore.QSize(205, 176))
-        MainWindow.setMaximumSize(QtCore.QSize(205, 187))
+class Ui_LoginMainWindow(object):
+    def setupUi(self, LoginMainWindow):
+        LoginMainWindow.setObjectName("LoginMainWindow")
+        LoginMainWindow.resize(205, 187)
+        LoginMainWindow.setMinimumSize(QtCore.QSize(205, 176))
+        LoginMainWindow.setMaximumSize(QtCore.QSize(205, 187))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(".\\qt\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        MainWindow.setWindowIcon(icon)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        LoginMainWindow.setWindowIcon(icon)
+        self.centralwidget = QtWidgets.QWidget(LoginMainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
@@ -52,18 +52,18 @@ class Ui_MainWindow(object):
         self.loginButton.setObjectName("loginButton")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.SpanningRole, self.loginButton)
         self.gridLayout.addLayout(self.formLayout, 0, 0, 1, 1)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        LoginMainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(LoginMainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 205, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
+        LoginMainWindow.setMenuBar(self.menubar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(LoginMainWindow)
+        QtCore.QMetaObject.connectSlotsByName(LoginMainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, LoginMainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "AUPay Login"))
-        self.idLine.setPlaceholderText(_translate("MainWindow", "School ID"))
-        self.passwordLine.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.loginButton.setText(_translate("MainWindow", "Login"))
+        LoginMainWindow.setWindowTitle(_translate("LoginMainWindow", "AUPay Login"))
+        self.idLine.setPlaceholderText(_translate("LoginMainWindow", "School ID"))
+        self.passwordLine.setPlaceholderText(_translate("LoginMainWindow", "Password"))
+        self.loginButton.setText(_translate("LoginMainWindow", "Login"))
