@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from os import getenv
 
 load_dotenv()
-connection_string = getenv('DB_URI')
+connection_string = getenv('mongodb://localhost:27017')
 
 
 class Database:
@@ -112,6 +112,14 @@ class Database:
         )
         print(f"Transaction {new_transaction.inserted_id} added.")
         return new_transaction.inserted_id
+
+    def load_user_table(self):
+        load_user = self.collection['users'].find()
+        user_data = []
+        for user in load_user:
+            user_data.append([user['card_id'],user['school_id'],user['password'],user['otp_key'],user['user_type'],user['balance']]) 
+        # print(user_data)
+        return user_data
 
 user_validator = {
     '$jsonSchema': {
