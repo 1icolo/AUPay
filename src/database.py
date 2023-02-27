@@ -46,7 +46,7 @@ class Database:
         self.collection['transactions'].insert_one(documents['transaction'])
         print("Initial database created.")
 
-    def findUser(self, id, password):
+    def find_user(self, id, password):
         output = self.collection['users'].find_one(
             # {"school_id": id},
             {"school_id": id, "password": password}
@@ -55,8 +55,10 @@ class Database:
             print("Login failed")
         else:
             if password == output["password"]:
-                print("Login successful")
-                print(output['card_id'])
+                # print("Login successful")
+                # print(output['card_id'])
+                # print(output['user_type'])
+                return output['user_type']
             else:
                 print("Login failed")
 
