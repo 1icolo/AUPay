@@ -2,6 +2,7 @@
 from pymongo import MongoClient
 from bson import Timestamp, ObjectId
 from dotenv import load_dotenv
+from datetime import datetime
 
 from os import getenv
 
@@ -114,12 +115,25 @@ class Database:
         return new_transaction.inserted_id
 
     def load_user_table(self):
-        load_user = self.collection['users'].find()
-        user_data = []
-        for user in load_user:
-            user_data.append([user['card_id'],user['school_id'],user['password'],user['otp_key'],user['user_type'],user['balance']]) 
+        load_users = self.collection['users'].find()
+        users_data = []
+        for users in load_users:
+            users_data.append([users['card_id'],users['school_id'],users['password'],users['otp_key'],users['user_type'],users['balance']]) 
         # print(user_data)
-        return user_data
+        return users_data
+
+    def load_transaction_table(self):
+        load_transactions = self.collection['transactions'].find()
+        transaction_data = []
+        transactions_data = []
+        for transactions in load_transactions:
+            transaction_data.append([transactions['timestamp']])       
+            bson_timestamp = transaction_data[0][0] 
+            dt = datetime.fromtimestamp(bson_timestamp.time)
+            date_string = dt.strftime("%m/%d/%y")
+            transactions_data.append([transactions['_id'],date_string,transactions['source_id'],transactions['destination_id'],transactions['amount'],transactions['description']])
+        # print(transactions_data)
+        return transactions_data
 
 user_validator = {
     '$jsonSchema': {
