@@ -10,9 +10,6 @@ def find_user(id, password):
         print("Login failed")
     else:
         if password == output["password"]:
-            # print("Login successful")
-            # print(output['card_id'])
-            # print(output['user_type'])
-            return output['user_type']
+            return output
         else:
             print("Login failed")
