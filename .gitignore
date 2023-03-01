@@ -8,3 +8,8 @@
 .idea/dataSources/
 .idea/dataSources.local.xml
 src/__pycache__
+src/dbHelper/__pycache__
+src/fnHelper/__pycache__
+src/windows/__pycache__
+src/windows/ui/__pycache__
+*.pyc 
