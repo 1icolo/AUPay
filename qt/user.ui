@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>UserMainWindow</class>
- <widget class="QMainWindow" name="UserMainWindow">
+ <class>UserWindow</class>
+ <widget class="QMainWindow" name="UserWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>AUPay User</string>
   </property>
   <property name="windowIcon">
    <iconset>

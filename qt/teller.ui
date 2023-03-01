@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TellerMainWindow</class>
- <widget class="QMainWindow" name="TellerMainWindow">
+ <class>TellerWindow</class>
+ <widget class="QMainWindow" name="TellerWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
