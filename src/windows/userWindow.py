@@ -1,7 +1,5 @@
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from user_ui import Ui_UserMainWindow
+from src.windows.ui.userWindow_ui import Ui_UserMainWindow
 
 
 class UserMainWindow(QMainWindow, Ui_UserMainWindow):
