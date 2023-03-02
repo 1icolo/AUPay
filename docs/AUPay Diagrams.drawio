@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-02T04:42:20.030Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70" etag="gWF_0Tm1p0zzTX3wpQQQ" version="20.8.23" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-03-02T04:48:02.877Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 Edg/109.0.1518.70" etag="PXWumxIhZWdjrTToV459" version="20.8.23" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
     <mxGraphModel dx="1194" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="0">
       <root>
@@ -47,14 +47,14 @@
             <mxGeometry x="20" y="657" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Update Business window UI&lt;br&gt;- making tabs&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="0ejm54ke16URSIGelpPG-1">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-2">
-            <mxGeometry x="20" y="766" width="190" height="89" as="geometry" />
-          </mxCell>
-        </object>
         <object label="NICO" status="In progress" id="sQsjrjN2aDBts0AqB7bt-6">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
             <mxGeometry x="230" y="28" width="190" height="952" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Update Business window UI&lt;br&gt;- making tabs&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="0ejm54ke16URSIGelpPG-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-6">
+            <mxGeometry x="20" y="21" width="150" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-5">
