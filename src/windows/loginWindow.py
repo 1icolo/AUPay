@@ -2,10 +2,11 @@ from PyQt5.QtWidgets import *
 from dbHelper import find_user
 from fnHelper import login
 from windows.ui.loginWindow_ui import Ui_LoginWindow
-from windows.ui.userWindow_ui import Ui_UserWindow
-from windows.ui.tellerWindow_ui import Ui_TellerWindow
-from windows.ui.adminWindow_ui import Ui_AdminWindow
-from windows.ui.businessWindow_ui import Ui_BusinessWindow
+from windows.adminWindow import AdminWindow
+from windows.userWindow import UserWindow
+from windows.businessWIndow import BusinessWindow
+from windows.tellerWIndow import TellerWIndow
+
 
 class LoginWindow(QMainWindow, Ui_LoginWindow):
     def __init__(self, parent=None):
@@ -20,12 +21,12 @@ class LoginWindow(QMainWindow, Ui_LoginWindow):
         self.window = QMainWindow()
         match user['user_type']:
             case "user":
-                self.ui = Ui_UserWindow()
+                self.ui = UserWindow()
             case "admin":
-                self.ui = Ui_AdminWindow()
+                self.ui = AdminWindow()
             case "business":
-                self.ui = Ui_BusinessWindow()
+                self.ui = BusinessWindow()
             case "teller":
-                self.ui = Ui_TellerWindow()
+                self.ui = TellerWIndow()
         self.ui.setupUi(self.window)
         self.window.show()

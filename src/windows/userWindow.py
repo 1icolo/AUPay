@@ -1,17 +1,8 @@
 from PyQt5.QtWidgets import *
-from src.windows.ui.userWindow_ui import Ui_UserMainWindow
+from windows.ui.userWindow_ui import Ui_UserWindow
 
 
-class UserMainWindow(QMainWindow, Ui_UserMainWindow):
+class UserWindow(QMainWindow, Ui_UserWindow):
     def __init__(self, parent = None):
-        super(UserMainWindow, self).__init__(parent)
-        
+        super(UserWindow, self).__init__(parent)
         self.setupUi(self)
-        self.buttonLogout.clicked.connect(lambda: print("Logout"))
-
-
-
-app = QApplication([])
-window = UserMainWindow()
-window.show()
-app.exec()
