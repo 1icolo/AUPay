@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\qt\business.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\qt\business.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -16,7 +16,7 @@ class Ui_BusinessWindow(object):
         BusinessWindow.setObjectName("BusinessWindow")
         BusinessWindow.resize(644, 624)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\qt\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\qt\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         BusinessWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(BusinessWindow)
         self.centralwidget.setObjectName("centralwidget")
