@@ -11,3 +11,12 @@ def find_transaction(transaction_id):
     except:
         print("Transaction doesn't exist")
         return None
+    
+    
+def find_all_transactions():
+    try:
+        transactions = Database().collection['transactions'].find()
+        return transactions
+    except:
+        print("No transaction exists in the database.")
+        return None
