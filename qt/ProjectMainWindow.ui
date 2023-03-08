@@ -1238,7 +1238,7 @@
                <enum>QLayout::SetFixedSize</enum>
               </property>
               <item>
-               <widget class="QLineEdit" name="userSearchLine_administrator">
+               <widget class="QLineEdit" name="lineSearchUser_administrator">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -1251,21 +1251,21 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="addUserButton_administrator">
+               <widget class="QPushButton" name="buttonAddUser_administrator">
                 <property name="text">
                  <string>Add User</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="editUserButton_administrator">
+               <widget class="QPushButton" name="buttonEditUser_administrator">
                 <property name="text">
                  <string>Edit User</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="deleteUserButton_administrator">
+               <widget class="QPushButton" name="buttonDeleteUser_administrator">
                 <property name="text">
                  <string>Delete User</string>
                 </property>
@@ -1287,7 +1287,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QTableWidget" name="usersTable_administrator">
+             <widget class="QTableWidget" name="tableUsers_administrator">
               <property name="sizePolicy">
                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -1357,7 +1357,7 @@
                <enum>QLayout::SetFixedSize</enum>
               </property>
               <item>
-               <widget class="QLineEdit" name="transactionSearchButton_administrator">
+               <widget class="QLineEdit" name="lineSearchTransaction_administrator">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -1370,7 +1370,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="addTransactionButton_administrator">
+               <widget class="QPushButton" name="buttonAddTransaction_administrator">
                 <property name="text">
                  <string>Add Transaction</string>
                 </property>
