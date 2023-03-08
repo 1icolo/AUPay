@@ -1,4 +1,4 @@
-__all__ = ['find_user', 'add_user', 'update_user', 'delete_user', 'find_transaction', 'add_transaction']
+__all__ = ['find_user', 'add_user', 'update_user', 'delete_user', 'find_transaction', 'add_transaction','get_all_transactions', 'get_all_users']
 
 from .find_user import find_user
 from .add_user import add_user
