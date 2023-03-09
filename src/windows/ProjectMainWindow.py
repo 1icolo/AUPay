@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import *
 from dbHelper import find_all_users
 from bson import ObjectId
 
-from fnHelper import login
+from fnHelper import login, logout
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
 
 
@@ -13,12 +13,15 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         super(ProjectMainWindow, self).__init__(parent)
         self.setupUi(self)
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
+        self.actionLogout.triggered.connect(lambda: self.logout())
 
     def loginAttempt(self):
         print("hello world")
         user = login.login_attempt(self.lineSchoolId_login.text(), self.linePassword_login.text())
         self.stackedWidget.setCurrentIndex(4)
 
+    def logout(self):
+        logout.Logout(self)
 
 # class AdministratorWindow(ProjectMainWindow):
 #     def __init__(self, parent=ProjectMainWindow):
