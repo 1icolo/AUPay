@@ -11,6 +11,7 @@ def find_user_by_login(id, password):
         return None
     else:
         if password == output["password"]:
+            print("Login Successfully")
             return output
         else:
             print("Login failed")
