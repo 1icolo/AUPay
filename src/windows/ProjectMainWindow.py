@@ -5,7 +5,7 @@ from dbHelper import find_all_users
 from bson import ObjectId
 
 from fnHelper import login
-from windows.ui.ProjectMainWindow_ui import Ui_ProjectMainWindow
+from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
 
 
 class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
