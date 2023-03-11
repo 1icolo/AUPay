@@ -1,7 +1,7 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from fnHelper import login
+from fnHelper import login, logout
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
 
 
@@ -9,8 +9,13 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
         super(ProjectMainWindow, self).__init__(parent)
         self.setupUi(self)
+        self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
         
+        
+    def logoutAttempt(self):
+        logout.Logout(self)
+
 
     def loginAttempt(self):
         user = login.login_attempt(self.lineSchoolId_login.text(), self.linePassword_login.text())
