@@ -584,7 +584,7 @@ class Ui_ProjectMainWindow(object):
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
         self.tabWidget_business.setCurrentIndex(1)
-        self.tabWidget_administrator.setCurrentIndex(1)
+        self.tabWidget_administrator.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(ProjectMainWindow)
 
     def retranslateUi(self, ProjectMainWindow):
