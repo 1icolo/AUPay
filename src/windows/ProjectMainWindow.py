@@ -3,7 +3,12 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from fnHelper import login, logout
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
-
+from windows.AdminWindow import addUserDialog
+                
+class AddUserDialog(QDialog):
+    def __init__(self, parent=None):
+        super(AddUserDialog, self).__init__(parent)
+        addUserDialog(self)
 
 class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
@@ -11,8 +16,8 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.setupUi(self)
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
-        
-        
+        self.buttonAddUser_administrator.clicked.connect(lambda: AddUserDialog().exec())
+
     def logoutAttempt(self):
         logout.Logout(self)
 
@@ -25,8 +30,6 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         match user['user_type']:
             case 'admin':
                 self.stackedWidget.setCurrentIndex(4)
-                from windows.AdminWindow import AdminWindow
-                AdminWindow(self)
             case 'user':
                 self.stackedWidget.setCurrentIndex(1)
                 from windows.UserWindow import UserWindow
