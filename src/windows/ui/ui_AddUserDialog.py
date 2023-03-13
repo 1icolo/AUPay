@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'AddUserDialog.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\AddUserDialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #

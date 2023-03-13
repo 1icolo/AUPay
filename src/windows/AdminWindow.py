@@ -1,16 +1,27 @@
-from dbHelper import add_user
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from dbHelper.add_user import add_user
 from windows.ui.ui_AddUserDialog import Ui_Dialog
 
-def AdminWindow(self):
-        print(__name__)
 
-def addUserDialog(self):
+def AdminWindow(self):
+    print(__name__)
+    self.buttonAddUser_administrator.clicked.connect(lambda: AddUserDialog().exec())
+
+
+class AddUserDialog(QDialog):
+    def __init__(self, parent=None):
+        super(AddUserDialog, self).__init__(parent)
+        self.addUserDialog()
+
+    def addUserDialog(self):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
-        self.ui.buttonSave_addUser.clicked.connect(lambda: addUser(self))
+        self.ui.buttonSave_addUser.clicked.connect(lambda: self.addUser())
         self.ui.buttonCancel_addUser.clicked.connect(lambda: self.close())
 
-def addUser(self):
+    def addUser(self):
         newUser = {
             'card_id': self.ui.cardID_addUser.text(),
             'school_id': self.ui.schoolID_addUser.text(),
