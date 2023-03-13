@@ -1,4 +1,4 @@
-import pyotp
+# import pyotp
 
-class OTPAuthenticate():
-    totp = pyotp.TOTP('elcidelcidelcid')
+# class OTPAuthenticate():
+#     totp = pyotp.TOTP('elcidelcidelcid')
