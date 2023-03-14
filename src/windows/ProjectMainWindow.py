@@ -11,7 +11,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.setupUi(self)
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
-
+        self.linePassword_login.returnPressed.connect(self.loginAttempt)
 
     def logoutAttempt(self):
         logout.Logout(self)
