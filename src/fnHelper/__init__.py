@@ -1,6 +1,6 @@
-__all__ = ['login', 'logout', 'aupCard', 'otp']
+__all__ = ['login', 'logout', 'aupCard', 'otpAuth']
 
 from .aupCard import *
 from .login import *
 from .logout import *
-from .otp import *
+from .otpAuth import *
