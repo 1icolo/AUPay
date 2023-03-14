@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.resize(1088, 767)
         ProjectMainWindow.setMinimumSize(QtCore.QSize(205, 176))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\src\\windows\\ui\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProjectMainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ProjectMainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -508,7 +508,7 @@ class Ui_ProjectMainWindow(object):
         sizePolicy.setHeightForWidth(self.tableUsers_administrator.sizePolicy().hasHeightForWidth())
         self.tableUsers_administrator.setSizePolicy(sizePolicy)
         self.tableUsers_administrator.setObjectName("tableUsers_administrator")
-        self.tableUsers_administrator.setColumnCount(6)
+        self.tableUsers_administrator.setColumnCount(7)
         self.tableUsers_administrator.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tableUsers_administrator.setHorizontalHeaderItem(0, item)
@@ -522,6 +522,8 @@ class Ui_ProjectMainWindow(object):
         self.tableUsers_administrator.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableUsers_administrator.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableUsers_administrator.setHorizontalHeaderItem(6, item)
         self.horizontalLayout_4.addWidget(self.tableUsers_administrator)
         self.tabWidget_administrator.addTab(self.tabUsers_administrator, "")
         self.tabTransactions_administrator = QtWidgets.QWidget()
@@ -571,7 +573,7 @@ class Ui_ProjectMainWindow(object):
         self.gridLayout_2.addWidget(self.stackedWidget, 0, 0, 1, 1)
         ProjectMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(ProjectMainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1088, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1088, 26))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -724,16 +726,18 @@ class Ui_ProjectMainWindow(object):
         self.buttonEditUser_administrator.setText(_translate("ProjectMainWindow", "Edit User"))
         self.buttonDeleteUser_administrator.setText(_translate("ProjectMainWindow", "Delete User"))
         item = self.tableUsers_administrator.horizontalHeaderItem(0)
-        item.setText(_translate("ProjectMainWindow", "card_id"))
+        item.setText(_translate("ProjectMainWindow", "_id"))
         item = self.tableUsers_administrator.horizontalHeaderItem(1)
-        item.setText(_translate("ProjectMainWindow", "school_id"))
+        item.setText(_translate("ProjectMainWindow", "card_id"))
         item = self.tableUsers_administrator.horizontalHeaderItem(2)
-        item.setText(_translate("ProjectMainWindow", "password"))
+        item.setText(_translate("ProjectMainWindow", "school_id"))
         item = self.tableUsers_administrator.horizontalHeaderItem(3)
-        item.setText(_translate("ProjectMainWindow", "otp_key"))
+        item.setText(_translate("ProjectMainWindow", "password"))
         item = self.tableUsers_administrator.horizontalHeaderItem(4)
-        item.setText(_translate("ProjectMainWindow", "user_type"))
+        item.setText(_translate("ProjectMainWindow", "otp_key"))
         item = self.tableUsers_administrator.horizontalHeaderItem(5)
+        item.setText(_translate("ProjectMainWindow", "user_type"))
+        item = self.tableUsers_administrator.horizontalHeaderItem(6)
         item.setText(_translate("ProjectMainWindow", "balance"))
         self.tabWidget_administrator.setTabText(self.tabWidget_administrator.indexOf(self.tabUsers_administrator), _translate("ProjectMainWindow", "Users"))
         self.lineSearchTransaction_administrator.setPlaceholderText(_translate("ProjectMainWindow", "Search"))

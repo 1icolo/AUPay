@@ -12,12 +12,24 @@ def load_user_data_to_table(self):
     rows = len(data)
     columns = len(data[0])
     self.tableUsers_administrator.setRowCount(len(data))
+    self.tableUsers_administrator.setSelectionMode(QTableWidget.SingleSelection)
+    self.tableUsers_administrator.setSelectionBehavior(QAbstractItemView.SelectRows)
+    self.tableUsers_administrator.hideColumn(0)
+    # print(data[school_id])
     # Add the user data to the table
     for row in range(rows):
         for column in range(columns):
             item = QTableWidgetItem(str(data[row][column]))
             self.tableUsers_administrator.setItem(row, column, item)
             self.tableUsers_administrator.item(row, column).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
+    self.tableUsers_administrator.itemSelectionChanged.connect(lambda: id_of_selected_row(self))
+
+def id_of_selected_row(self):
+    selected_items = self.tableUsers_administrator.selectedItems()
+    if selected_items:
+        selected_row = selected_items[0].row()
+        _id = self.tableUsers_administrator.item(selected_row, 0).text()
+        print(_id)
 
 class AddUserDialog(QDialog):
     def __init__(self, parent=None):
@@ -46,3 +58,4 @@ def AdminWindow(self):
     print(__name__)
     self.buttonAddUser_administrator.clicked.connect(lambda: AddUserDialog().exec())
     load_user_data_to_table(self)
+    

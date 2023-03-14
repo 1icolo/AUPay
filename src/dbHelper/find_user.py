@@ -40,6 +40,7 @@ def load_user_data(self):
         load_user = Database().collection['users'].find()
         user_data = []
         for user in load_user:
-            user_data.append([user['card_id'],user['school_id'],user['password'],user['otp_key'],user['user_type'],user['balance']]) 
+            user_data.append([user['_id'],user['card_id'],user['school_id'],user['password'],user['otp_key'],user['user_type'],user['balance']]) 
         # print(user_data)
         return user_data
+
