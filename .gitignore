@@ -12,4 +12,5 @@ src/dbHelper/__pycache__
 src/fnHelper/__pycache__
 src/windows/__pycache__
 src/windows/ui/__pycache__
-*.pyc 
+*.pyc
+venv
