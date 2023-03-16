@@ -1,16 +1,35 @@
-# from smartcard.CardType import CardType
-# from smartcard.CardRequest import CardRequest
-# from smartcard.util import toHexString
+from smartcard.CardType import AnyCardType
+from smartcard.CardRequest import CardRequest
+from smartcard.util import toHexString
 
-# class DCCardType(CardType):
-#     def matches( self, atr, reader=None ):
-#         return atr[0]==0x3B
+class AUPCard:
+    def __init__(self, timeout: int = 1):
+        print(f"Waiting for smartcard within {timeout} seconds")
+        try:
+            # define the card type
+            cardtype = AnyCardType()
 
-# cardtype = DCCardType()
-# cardrequest = CardRequest( timeout=1, cardType=cardtype )
-# cardservice = cardrequest.waitforcard()
+            # request a card connection
+            cardrequest = CardRequest(timeout=timeout, cardType=cardtype)
+            cardservice = cardrequest.waitforcard()
 
-# cardservice.connection.connect()
-# print (toHexString( cardservice.connection.getATR() ))
+            # connect to the card
+            cardservice.connection.connect()
 
-# print (cardservice.connection.getReader())
+            # get the UID of the card
+            GET_UID = [0xFF, 0xCA, 0x00, 0x00, 0x00]
+            self.data, sw1, sw2 = cardservice.connection.transmit(GET_UID)
+
+            # return UID
+            self.get_uid()
+            
+        except Exception:
+            pass
+
+
+    def get_uid(self):
+        # print the UID in hexadecimal format
+        print("UID: %s" % toHexString(self.data))
+        return self.data
+    
+AUPCard(25)
