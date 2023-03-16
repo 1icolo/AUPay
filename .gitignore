@@ -14,3 +14,5 @@ src/windows/__pycache__
 src/windows/ui/__pycache__
 *.pyc
 venv
+build
+dist
