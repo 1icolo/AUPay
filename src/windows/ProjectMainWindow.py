@@ -14,7 +14,6 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
         self.lineSchoolId_login.returnPressed.connect(self.loginAttempt)
         self.linePassword_login.returnPressed.connect(self.loginAttempt)
-        self.lineSchoolId_login.returnPressed.connect(self.loginAttempt)
         self.buttonRFIDLogin_login.clicked.connect(lambda: self.loginRFID())
 
 
