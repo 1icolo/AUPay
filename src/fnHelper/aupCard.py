@@ -3,7 +3,7 @@ from smartcard.CardRequest import CardRequest
 from smartcard.util import toHexString
 
 class AUPCard:
-    def __init__(self, timeout: int = 1):
+    def __init__(self, timeout: int = 5):
         print(f"Waiting for smartcard within {timeout} seconds")
         try:
             # define the card type
@@ -29,7 +29,5 @@ class AUPCard:
 
     def get_uid(self):
         # print the UID in hexadecimal format
-        print("UID: %s" % toHexString(self.data))
-        return self.data
-    
-AUPCard(25)
+        uid = toHexString(self.data)
+        return uid

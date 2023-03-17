@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.resize(1088, 810)
         ProjectMainWindow.setMinimumSize(QtCore.QSize(205, 176))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\src\\windows\\ui\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProjectMainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ProjectMainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -51,8 +51,11 @@ class Ui_ProjectMainWindow(object):
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.SpanningRole, self.linePassword_login)
         spacerItem = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.formLayout.setItem(4, QtWidgets.QFormLayout.SpanningRole, spacerItem)
+        self.buttonRFIDLogin_login = QtWidgets.QPushButton(self.pageLogin)
+        self.buttonRFIDLogin_login.setObjectName("buttonRFIDLogin_login")
+        self.formLayout.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.buttonRFIDLogin_login)
         spacerItem1 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.formLayout.setItem(5, QtWidgets.QFormLayout.LabelRole, spacerItem1)
+        self.formLayout.setItem(7, QtWidgets.QFormLayout.LabelRole, spacerItem1)
         self.buttonLogin_login = QtWidgets.QPushButton(self.pageLogin)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -62,16 +65,16 @@ class Ui_ProjectMainWindow(object):
         self.buttonLogin_login.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.buttonLogin_login.setMouseTracking(True)
         self.buttonLogin_login.setObjectName("buttonLogin_login")
-        self.formLayout.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.buttonLogin_login)
+        self.formLayout.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.buttonLogin_login)
         self.gridLayout.addLayout(self.formLayout, 1, 1, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem2, 1, 0, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem3, 1, 2, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem3, 2, 1, 1, 1)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem4, 2, 1, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem5, 0, 1, 1, 1)
+        self.gridLayout.addItem(spacerItem4, 0, 1, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem5, 1, 2, 1, 1)
         self.stackedWidget.addWidget(self.pageLogin)
         self.pageUser = QtWidgets.QWidget()
         self.pageUser.setObjectName("pageUser")
@@ -606,6 +609,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.setWindowTitle(_translate("ProjectMainWindow", "AUPay"))
         self.lineSchoolId_login.setPlaceholderText(_translate("ProjectMainWindow", "School ID"))
         self.linePassword_login.setPlaceholderText(_translate("ProjectMainWindow", "Password"))
+        self.buttonRFIDLogin_login.setText(_translate("ProjectMainWindow", "RFID Login"))
         self.buttonLogin_login.setText(_translate("ProjectMainWindow", "Login"))
         self.labelSchoolId_user.setText(_translate("ProjectMainWindow", "School ID"))
         self.lineSchoolId_user.setText(_translate("ProjectMainWindow", "2052522"))

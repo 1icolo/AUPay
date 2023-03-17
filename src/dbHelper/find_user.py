@@ -16,10 +16,20 @@ def find_user_by_login(id, password):
         else:
             print("Login failed")
             return None
+        
+
+def find_user_by_card_id(card_id):
+    user = Database().collection['users'].find_one(
+        {"card_id": card_id}
+    )
+    if user is None:
+        print("Login failed")
+        return None
+    return user
 
 
 def find_user_by_id(id):
-    output = Database().collection['users'].find_one*(
+    output = Database().collection['users'].find_one(
         {"_id": id}
     )
     if output is None:
