@@ -4,12 +4,14 @@ from PyQt5.QtWidgets import *
 from fnHelper import login
 from dbHelper.find_transaction import load_transaction_table
 
+def UserWindow(self, user):
+        print(__name__)
+        load_user_data(self, user)
+        load_user_transaction_data(self)
 
-
-def load_user_data(self):
-        user = login.login_attempt(self.lineSchoolId_login.text(), self.linePassword_login.text())
-        # print(user)
-        self.lineSchoolId_user.setText(user['school_id'])
+def load_user_data(self, user):
+        print(self.lineSchoolId_user.setText(user['school_id']))
+        print("Hello")
         self.lineBalance_user.setText(user['balance'])
 
 
@@ -27,8 +29,3 @@ def load_user_transaction_data(self):
                         item = QTableWidgetItem(str(transaction[row][column]))
                         self.userTable_Window.setItem(row, column, item)
                         self.userTable_Window.item(row, column).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
-
-def UserWindow(self):
-        print(__name__)
-        load_user_data(self)
-        load_user_transaction_data(self)
