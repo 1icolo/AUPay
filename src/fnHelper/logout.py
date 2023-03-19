@@ -8,7 +8,7 @@ def Logout(self):
 def resetOtherWindow(self):
     self.userTable_Window.clearSelection()
     self.tableInventory_business.clearSelection()
-    self.tableCart.clearSelection()
+    self.tableCart_business.clearSelection()
     self.tableTransactions_business.clearSelection()
     self.tabletTransactions_teller.clearSelection()
     self.tableUsers_administrator.clearSelection()

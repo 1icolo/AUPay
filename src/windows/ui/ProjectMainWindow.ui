@@ -849,7 +849,129 @@
                 </property>
                 <layout class="QGridLayout" name="gridLayout_5">
                  <item row="3" column="0">
-                  <widget class="QTableWidget" name="tableInventory_business"/>
+                  <widget class="QTableWidget" name="tableInventory_business">
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SingleSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectRows</enum>
+                   </property>
+                   <row>
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </row>
+                   <column>
+                    <property name="text">
+                     <string>product</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>quantity</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>amount</string>
+                    </property>
+                   </column>
+                   <item row="0" column="0">
+                    <property name="text">
+                     <string>Soya</string>
+                    </property>
+                   </item>
+                   <item row="0" column="1">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </item>
+                   <item row="0" column="2">
+                    <property name="text">
+                     <string>60</string>
+                    </property>
+                   </item>
+                   <item row="1" column="0">
+                    <property name="text">
+                     <string>Yummy pasta</string>
+                    </property>
+                   </item>
+                   <item row="1" column="1">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </item>
+                   <item row="1" column="2">
+                    <property name="text">
+                     <string>55</string>
+                    </property>
+                   </item>
+                   <item row="2" column="0">
+                    <property name="text">
+                     <string>111111</string>
+                    </property>
+                   </item>
+                   <item row="2" column="1">
+                    <property name="text">
+                     <string>11111</string>
+                    </property>
+                   </item>
+                   <item row="2" column="2">
+                    <property name="text">
+                     <string>11111111</string>
+                    </property>
+                   </item>
+                   <item row="3" column="0">
+                    <property name="text">
+                     <string>222222</string>
+                    </property>
+                   </item>
+                   <item row="3" column="1">
+                    <property name="text">
+                     <string>22222</string>
+                    </property>
+                   </item>
+                   <item row="3" column="2">
+                    <property name="text">
+                     <string>22222</string>
+                    </property>
+                   </item>
+                   <item row="4" column="0">
+                    <property name="text">
+                     <string>asdf</string>
+                    </property>
+                   </item>
+                   <item row="4" column="1">
+                    <property name="text">
+                     <string>asdf</string>
+                    </property>
+                   </item>
+                   <item row="4" column="2">
+                    <property name="text">
+                     <string>asdf</string>
+                    </property>
+                   </item>
+                  </widget>
                  </item>
                  <item row="1" column="0">
                   <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -948,7 +1070,29 @@
                 </property>
                 <layout class="QGridLayout" name="gridLayout_6">
                  <item row="0" column="0">
-                  <widget class="QTableWidget" name="tableCart"/>
+                  <widget class="QTableWidget" name="tableCart_business">
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SingleSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectRows</enum>
+                   </property>
+                   <column>
+                    <property name="text">
+                     <string>product</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>quantity</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>amount</string>
+                    </property>
+                   </column>
+                  </widget>
                  </item>
                 </layout>
                </widget>
