@@ -795,8 +795,8 @@ class Ui_ProjectMainWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
 
         self.retranslateUi(ProjectMainWindow)
-        self.stackedWidget.setCurrentIndex(2)
-        self.tabWidget_business.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
+        self.tabWidget_business.setCurrentIndex(0)
         self.tabWidget_administrator.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(ProjectMainWindow)
 
