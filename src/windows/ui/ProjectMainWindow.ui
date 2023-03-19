@@ -1808,6 +1808,11 @@
             </item>
             <item>
              <widget class="QTableWidget" name="transactionsTable_administrator">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
               <column>
                <property name="text">
                 <string>_id</string>
