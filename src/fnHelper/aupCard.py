@@ -28,6 +28,7 @@ class AUPCard:
 
 
     def get_uid(self):
-        # print the UID in hexadecimal format
+        # return the UID in hexadecimal format
         uid = toHexString(self.data)
+        # print(uid)
         return uid
