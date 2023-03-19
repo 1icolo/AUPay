@@ -32,7 +32,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
             case 'user':
                 self.stackedWidget.setCurrentIndex(1)
                 from windows.UserWindow import UserWindow
-                UserWindow(self)
+                UserWindow(self, user)
             case 'business':
                 self.stackedWidget.setCurrentIndex(2)
                 from windows.BusinessWindow import BusinessWindow
@@ -55,7 +55,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
                 case 'user':
                     self.stackedWidget.setCurrentIndex(1)
                     from windows.UserWindow import UserWindow
-                    UserWindow(self)
+                    UserWindow(self, user)
                 case 'business':
                     self.stackedWidget.setCurrentIndex(2)
                     from windows.BusinessWindow import BusinessWindow

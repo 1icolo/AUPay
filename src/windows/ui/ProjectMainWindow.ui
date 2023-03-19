@@ -361,7 +361,7 @@
              <enum>Qt::DefaultContextMenu</enum>
             </property>
             <property name="text">
-             <string>2052522</string>
+             <string>asdf</string>
             </property>
             <property name="maxLength">
              <number>30</number>
@@ -427,7 +427,7 @@
              <string/>
             </property>
             <property name="text">
-             <string>66430</string>
+             <string/>
             </property>
             <property name="maxLength">
              <number>30</number>
@@ -436,7 +436,7 @@
              <bool>true</bool>
             </property>
             <property name="placeholderText">
-             <string>Destination</string>
+             <string>Balance</string>
             </property>
            </widget>
           </item>
