@@ -10,10 +10,9 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
         super(ProjectMainWindow, self).__init__(parent)
         self.setupUi(self)
+        self.loginRFID(1)
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
-        self.lineSchoolId_login.returnPressed.connect(self.loginAttempt)
-        self.linePassword_login.returnPressed.connect(self.loginAttempt)
         self.buttonRFIDLogin_login.clicked.connect(lambda: self.loginRFID())
 
 
@@ -43,9 +42,9 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
                 from windows.TellerWindow import TellerWindow
                 TellerWindow(self)
 
-    def loginRFID(self):
+    def loginRFID(self, seconds):
         try:
-            user = login.login_rfid(AUPCard(5).get_uid())  
+            user = login.login_rfid(AUPCard(seconds).get_uid())  
             if user is None:
                 return
             match user['user_type']:
