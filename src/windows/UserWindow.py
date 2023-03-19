@@ -11,9 +11,8 @@ def UserWindow(self, user):
 
 def load_user_data(self, user):
         print(self.lineSchoolId_user.setText(user['school_id']))
-        print("Hello")
+        # print("Hello")
         self.lineBalance_user.setText(user['balance'])
-
 
 def load_user_transaction_data(self):
         transaction = load_transaction_table(self)
@@ -21,11 +20,8 @@ def load_user_transaction_data(self):
         rows = len(transaction)
         columns = len(transaction[0])
         self.userTable_Window.setRowCount(len(transaction))
-        # self.userTable_Window.setSelectionMode(QTableWidget.SingleSelection)
-        self.userTable_Window.setSelectionBehavior(QAbstractItemView.SelectRows)
         # Add the user data to the table
         for row in range(rows):
                 for column in range(columns):
                         item = QTableWidgetItem(str(transaction[row][column]))
                         self.userTable_Window.setItem(row, column, item)
-                        self.userTable_Window.item(row, column).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)

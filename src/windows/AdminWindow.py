@@ -12,8 +12,6 @@ def load_users_to_table(self):
     rows = len(users_data)
     columns = len(users_data[0])
     self.tableUsers_administrator.setRowCount(len(users_data))
-    self.tableUsers_administrator.setSelectionMode(QTableWidget.SingleSelection)
-    self.tableUsers_administrator.setSelectionBehavior(QAbstractItemView.SelectRows)
     self.tableUsers_administrator.hideColumn(0)
     # print(data[school_id])
     # Add the user data to the table
@@ -21,15 +19,12 @@ def load_users_to_table(self):
         for column in range(columns):
             item = QTableWidgetItem(str(users_data[row][column]))
             self.tableUsers_administrator.setItem(row, column, item)
-            self.tableUsers_administrator.item(row, column).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
-    self.tableUsers_administrator.itemSelectionChanged.connect(lambda: id_of_selected_row(self))
+    self.tableUsers_administrator.itemSelectionChanged.connect(lambda: id_of_selected_row_user(self))
 
-    def id_of_selected_row(self):
-        selected_items = self.tableUsers_administrator.selectedItems()
-        if selected_items:
-            selected_row = selected_items[0].row()
-            _id = self.tableUsers_administrator.item(selected_row, 0).text()
-            print(_id)
+    def id_of_selected_row_user(self):
+        selected_row = self.tableUsers_administrator.currentRow()
+        _id = self.tableUsers_administrator.item(selected_row, 0).text()
+        print(_id)
 
 def load_transactions_to_table(self):
     transactions_data = load_transaction_table(self)
@@ -37,22 +32,17 @@ def load_transactions_to_table(self):
     rows = len(transactions_data)
     columns = len(transactions_data[0])
     self.transactionsTable_administrator.setRowCount(len(transactions_data))
-    self.transactionsTable_administrator.setSelectionMode(QTableWidget.SingleSelection)
-    self.transactionsTable_administrator.setSelectionBehavior(QAbstractItemView.SelectRows)
     # Add the user data to the table
     for row in range(rows):
         for column in range(columns):
             item = QTableWidgetItem(str(transactions_data[row][column]))
             self.transactionsTable_administrator.setItem(row, column, item)
-            self.transactionsTable_administrator.item(row, column).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
-    self.transactionsTable_administrator.itemSelectionChanged.connect(lambda: id_of_selected_row(self))
+    self.transactionsTable_administrator.itemSelectionChanged.connect(lambda: id_of_selected_row_transaction(self))
 
-    def id_of_selected_row(self):
-        selected_items = self.transactionsTable_administrator.selectedItems()
-        if selected_items:
-            selected_row = selected_items[0].row()
-            _id = self.transactionsTable_administrator.item(selected_row, 0).text()
-            print(_id)
+    def id_of_selected_row_transaction(self):
+        selected_row = self.transactionsTable_administrator.currentRow()
+        _id = self.transactionsTable_administrator.item(selected_row, 0).text()
+        print(_id)
 
 
 class AddUserDialog(QDialog):
