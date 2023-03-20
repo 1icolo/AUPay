@@ -27,18 +27,18 @@ class Database:
     def __create_database(self):
         documents = {
             'user': {
-                'card_id': "1234567890",
-                'school_id': "0000000",
-                'password': "12345",
-                'otp_key': "1a2b3c4b5d",
-                'user_type': 'user',
-                'balance': '35',
+                'card_id': "26 FC 37 F1",
+                'school_id': "2052522",
+                'password': "asdf@asd02D2!",
+                'otp_key': "D9SADSDJER3D",
+                'user_type': 'admin',
+                'balance': 0.00,
             },
             'transaction': {
                 'timestamp': Timestamp(1651363200, 0),
                 'source_id': ObjectId("63abc434a689ea6865853eb8"),
                 'destination_id': ObjectId("63abc435a689ea6865853eb9"),
-                'amount': 0,
+                'amount': 0.00,
                 'description': "Initial transaction",
             }
         }
