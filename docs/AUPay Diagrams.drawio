@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-19T16:09:03.864Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="60Ek7Jw_sGomDn13jf4A" version="21.0.8" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-03-20T00:33:29.978Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="__j7NysNs9qBM3J2YfGC" version="21.0.8" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
     <mxGraphModel dx="1434" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="0">
       <root>
@@ -22,29 +22,24 @@
             <mxGeometry x="20" y="130" width="190" height="252" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Items on the Business Window Inventory table should be based from a JSON file at the root folder&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-4">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-2">
+        <object label="&lt;font style=&quot;&quot;&gt;Function in fnHelper that calculates the balance of a user based on all of the user&#39;s transactions then updates the user balance&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="gFWDnQQzy-8UEIj2B_wU-36">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
             <mxGeometry x="20" y="402" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Function in fnHelper that calculates the balance of a user based on all of the user&#39;s transactions then updates the user balance&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="gFWDnQQzy-8UEIj2B_wU-36">
+        <object label="&lt;font style=&quot;&quot;&gt;In Business Window there is an Edit Items button. When i press the button, a dialog will pop up with an editable list of preset and their shortcut key.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
             <mxGeometry x="20" y="511" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;In Business Window there is an Edit Items button. When i press the button, a dialog will pop up with an editable list of preset and their shortcut key.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-2">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-2">
-            <mxGeometry x="20" y="620" width="190" height="89" as="geometry" />
-          </mxCell>
-        </object>
         <object label="&lt;font style=&quot;&quot;&gt;Table Searching Function&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-3">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-2">
-            <mxGeometry x="20" y="729" width="190" height="89" as="geometry" />
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
+            <mxGeometry x="20" y="620" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;Setup the API server using Flask&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="nOb4MM5HKLPM6Ro4mZpl-3">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
-            <mxGeometry x="20" y="838" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="729" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="NICO" status="In progress" id="jk4ZuAFncWzifWcSEG9R-6">
@@ -55,6 +50,11 @@
         <object label="&lt;font style=&quot;&quot;&gt;Add OTP verification in user registration&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="FMs3bLKS2XqBx0wkWiiC-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="jk4ZuAFncWzifWcSEG9R-6" vertex="1">
             <mxGeometry x="20" y="21" width="140" height="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Items on the Business Window Inventory table should be based from a JSON file at the root folder&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-4">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="jk4ZuAFncWzifWcSEG9R-6" vertex="1">
+            <mxGeometry x="20" y="130" width="140" height="110" as="geometry" />
           </mxCell>
         </object>
         <object label="" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-5">
