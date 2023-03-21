@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-21T09:00:10.464Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="YK8XKv2a80UpFkeYrz5N" version="21.0.8" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-03-21T09:18:18.536Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="IY6Q3YGcIJ0HNuWzmBef" version="21.0.8" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
-    <mxGraphModel dx="989" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
+    <mxGraphModel dx="1049" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -47,11 +47,6 @@
             <mxGeometry x="20" y="439" width="140" height="89" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Items on the Business Window Inventory table should be based from a JSON file at the root folder&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-4">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="jk4ZuAFncWzifWcSEG9R-6" vertex="1">
-            <mxGeometry x="20" y="548" width="140" height="110" as="geometry" />
-          </mxCell>
-        </object>
         <object label="" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-5">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
             <mxGeometry x="410" y="28" width="190" height="3512" as="geometry" />
@@ -90,6 +85,11 @@
         <object label="&lt;font style=&quot;&quot;&gt;When clicking certain row, it should show the data on the textboxes&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="RuUKVgwNkQRj4nLTe_cS-3">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="A4bzXRDnEpqqfuXnQtNc-31" vertex="1">
             <mxGeometry x="20" y="239" width="140" height="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Items on the Business Window Inventory table should be based from items.json at the root folder&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-4">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="A4bzXRDnEpqqfuXnQtNc-31" vertex="1">
+            <mxGeometry x="20" y="348" width="140" height="110" as="geometry" />
           </mxCell>
         </object>
         <object label="DONE" status="Completed" id="sQsjrjN2aDBts0AqB7bt-9">
