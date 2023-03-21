@@ -4,7 +4,7 @@ from smartcard.util import toHexString
 
 class AUPCard:
     def __init__(self, timeout: int = 5):
-        print(f"Waiting for smartcard within {timeout} seconds")
+        print(f"Waiting for smartcard within {timeout} second{(lambda: '', lambda: 's')[timeout != 1]()}.")
         try:
             # define the card type
             cardtype = AnyCardType()
