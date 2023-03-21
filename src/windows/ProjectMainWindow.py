@@ -42,7 +42,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
                 from windows.TellerWindow import TellerWindow
                 TellerWindow(self)
 
-    def loginRFID(self, seconds):
+    def loginRFID(self, seconds = 5):
         try:
             user = login.login_rfid(AUPCard(seconds).get_uid())  
             if user is None:
