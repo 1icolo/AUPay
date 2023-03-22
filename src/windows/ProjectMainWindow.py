@@ -1,10 +1,10 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from fnHelper import login, logout
+from fnHelper import login
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
 from fnHelper.aupCard import AUPCard
-                
+import sys, os
 
 class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
@@ -14,10 +14,11 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt())
         self.buttonRFIDLogin_login.clicked.connect(lambda: self.loginRFID())
-
-
+        
     def logoutAttempt(self):
-        logout.Logout(self)
+        QApplication.quit()
+        python = sys.executable
+        os.execl(python, python, *sys.argv)
 
     def loginAttempt(self):
         user = login.login_attempt(self.lineSchoolId_login.text(), self.linePassword_login.text())

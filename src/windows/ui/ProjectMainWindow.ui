@@ -361,7 +361,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineSchoolId_user">
+             <widget class="QLineEdit" name="userWindow_schoolIdLine">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -417,7 +417,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineBalance_user">
+             <widget class="QLineEdit" name="userWindow_balanceLine">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -471,7 +471,7 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_12">
            <item row="1" column="0">
-            <widget class="QTableWidget" name="userTable_Window">
+            <widget class="QTableWidget" name="userWindow_transactions_table">
              <property name="enabled">
               <bool>true</bool>
              </property>
@@ -494,6 +494,12 @@
              </property>
              <property name="editTriggers">
               <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
              </property>
              <row>
               <property name="text">
@@ -603,7 +609,7 @@
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLineEdit" name="userWindow_transaction_search">
              <property name="text">
               <string/>
              </property>
@@ -635,7 +641,7 @@
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QTabWidget" name="tabWidget_business">
+         <widget class="QTabWidget" name="tabWidget_2">
           <property name="font">
            <font>
             <family>Segoe UI</family>
@@ -731,7 +737,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineSearchInventory_business">
+                    <widget class="QLineEdit" name="businessWindow_inventory_search">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -793,13 +799,37 @@
                   </layout>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QTableWidget" name="tableInventory_business">
+                  <widget class="QTableWidget" name="businessWindow_inventory_table">
                    <property name="font">
                     <font>
                      <family>Segoe UI</family>
                      <pointsize>16</pointsize>
                     </font>
                    </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::NoEditTriggers</set>
+                   </property>
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SingleSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectRows</enum>
+                   </property>
+                   <column>
+                    <property name="text">
+                     <string>Item ID</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Name</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Price</string>
+                    </property>
+                   </column>
                   </widget>
                  </item>
                 </layout>
@@ -868,13 +898,34 @@
                   </spacer>
                  </item>
                  <item row="1" column="0" colspan="2">
-                  <widget class="QTableWidget" name="tableCart_business">
+                  <widget class="QTableWidget" name="businessWindow_cart_table">
                    <property name="font">
                     <font>
                      <family>Segoe UI</family>
                      <pointsize>16</pointsize>
                     </font>
                    </property>
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SingleSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectRows</enum>
+                   </property>
+                   <column>
+                    <property name="text">
+                     <string>Item ID</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Name</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Price</string>
+                    </property>
+                   </column>
                   </widget>
                  </item>
                 </layout>
@@ -968,7 +1019,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineSchoolId_business">
+                 <widget class="QLineEdit" name="businessWindow_sourceLine">
                   <property name="enabled">
                    <bool>true</bool>
                   </property>
@@ -1012,7 +1063,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineAmount_business">
+                 <widget class="QLineEdit" name="businessWindow_amountLine">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1044,7 +1095,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QTextEdit" name="textDescription_business">
+                 <widget class="QTextEdit" name="businessWindow_descriptionLine">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                     <horstretch>0</horstretch>
@@ -1136,21 +1187,8 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
-             <widget class="QLineEdit" name="lineSearchTransactions_business">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="placeholderText">
-               <string>Search</string>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0" colspan="3">
-             <widget class="QTableWidget" name="tableTransactions_business">
+             <widget class="QTableWidget" name="businessWindow_transactions_table">
               <property name="minimumSize">
                <size>
                 <width>420</width>
@@ -1171,6 +1209,12 @@
               </property>
               <property name="editTriggers">
                <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
               </property>
               <row>
                <property name="text">
@@ -1252,6 +1296,19 @@
               </property>
              </spacer>
             </item>
+            <item row="0" column="0">
+             <widget class="QLineEdit" name="businessWindow_transaction_search">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="placeholderText">
+               <string>Search</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </widget>
@@ -1288,7 +1345,7 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_11">
            <item row="1" column="0">
-            <widget class="QTableWidget" name="tabletTransactions_teller">
+            <widget class="QTableWidget" name="tellerWindow_transactions_table">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -1308,6 +1365,12 @@
              </property>
              <property name="editTriggers">
               <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
              </property>
              <row>
               <property name="text">
@@ -1397,7 +1460,7 @@
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLineEdit" name="lineEdit_2">
+            <widget class="QLineEdit" name="tellerWindow_transaction_search">
              <property name="placeholderText">
               <string>Search</string>
              </property>
@@ -1477,7 +1540,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineSchoolId_teller">
+             <widget class="QLineEdit" name="tellerWindow_schoolIdLine">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1512,7 +1575,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineAmount_teller">
+             <widget class="QLineEdit" name="tellerWindow_amountLine">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -1532,7 +1595,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QTextEdit" name="textDescription_teller">
+             <widget class="QTextEdit" name="tellerWindow_descriptionLine">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -1605,7 +1668,7 @@
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QTabWidget" name="tabWidget_administrator">
+         <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -1650,7 +1713,7 @@
                <number>20</number>
               </property>
               <item>
-               <widget class="QLineEdit" name="lineSearchUser_administrator">
+               <widget class="QLineEdit" name="adminWindow_user_search">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -1702,7 +1765,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QTableWidget" name="tableUsers_administrator">
+             <widget class="QTableWidget" name="adminWindow_users_table">
               <property name="sizePolicy">
                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -1713,6 +1776,15 @@
                <font>
                 <pointsize>16</pointsize>
                </font>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
               </property>
               <column>
                <property name="text">
@@ -1794,7 +1866,7 @@
                <number>20</number>
               </property>
               <item>
-               <widget class="QLineEdit" name="lineSearchTransaction_administrator">
+               <widget class="QLineEdit" name="adminWindow_transaction_search">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -1829,11 +1901,20 @@
              </layout>
             </item>
             <item>
-             <widget class="QTableWidget" name="transactionsTable_administrator">
+             <widget class="QTableWidget" name="adminWindow_transactions_table">
               <property name="font">
                <font>
                 <pointsize>16</pointsize>
                </font>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
               </property>
               <column>
                <property name="text">

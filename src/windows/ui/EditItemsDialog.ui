@@ -47,7 +47,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="nameLineEdit">
+        <widget class="QLineEdit" name="businessWindow_edit_dialog_nameLine">
          <property name="font">
           <font>
            <family>Segoe UI</family>
@@ -70,7 +70,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="priceLineEdit">
+        <widget class="QLineEdit" name="businessWindow_edit_dialog_priceLine">
          <property name="font">
           <font>
            <family>Segoe UI</family>
@@ -123,13 +123,37 @@
     </layout>
    </item>
    <item row="0" column="1" rowspan="2">
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="businessWindow_edit_dialog_table">
      <property name="font">
       <font>
        <family>Segoe UI</family>
        <pointsize>16</pointsize>
       </font>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>Item ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Price</string>
+      </property>
+     </column>
     </widget>
    </item>
    <item row="1" column="2">
