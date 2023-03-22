@@ -11,7 +11,7 @@ class AddUserDialog(QDialog):
         self.addUserDialog()
 
     def addUserDialog(self):
-        self.ui = Ui_Dialog()
+        self.ui = AddUserUi_Dialog()
         self.ui.setupUi(self)
         self.ui.buttonSave_addUser.clicked.connect(lambda: self.addUser())
         self.ui.buttonCancel_addUser.clicked.connect(lambda: self.close())
@@ -29,6 +29,8 @@ class AddUserDialog(QDialog):
 
 def AdminWindow(self):
     print(__name__)
+    self.buttonEditUser_administrator.setEnabled(False)
+    self.buttonDeleteUser_administrator.setEnabled(False)
     self.buttonAddUser_administrator.clicked.connect(lambda: AddUserDialog().exec())
     load_users_to_table(self, self.adminWindow_users_table)
     load_transactions_to_table(self, self.adminWindow_transactions_table)
