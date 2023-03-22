@@ -4,6 +4,7 @@ __all__ = ['find_user',
            'delete_user', 
            'find_transaction', 
            'add_transaction',
+           'compute_user_balance',
            ]
 
 from .find_user import *
@@ -12,3 +13,4 @@ from .update_user import *
 from .delete_user import *
 from .find_transaction import *
 from .add_transaction import *
+from .compute_user_balance import *
