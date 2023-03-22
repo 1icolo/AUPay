@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-22T12:51:43.775Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="WN0ooZpQQxYvEgPQntYl" version="21.0.8" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-03-22T13:28:33.786Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="Ya2_yNOIu9i6CnfyRy6G" version="21.0.8" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
-    <mxGraphModel dx="908" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
+    <mxGraphModel dx="1711" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -25,6 +25,11 @@
         <object label="NICO" status="In progress" id="jk4ZuAFncWzifWcSEG9R-6">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#6c8ebf;fillStyle=solid;fillColor=#dae8fc;glass=0;rounded=0;shadow=0;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
             <mxGeometry x="230" y="28" width="180" height="3512" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;SHA-256 encryption of user password and card_id&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="h1mb9DsuWdLbDNXU4b4d-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
+            <mxGeometry x="20" y="21" width="140" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-5">
