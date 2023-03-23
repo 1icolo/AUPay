@@ -38,9 +38,6 @@ class Ui_Dialog(object):
         self.buttonCancel_deleteUser.setObjectName("buttonCancel_deleteUser")
         self.horizontalLayout.addWidget(self.buttonCancel_deleteUser)
         self.verticalLayout.addLayout(self.horizontalLayout)
-        self._id_deleteUser = QtWidgets.QLineEdit(Dialog)
-        self._id_deleteUser.setGeometry(QtCore.QRect(130, 20, 113, 20))
-        self._id_deleteUser.setObjectName("_id_deleteUser")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
