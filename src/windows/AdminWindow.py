@@ -7,6 +7,8 @@ from windows.ui.ui_AddUserDialog import Ui_Dialog as AddUserUi_Dialog
 from windows.ui.ui_EditUserDialog import Ui_Dialog as EditUserUi_Dialog
 from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
 from bson import ObjectId
+from fnHelper.aupCard import AUPCard
+from fnHelper import hashEncryption
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -40,19 +42,35 @@ class AddUserDialog(QDialog):
     def addUserDialog(self):
         self.ui = AddUserUi_Dialog()
         self.ui.setupUi(self)
-        self.ui.buttonSave_addUser.clicked.connect(lambda: self.addUser())
+        self.ui.buttonSave_addUser.clicked.connect(lambda: self.saveButton())
         self.ui.buttonCancel_addUser.clicked.connect(lambda: self.close())
+        self.ui.buttonScanId_addUser.clicked.connect(lambda: self.scanID())
+        self.ui.secret_addUser.setText(get_random_secret())
+        self.totp = get_totp(self.ui.secret_addUser.text())
 
-    def addUser(self):
+    def scanID(self):
+        self.ui.cardID_addUser.setText(AUPCard().get_uid())
+
+    def checkFields(self):
+        # paki check lahat ng fields if may laman 
+        if not verify_otp(self.totp, self.ui.otpt_addUser.text()):
+            print("Invalid OTP")
+            return False
+        return True
+
+    def saveButton(self):
         newUser = {
-            'card_id': self.ui.cardID_addUser.text(),
+            'card_id': hashEncryption.encrypt(self.ui.cardID_addUser.text()),
             'school_id': self.ui.schoolID_addUser.text(),
-            'password': self.ui.password_addUser.text(),
-            'otp_key': "",
+            'password': hashEncryption.encrypt(self.ui.password_addUser.text()),
+            'otp_key': hashEncryption.encrypt(self.ui.secret_addUser.text()),
             'user_type': self.ui.userType_addUser.currentText().lower(),
-            'balance': self.ui.balance_addUser.text(),
+            'balance': 0.00,
         }
-        add_user(newUser)
+        if self.checkFields():
+            add_user(newUser)
+            self.close()
+
 class EditUserDialog(QDialog):
     def __init__(self, id, parent=None):
         super(EditUserDialog, self).__init__(parent)
