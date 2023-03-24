@@ -82,6 +82,7 @@ class Ui_Dialog(object):
         self.otpSecret_editUser.setInputMethodHints(QtCore.Qt.ImhDigitsOnly)
         self.otpSecret_editUser.setFrame(True)
         self.otpSecret_editUser.setEchoMode(QtWidgets.QLineEdit.Normal)
+        self.otpSecret_editUser.setReadOnly(True)
         self.otpSecret_editUser.setClearButtonEnabled(False)
         self.otpSecret_editUser.setObjectName("otpSecret_editUser")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.otpSecret_editUser)

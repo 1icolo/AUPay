@@ -183,6 +183,9 @@
       <property name="echoMode">
        <enum>QLineEdit::Normal</enum>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
       </property>
