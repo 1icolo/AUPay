@@ -30,8 +30,8 @@ def editUser(self):
     edit_dialog.ui.userType_editUser.setCurrentText(current_user_type(current_user_data['user_type']))
     edit_dialog.exec()
 def deleteUser(self):
-    selected_row = self.tableUsers_administrator.currentRow()
-    id = self.tableUsers_administrator.item(selected_row, 0).text()
+    selected_row = self.adminWindow_users_table.currentRow()
+    id = self.adminWindow_users_table.item(selected_row, 0).text()
     delete_dialog = DeleteUserDialog(id)
     delete_dialog.exec()
 class AddUserDialog(QDialog):
