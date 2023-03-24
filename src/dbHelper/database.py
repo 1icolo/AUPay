@@ -27,9 +27,9 @@ class Database:
     def __create_database(self):
         documents = {
             'user': {
-                'card_id': "26 FC 37 F1",
-                'school_id': "2052522",
-                'password': "asdf@asd02D2!",
+                'card_id': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                'school_id': "",
+                'password': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
                 'otp_key': "D9SADSDJER3D",
                 'user_type': 'admin',
                 'balance': 0.00,

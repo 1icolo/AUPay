@@ -5,6 +5,7 @@ from fnHelper import login
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
 from fnHelper.aupCard import AUPCard
 import sys, os
+from fnHelper import hashEncryption
 
 class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
@@ -21,7 +22,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         os.execl(python, python, *sys.argv)
 
     def loginAttempt(self):
-        user = login.login_attempt(self.lineSchoolId_login.text(), self.linePassword_login.text())
+        user = login.login_attempt(self.lineSchoolId_login.text(), hashEncryption.encrypt(self.linePassword_login.text()))
         # if user doesn't match anything
         if user is None:
             return
@@ -45,7 +46,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
 
     def loginRFID(self, seconds = 5):
         try:
-            user = login.login_rfid(AUPCard(seconds).get_uid())  
+            user = login.login_rfid(hashEncryption.encrypt(AUPCard(seconds).get_uid()))  
             if user is None:
                 return
             match user['user_type']:

@@ -17,7 +17,6 @@ def editUser(self):
     edit_dialog = EditUserDialog(id)
     edit_dialog.ui.cardID_editUser.setText(current_user_data['card_id'])
     edit_dialog.ui.schoolID_editUser.setText(current_user_data['school_id'])
-    edit_dialog.ui.password_editUser.setText(current_user_data['password'])
     def current_user_type(user_type):
         if user_type == 'user':
             return "User"
@@ -86,10 +85,10 @@ class EditUserDialog(QDialog):
     def updateUser(self, id):
             userData = {
                 '_id': ObjectId(id),
-                'card_id': self.ui.cardID_editUser.text(),
+                'card_id': hashEncryption.encrypt(self.ui.cardID_editUser.text()),
                 'school_id': self.ui.schoolID_editUser.text(),
-                'password': self.ui.password_editUser.text(),
-                'otp_key': self.ui.otp_editUser.text(),
+                'password': hashEncryption.encrypt(self.ui.password_editUser.text()),
+                'otp_key': hashEncryption.encrypt(self.ui.otp_editUser.text()),
                 'user_type': self.ui.userType_editUser.currentText().lower(),
             }
             update_user(userData)
