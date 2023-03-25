@@ -122,6 +122,7 @@ class EditUserDialog(QDialog):
         self.totp = get_totp(self.ui.otpSecret_editUser.text())
         self.ui.otpSecret_editUser.setEnabled(True)
         self.ui.buttonSave_editUser.setEnabled(False)
+        self.ui.otp_editUser.setEnabled(True)
         return newSecret     
 class DeleteUserDialog(QDialog):
     def __init__(self, id, parent=None):

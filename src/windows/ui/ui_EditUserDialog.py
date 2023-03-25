@@ -138,7 +138,7 @@ class Ui_Dialog(object):
         self.labelOTP.setObjectName("labelOTP")
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.labelOTP)
         self.otp_editUser = QtWidgets.QLineEdit(Dialog)
-        self.otp_editUser.setEnabled(True)
+        self.otp_editUser.setEnabled(False)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(16)
