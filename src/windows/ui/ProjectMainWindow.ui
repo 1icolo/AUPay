@@ -817,11 +817,6 @@
                    </property>
                    <column>
                     <property name="text">
-                     <string>Item ID</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
                      <string>Name</string>
                     </property>
                    </column>
@@ -911,11 +906,6 @@
                    <property name="selectionBehavior">
                     <enum>QAbstractItemView::SelectRows</enum>
                    </property>
-                   <column>
-                    <property name="text">
-                     <string>Item ID</string>
-                    </property>
-                   </column>
                    <column>
                     <property name="text">
                      <string>Name</string>
@@ -1670,7 +1660,7 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tabUsers_administrator">
            <attribute name="title">

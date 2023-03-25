@@ -95,6 +95,19 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="updateItemButton">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Update Item</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="removeItemButton">
        <property name="font">
         <font>
@@ -139,11 +152,6 @@
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
-     <column>
-      <property name="text">
-       <string>Item ID</string>
-      </property>
-     </column>
      <column>
       <property name="text">
        <string>Name</string>

@@ -58,13 +58,14 @@ def load_transactions_to_table(self,tableWidget):
         print(_id)
 
 def load_inventory_to_table(self, tableWidget):
-    items_data = jsonIO.read_items()
-    tableWidget.setRowCount(sum(len(v) for v in items_data.values()))
-    # print(items_data.values())
-    row = 0
-    for id, items in items_data.items():
-        for item in items:
-            tableWidget.setItem(row, 0, QTableWidgetItem(id))
-            tableWidget.setItem(row, 1, QTableWidgetItem(item['name']))
-            tableWidget.setItem(row, 2, QTableWidgetItem(str(item['price'])))
-            row += 1
+    items = jsonIO.read_items()
+    items_data = []
+    for item in items:
+        items_data.append([item['name'],item['price']])
+    rows = len(items_data)
+    columns = len(items_data[0])
+    tableWidget.setRowCount(len(items_data))
+    for row in range(rows):
+        for column in range(columns):
+            item = QTableWidgetItem(str(items_data[row][column]))
+            tableWidget.setItem(row, column, item)
