@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-24T10:38:52.081Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.51" etag="KG0y7ClSSTf8D66HKfaa" version="21.0.10" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-03-25T20:30:52.330Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.51" etag="9W-CXfq_XDJZ7FOfmzGH" version="21.1.0" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
-    <mxGraphModel dx="1434" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
+    <mxGraphModel dx="1499" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,14 +12,19 @@
             <mxGeometry y="28" width="230" height="3512" as="geometry" />
           </mxCell>
         </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Dialog Closes After Saving&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="p6T6QmgnZjl_qqkkDU0B-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-2">
+            <mxGeometry x="20" y="21" width="190" height="89" as="geometry" />
+          </mxCell>
+        </object>
         <object label="&lt;font style=&quot;&quot;&gt;Table Searching Function&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-3">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
-            <mxGeometry x="20" y="21" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="130" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;Setup the API server using Flask&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="nOb4MM5HKLPM6Ro4mZpl-3">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
-            <mxGeometry x="20" y="130" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="239" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="NICO" status="In progress" id="jk4ZuAFncWzifWcSEG9R-6">
@@ -27,8 +32,8 @@
             <mxGeometry x="230" y="28" width="180" height="3512" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;SHA-256 encryption of user password and card_id&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="h1mb9DsuWdLbDNXU4b4d-1">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="jk4ZuAFncWzifWcSEG9R-6" vertex="1">
+        <object label="&lt;font style=&quot;&quot;&gt;Refresh Table Function&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="p6T6QmgnZjl_qqkkDU0B-2">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
             <mxGeometry x="20" y="21" width="140" height="89" as="geometry" />
           </mxCell>
         </object>
@@ -72,139 +77,144 @@
             <mxGeometry x="780" y="28" width="230" height="3512" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Add OTP verification in user registration&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="FMs3bLKS2XqBx0wkWiiC-1">
+        <object label="&lt;font style=&quot;&quot;&gt;SHA-256 encryption of user password and card_id&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="h1mb9DsuWdLbDNXU4b4d-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
             <mxGeometry x="20" y="21" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Remove Balance in Add User and Edit User dialogs in Admin Window&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="wayB1lYA78XDd3pGGEzo-40">
+        <object label="&lt;font style=&quot;&quot;&gt;Add OTP verification in user registration&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="FMs3bLKS2XqBx0wkWiiC-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
             <mxGeometry x="20" y="130" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Button that has generate random secret in Edit Dialog in case the user lost the authentication key.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="wayB1lYA78XDd3pGGEzo-41">
+        <object label="&lt;font style=&quot;&quot;&gt;Remove Balance in Add User and Edit User dialogs in Admin Window&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="wayB1lYA78XDd3pGGEzo-40">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
             <mxGeometry x="20" y="239" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Button that has generate random secret in Edit Dialog in case the user lost the authentication key.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="wayB1lYA78XDd3pGGEzo-41">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
+            <mxGeometry x="20" y="348" width="190" height="89" as="geometry" />
+          </mxCell>
+        </object>
         <object label="User Registration&lt;br&gt;- CRUD User in admin window&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="sQsjrjN2aDBts0AqB7bt-4">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="348" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="457" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;Function in fnHelper that calculates the balance of a user based on all of the user&#39;s transactions then updates the user balance&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="gFWDnQQzy-8UEIj2B_wU-36">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="448" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="557" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;A function that accepts 2 string inputs and scans all text from an array then returns a number output counting all the scanned text based on the 1st string input.&lt;br&gt;&lt;br&gt;Example:&amp;nbsp;&lt;br&gt;String1 = &quot;nico&quot;&lt;br&gt;String2 = [&quot;niconico elcid kennethnico elcid nico&quot;,&lt;br&gt;&quot;nico boy&quot;]&lt;br&gt;&lt;br&gt;def counter(String1, String2)&lt;br&gt;//returns 5&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="nOb4MM5HKLPM6Ro4mZpl-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="557" width="190" height="289" as="geometry" />
+            <mxGeometry x="20" y="666" width="190" height="289" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;In Business Window there is an Edit Items button. When i press the button, a dialog will pop up with an editable list of preset and their shortcut key.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="npJ_44Owy-R3Lvkdz7to-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="866" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="975" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="Load Users and Transactions Table Data Function&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="sQsjrjN2aDBts0AqB7bt-14">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="975" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="1084" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Login with RFID&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="6WkQx13fl0O6JysKAOzu-31">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1075" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="1184" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="Get UID from RFID&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="A4bzXRDnEpqqfuXnQtNc-38">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1184" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="1293" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="OTP functions&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="If3_SnB8smgJJ_zUAqX0-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1293" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="1402" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="Logout Button Functionality&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="tE-L8PPl8Dztt9B8-D4o-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1402" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="1511" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="Study modules, how they work&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="tE-L8PPl8Dztt9B8-D4o-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1511" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="1620" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;Update Business window UI&lt;br&gt;- making tabs&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="0ejm54ke16URSIGelpPG-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1611" width="190" height="89" as="geometry" />
+            <mxGeometry x="20" y="1720" width="190" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="Fixing project structure&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="2BsAKDOQm49fS9F0Et8G-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1720" width="190" height="129" as="geometry" />
+            <mxGeometry x="20" y="1829" width="190" height="129" as="geometry" />
           </mxCell>
         </object>
         <object label="Navigation function from login to user type menu.&lt;br&gt;&lt;i&gt;After I login, depending on userType, the designated window will open up.&lt;/i&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="kagd9e0XEU1kHWNo0j-2-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="1869" width="190" height="129" as="geometry" />
+            <mxGeometry x="20" y="1978" width="190" height="129" as="geometry" />
           </mxCell>
         </object>
         <object label="Load Users Table Data Function&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="A4bzXRDnEpqqfuXnQtNc-39">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2018" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2127" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Function that checks for user type then loads the window for the specific user type.&lt;br&gt;Example: &lt;br&gt;user_type = administrator&lt;br&gt;&lt;i&gt;loads admin window&lt;/i&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="A4bzXRDnEpqqfuXnQtNc-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2118" width="190" height="119" as="geometry" />
+            <mxGeometry x="20" y="2227" width="190" height="119" as="geometry" />
           </mxCell>
         </object>
         <object label="Create basic database queries in database.py (CRUD)&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="A4bzXRDnEpqqfuXnQtNc-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2257" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2366" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Admin Window&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="C-Gqak-4U_bp7HljnxZR-5">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2357" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2466" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Upload initial project on Github&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="sQsjrjN2aDBts0AqB7bt-10">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2457" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2566" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Study the full stack course&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="sQsjrjN2aDBts0AqB7bt-7">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2557" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2666" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Login&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="sQsjrjN2aDBts0AqB7bt-3">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2657" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2766" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Login Window&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="C-Gqak-4U_bp7HljnxZR-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2757" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2866" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="User Window&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="C-Gqak-4U_bp7HljnxZR-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2857" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="2966" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Teller Window&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="C-Gqak-4U_bp7HljnxZR-3">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="2957" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="3066" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="Business Window&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="C-Gqak-4U_bp7HljnxZR-4">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;" parent="sQsjrjN2aDBts0AqB7bt-9" vertex="1">
-            <mxGeometry x="20" y="3057" width="190" height="80" as="geometry" />
+            <mxGeometry x="20" y="3166" width="190" height="80" as="geometry" />
           </mxCell>
         </object>
       </root>
