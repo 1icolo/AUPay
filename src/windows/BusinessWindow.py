@@ -35,12 +35,13 @@ class EditItemsDialog(QDialog):
 
         self.items = jsonIO.read_items()
         
-
     def addItem(self):
         new_item = {'name':self.ui.businessWindow_edit_dialog_nameLine.text(), 'price': self.ui.businessWindow_edit_dialog_priceLine.text()}
         if any(item['name'] == new_item['name'] for item in self.items):
+            self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
             return print("Item already exists")
         if not all(new_item.values()):
+            self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
             return print("Provide data to insert")
         self.items.append(new_item)
         items_data = [[item['name'], item['price']] for item in self.items]
@@ -57,11 +58,13 @@ class EditItemsDialog(QDialog):
     def updateItem(self):
         selected_item = self.ui.businessWindow_edit_dialog_table.currentItem()
         if selected_item is None:
-            return print("Select an item to update")
+            self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
+            return print("Select a row/item to update")
         row = self.ui.businessWindow_edit_dialog_table.currentRow()
         item_name = self.items[row]['name']
         update_item = {'name': self.ui.businessWindow_edit_dialog_nameLine.text(), 'price': self.ui.businessWindow_edit_dialog_priceLine.text()}
         if not all(update_item.values()):
+            self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
             return print("Provide data to update")
         for item in self.items:
             if item['name'] == item_name:
@@ -81,10 +84,24 @@ class EditItemsDialog(QDialog):
         if not selectedItem:
             return print("no selected row")
         row = selectedItem[0].row()
-        del self.items[row]
-        self.ui.businessWindow_edit_dialog_table.removeRow(row)
-        print("Item removed")
-        self.clear_field()
+        item_name = self.items[row]['name']
+
+        # Show the confirmation dialog
+        msg_box = QMessageBox(self)
+        msg_box.setWindowTitle("Delete Item")
+        msg_box.setText(f"Are you sure you want to delete the item '{item_name}'?")
+        msg_box.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        msg_box.setDefaultButton(QMessageBox.Cancel)
+        msg_box.setIcon(QMessageBox.Warning)
+        response = msg_box.exec()
+
+        if response == QMessageBox.Ok:
+            del self.items[row]
+            self.ui.businessWindow_edit_dialog_table.removeRow(row)
+            print("Item removed")
+            self.clear_field()
+        else: 
+            print("Item removal cancelled")
         self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
 
     def saveItems(self):
@@ -112,6 +129,10 @@ def open_edit_items_dialog(self):
     
 def reload_inventory_table(self):
     load_inventory_to_table(self, self.businessWindow_inventory_table)
+    self.businessWindow_inventory_table.setCurrentItem(None)
+    self.businessWindow_sourceLine.setText("")
+    self.businessWindow_descriptionLine.setText("")
+    self.businessWindow_amountLine.setText("")
 
 def add_to_cart(self):
         selectedItem = self.businessWindow_inventory_table.selectedItems()

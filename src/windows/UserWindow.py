@@ -11,4 +11,4 @@ def UserWindow(self, user):
 
 def load_user_data(self, user):
         self.userWindow_schoolIdLine.setText(user['school_id'])
-        self.userWindow_balanceLine.setText(user['balance'])
+        self.userWindow_balanceLine.setText(str(user['balance']))
