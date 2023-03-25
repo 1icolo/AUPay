@@ -17,6 +17,7 @@ def editUser(self):
     edit_dialog = EditUserDialog(id)
     edit_dialog.ui.cardID_editUser.setText(current_user_data['card_id'])
     edit_dialog.ui.schoolID_editUser.setText(current_user_data['school_id'])
+    edit_dialog.ui.otpSecret_editUser.setText(current_user_data['otp_key'])
     def current_user_type(user_type):
         if user_type == 'user':
             return "User"
@@ -46,6 +47,7 @@ class AddUserDialog(QDialog):
         self.ui.buttonScanId_addUser.clicked.connect(lambda: self.scanID())
         self.ui.secret_addUser.setText(get_random_secret())
         self.totp = get_totp(self.ui.secret_addUser.text())
+        self.ui.otpt_addUser.textChanged.connect(lambda: self.verifyOTP(self.ui.secret_addUser.text()))
 
     def scanID(self):
         self.ui.cardID_addUser.setText(AUPCard().get_uid())
@@ -70,6 +72,13 @@ class AddUserDialog(QDialog):
             add_user(newUser)
             self.close()
 
+    def verifyOTP(self, otpSecret):
+        totp = get_totp(otpSecret)
+        if(verify_otp(totp, self.ui.otpt_addUser.text())):
+            self.ui.buttonSave_addUser.setEnabled(True)
+        else:
+            self.ui.buttonSave_addUser.setEnabled(False)
+
 class EditUserDialog(QDialog):
     def __init__(self, id, parent=None):
         super(EditUserDialog, self).__init__(parent)
@@ -77,30 +86,42 @@ class EditUserDialog(QDialog):
         self.ui.setupUi(self)
         idValidator = QIntValidator()
         idValidator.setRange(0, 100000)
-        self.ui.buttonSave_editUser.setEnabled(False)
+        # self.ui.buttonSave_editUser.setEnabled(False)
         self.ui.buttonSave_editUser.clicked.connect(lambda: self.updateUser(id))
         self.ui.buttonCancel_editUser.clicked.connect(lambda: self.close())
         self.ui.buttonGenerate_editUser.clicked.connect(lambda: self.ui.otpSecret_editUser.setText(self.generateOTPSecret()))
         self.ui.otp_editUser.textChanged.connect(lambda: self.verifyOTP(self.ui.otpSecret_editUser.text()))
+        self.ui.buttonScanID_editUser.clicked.connect(lambda: self.scanId())
+        self.oldCardId = self.ui
+
+    def scanId(self):
+        self.ui.cardID_editUser.setEnabled(True)
+        self.ui.cardID_editUser.setText(AUPCard().get_uid())
+        
     def updateUser(self, id):
             userData = {
                 '_id': ObjectId(id),
-                'card_id': hashEncryption.encrypt(self.ui.cardID_editUser.text()),
+                'card_id': (lambda: self.ui.cardID_editUser.text(), lambda: hashEncryption.encrypt(self.ui.cardID_editUser.text()))[self.ui.cardID_editUser.isEnabled()](),
                 'school_id': self.ui.schoolID_editUser.text(),
                 'password': hashEncryption.encrypt(self.ui.password_editUser.text()),
-                'otp_key': hashEncryption.encrypt(self.ui.otp_editUser.text()),
+                'otp_key': (lambda: self.ui.otpSecret_editUser.text(), lambda: hashEncryption.encrypt(self.ui.otpSecret_editUser.text()))[self.ui.otpSecret_editUser.isEnabled()](),
                 'user_type': self.ui.userType_editUser.currentText().lower(),
             }
             update_user(userData)
+
+            
     def verifyOTP(self, otpSecret):
         totp = get_totp(otpSecret)
         if(verify_otp(totp, self.ui.otp_editUser.text())):
             self.ui.buttonSave_editUser.setEnabled(True)
         else:
             self.ui.buttonSave_editUser.setEnabled(False)
+
     def generateOTPSecret(self):
         newSecret = get_random_secret()
-        # print(get_totp(newSecret).now())
+        self.totp = get_totp(self.ui.otpSecret_editUser.text())
+        self.ui.otpSecret_editUser.setEnabled(True)
+        self.ui.buttonSave_editUser.setEnabled(False)
         return newSecret     
 class DeleteUserDialog(QDialog):
     def __init__(self, id, parent=None):

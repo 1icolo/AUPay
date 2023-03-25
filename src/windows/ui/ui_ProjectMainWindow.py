@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.resize(1088, 810)
         ProjectMainWindow.setMinimumSize(QtCore.QSize(205, 176))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\src\\windows\\ui\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProjectMainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ProjectMainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -836,7 +836,7 @@ class Ui_ProjectMainWindow(object):
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(ProjectMainWindow)
 
     def retranslateUi(self, ProjectMainWindow):
