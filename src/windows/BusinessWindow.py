@@ -145,7 +145,6 @@ def add_to_cart(self):
             if item is not None:
                 newItem = QTableWidgetItem(item.text())
                 self.businessWindow_cart_table.setItem(self.businessWindow_cart_table.rowCount()-1, column, newItem)
-        self.businessWindow_inventory_table.removeRow(row)
         self.businessWindow_inventory_table.setCurrentItem(None)
 
         self.businessWindow_sourceLine.setText("")
