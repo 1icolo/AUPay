@@ -12,9 +12,13 @@ from fnHelper import hashEncryption
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
+    item = self.adminWindow_users_table.item(selected_row, 0)
+    if item is None:
+        return print("select row to edit")
     id = ObjectId(self.adminWindow_users_table.item(selected_row, 0).text())
     current_user_data = find_user_by_id(id)
     edit_dialog = EditUserDialog(id)
+    edit_dialog.table_updated.connect(lambda: load_users_to_table(self, self.adminWindow_users_table))
     edit_dialog.ui.cardID_editUser.setText(current_user_data['card_id'])
     edit_dialog.ui.schoolID_editUser.setText(current_user_data['school_id'])
     edit_dialog.ui.otpSecret_editUser.setText(current_user_data['otp_key'])
@@ -29,11 +33,17 @@ def editUser(self):
             return "Teller"
     edit_dialog.ui.userType_editUser.setCurrentText(current_user_type(current_user_data['user_type']))
     edit_dialog.exec()
+
 def deleteUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
+    item = self.adminWindow_users_table.item(selected_row, 0)
+    if item is None:
+        return print("select row to delete")
     id = self.adminWindow_users_table.item(selected_row, 0).text()
     delete_dialog = DeleteUserDialog(id)
+    delete_dialog.table_updated.connect(lambda: load_users_to_table(self, self.adminWindow_users_table))
     delete_dialog.exec()
+    
 class AddUserDialog(QDialog):
     def __init__(self, parent=None):
         super(AddUserDialog, self).__init__(parent)
@@ -79,7 +89,23 @@ class AddUserDialog(QDialog):
         else:
             self.ui.buttonSave_addUser.setEnabled(False)
 
+def open_add_user_dialog(self):
+    # Check if there is a selected row
+    selected_items = self.adminWindow_users_table.selectedItems()
+    if selected_items:
+        # Clear the selection
+        self.adminWindow_users_table.clearSelection()
+    self.add_user_dialog = AddUserDialog()
+    self.add_user_dialog.ui.buttonSave_addUser.clicked.connect(lambda: reload_inventory_table(self))
+    self.add_user_dialog.exec_()
+    
+def reload_inventory_table(self):
+    load_users_to_table(self, self.adminWindow_users_table)
+    self.adminWindow_users_table.setCurrentItem(None)
+    self.adminWindow_user_search.setText("")
+
 class EditUserDialog(QDialog):
+    table_updated = pyqtSignal()
     def __init__(self, id, parent=None):
         super(EditUserDialog, self).__init__(parent)
         self.ui = EditUserUi_Dialog()
@@ -93,6 +119,7 @@ class EditUserDialog(QDialog):
         self.ui.otp_editUser.textChanged.connect(lambda: self.verifyOTP(self.ui.otpSecret_editUser.text()))
         self.ui.buttonScanID_editUser.clicked.connect(lambda: self.scanId())
         self.oldCardId = self.ui
+        
 
     def scanId(self):
         self.ui.cardID_editUser.setEnabled(True)
@@ -108,7 +135,8 @@ class EditUserDialog(QDialog):
                 'user_type': self.ui.userType_editUser.currentText().lower(),
             }
             update_user(userData)
-
+            self.table_updated.emit()
+            self.close()
             
     def verifyOTP(self, otpSecret):
         totp = get_totp(otpSecret)
@@ -123,8 +151,10 @@ class EditUserDialog(QDialog):
         self.ui.otpSecret_editUser.setEnabled(True)
         self.ui.buttonSave_editUser.setEnabled(False)
         self.ui.otp_editUser.setEnabled(True)
-        return newSecret     
+        return newSecret
+
 class DeleteUserDialog(QDialog):
+    table_updated = pyqtSignal()
     def __init__(self, id, parent=None):
         super(DeleteUserDialog, self).__init__(parent)
         self.ui = DeleteUserUi_Dialog()
@@ -133,13 +163,14 @@ class DeleteUserDialog(QDialog):
         self.ui.buttonCancel_deleteUser.clicked.connect(lambda: self.close())
     def deleteUser(self, id):
         delete_user(ObjectId(id))
+        self.table_updated.emit()
+        
+        self.close()
 
 def AdminWindow(self):
     print(__name__)
-    self.buttonAddUser_administrator.clicked.connect(lambda: AddUserDialog().exec())
+    self.buttonAddUser_administrator.clicked.connect(lambda: open_add_user_dialog(self))
     self.buttonEditUser_administrator.clicked.connect(lambda: editUser(self))
     self.buttonDeleteUser_administrator.clicked.connect(lambda: deleteUser(self))
     load_users_to_table(self, self.adminWindow_users_table)
     load_transactions_to_table(self, self.adminWindow_transactions_table)
-
-    
