@@ -1,14 +1,16 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from dbHelper import add_user, find_user_by_id, update_user, delete_user
+from dbHelper import add_user, find_user_by_id, update_user, delete_user, add_transaction
 from fnHelper import get_random_secret, get_totp, verify_otp, load_users_to_table, load_transactions_to_table
 from windows.ui.ui_AddUserDialog import Ui_Dialog as AddUserUi_Dialog
 from windows.ui.ui_EditUserDialog import Ui_Dialog as EditUserUi_Dialog
 from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
-from bson import ObjectId
+from windows.ui.ui_AddTransactionDialog import Ui_Dialog as AddTransaction_Dialog
+from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
 from fnHelper import hashEncryption
+from datetime import *
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -103,7 +105,8 @@ def reload_inventory_table(self):
     load_users_to_table(self, self.adminWindow_users_table)
     self.adminWindow_users_table.setCurrentItem(None)
     self.adminWindow_user_search.setText("")
-
+def addTransaction(self):
+    AddTransactionDialog().exec()
 class EditUserDialog(QDialog):
     table_updated = pyqtSignal()
     def __init__(self, id, parent=None):
@@ -166,11 +169,32 @@ class DeleteUserDialog(QDialog):
         self.table_updated.emit()
         
         self.close()
+class AddTransactionDialog(QDialog):
+    table_updated = pyqtSignal()
+    def __init__(self, parent=None):
+        super(AddTransactionDialog, self).__init__(parent)
+        self.ui = AddTransaction_Dialog()
+        self.ui.setupUi(self)
+        self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.addTransaction())
+        self.ui.buttonCancel_addTransaction.clicked.connect(lambda: self.close())
+        self.ui.adminWindow_addTransactionTimestamp.setEnabled(False)
 
+    def addTransaction(self):
+        newTransaction =  {
+            "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
+            "source_id": ObjectId(self.ui.adminWindow_addTransactionSourceId.text()),
+            "destination_id": ObjectId(self.ui.adminWindow_addDestinationId.text()),
+            "amount": int(self.ui.adminWindow_addTransactionAmount.text()),
+            "description": self.ui.adminWindow_addTransactionDescription.text()
+        }
+        add_transaction(newTransaction)
+        self.table_updated.emit()
+        self.close()
 def AdminWindow(self):
     print(__name__)
     self.buttonAddUser_administrator.clicked.connect(lambda: open_add_user_dialog(self))
     self.buttonEditUser_administrator.clicked.connect(lambda: editUser(self))
     self.buttonDeleteUser_administrator.clicked.connect(lambda: deleteUser(self))
+    self.buttonAddTransaction_administrator.clicked.connect(lambda: addTransaction(self))
     load_users_to_table(self, self.adminWindow_users_table)
     load_transactions_to_table(self, self.adminWindow_transactions_table)
