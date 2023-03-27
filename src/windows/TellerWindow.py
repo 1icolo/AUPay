@@ -2,6 +2,8 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from fnHelper.load_tables import *
+from fnHelper.textSearch import *
+
 
 def selected_row_to_textbox(self):
     selected_row = self.tellerWindow_transactions_table.currentRow()
@@ -19,5 +21,7 @@ def TellerWindow(self):
         # load_user_transaction_data(self)
         load_transactions_to_table(self, self.tellerWindow_transactions_table)
         self.tellerWindow_transactions_table.itemSelectionChanged.connect(lambda: selected_row_to_textbox(self))
+        self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.tellerWindow_transactions_table))
+
 
 

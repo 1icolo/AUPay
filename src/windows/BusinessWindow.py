@@ -5,6 +5,8 @@ import json
 from fnHelper import jsonIO
 from windows.ui.ui_EditItemsDialog import Ui_Dialog
 from fnHelper.load_tables import *
+from fnHelper.textSearch import *
+
 
 def BusinessWindow(self):
     print(__name__)
@@ -15,6 +17,20 @@ def BusinessWindow(self):
     load_inventory_to_table(self, self.businessWindow_inventory_table)
     self.businessWindow_inventory_table.itemSelectionChanged.connect(lambda:selected_row_to_textbox(self, self.businessWindow_inventory_table))
     self.businessWindow_cart_table.itemSelectionChanged.connect(lambda:selected_row_to_textbox(self, self.businessWindow_cart_table))
+    self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
+    self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
+
+def search_inventory(self, text):
+    # iterate over each row in the inventory table
+    for row in range(self.businessWindow_inventory_table.rowCount()):
+        item_name = self.businessWindow_inventory_table.item(row, 0).text()
+        item_price = self.businessWindow_inventory_table.item(row, 1).text()
+
+        # check if the search text is a substring of any of the items in the row
+        if text.lower() in item_name.lower() or text.lower() in item_price.lower():
+            self.businessWindow_inventory_table.setRowHidden(row, False)
+        else:
+            self.businessWindow_inventory_table.setRowHidden(row, True)
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):

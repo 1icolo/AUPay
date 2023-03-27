@@ -11,6 +11,8 @@ from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
 from fnHelper import hashEncryption
 from datetime import *
+from fnHelper.textSearch import *
+
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -198,3 +200,6 @@ def AdminWindow(self):
     self.buttonAddTransaction_administrator.clicked.connect(lambda: addTransaction(self))
     load_users_to_table(self, self.adminWindow_users_table)
     load_transactions_to_table(self, self.adminWindow_transactions_table)
+    self.adminWindow_user_search.textChanged.connect(lambda text: search_users(text, self.adminWindow_users_table))
+    self.adminWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.adminWindow_transactions_table))
+
