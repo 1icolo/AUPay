@@ -186,7 +186,7 @@ class AddTransactionDialog(QDialog):
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
             "source_id": ObjectId(self.ui.adminWindow_addTransactionSourceId.text()),
             "destination_id": ObjectId(self.ui.adminWindow_addDestinationId.text()),
-            "amount": int(self.ui.adminWindow_addTransactionAmount.text()),
+            "amount": float(self.ui.adminWindow_addTransactionAmount.text()),
             "description": self.ui.adminWindow_addTransactionDescription.text()
         }
         add_transaction(newTransaction)

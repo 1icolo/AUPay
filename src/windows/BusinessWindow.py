@@ -26,9 +26,9 @@ def BusinessWindow(self, user):
 def charge(self):
     newTransaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
-        "destination_id": self.lineBusiness_business.text(),
-        "source_id": self.businessWindow_sourceLine.text(),
-        "amount":self.businessWindow_amountLine.text(),
+        "destination_id": ObjectId(self.lineBusiness_business.text()),
+        "source_id": ObjectId(self.businessWindow_sourceLine.text()),
+        "amount": float(self.businessWindow_amountLine.text()),
         "description": self.businessWindow_descriptionLine.toPlainText()
     }
     add_transaction(newTransaction)
