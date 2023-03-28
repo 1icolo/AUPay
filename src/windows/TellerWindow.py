@@ -38,6 +38,11 @@ def transact(self):
             "description": self.tellerWindow_descriptionLine.toPlainText()
         }
         add_transaction(newTransaction)
+    self.tellerWindow_schoolIdLine.setText("")
+    self.tellerWindow_amountLine.setText("")
+    self.tellerWindow_descriptionLine.setText("")
+    # self.tellerWindow_transactions_table.clearContents()
+    # self.tellerWindow_transactions_table.setRowCount(0)
 def TellerWindow(self, user):
         print(__name__)
         # load_user_transaction_data(self)
