@@ -61,7 +61,7 @@ def load_inventory_to_table(self, tableWidget):
     items = jsonIO.read_items()
     items_data = []
     for item in items:
-        items_data.append([item['name'],item['price']])
+        items_data.append([item['price'], item['name']])
     rows = len(items_data)
     columns = len(items_data[0])
     tableWidget.setRowCount(len(items_data))

@@ -58,7 +58,7 @@ class EditItemsDialog(QDialog):
             self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
             return print("Provide data to insert")
         self.items.append(new_item)
-        items_data = [[item['name'], item['price']] for item in self.items]
+        items_data = [[item['price'], item['name']] for item in self.items]
         self.ui.businessWindow_edit_dialog_table.setRowCount(len(items_data))
         for row, item in enumerate(items_data):
             for column, value in enumerate(item):
@@ -85,7 +85,7 @@ class EditItemsDialog(QDialog):
             if item['name'] == item_name:
                 item.update(update_item)
                 break
-        items_data = [[item['name'], item['price']] for item in self.items]
+        items_data = [[item['price'], item['name']] for item in self.items]
         for row, item in enumerate(items_data):
             for column, value in enumerate(item):
                 item = QTableWidgetItem(str(value))
@@ -126,8 +126,8 @@ class EditItemsDialog(QDialog):
 
     def edit_dialog_selected_row(self):
         selected_row = self.ui.businessWindow_edit_dialog_table.currentRow()
-        name = self.ui.businessWindow_edit_dialog_table.item(selected_row, 0)
-        price = self.ui.businessWindow_edit_dialog_table.item(selected_row, 1)
+        price = self.ui.businessWindow_edit_dialog_table.item(selected_row, 0)
+        name = self.ui.businessWindow_edit_dialog_table.item(selected_row, 1)
         if name and price is not None:
             # put the data in the line edit/textbox
             self.ui.businessWindow_edit_dialog_nameLine.setText(name.text())
@@ -170,8 +170,8 @@ def get_cart_data(self):
 
     # iterate over each row in the cart table
     for row in range(self.businessWindow_cart_table.rowCount()):
-        item_name = self.businessWindow_cart_table.item(row, 0).text()
-        item_price = self.businessWindow_cart_table.item(row, 1).text()
+        item_price = self.businessWindow_cart_table.item(row, 0).text()
+        item_name = self.businessWindow_cart_table.item(row, 1).text()
 
         total_amount += float(item_price)
 
@@ -191,10 +191,6 @@ def remove_from_cart(self):
     row = selectedItem[0].row()
     self.businessWindow_cart_table.removeRow(row)
     self.businessWindow_cart_table.setCurrentItem(None)
-
-    # self.businessWindow_sourceLine.setText("")
-    # self.businessWindow_descriptionLine.setText("")
-    # self.businessWindow_amountLine.setText("")
     print("removed from cart")
     get_cart_data(self)
 

@@ -152,14 +152,17 @@
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
      <column>
       <property name="text">
-       <string>Name</string>
+       <string>Price</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Price</string>
+       <string>Name</string>
       </property>
      </column>
     </widget>
