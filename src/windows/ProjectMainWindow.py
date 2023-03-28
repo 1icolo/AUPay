@@ -42,7 +42,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
             case 'teller':
                 self.stackedWidget.setCurrentIndex(3)
                 from windows.TellerWindow import TellerWindow
-                TellerWindow(self)
+                TellerWindow(self, user['_id'])
 
     def loginRFID(self, seconds = 5):
         try:
