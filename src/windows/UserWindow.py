@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import *
 from fnHelper import login
 from fnHelper.load_tables import *
 from fnHelper.textSearch import *
+from dbHelper.compute_user_balance import *
 
 def UserWindow(self, user):
         print(__name__)
@@ -15,4 +16,7 @@ def UserWindow(self, user):
 
 def load_user_data(self, user):
         self.userWindow_schoolIdLine.setText(user['school_id'])
-        self.userWindow_balanceLine.setText(str(user['balance']))
+        self.userWindow_balanceLine.setText(str(compute_user_balance(user['_id'])))
+
+
+        
