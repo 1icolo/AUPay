@@ -32,6 +32,12 @@ def charge(self):
         "description": self.businessWindow_descriptionLine.toPlainText()
     }
     add_transaction(newTransaction)
+    self.businessWindow_sourceLine.setText("")
+    self.businessWindow_amountLine.setText("")
+    self.businessWindow_descriptionLine.setText("")
+    self.businessWindow_cart_table.clearContents()
+    self.businessWindow_cart_table.setRowCount(0)
+
     # print(newTransaction)
 def search_inventory(self, text):
     # iterate over each row in the inventory table
