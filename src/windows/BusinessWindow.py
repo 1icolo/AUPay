@@ -1,23 +1,38 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-import json
+from bson import *
+from datetime import *
 from fnHelper import jsonIO
 from windows.ui.ui_EditItemsDialog import Ui_Dialog
 from fnHelper.load_tables import *
 from fnHelper.textSearch import *
+from dbHelper.add_transaction import add_transaction
 
 
-def BusinessWindow(self):
+def BusinessWindow(self, user):
     print(__name__)
+    self.lineBusiness_business.setText(str(user))
+    #sample source id
+    self.businessWindow_sourceLine.setText(str(user))
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
     self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
     self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
+    self.buttonCharge.clicked.connect(lambda: charge(self))
     load_transactions_to_table(self, self.businessWindow_transactions_table)
     load_inventory_to_table(self, self.businessWindow_inventory_table)
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
-
+def charge(self):
+    newTransaction = {
+        "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
+        "destination_id": self.lineBusiness_business.text(),
+        "source_id": self.businessWindow_sourceLine.text(),
+        "amount":self.businessWindow_amountLine.text(),
+        "description": self.businessWindow_descriptionLine.toPlainText()
+    }
+    add_transaction(newTransaction)
+    # print(newTransaction)
 def search_inventory(self, text):
     # iterate over each row in the inventory table
     for row in range(self.businessWindow_inventory_table.rowCount()):

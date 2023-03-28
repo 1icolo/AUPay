@@ -38,7 +38,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
             case 'business':
                 self.stackedWidget.setCurrentIndex(2)
                 from windows.BusinessWindow import BusinessWindow
-                BusinessWindow(self)
+                BusinessWindow(self, user['_id'])
             case 'teller':
                 self.stackedWidget.setCurrentIndex(3)
                 from windows.TellerWindow import TellerWindow
