@@ -329,148 +329,42 @@
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <property name="spacing">
-           <number>20</number>
-          </property>
-          <property name="sizeConstraint">
-           <enum>QLayout::SetDefaultConstraint</enum>
-          </property>
-          <property name="leftMargin">
-           <number>20</number>
-          </property>
-          <property name="topMargin">
-           <number>20</number>
-          </property>
-          <property name="rightMargin">
-           <number>20</number>
-          </property>
-          <property name="bottomMargin">
-           <number>20</number>
-          </property>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_10">
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="labelSchoolId_user">
-              <property name="text">
-               <string>School ID</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="userWindow_schoolIdLine">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <family>Segoe UI</family>
-                <pointsize>16</pointsize>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>ArrowCursor</cursorShape>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::NoFocus</enum>
-              </property>
-              <property name="contextMenuPolicy">
-               <enum>Qt::DefaultContextMenu</enum>
-              </property>
-              <property name="text">
-               <string>asdf</string>
-              </property>
-              <property name="maxLength">
-               <number>30</number>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
-              </property>
-              <property name="placeholderText">
-               <string>Source</string>
-              </property>
-              <property name="clearButtonEnabled">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelBalance_user">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Balance</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="userWindow_balanceLine">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="inputMask">
-               <string/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="maxLength">
-               <number>30</number>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
-              </property>
-              <property name="placeholderText">
-               <string>Balance</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::MinimumExpanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1">
          <widget class="QGroupBox" name="groupBox_2">
           <property name="title">
            <string>Transactions</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_12">
-           <item row="1" column="0">
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>From</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QDateEdit" name="dateTo_user"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="userWindow_transaction_search">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QDateEdit" name="dateFrom_user"/>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>To</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" colspan="5">
             <widget class="QTableWidget" name="userWindow_transactions_table">
              <property name="enabled">
               <bool>true</bool>
@@ -614,15 +508,103 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QLineEdit" name="userWindow_transaction_search">
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Analytics</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_13">
+           <item row="1" column="2">
+            <widget class="QLabel" name="labelBalance_user">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Balance</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="userWindow_balanceLine">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
              <property name="text">
               <string/>
              </property>
+             <property name="maxLength">
+              <number>30</number>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="placeholderText">
-              <string>Search</string>
+              <string>Balance</string>
              </property>
             </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="userWindow_schoolIdLine">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>ArrowCursor</cursorShape>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="maxLength">
+              <number>30</number>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>User ID</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelSchoolId_user">
+             <property name="text">
+              <string>School ID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Export</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="5">
+            <widget class="QGraphicsView" name="graphicsView"/>
            </item>
           </layout>
          </widget>
@@ -655,7 +637,7 @@
            </font>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tabCharge">
            <attribute name="title">
@@ -738,7 +720,7 @@
                      <string/>
                     </property>
                     <property name="text">
-                     <string>BUSINESS NAME</string>
+                     <string/>
                     </property>
                     <property name="maxLength">
                      <number>30</number>
@@ -1198,141 +1180,171 @@
             <property name="verticalSpacing">
              <number>20</number>
             </property>
-            <item row="0" column="2">
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="text">
-               <string>Refund</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0" colspan="3">
-             <widget class="QTableWidget" name="businessWindow_transactions_table">
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="groupBox_7">
               <property name="minimumSize">
                <size>
-                <width>420</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>16777215</height>
-               </size>
+              <property name="title">
+               <string>Analytics</string>
               </property>
-              <property name="font">
-               <font>
-                <pointsize>16</pointsize>
-               </font>
-              </property>
-              <property name="layoutDirection">
-               <enum>Qt::LeftToRight</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Plain</enum>
-              </property>
-              <property name="editTriggers">
-               <set>QAbstractItemView::NoEditTriggers</set>
-              </property>
-              <property name="selectionMode">
-               <enum>QAbstractItemView::SingleSelection</enum>
-              </property>
-              <property name="selectionBehavior">
-               <enum>QAbstractItemView::SelectRows</enum>
-              </property>
-              <attribute name="horizontalHeaderStretchLastSection">
-               <bool>true</bool>
-              </attribute>
-              <row>
-               <property name="text">
-                <string>1</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>2</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>3</string>
-               </property>
-              </row>
-              <column>
-               <property name="text">
-                <string>_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>timestamp</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>source_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>destination_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>amount</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>description</string>
-               </property>
-              </column>
-              <item row="0" column="0">
-               <property name="text">
-                <string/>
-               </property>
-              </item>
-              <item row="0" column="2">
-               <property name="text">
-                <string/>
-               </property>
-              </item>
-              <item row="0" column="4">
-               <property name="text">
-                <string/>
-               </property>
-              </item>
-              <item row="0" column="5">
-               <property name="text">
-                <string/>
-               </property>
-              </item>
+              <layout class="QGridLayout" name="gridLayout_15">
+               <item row="1" column="0">
+                <widget class="QGraphicsView" name="graphicsView_2"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
-            <item row="0" column="1">
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
             <item row="0" column="0">
-             <widget class="QLineEdit" name="businessWindow_transaction_search">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <widget class="QGroupBox" name="groupBox_6">
+              <property name="title">
+               <string>Transactions</string>
               </property>
-              <property name="placeholderText">
-               <string>Search</string>
-              </property>
+              <layout class="QGridLayout" name="gridLayout_14">
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="businessWindow_transaction_search">
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QDateEdit" name="dateFrom_business"/>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>From</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QDateEdit" name="dateTo_business"/>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>To</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="text">
+                  <string>Refund</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="6">
+                <widget class="QTableWidget" name="businessWindow_transactions_table">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="layoutDirection">
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <attribute name="horizontalHeaderStretchLastSection">
+                  <bool>true</bool>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>timestamp</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>source_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>destination_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>amount</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>description</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="0" column="2">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="0" column="4">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                 <item row="0" column="5">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -1548,7 +1560,7 @@
                <string/>
               </property>
               <property name="text">
-               <string>AUP</string>
+               <string/>
               </property>
               <property name="maxLength">
                <number>30</number>
@@ -1699,7 +1711,7 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tabUsers_administrator">
            <attribute name="title">
@@ -1722,137 +1734,108 @@
              <number>0</number>
             </property>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
-              <property name="spacing">
-               <number>20</number>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Users</string>
               </property>
-              <property name="sizeConstraint">
-               <enum>QLayout::SetDefaultConstraint</enum>
-              </property>
-              <property name="leftMargin">
-               <number>20</number>
-              </property>
-              <property name="topMargin">
-               <number>20</number>
-              </property>
-              <property name="rightMargin">
-               <number>20</number>
-              </property>
-              <property name="bottomMargin">
-               <number>20</number>
-              </property>
-              <item>
-               <widget class="QLineEdit" name="adminWindow_user_search">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="placeholderText">
-                 <string>Search</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="buttonAddUser_administrator">
-                <property name="text">
-                 <string>Add User</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="buttonEditUser_administrator">
-                <property name="text">
-                 <string>Edit User</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="buttonDeleteUser_administrator">
-                <property name="text">
-                 <string>Delete User</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="verticalSpacer_10">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeType">
-                 <enum>QSizePolicy::MinimumExpanding</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="QTableWidget" name="adminWindow_users_table">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>16</pointsize>
-               </font>
-              </property>
-              <property name="editTriggers">
-               <set>QAbstractItemView::NoEditTriggers</set>
-              </property>
-              <property name="selectionMode">
-               <enum>QAbstractItemView::SingleSelection</enum>
-              </property>
-              <property name="selectionBehavior">
-               <enum>QAbstractItemView::SelectRows</enum>
-              </property>
-              <attribute name="horizontalHeaderStretchLastSection">
-               <bool>true</bool>
-              </attribute>
-              <column>
-               <property name="text">
-                <string>_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>card_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>school_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>password</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>otp_key</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>user_type</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>balance</string>
-               </property>
-              </column>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <item row="0" column="1">
+                <widget class="QPushButton" name="buttonAddUser_administrator">
+                 <property name="text">
+                  <string>Add User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="buttonEditUser_administrator">
+                 <property name="text">
+                  <string>Edit User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="adminWindow_user_search">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="buttonDeleteUser_administrator">
+                 <property name="text">
+                  <string>Delete User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="4">
+                <widget class="QTableWidget" name="adminWindow_users_table">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <attribute name="horizontalHeaderStretchLastSection">
+                  <bool>true</bool>
+                 </attribute>
+                 <column>
+                  <property name="text">
+                   <string>_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>card_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>school_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>password</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>otp_key</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>user_type</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>balance</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -1878,109 +1861,116 @@
              <number>0</number>
             </property>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_7">
-              <property name="spacing">
-               <number>20</number>
+             <widget class="QGroupBox" name="groupBox_9">
+              <property name="title">
+               <string>Transactions</string>
               </property>
-              <property name="sizeConstraint">
-               <enum>QLayout::SetFixedSize</enum>
-              </property>
-              <property name="leftMargin">
-               <number>20</number>
-              </property>
-              <property name="topMargin">
-               <number>20</number>
-              </property>
-              <property name="rightMargin">
-               <number>20</number>
-              </property>
-              <property name="bottomMargin">
-               <number>20</number>
-              </property>
-              <item>
-               <widget class="QLineEdit" name="adminWindow_transaction_search">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="placeholderText">
-                 <string>Search</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="buttonAddTransaction_administrator">
-                <property name="text">
-                 <string>Add Transaction</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="verticalSpacer_11">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
+              <layout class="QGridLayout" name="gridLayout_16">
+               <item row="0" column="5">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator">
+                 <property name="text">
+                  <string>Add Transaction</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="6">
+                <widget class="QTableWidget" name="adminWindow_transactions_table">
+                 <property name="font">
+                  <font>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <attribute name="horizontalHeaderStretchLastSection">
+                  <bool>true</bool>
+                 </attribute>
+                 <column>
+                  <property name="text">
+                   <string>_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>timestamp</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>source_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>destination_id</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>amount</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>description</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="adminWindow_transaction_search">
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QDateEdit" name="dateTo_administrator"/>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>To</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>From</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QDateEdit" name="dateFrom_administrator"/>
+               </item>
+              </layout>
+             </widget>
             </item>
             <item>
-             <widget class="QTableWidget" name="adminWindow_transactions_table">
-              <property name="font">
-               <font>
-                <pointsize>16</pointsize>
-               </font>
+             <widget class="QGroupBox" name="groupBox_10">
+              <property name="title">
+               <string>Analytics</string>
               </property>
-              <property name="editTriggers">
-               <set>QAbstractItemView::NoEditTriggers</set>
-              </property>
-              <property name="selectionMode">
-               <enum>QAbstractItemView::SingleSelection</enum>
-              </property>
-              <property name="selectionBehavior">
-               <enum>QAbstractItemView::SelectRows</enum>
-              </property>
-              <attribute name="horizontalHeaderStretchLastSection">
-               <bool>true</bool>
-              </attribute>
-              <column>
-               <property name="text">
-                <string>_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>timestamp</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>source_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>destination_id</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>amount</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>description</string>
-               </property>
-              </column>
+              <layout class="QGridLayout" name="gridLayout_17">
+               <item row="1" column="0">
+                <widget class="QGraphicsView" name="graphicsView_3"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
