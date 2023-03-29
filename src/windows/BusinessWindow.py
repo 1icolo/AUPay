@@ -5,6 +5,7 @@ from bson import *
 from datetime import *
 from fnHelper import jsonIO
 from windows.ui.ui_EditItemsDialog import Ui_Dialog
+from windows.ui.ui_ChargebackTransactionDialog import Ui_Dialog as Ui_ChargebackTransactionDialog
 from fnHelper.load_tables import *
 from fnHelper.textSearch import *
 from dbHelper.add_transaction import add_transaction
@@ -23,6 +24,7 @@ def BusinessWindow(self, user):
     load_inventory_to_table(self, self.businessWindow_inventory_table)
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
+    self.buttonChargeback_business.clicked.connect(lambda: ChargebackDialog().exec_())
 def charge(self):
     newTransaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
@@ -50,6 +52,16 @@ def search_inventory(self, text):
             self.businessWindow_inventory_table.setRowHidden(row, False)
         else:
             self.businessWindow_inventory_table.setRowHidden(row, True)
+
+class ChargebackDialog(QDialog):
+    def __init__(self, parent=None):
+        print(__name__)
+        super(ChargebackDialog, self).__init__(parent)
+        self.chargebackDialog()
+    
+    def chargebackDialog(self):
+        self.ui = Ui_ChargebackTransactionDialog()
+        self.ui.setupUi(self)
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):
