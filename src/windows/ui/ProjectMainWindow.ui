@@ -637,7 +637,7 @@
            </font>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabCharge">
            <attribute name="title">
@@ -1711,7 +1711,7 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabUsers_administrator">
            <attribute name="title">
@@ -1746,34 +1746,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="buttonEditUser_administrator">
-                 <property name="text">
-                  <string>Edit User</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLineEdit" name="adminWindow_user_search">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Search</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="buttonDeleteUser_administrator">
-                 <property name="text">
-                  <string>Delete User</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" colspan="4">
+               <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="adminWindow_users_table">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
@@ -1835,6 +1808,66 @@
                  </column>
                 </widget>
                </item>
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="adminWindow_user_search">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="buttonEditUser_administrator">
+                 <property name="text">
+                  <string>Edit User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QLabel" name="label_15">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Total Users:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="buttonDeleteUser_administrator">
+                 <property name="text">
+                  <string>Delete User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="6">
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
@@ -1866,10 +1899,20 @@
                <string>Transactions</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
-               <item row="0" column="5">
-                <widget class="QPushButton" name="buttonAddTransaction_administrator">
+               <item row="0" column="4">
+                <widget class="QDateEdit" name="dateTo_administrator"/>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_13">
                  <property name="text">
-                  <string>Add Transaction</string>
+                  <string>From</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>To</string>
                  </property>
                 </widget>
                </item>
@@ -1931,20 +1974,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
-                <widget class="QDateEdit" name="dateTo_administrator"/>
-               </item>
-               <item row="0" column="3">
-                <widget class="QLabel" name="label_14">
+               <item row="0" column="5">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator">
                  <property name="text">
-                  <string>To</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_13">
-                 <property name="text">
-                  <string>From</string>
+                  <string>Add Transaction</string>
                  </property>
                 </widget>
                </item>
@@ -1960,15 +1993,55 @@
                <string>Analytics</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
-               <item row="1" column="0">
-                <widget class="QGraphicsView" name="graphicsView_3"/>
-               </item>
                <item row="0" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Total Circulating:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="5">
+                <widget class="QGraphicsView" name="graphicsView_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
                 <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
                  <property name="text">
                   <string>Export</string>
                  </property>
                 </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
