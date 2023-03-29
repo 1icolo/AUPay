@@ -2,7 +2,10 @@ from hashlib import sha256
 
 
 def encrypt(text: str):
-    return sha256(text.encode()).hexdigest()
+    try:
+        return sha256(text.encode()).hexdigest()
+    except:
+        return None
 
 
 def verify(hash, text):
