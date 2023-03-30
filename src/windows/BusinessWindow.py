@@ -25,6 +25,8 @@ def BusinessWindow(self, user):
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
     self.buttonChargeback_business.clicked.connect(lambda: ChargebackDialog().exec_())
+    self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
+
 def charge(self):
     newTransaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
@@ -79,6 +81,9 @@ class EditItemsDialog(QDialog):
         self.ui.cancelButton.clicked.connect(lambda: self.close())
         load_inventory_to_table(self, self.ui.businessWindow_edit_dialog_table)
         self.ui.businessWindow_edit_dialog_table.itemSelectionChanged.connect(lambda: self.edit_dialog_selected_row())
+        self.ui.moveUpButton.clicked.connect(lambda: self.move_row_up())
+        self.ui.moveDownButton.clicked.connect(lambda: self.move_row_down())
+        
 
         self.items = jsonIO.read_items()
         
@@ -153,9 +158,16 @@ class EditItemsDialog(QDialog):
         self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
 
     def saveItems(self):
-        jsonIO.write_items(self.items)
-        print("save items")
+        items_data = []
+        for row in range(self.ui.businessWindow_edit_dialog_table.rowCount()):
+            item_name = self.ui.businessWindow_edit_dialog_table.item(row, 1).text()
+            item_price = self.ui.businessWindow_edit_dialog_table.item(row, 0).text()
+            if item_name and item_price:
+                items_data.append({'name': item_name, 'price': item_price})
+        jsonIO.write_items(items_data)
+        self.items = items_data
         self.close()
+        print("Items saved")
 
     def edit_dialog_selected_row(self):
         selected_row = self.ui.businessWindow_edit_dialog_table.currentRow()
@@ -169,6 +181,36 @@ class EditItemsDialog(QDialog):
     def clear_field(self):
         self.ui.businessWindow_edit_dialog_nameLine.setText("")
         self.ui.businessWindow_edit_dialog_priceLine.setText("")
+
+    def move_row_up(self):
+        current_row = self.ui.businessWindow_edit_dialog_table.currentRow()
+        if current_row > 0:
+            # Remove entire row and insert at row above
+            row_items = []
+            for col in range(self.ui.businessWindow_edit_dialog_table.columnCount()):
+                item = self.ui.businessWindow_edit_dialog_table.takeItem(current_row, col)
+                row_items.append(item)
+            self.ui.businessWindow_edit_dialog_table.removeRow(current_row)
+            self.ui.businessWindow_edit_dialog_table.insertRow(current_row - 1)
+            for col, item in enumerate(row_items):
+                self.ui.businessWindow_edit_dialog_table.setItem(current_row - 1, col, item)
+            # Update selection to moved row
+            self.ui.businessWindow_edit_dialog_table.selectRow(current_row - 1)
+
+    def move_row_down(self):
+        current_row = self.ui.businessWindow_edit_dialog_table.currentRow()
+        if current_row < self.ui.businessWindow_edit_dialog_table.rowCount() - 1:
+            # Remove entire row and insert at row below
+            row_items = []
+            for col in range(self.ui.businessWindow_edit_dialog_table.columnCount()):
+                item = self.ui.businessWindow_edit_dialog_table.takeItem(current_row, col)
+                row_items.append(item)
+            self.ui.businessWindow_edit_dialog_table.removeRow(current_row)
+            self.ui.businessWindow_edit_dialog_table.insertRow(current_row + 1)
+            for col, item in enumerate(row_items):
+                self.ui.businessWindow_edit_dialog_table.setItem(current_row + 1, col, item)
+            # Update selection to moved row
+            self.ui.businessWindow_edit_dialog_table.selectRow(current_row + 1)
 
 def open_edit_items_dialog(self):
     self.edit_items_dialog = EditItemsDialog()
@@ -226,4 +268,47 @@ def remove_from_cart(self):
     self.businessWindow_cart_table.setCurrentItem(None)
     print("removed from cart")
     get_cart_data(self)
+
+def add_item_shortcut(self, event):
+    for row in range(self.businessWindow_inventory_table.rowCount()):
+        if row <= 12:
+            item_price = float(self.businessWindow_inventory_table.item(row, 0).text())
+            item_name = self.businessWindow_inventory_table.item(row, 1).text()
+            
+            if event.key() == Qt.Key_F1:
+                row_index = 0
+            elif event.key() == Qt.Key_F2:
+                row_index = 1
+            elif event.key() == Qt.Key_F3:
+                row_index = 2
+            elif event.key() == Qt.Key_F4:
+                row_index = 3
+            elif event.key() == Qt.Key_F5:
+                row_index = 4
+            elif event.key() == Qt.Key_F6:
+                row_index = 5
+            elif event.key() == Qt.Key_F7:
+                row_index = 6
+            elif event.key() == Qt.Key_F8:
+                row_index = 7
+            elif event.key() == Qt.Key_F9:
+                row_index = 8
+            elif event.key() == Qt.Key_F10:
+                row_index = 9
+            elif event.key() == Qt.Key_F11:
+                row_index = 10
+            elif event.key() == Qt.Key_F12:
+                row_index = 11
+            else:
+                return
+
+            # Check if the selected row corresponds to the pressed key
+            if row == row_index:
+                # Add the selected item to the cart table
+                cart_table = self.businessWindow_cart_table
+                row_count = cart_table.rowCount()
+                cart_table.insertRow(row_count)
+                cart_table.setItem(row_count, 1, QTableWidgetItem(item_name))
+                cart_table.setItem(row_count, 0, QTableWidgetItem(str(item_price)))
+            get_cart_data(self)
 
