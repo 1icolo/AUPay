@@ -5,18 +5,16 @@ from fnHelper import login
 from fnHelper.load_tables import *
 from fnHelper.textSearch import *
 from dbHelper.compute_user_balance import *
+from dbHelper.find_transaction import *
 
 def UserWindow(self, user):
         print(__name__)
         load_user_data(self, user)
-        load_transactions_to_table(self, self.userWindow_transactions_table)
         self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.userWindow_transactions_table))
-
-
+        load_user_transaction_by_id(self, self.userWindow_transactions_table, user['_id'])
 
 def load_user_data(self, user):
         self.userWindow_schoolIdLine.setText(user['school_id'])
+        # self.userWindow_balanceLine.setText(str(user['balance']))
         self.userWindow_balanceLine.setText(str(compute_user_balance(user['_id'])))
 
-
-        
