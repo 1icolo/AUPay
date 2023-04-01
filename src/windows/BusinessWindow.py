@@ -9,6 +9,7 @@ from windows.ui.ui_ChargebackTransactionDialog import Ui_Dialog as Ui_Chargeback
 from fnHelper.load_tables import *
 from fnHelper.textSearch import *
 from dbHelper.add_transaction import add_transaction
+from dbHelper.find_transaction import find_transaction
 
 
 def BusinessWindow(self, user):
@@ -24,8 +25,8 @@ def BusinessWindow(self, user):
     load_inventory_to_table(self, self.businessWindow_inventory_table)
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
-    self.buttonChargeback_business.clicked.connect(lambda: ChargebackDialog().exec_())
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
+    self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
 
 def charge(self):
     newTransaction = {
@@ -55,15 +56,44 @@ def search_inventory(self, text):
         else:
             self.businessWindow_inventory_table.setRowHidden(row, True)
 
+def chargebackTransaction(self):
+    selected_row = self.businessWindow_transactions_table.currentRow()
+    item = self.businessWindow_transactions_table.item(selected_row, 0)
+    if item is None:
+        return print("select row to chargeback")
+    id = ObjectId(self.businessWindow_transactions_table.item(selected_row, 0).text())
+    current_transaction_data = find_transaction(id)
+    ChargebackDialog(current_transaction_data).exec()
+
+
 class ChargebackDialog(QDialog):
-    def __init__(self, parent=None):
+    table_updated = pyqtSignal()
+    def __init__(self, transaction_data, parent=None):
         print(__name__)
         super(ChargebackDialog, self).__init__(parent)
         self.chargebackDialog()
+        self.ui.sourceIDLineEdit.setText(str(transaction_data['destination_id']))
+        self.ui.destinationIDLineEdit.setText(str(transaction_data['source_id']))
+        self.ui.amountLineEdit.setText(str(transaction_data['amount']))
+        self.ui.descriptionLineEdit.setText(f'chargeback transaction {transaction_data["_id"]}')
+        self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.chargeback(transaction_data))
     
     def chargebackDialog(self):
         self.ui = Ui_ChargebackTransactionDialog()
         self.ui.setupUi(self)
+
+    def chargeback(self, transaction_data):
+        
+        newTransaction = {
+            "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
+            "destination_id": transaction_data['source_id'],
+            "source_id": transaction_data['destination_id'],
+            "amount": transaction_data['amount'],
+            "description": (f'chargeback transaction {transaction_data["_id"]}')
+        }
+        add_transaction(newTransaction)
+        self.table_updated.emit()
+        self.close()
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):
