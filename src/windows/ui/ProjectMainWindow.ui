@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1386</width>
-    <height>910</height>
+    <width>1091</width>
+    <height>810</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -24,10 +24,7 @@
     <normaloff>../src/resources/aupay-icon.png</normaloff>../src/resources/aupay-icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <property name="spacing">
-     <number>0</number>
-    </property>
+   <layout class="QGridLayout" name="gridLayout_2">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -40,7 +37,10 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="font">
        <font>
@@ -334,16 +334,6 @@
            <string>Transactions</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_12">
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>From</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="5">
-            <widget class="QDateEdit" name="dateTo_user"/>
-           </item>
            <item row="0" column="1">
             <widget class="QLineEdit" name="userWindow_transaction_search">
              <property name="text">
@@ -354,7 +344,27 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="1" colspan="5">
+           <item row="0" column="5">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>To</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QDateEdit" name="dateFrom_user"/>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>From</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QDateEdit" name="dateTo_user"/>
+           </item>
+           <item row="2" column="1" colspan="6">
             <widget class="QTableWidget" name="userWindow_transactions_table">
              <property name="enabled">
               <bool>true</bool>
@@ -498,13 +508,10 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="3">
-            <widget class="QDateEdit" name="dateFrom_user"/>
-           </item>
-           <item row="0" column="4">
-            <widget class="QLabel" name="label_9">
+           <item row="0" column="2">
+            <widget class="QPushButton" name="buttonClearTransactions_user">
              <property name="text">
-              <string>To</string>
+              <string>Clear</string>
              </property>
             </widget>
            </item>
@@ -530,13 +537,25 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="0" colspan="5">
-            <widget class="QGraphicsView" name="graphicsView"/>
-           </item>
-           <item row="1" column="4">
-            <widget class="QPushButton" name="pushButton">
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="userWindow_balanceLine">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
              <property name="text">
-              <string>Export</string>
+              <string/>
+             </property>
+             <property name="maxLength">
+              <number>30</number>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Balance</string>
              </property>
             </widget>
            </item>
@@ -577,34 +596,22 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="3">
-            <widget class="QLineEdit" name="userWindow_balanceLine">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="inputMask">
-              <string/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="maxLength">
-              <number>30</number>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
-              <string>Balance</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="labelSchoolId_user">
              <property name="text">
               <string>School ID</string>
              </property>
             </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Export</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="5">
+            <widget class="QGraphicsView" name="graphicsView"/>
            </item>
           </layout>
          </widget>
@@ -842,6 +849,22 @@
                    </widget>
                   </item>
                  </layout>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="buttonClearFields_business">
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI</family>
+                    <pointsize>16</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Clear</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>Return</string>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <spacer name="verticalSpacer_8">
@@ -1180,12 +1203,58 @@
             <property name="verticalSpacing">
              <number>20</number>
             </property>
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="groupBox_7">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="title">
+               <string>Analytics</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_15">
+               <item row="1" column="0">
+                <widget class="QGraphicsView" name="graphicsView_2"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
             <item row="0" column="0">
              <widget class="QGroupBox" name="groupBox_6">
               <property name="title">
                <string>Transactions</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">
+               <item row="0" column="4">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>To</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>From</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="buttonClearTransactions_business">
+                 <property name="text">
+                  <string>Clear</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QLineEdit" name="businessWindow_transaction_search">
                  <property name="placeholderText">
@@ -1193,34 +1262,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
+               <item row="0" column="3">
                 <widget class="QDateEdit" name="dateFrom_business"/>
                </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_11">
-                 <property name="text">
-                  <string>From</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QDateEdit" name="dateTo_business"/>
-               </item>
-               <item row="0" column="3">
-                <widget class="QLabel" name="label_12">
-                 <property name="text">
-                  <string>To</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="5">
+               <item row="0" column="6">
                 <widget class="QPushButton" name="buttonChargeback_business">
                  <property name="text">
                   <string>Chargeback</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0" colspan="6">
+               <item row="0" column="5">
+                <widget class="QDateEdit" name="dateTo_business"/>
+               </item>
+               <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="businessWindow_transactions_table">
                  <property name="maximumSize">
                   <size>
@@ -1317,31 +1372,6 @@
                    <string/>
                   </property>
                  </item>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QGroupBox" name="groupBox_7">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="title">
-               <string>Analytics</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_15">
-               <item row="1" column="0">
-                <widget class="QGraphicsView" name="graphicsView_2"/>
-               </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="pushButton_3">
-                 <property name="text">
-                  <string>Export</string>
-                 </property>
                 </widget>
                </item>
               </layout>
@@ -1651,6 +1681,13 @@
            </layout>
           </item>
           <item>
+           <widget class="QPushButton" name="buttonClearFields_teller">
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -1878,16 +1915,35 @@
             <string>Transactions</string>
            </attribute>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_9">
               <property name="title">
                <string>Transactions</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
-               <item row="0" column="4">
-                <widget class="QDateEdit" name="dateTo_administrator"/>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>From</string>
+                 </property>
+                </widget>
                </item>
-               <item row="1" column="0" colspan="6">
+               <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="adminWindow_transactions_table">
                  <property name="font">
                   <font>
@@ -1938,12 +1994,8 @@
                  </column>
                 </widget>
                </item>
-               <item row="0" column="3">
-                <widget class="QLabel" name="label_14">
-                 <property name="text">
-                  <string>To</string>
-                 </property>
-                </widget>
+               <item row="0" column="5">
+                <widget class="QDateEdit" name="dateTo_administrator"/>
                </item>
                <item row="0" column="0">
                 <widget class="QLineEdit" name="adminWindow_transaction_search">
@@ -1952,20 +2004,27 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <widget class="QDateEdit" name="dateFrom_administrator"/>
-               </item>
-               <item row="0" column="5">
+               <item row="0" column="6">
                 <widget class="QPushButton" name="buttonAddTransaction_administrator">
                  <property name="text">
                   <string>Add Transaction</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_13">
+               <item row="0" column="4">
+                <widget class="QLabel" name="label_14">
                  <property name="text">
-                  <string>From</string>
+                  <string>To</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QDateEdit" name="dateFrom_administrator"/>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="buttonClearTransactions_administrator">
+                 <property name="text">
+                  <string>Clear</string>
                  </property>
                 </widget>
                </item>
@@ -1991,6 +2050,23 @@
                  </property>
                 </widget>
                </item>
+               <item row="1" column="0" colspan="5">
+                <widget class="QGraphicsView" name="graphicsView_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_18">
                  <property name="text">
@@ -2011,23 +2087,6 @@
                  </property>
                 </spacer>
                </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
-                 <property name="text">
-                  <string>Export</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" colspan="5">
-                <widget class="QGraphicsView" name="graphicsView_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
               </layout>
              </widget>
             </item>
@@ -2046,7 +2105,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1386</width>
+     <width>1091</width>
      <height>21</height>
     </rect>
    </property>
@@ -2065,5 +2124,198 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_descriptionLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>550</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>189</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_amountLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>226</x>
+     <y>538</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>190</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_schoolIdLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>148</x>
+     <y>543</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>188</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>lineTeller_teller</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>539</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_transaction_search</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>546</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_business</sender>
+   <signal>clicked()</signal>
+   <receiver>businessWindow_descriptionLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>559</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>184</x>
+     <y>497</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_business</sender>
+   <signal>clicked()</signal>
+   <receiver>businessWindow_amountLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>232</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>208</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_business</sender>
+   <signal>clicked()</signal>
+   <receiver>businessWindow_sourceLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>574</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_business</sender>
+   <signal>clicked()</signal>
+   <receiver>lineBusiness_business</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_business</sender>
+   <signal>clicked()</signal>
+   <receiver>businessWindow_inventory_search</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearTransactions_business</sender>
+   <signal>clicked()</signal>
+   <receiver>businessWindow_transaction_search</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>143</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearTransactions_user</sender>
+   <signal>clicked()</signal>
+   <receiver>userWindow_transaction_search</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
