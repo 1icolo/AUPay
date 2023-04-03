@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1091</width>
-    <height>810</height>
+    <width>1386</width>
+    <height>910</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -24,7 +24,10 @@
     <normaloff>../src/resources/aupay-icon.png</normaloff>../src/resources/aupay-icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -37,10 +40,7 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <item row="0" column="0">
+    <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="font">
        <font>
@@ -354,16 +354,6 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
-            <widget class="QDateEdit" name="dateFrom_user"/>
-           </item>
-           <item row="0" column="4">
-            <widget class="QLabel" name="label_9">
-             <property name="text">
-              <string>To</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="1" colspan="5">
             <widget class="QTableWidget" name="userWindow_transactions_table">
              <property name="enabled">
@@ -508,6 +498,16 @@
              </item>
             </widget>
            </item>
+           <item row="0" column="3">
+            <widget class="QDateEdit" name="dateFrom_user"/>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>To</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -530,25 +530,13 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="3">
-            <widget class="QLineEdit" name="userWindow_balanceLine">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="inputMask">
-              <string/>
-             </property>
+           <item row="4" column="0" colspan="5">
+            <widget class="QGraphicsView" name="graphicsView"/>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="pushButton">
              <property name="text">
-              <string/>
-             </property>
-             <property name="maxLength">
-              <number>30</number>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
-              <string>Balance</string>
+              <string>Export</string>
              </property>
             </widget>
            </item>
@@ -589,22 +577,34 @@
              </property>
             </widget>
            </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="userWindow_balanceLine">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="maxLength">
+              <number>30</number>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Balance</string>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="labelSchoolId_user">
              <property name="text">
               <string>School ID</string>
              </property>
             </widget>
-           </item>
-           <item row="1" column="4">
-            <widget class="QPushButton" name="pushButton">
-             <property name="text">
-              <string>Export</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0" colspan="5">
-            <widget class="QGraphicsView" name="graphicsView"/>
            </item>
           </layout>
          </widget>
@@ -637,7 +637,7 @@
            </font>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabCharge">
            <attribute name="title">
@@ -1180,31 +1180,6 @@
             <property name="verticalSpacing">
              <number>20</number>
             </property>
-            <item row="0" column="1">
-             <widget class="QGroupBox" name="groupBox_7">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="title">
-               <string>Analytics</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_15">
-               <item row="1" column="0">
-                <widget class="QGraphicsView" name="graphicsView_2"/>
-               </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="pushButton_3">
-                 <property name="text">
-                  <string>Export</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
             <item row="0" column="0">
              <widget class="QGroupBox" name="groupBox_6">
               <property name="title">
@@ -1342,6 +1317,31 @@
                    <string/>
                   </property>
                  </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="groupBox_7">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="title">
+               <string>Analytics</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_15">
+               <item row="1" column="0">
+                <widget class="QGraphicsView" name="graphicsView_2"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -1878,21 +1878,6 @@
             <string>Transactions</string>
            </attribute>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_9">
               <property name="title">
@@ -1901,20 +1886,6 @@
               <layout class="QGridLayout" name="gridLayout_16">
                <item row="0" column="4">
                 <widget class="QDateEdit" name="dateTo_administrator"/>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_13">
-                 <property name="text">
-                  <string>From</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QLabel" name="label_14">
-                 <property name="text">
-                  <string>To</string>
-                 </property>
-                </widget>
                </item>
                <item row="1" column="0" colspan="6">
                 <widget class="QTableWidget" name="adminWindow_transactions_table">
@@ -1967,12 +1938,22 @@
                  </column>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>To</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QLineEdit" name="adminWindow_transaction_search">
                  <property name="placeholderText">
                   <string>Search</string>
                  </property>
                 </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QDateEdit" name="dateFrom_administrator"/>
                </item>
                <item row="0" column="5">
                 <widget class="QPushButton" name="buttonAddTransaction_administrator">
@@ -1981,8 +1962,12 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <widget class="QDateEdit" name="dateFrom_administrator"/>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>From</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -2006,23 +1991,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0" colspan="5">
-                <widget class="QGraphicsView" name="graphicsView_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
-                 <property name="text">
-                  <string>Export</string>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_18">
                  <property name="text">
@@ -2043,6 +2011,23 @@
                  </property>
                 </spacer>
                </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="5">
+                <widget class="QGraphicsView" name="graphicsView_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
@@ -2061,7 +2046,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1091</width>
+     <width>1386</width>
      <height>21</height>
     </rect>
    </property>

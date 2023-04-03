@@ -1,6 +1,7 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtChart import *
 from dbHelper.find_user import find_all_users
 from dbHelper.find_transaction import *
 # import json
@@ -91,3 +92,53 @@ def load_user_transaction_by_id(self, tableWidget, user):
         for column in range(columns):
             item = QTableWidgetItem(str(transactions_data[row][column]))
             tableWidget.setItem(row, column, item)
+
+def load_bar_chart(self, tableWidget, graphicsView):
+    series = QHorizontalBarSeries()
+
+    # Clean up the descriptions by stripping extra spaces and converting to lowercase
+    descriptions = [tableWidget.item(row, 5).text().strip().lower() for row in range(tableWidget.rowCount())]
+
+    # Split multi-item descriptions into individual items
+    items = []
+    for description in descriptions:
+        items.extend(description.split(','))
+
+    # Count the frequency of each item, accumulating frequencies of items with the same name
+    frequencies = {}
+    total_frequencies = {}
+    for item in items:
+        item_name = item.strip()
+        if item_name not in frequencies:
+            frequencies[item_name] = 0
+            total_frequencies[item_name] = 0
+        frequencies[item_name] += 1
+        total_frequencies[item_name] += 1
+
+    # Add the data to the series
+    sorted_frequencies = sorted(frequencies.items(), key=lambda x: x[1], reverse=True)  # Sort from highest to lowest
+    bar_set = QBarSet('Items')
+    labels = []
+    for item_name, frequency in sorted_frequencies:
+        if frequency > 0:
+            bar_set.append(frequency)
+            labels.append("{0} ({1})".format(item_name, total_frequencies[item_name]))
+    series.append(bar_set)
+
+    # Create and set the labels for the bars
+    axis_y = QBarCategoryAxis()
+    axis_y.append(labels)
+    chart = QChart()
+    chart.addSeries(series)
+    chart.createDefaultAxes()
+    chart.setAxisY(axis_y, series)
+
+    # Set the alignment of the legend
+    chart.legend().hide()
+
+    chartView = QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+
+    # Add chartView to a layout
+    layout = QVBoxLayout(graphicsView)
+    layout.addWidget(chartView)

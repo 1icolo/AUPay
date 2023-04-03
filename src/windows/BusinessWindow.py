@@ -27,6 +27,7 @@ def BusinessWindow(self, user):
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
+    load_bar_chart(self, self.businessWindow_transactions_table, self.graphicsView_2)
 
 def charge(self):
     newTransaction = {

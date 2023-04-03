@@ -2,7 +2,8 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from dbHelper import add_user, find_user_by_id, update_user, delete_user, add_transaction
-from fnHelper import get_random_secret, get_totp, verify_otp, load_users_to_table, load_transactions_to_table
+from fnHelper import get_random_secret, get_totp, verify_otp
+from fnHelper.load_tables import *
 from windows.ui.ui_AddUserDialog import Ui_Dialog as AddUserUi_Dialog
 from windows.ui.ui_EditUserDialog import Ui_Dialog as EditUserUi_Dialog
 from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
@@ -12,7 +13,6 @@ from fnHelper.aupCard import AUPCard
 from fnHelper import hashEncryption
 from datetime import *
 from fnHelper.textSearch import *
-
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -219,4 +219,13 @@ def AdminWindow(self):
     load_transactions_to_table(self, self.adminWindow_transactions_table)
     self.adminWindow_user_search.textChanged.connect(lambda text: search_users(text, self.adminWindow_users_table))
     self.adminWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.adminWindow_transactions_table))
+    load_bar_chart(self, self.adminWindow_transactions_table, self.graphicsView_3)
+
+
+
+
+
+
+
+
 
