@@ -116,7 +116,7 @@ def load_bar_chart(self, tableWidget, graphicsView):
         total_frequencies[item_name] += 1
 
     # Add the data to the series
-    sorted_frequencies = sorted(frequencies.items(), key=lambda x: x[1], reverse=True)  # Sort from highest to lowest
+    sorted_frequencies = sorted(frequencies.items(), key=lambda x: x[1])  # Sort from highest to lowest (reverse=True)
     bar_set = QBarSet('Items')
     labels = []
     for item_name, frequency in sorted_frequencies:
@@ -133,6 +133,7 @@ def load_bar_chart(self, tableWidget, graphicsView):
     chart.createDefaultAxes()
     chart.setAxisY(axis_y, series)
 
+
     # Set the alignment of the legend
     chart.legend().hide()
 
@@ -142,3 +143,5 @@ def load_bar_chart(self, tableWidget, graphicsView):
     # Add chartView to a layout
     layout = QVBoxLayout(graphicsView)
     layout.addWidget(chartView)
+
+
