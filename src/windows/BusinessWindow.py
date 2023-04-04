@@ -10,6 +10,9 @@ from fnHelper.load_tables import *
 from fnHelper.textSearch import *
 from dbHelper.add_transaction import add_transaction
 from dbHelper.find_transaction import find_transaction
+from fnHelper.aupCard import AUPCard
+from dbHelper.find_user import find_user_by_id
+from fnHelper.hashEncryption import encrypt
 
 
 def BusinessWindow(self, user):
@@ -21,7 +24,8 @@ def BusinessWindow(self, user):
     self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
     self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
     self.buttonCharge.clicked.connect(lambda: charge(self))
-    load_transactions_to_table(self, self.businessWindow_transactions_table)
+    # load_transactions_to_table(self, self.businessWindow_transactions_table)
+    load_user_transaction_by_id(self, self.businessWindow_transactions_table, user)
     load_inventory_to_table(self, self.businessWindow_inventory_table)
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
@@ -78,19 +82,39 @@ class ChargebackDialog(QDialog):
         self.ui.amountLineEdit.setText(str(transaction_data['amount']))
         self.ui.descriptionLineEdit.setText(f'chargeback transaction {transaction_data["_id"]}')
         self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.chargeback(transaction_data))
+        self.ui.buttonScanBusiness.clicked.connect(lambda: self.scanId('business', transaction_data))
+        self.ui.buttonScanUser.clicked.connect(lambda: self.scanId('user', transaction_data))
     
     def chargebackDialog(self):
         self.ui = Ui_ChargebackTransactionDialog()
         self.ui.setupUi(self)
 
+    def scanId(self, user_type, transaction_data):
+        match user_type:
+            case 'business':
+                user = find_user_by_id(transaction_data['destination_id'])
+                if encrypt(AUPCard().get_uid()) == user['card_id']:
+                    print("Business verified")
+                    self.ui.checkBoxBusiness.setChecked(True)
+            case 'user': 
+                user = find_user_by_id(transaction_data['source_id'])
+                if encrypt(AUPCard().get_uid()) == user['card_id']:
+                    print("User verified")
+                    self.ui.checkBoxUser.setChecked(True)
+
+
+    def verifyID(self):
+        return self.ui.checkBoxBusiness.isChecked() and self.ui.checkBoxUser.isChecked()
+
     def chargeback(self, transaction_data):
-        
+        if not self.verifyID():
+            return print("Business and User verification required")
         newTransaction = {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
             "destination_id": transaction_data['source_id'],
             "source_id": transaction_data['destination_id'],
             "amount": transaction_data['amount'],
-            "description": (f'chargeback transaction {transaction_data["_id"]}')
+            "description": (f'chargeback {transaction_data["_id"]}')
         }
         add_transaction(newTransaction)
         self.table_updated.emit()
