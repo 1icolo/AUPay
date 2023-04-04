@@ -25,13 +25,14 @@ def BusinessWindow(self, user):
     self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
     self.buttonCharge.clicked.connect(lambda: charge(self))
     # load_transactions_to_table(self, self.businessWindow_transactions_table)
-    load_user_transaction_by_id(self, self.businessWindow_transactions_table, user)
-    load_inventory_to_table(self, self.businessWindow_inventory_table)
+    load_inventory_to_table(self.businessWindow_inventory_table)
+    load_user_transaction_by_id(self.businessWindow_transactions_table, user)
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
-    load_bar_chart(self, self.businessWindow_transactions_table, self.graphicsView_2)
+    load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
+
 
 def charge(self):
     newTransaction = {
@@ -47,6 +48,7 @@ def charge(self):
     self.businessWindow_descriptionLine.setText("")
     self.businessWindow_cart_table.clearContents()
     self.businessWindow_cart_table.setRowCount(0)
+    load_user_transaction_by_id(self.businessWindow_transactions_table, self.lineBusiness_business.text())
 
     # print(newTransaction)
 def search_inventory(self, text):
@@ -134,7 +136,7 @@ class EditItemsDialog(QDialog):
         self.ui.removeItemButton.clicked.connect(lambda: self.removeItem())
         self.ui.saveButton.clicked.connect(lambda: self.saveItems())
         self.ui.cancelButton.clicked.connect(lambda: self.close())
-        load_inventory_to_table(self, self.ui.businessWindow_edit_dialog_table)
+        load_inventory_to_table(self.ui.businessWindow_edit_dialog_table)
         self.ui.businessWindow_edit_dialog_table.itemSelectionChanged.connect(lambda: self.edit_dialog_selected_row())
         self.ui.moveUpButton.clicked.connect(lambda: self.move_row_up())
         self.ui.moveDownButton.clicked.connect(lambda: self.move_row_down())
@@ -272,8 +274,8 @@ def open_edit_items_dialog(self):
     self.edit_items_dialog.ui.saveButton.clicked.connect(lambda: reload_inventory_table(self))
     self.edit_items_dialog.exec_()
     
-def reload_inventory_table(self):
-    load_inventory_to_table(self, self.businessWindow_inventory_table)
+def reload_inventory_table(self, user):
+    load_inventory_to_table(self.businessWindow_inventory_table)    
     self.businessWindow_inventory_table.setCurrentItem(None)
     self.businessWindow_sourceLine.setText("")
     self.businessWindow_descriptionLine.setText("")
@@ -297,7 +299,7 @@ def add_to_cart(self):
 def get_cart_data(self):
     total_amount = 0
     description = ""
-
+    
     # iterate over each row in the cart table
     for row in range(self.businessWindow_cart_table.rowCount()):
         item_price = self.businessWindow_cart_table.item(row, 0).text()

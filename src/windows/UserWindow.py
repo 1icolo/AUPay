@@ -13,8 +13,8 @@ def UserWindow(self, user):
     print(__name__)
     load_user_data(self, user)
     self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.userWindow_transactions_table))
-    user_transactions = load_user_transaction_by_id(self, self.userWindow_transactions_table, user['_id'])
-    load_bar_chart(self, self.userWindow_transactions_table, self.graphicsView)
+    load_user_transaction_by_id(self.userWindow_transactions_table, user['_id'])
+    load_bar_chart(self.userWindow_transactions_table, self.graphicsView)
 
 def load_user_data(self, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])

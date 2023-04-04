@@ -58,7 +58,7 @@ def load_transactions_to_table(self,tableWidget):
         _id = tableWidget.item(selected_row, 0).text()
         print(_id)
 
-def load_inventory_to_table(self, tableWidget):
+def load_inventory_to_table(tableWidget):
     items = jsonIO.read_items()
     items_data = []
     for item in items:
@@ -71,7 +71,7 @@ def load_inventory_to_table(self, tableWidget):
             item = QTableWidgetItem(str(items_data[row][column]))
             tableWidget.setItem(row, column, item)
 
-def load_user_transaction_by_id(self, tableWidget, user):
+def load_user_transaction_by_id(tableWidget, user):
     transactions = find_all_transactions_of_user(user)
     transaction_data = []
     transactions_data = []
@@ -93,11 +93,11 @@ def load_user_transaction_by_id(self, tableWidget, user):
             item = QTableWidgetItem(str(transactions_data[row][column]))
             tableWidget.setItem(row, column, item)
 
-def load_bar_chart(self, tableWidget, graphicsView):
+def load_bar_chart(tableWidget, graphicsView):
     series = QHorizontalBarSeries()
 
     # Clean up the descriptions by stripping extra spaces and converting to lowercase
-    descriptions = [tableWidget.item(row, 5).text().strip().lower() for row in range(tableWidget.rowCount())]
+    descriptions = [tableWidget.item(row, 5).text().strip().title() for row in range(tableWidget.rowCount())]
 
     # Split multi-item descriptions into individual items
     items = []

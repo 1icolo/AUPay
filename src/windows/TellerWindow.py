@@ -17,9 +17,9 @@ def selected_row_to_textbox(self):
         self.tellerWindow_schoolIdLine.setText(school_id.text())
         self.tellerWindow_amountLine.setText(amount.text())
         self.tellerWindow_descriptionLine.setText(description.text())
-def transact(self):
+def transact(self, user):
     if(self.comboTransaction_teller.currentText() == "Deposit"):
-        print("deposit")
+        print("Deposit")
         newTransaction = {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
             "source_id": ObjectId(self.lineTeller_teller.text()),
@@ -38,11 +38,16 @@ def transact(self):
             "description": self.tellerWindow_descriptionLine.toPlainText()
         }
         add_transaction(newTransaction)
+    load_user_transaction_by_id(self.tellerWindow_transactions_table, user)
+    self.tellerWindow_transactions_table.setCurrentItem(None)
     self.tellerWindow_schoolIdLine.setText("")
     self.tellerWindow_amountLine.setText("")
     self.tellerWindow_descriptionLine.setText("")
-    # self.tellerWindow_transactions_table.clearContents()
-    # self.tellerWindow_transactions_table.setRowCount(0)
+
+def deposit_withdraw (self):
+     self.comboTransaction_teller.getText()
+     self.tellerWindow_descriptionLine.setText("")
+
 def TellerWindow(self, user):
         print(__name__)
         # load_user_transaction_data(self)
@@ -50,9 +55,12 @@ def TellerWindow(self, user):
         # testing school id only
         self.tellerWindow_schoolIdLine.setText(str(user))
         load_transactions_to_table(self, self.tellerWindow_transactions_table)
+        load_user_transaction_by_id(self.tellerWindow_transactions_table, user)
         self.tellerWindow_transactions_table.itemSelectionChanged.connect(lambda: selected_row_to_textbox(self))
         self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.tellerWindow_transactions_table))
-        self.buttonTransact_teller.clicked.connect(lambda: transact(self))
+        self.buttonTransact_teller.clicked.connect(lambda: transact(self, user))
+
+        
 
 
 
