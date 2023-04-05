@@ -6,6 +6,8 @@ from dbHelper.find_user import find_all_users
 from dbHelper.find_transaction import *
 # import json
 from fnHelper import jsonIO
+from datetime import *
+
 
 
 def load_users_to_table(self, tableWidget):
@@ -37,9 +39,8 @@ def load_transactions_to_table(self,tableWidget):
     for transaction in transactions:
         transaction_data.append([transaction['timestamp']])
         bson_timestamp = transaction_data[0][0]
-        from datetime import datetime
         dt = datetime.fromtimestamp(bson_timestamp.time)
-        date_string = dt.strftime("%m/%d/%y")
+        date_string = dt.strftime("%m/%d/%Y")
         transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
                                  transaction['destination_id'], transaction['amount'], transaction['description']])
     # print(transactions_data)
@@ -78,9 +79,8 @@ def load_user_transaction_by_id(tableWidget, user):
     for transaction in transactions:
         transaction_data.append([transaction['timestamp']])
         bson_timestamp = transaction_data[0][0]
-        from datetime import datetime
         dt = datetime.fromtimestamp(bson_timestamp.time)
-        date_string = dt.strftime("%m/%d/%y")
+        date_string = dt.strftime("%m/%d/%Y")
         transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
                                  transaction['destination_id'], transaction['amount'], transaction['description']])
     # print(transactions_data)
@@ -169,3 +169,20 @@ def refresh_bar_chart(tableWidget, graphicsView):
 
     # Load the new chart and add it to the layout
     load_bar_chart(tableWidget, graphicsView)
+
+def search_transactions_by_date(tablewidget, date_from_edit, date_to_edit):
+    date_from = date_from_edit.date().toPyDate()
+    date_to = date_to_edit.date().toPyDate()
+
+    date_range = range((date_to - date_from).days + 1)
+
+    # iterate over each row in the inventory table
+    for row in range(tablewidget.rowCount()):
+        timestamp_str = tablewidget.item(row, 1).text()
+        timestamp = datetime.strptime(timestamp_str, "%m/%d/%Y").date()
+
+        # check if the timestamp falls within the date range
+        if timestamp in (date_from + timedelta(n) for n in date_range):
+            tablewidget.setRowHidden(row, False)
+        else:
+            tablewidget.setRowHidden(row, True)

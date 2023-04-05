@@ -344,15 +344,12 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="5">
-            <widget class="QLabel" name="label_9">
+           <item row="0" column="2">
+            <widget class="QPushButton" name="buttonClearTransactions_user">
              <property name="text">
-              <string>To</string>
+              <string>Clear</string>
              </property>
             </widget>
-           </item>
-           <item row="0" column="4">
-            <widget class="QDateEdit" name="dateFrom_user"/>
            </item>
            <item row="0" column="3">
             <widget class="QLabel" name="label_10">
@@ -361,8 +358,26 @@
              </property>
             </widget>
            </item>
+           <item row="0" column="4">
+            <widget class="QDateEdit" name="dateFrom_user">
+             <property name="displayFormat">
+              <string>MM/dd/yyyy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>To</string>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="6">
-            <widget class="QDateEdit" name="dateTo_user"/>
+            <widget class="QDateEdit" name="dateTo_user">
+             <property name="displayFormat">
+              <string>MM/dd/yyyy</string>
+             </property>
+            </widget>
            </item>
            <item row="2" column="1" colspan="6">
             <widget class="QTableWidget" name="userWindow_transactions_table">
@@ -506,13 +521,6 @@
                <string/>
               </property>
              </item>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QPushButton" name="buttonClearTransactions_user">
-             <property name="text">
-              <string>Clear</string>
-             </property>
             </widget>
            </item>
           </layout>
@@ -1274,7 +1282,11 @@
                 </widget>
                </item>
                <item row="0" column="3">
-                <widget class="QDateEdit" name="dateFrom_business"/>
+                <widget class="QDateEdit" name="dateFrom_business">
+                 <property name="displayFormat">
+                  <string>MM/dd/yyyy</string>
+                 </property>
+                </widget>
                </item>
                <item row="0" column="6">
                 <widget class="QPushButton" name="buttonChargeback_business">
@@ -1284,7 +1296,11 @@
                 </widget>
                </item>
                <item row="0" column="5">
-                <widget class="QDateEdit" name="dateTo_business"/>
+                <widget class="QDateEdit" name="dateTo_business">
+                 <property name="displayFormat">
+                  <string>MM/dd/yyyy</string>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="businessWindow_transactions_table">
@@ -1962,10 +1978,18 @@
                 </widget>
                </item>
                <item row="0" column="5">
-                <widget class="QDateEdit" name="dateTo_administrator"/>
+                <widget class="QDateEdit" name="dateTo_administrator">
+                 <property name="displayFormat">
+                  <string>MM/dd/yyyy</string>
+                 </property>
+                </widget>
                </item>
                <item row="0" column="3">
-                <widget class="QDateEdit" name="dateFrom_administrator"/>
+                <widget class="QDateEdit" name="dateFrom_administrator">
+                 <property name="displayFormat">
+                  <string>MM/dd/yyyy</string>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="adminWindow_transactions_table">
