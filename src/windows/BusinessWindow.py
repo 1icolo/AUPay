@@ -9,6 +9,7 @@ from windows.ui.ui_ChargebackTransactionDialog import Ui_Dialog as Ui_Chargeback
 from fnHelper.load_tables import *
 from fnHelper.textSearch import *
 from dbHelper.add_transaction import add_transaction
+from fnHelper.charge import charge_transaction
 from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_id
@@ -35,6 +36,7 @@ def BusinessWindow(self, user):
 
 
 def charge(self):
+    #rfid
     newTransaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
         "destination_id": ObjectId(self.lineBusiness_business.text()),
@@ -42,7 +44,7 @@ def charge(self):
         "amount": float(self.businessWindow_amountLine.text()),
         "description": self.businessWindow_descriptionLine.toPlainText()
     }
-    add_transaction(newTransaction)
+    charge_transaction(newTransaction)
     self.businessWindow_sourceLine.setText("")
     self.businessWindow_amountLine.setText("")
     self.businessWindow_descriptionLine.setText("")
