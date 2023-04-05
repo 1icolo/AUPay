@@ -8,7 +8,6 @@ from fnHelper.textSearch import *
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
 
-
 def UserWindow(self, user):
     print(__name__)
     load_user_data(self, user)
@@ -18,5 +17,5 @@ def UserWindow(self, user):
 
 def load_user_data(self, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
-    # self.userWindow_balanceLine.setText(str(user['balance']))
     self.userWindow_balanceLine.setText(str(compute_user_balance(user['_id'])))
+
