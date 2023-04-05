@@ -94,6 +94,15 @@ def load_user_transaction_by_id(tableWidget, user):
             tableWidget.setItem(row, column, item)
 
 def load_bar_chart(tableWidget, graphicsView):
+    # Remove the existing layout from the graphicsView
+    layout = graphicsView.layout()
+    if layout is not None:
+        while layout.count() > 0:
+            item = layout.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.deleteLater()
+
     series = QHorizontalBarSeries()
 
     # Clean up the descriptions by stripping extra spaces and converting to lowercase
@@ -133,15 +142,30 @@ def load_bar_chart(tableWidget, graphicsView):
     chart.createDefaultAxes()
     chart.setAxisY(axis_y, series)
 
-
     # Set the alignment of the legend
     chart.legend().hide()
 
     chartView = QChartView(chart)
     chartView.setRenderHint(QPainter.Antialiasing)
 
-    # Add chartView to a layout
-    layout = QVBoxLayout(graphicsView)
-    layout.addWidget(chartView)
+    # Clear the existing layout before adding a new one
+    graphicsView.setLayout(QVBoxLayout())
+    
+    # Add chartView to the layout
+    graphicsView.layout().addWidget(chartView)
 
 
+def refresh_bar_chart(tableWidget, graphicsView):
+    # Remove any existing chart view from the layout
+    chartView = None
+    for i in range(graphicsView.layout().count()):
+        widget = graphicsView.layout().itemAt(i).widget()
+        if isinstance(widget, QChartView):
+            chartView = widget
+            graphicsView.layout().removeWidget(chartView)
+            break
+    if chartView is not None:
+        chartView.deleteLater()
+
+    # Load the new chart and add it to the layout
+    load_bar_chart(tableWidget, graphicsView)

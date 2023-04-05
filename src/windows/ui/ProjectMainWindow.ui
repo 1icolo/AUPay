@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1091</width>
+    <width>1149</width>
     <height>810</height>
    </rect>
   </property>
@@ -1214,16 +1214,27 @@
               <property name="title">
                <string>Analytics</string>
               </property>
-              <layout class="QGridLayout" name="gridLayout_15">
-               <item row="1" column="0">
-                <widget class="QGraphicsView" name="graphicsView_2"/>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QPushButton" name="businessWindow_chart_refresh">
+                   <property name="text">
+                    <string>Refresh</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_3">
+                   <property name="text">
+                    <string>Export</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="pushButton_3">
-                 <property name="text">
-                  <string>Export</string>
-                 </property>
-                </widget>
+               <item>
+                <widget class="QGraphicsView" name="graphicsView_2"/>
                </item>
               </layout>
              </widget>
@@ -1936,12 +1947,25 @@
                <string>Transactions</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
+               <item row="0" column="6">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator">
+                 <property name="text">
+                  <string>Add Transaction</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="2">
                 <widget class="QLabel" name="label_13">
                  <property name="text">
                   <string>From</string>
                  </property>
                 </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QDateEdit" name="dateTo_administrator"/>
+               </item>
+               <item row="0" column="3">
+                <widget class="QDateEdit" name="dateFrom_administrator"/>
                </item>
                <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="adminWindow_transactions_table">
@@ -1994,9 +2018,6 @@
                  </column>
                 </widget>
                </item>
-               <item row="0" column="5">
-                <widget class="QDateEdit" name="dateTo_administrator"/>
-               </item>
                <item row="0" column="0">
                 <widget class="QLineEdit" name="adminWindow_transaction_search">
                  <property name="placeholderText">
@@ -2004,10 +2025,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
-                <widget class="QPushButton" name="buttonAddTransaction_administrator">
+               <item row="0" column="1">
+                <widget class="QPushButton" name="buttonClearTransactions_administrator">
                  <property name="text">
-                  <string>Add Transaction</string>
+                  <string>Clear</string>
                  </property>
                 </widget>
                </item>
@@ -2015,16 +2036,6 @@
                 <widget class="QLabel" name="label_14">
                  <property name="text">
                   <string>To</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QDateEdit" name="dateFrom_administrator"/>
-               </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="buttonClearTransactions_administrator">
-                 <property name="text">
-                  <string>Clear</string>
                  </property>
                 </widget>
                </item>
@@ -2036,21 +2047,50 @@
               <property name="title">
                <string>Analytics</string>
               </property>
-              <layout class="QGridLayout" name="gridLayout_17">
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_17">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Total Circulating:</string>
-                 </property>
-                </widget>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="label_17">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Total Circulating:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_18">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
-               <item row="1" column="0" colspan="5">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QPushButton" name="adminWindow_chart_refresh">
+                   <property name="text">
+                    <string>Refresh</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
+                   <property name="text">
+                    <string>Export</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
                 <widget class="QGraphicsView" name="graphicsView_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
@@ -2059,33 +2099,6 @@
                   </sizepolicy>
                  </property>
                 </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
-                 <property name="text">
-                  <string>Export</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QLabel" name="label_18">
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
@@ -2105,7 +2118,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1091</width>
+     <width>1149</width>
      <height>21</height>
     </rect>
    </property>

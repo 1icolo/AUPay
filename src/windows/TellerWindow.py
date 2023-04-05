@@ -44,10 +44,6 @@ def transact(self, user):
     self.tellerWindow_amountLine.setText("")
     self.tellerWindow_descriptionLine.setText("")
 
-def deposit_withdraw (self):
-     self.comboTransaction_teller.getText()
-     self.tellerWindow_descriptionLine.setText("")
-
 def TellerWindow(self, user):
         print(__name__)
         # load_user_transaction_data(self)
