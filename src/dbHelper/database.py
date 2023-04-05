@@ -35,10 +35,11 @@ class Database:
                 'balance': 0.00,
             },
             'transaction': {
+                '_id': ObjectId("64283b50a7a5063923cf424b"),
                 'timestamp': Timestamp(1651363200, 0),
-                'source_id': ObjectId("63abc434a689ea6865853eb8"),
-                'destination_id': ObjectId("63abc435a689ea6865853eb9"),
-                'amount': 0.00,
+                'source_id': ObjectId("64283b50a7a5063923cf424b"),
+                'destination_id': ObjectId("64283b50a7a5063923cf424b"),
+                'amount': 100.00,
                 'description': "Initial transaction",
             }
         }
