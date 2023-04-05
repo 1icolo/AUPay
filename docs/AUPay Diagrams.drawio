@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-05T03:50:41.780Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62" etag="WYxdXP2x-Hd9UZy6pqSV" version="21.1.4" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-04-05T08:42:16.917Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62" etag="mCIFBV93SfIi_uAPWCkK" version="21.1.4" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
-    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
+    <mxGraphModel dx="1249" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,6 +40,11 @@
         <object label="&lt;font style=&quot;&quot;&gt;Chapter 4 and 5&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="Y9JxM2GparIlATXVdZgH-6">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="jk4ZuAFncWzifWcSEG9R-6" vertex="1">
             <mxGeometry x="20" y="21" width="140" height="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Developing an aggregation algorithm for computing the total circulating supply&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="9QmKQknWebydVsMe6agB-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
+            <mxGeometry x="20" y="130" width="140" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="" status="In progress" id="dP4nEb0FnnbFnyhw3xI3-1">
