@@ -1,17 +1,18 @@
 from dbHelper.find_transaction import find_transaction
+from fnHelper.aupCard import AUPCard
+from fnHelper.hashEncryption import encrypt
+from dbHelper.add_transaction import add_transaction
+from bson import Timestamp
+from datetime import datetime
 
-def refund_transaction(transaction_id):
-    # get transaction if transaction exists
-    transaction = find_transaction(transaction_id)
-    if transaction is None:
-        print('Transaction does not exist')
-        return
-
-    # scan rfid of user
-
-
-    # scan rfid of admin/teller
-
-
+def chargeback_transaction(transaction):
+    newTransaction = {
+            "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
+            "destination_id": transaction['source_id'],
+            "source_id": transaction['destination_id'],
+            "amount": transaction['amount'],
+            "description": (f'chargeback {transaction["_id"]}')
+        }
+    
     # add transaction
-    pass
+    add_transaction(newTransaction)

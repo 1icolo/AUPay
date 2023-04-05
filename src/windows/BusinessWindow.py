@@ -14,6 +14,7 @@ from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_id
 from fnHelper.hashEncryption import encrypt
+from fnHelper.chargeback import chargeback_transaction
 
 
 def BusinessWindow(self, user):
@@ -106,21 +107,10 @@ class ChargebackDialog(QDialog):
                     print("User verified")
                     self.ui.checkBoxUser.setChecked(True)
 
-
-    def verifyID(self):
-        return self.ui.checkBoxBusiness.isChecked() and self.ui.checkBoxUser.isChecked()
-
     def chargeback(self, transaction_data):
-        if not self.verifyID():
+        if not self.ui.checkBoxBusiness.isChecked() and self.ui.checkBoxUser.isChecked():
             return print("Business and User verification required")
-        newTransaction = {
-            "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
-            "destination_id": transaction_data['source_id'],
-            "source_id": transaction_data['destination_id'],
-            "amount": transaction_data['amount'],
-            "description": (f'chargeback {transaction_data["_id"]}')
-        }
-        add_transaction(newTransaction)
+        chargeback_transaction(transaction_data)
         self.table_updated.emit()
         self.close()
 
