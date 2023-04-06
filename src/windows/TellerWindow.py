@@ -6,6 +6,7 @@ from fnHelper.textSearch import *
 from bson import *
 from datetime import *
 from dbHelper.add_transaction import add_transaction
+from dbHelper.compute_user_balance import compute_user_balance
 
 def selected_row_to_textbox(self):
     selected_row = self.tellerWindow_transactions_table.currentRow()
@@ -51,14 +52,15 @@ def deposit_withdraw (self):
 def TellerWindow(self, user):
         print(__name__)
         # load_user_transaction_data(self)
-        self.lineTeller_teller.setText(str(user))
+        self.lineTeller_teller.setText(str(user['_id']))
         # testing school id only
-        self.tellerWindow_schoolIdLine.setText(str(user))
+        self.tellerWindow_schoolIdLine.setText(str(user['_id']))
         load_transactions_to_table(self, self.tellerWindow_transactions_table)
-        load_user_transaction_by_id(self.tellerWindow_transactions_table, user)
+        load_user_transaction_by_id(self.tellerWindow_transactions_table, user['_id'])
         self.tellerWindow_transactions_table.itemSelectionChanged.connect(lambda: selected_row_to_textbox(self))
         self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.tellerWindow_transactions_table))
-        self.buttonTransact_teller.clicked.connect(lambda: transact(self, user))
+        self.buttonTransact_teller.clicked.connect(lambda: transact(self, user['_id']))
+        self.lineBalance_teller.setText(compute_user_balance(user['_id']))
 
         
 

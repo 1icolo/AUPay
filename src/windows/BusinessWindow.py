@@ -15,25 +15,28 @@ from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_id
 from fnHelper.hashEncryption import encrypt
 from fnHelper.chargeback import chargeback_transaction
+from dbHelper.compute_user_balance import compute_user_balance
 
 
 def BusinessWindow(self, user):
     print(__name__)
-    self.lineBusiness_business.setText(str(user))
+    self.lineBusiness_business.setText(str(user['_id']))
     #sample source id
-    self.businessWindow_sourceLine.setText(str(user))
+    self.businessWindow_sourceLine.setText(str('642aea840c38de23f35ba614'))
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
     self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
     self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
     self.buttonCharge.clicked.connect(lambda: charge(self))
     # load_transactions_to_table(self, self.businessWindow_transactions_table)
     load_inventory_to_table(self.businessWindow_inventory_table)
-    load_user_transaction_by_id(self.businessWindow_transactions_table, user)
+    load_user_transaction_by_id(self.businessWindow_transactions_table, user['_id'])
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
     load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
+    self.lineBalance_business.setText(str(compute_user_balance(user['_id'])))
+    
 
 
 def charge(self):
@@ -108,11 +111,12 @@ class ChargebackDialog(QDialog):
                     self.ui.checkBoxUser.setChecked(True)
 
     def chargeback(self, transaction_data):
-        if not self.ui.checkBoxBusiness.isChecked() and self.ui.checkBoxUser.isChecked():
-            return print("Business and User verification required")
-        chargeback_transaction(transaction_data)
-        self.table_updated.emit()
-        self.close()
+        if self.ui.checkBoxBusiness.isChecked() and self.ui.checkBoxUser.isChecked():
+            chargeback_transaction(self, transaction_data)
+            self.table_updated.emit()
+            self.close()
+        else:
+            QMessageBox.critical(self, "Error", "Business and User verification required")
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):

@@ -4,8 +4,10 @@ from fnHelper.hashEncryption import encrypt
 from dbHelper.add_transaction import add_transaction
 from bson import Timestamp
 from datetime import datetime
+from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency
+from PyQt5.QtWidgets import QMessageBox
 
-def chargeback_transaction(transaction):
+def chargeback_transaction(QWidget, transaction):
     newTransaction = {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
             "destination_id": transaction['source_id'],
@@ -13,6 +15,8 @@ def chargeback_transaction(transaction):
             "amount": transaction['amount'],
             "description": (f'chargeback {transaction["_id"]}')
         }
-    
-    # add transaction
-    add_transaction(newTransaction)
+    print(transaction['amount'])
+    if checkBalanceSufficiency(transaction['destination_id'], transaction['amount']):
+        # add transaction
+        return add_transaction(newTransaction)
+    return QMessageBox.critical(QWidget, "Error", "Insufficient Balance.")

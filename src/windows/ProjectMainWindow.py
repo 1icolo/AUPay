@@ -43,10 +43,10 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
                 case 'business':
                     self.stackedWidget.setCurrentIndex(2)
                     from windows.BusinessWindow import BusinessWindow
-                    BusinessWindow(self, user['_id'])
+                    BusinessWindow(self, user)
                 case 'teller':
                     self.stackedWidget.setCurrentIndex(3)
                     from windows.TellerWindow import TellerWindow
-                    TellerWindow(self, user['_id'])
+                    TellerWindow(self, user)
         except Exception:
             print('No RFID detected.')
