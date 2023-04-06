@@ -554,7 +554,7 @@
               <string/>
              </property>
              <property name="text">
-              <string/>
+              <string>0</string>
              </property>
              <property name="maxLength">
               <number>30</number>
@@ -652,7 +652,7 @@
            </font>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabCharge">
            <attribute name="title">
@@ -688,7 +688,7 @@
                  <number>20</number>
                 </property>
                 <property name="topMargin">
-                 <number>20</number>
+                 <number>0</number>
                 </property>
                 <property name="rightMargin">
                  <number>20</number>
@@ -697,101 +697,53 @@
                  <number>20</number>
                 </property>
                 <item>
+                 <widget class="QGroupBox" name="groupBox_4">
+                  <property name="title">
+                   <string>Business Information</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_15">
+                   <item row="0" column="0">
+                    <widget class="QLineEdit" name="lineBusiness_business">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI</family>
+                       <pointsize>16</pointsize>
+                      </font>
+                     </property>
+                     <property name="inputMask">
+                      <string/>
+                     </property>
+                     <property name="text">
+                      <string>Business Name</string>
+                     </property>
+                     <property name="maxLength">
+                      <number>30</number>
+                     </property>
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Destination</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
                  <layout class="QVBoxLayout" name="verticalLayout_8">
                   <property name="leftMargin">
                    <number>0</number>
                   </property>
-                  <item>
-                   <widget class="QLabel" name="label">
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>16</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Name</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLineEdit" name="lineBusiness_business">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>16</pointsize>
-                     </font>
-                    </property>
-                    <property name="inputMask">
-                     <string/>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="maxLength">
-                     <number>30</number>
-                    </property>
-                    <property name="readOnly">
-                     <bool>true</bool>
-                    </property>
-                    <property name="placeholderText">
-                     <string>Destination</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_2">
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>16</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Source</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLineEdit" name="businessWindow_sourceLine">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>16</pointsize>
-                     </font>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>ArrowCursor</cursorShape>
-                    </property>
-                    <property name="focusPolicy">
-                     <enum>Qt::NoFocus</enum>
-                    </property>
-                    <property name="maxLength">
-                     <number>30</number>
-                    </property>
-                    <property name="placeholderText">
-                     <string>Source</string>
-                    </property>
-                   </widget>
-                  </item>
                   <item>
                    <widget class="QLabel" name="label_3">
                     <property name="font">
@@ -916,6 +868,15 @@
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <property name="spacing">
+                 <number>20</number>
+                </property>
+                <property name="rightMargin">
+                 <number>20</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>20</number>
+                </property>
                 <item>
                  <widget class="QGroupBox" name="groupInventory_business">
                   <property name="sizePolicy">
@@ -1245,6 +1206,9 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
                    </property>
                    <property name="readOnly">
                     <bool>true</bool>
@@ -2341,22 +2305,6 @@
     <hint type="destinationlabel">
      <x>208</x>
      <y>282</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_business</sender>
-   <signal>clicked()</signal>
-   <receiver>businessWindow_sourceLine</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>135</x>
-     <y>574</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>146</x>
-     <y>216</y>
     </hint>
    </hints>
   </connection>
