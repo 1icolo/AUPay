@@ -22,11 +22,20 @@ def compute_user_balance(user_id):
                         '$cond': [
                             {
                                 '$eq': [
-                                    '$destination_id', ObjectId(user_id)
+                                    '$source_id', '$destination_id'
                                 ]
-                            }, '$amount', {
-                                '$multiply': [
-                                    -1, '$amount'
+                            }, 0, {
+                                '$cond': [
+                                    {
+                                        '$eq': [
+                                            '$destination_id', ObjectId(
+                                                user_id)
+                                        ]
+                                    }, '$amount', {
+                                        '$multiply': [
+                                            -1, '$amount'
+                                        ]
+                                    }
                                 ]
                             }
                         ]
