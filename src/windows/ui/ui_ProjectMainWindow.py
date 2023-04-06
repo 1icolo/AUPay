@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.resize(1149, 810)
         ProjectMainWindow.setMinimumSize(QtCore.QSize(205, 176))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\src\\windows\\ui\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProjectMainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ProjectMainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -526,9 +526,6 @@ class Ui_ProjectMainWindow(object):
         self.lineBalance_business.setReadOnly(True)
         self.lineBalance_business.setObjectName("lineBalance_business")
         self.horizontalLayout_7.addWidget(self.lineBalance_business)
-        self.businessWindow_chart_refresh = QtWidgets.QPushButton(self.groupBox_7)
-        self.businessWindow_chart_refresh.setObjectName("businessWindow_chart_refresh")
-        self.horizontalLayout_7.addWidget(self.businessWindow_chart_refresh)
         self.pushButton_3 = QtWidgets.QPushButton(self.groupBox_7)
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_7.addWidget(self.pushButton_3)
@@ -933,15 +930,12 @@ class Ui_ProjectMainWindow(object):
         self.lineTotalCirculating_administrator.setReadOnly(True)
         self.lineTotalCirculating_administrator.setObjectName("lineTotalCirculating_administrator")
         self.horizontalLayout_9.addWidget(self.lineTotalCirculating_administrator)
+        self.buttonAddTransaction_administrator_2 = QtWidgets.QPushButton(self.groupBox_10)
+        self.buttonAddTransaction_administrator_2.setObjectName("buttonAddTransaction_administrator_2")
+        self.horizontalLayout_9.addWidget(self.buttonAddTransaction_administrator_2)
         self.verticalLayout_4.addLayout(self.horizontalLayout_9)
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.adminWindow_chart_refresh = QtWidgets.QPushButton(self.groupBox_10)
-        self.adminWindow_chart_refresh.setObjectName("adminWindow_chart_refresh")
-        self.horizontalLayout_8.addWidget(self.adminWindow_chart_refresh)
-        self.buttonAddTransaction_administrator_2 = QtWidgets.QPushButton(self.groupBox_10)
-        self.buttonAddTransaction_administrator_2.setObjectName("buttonAddTransaction_administrator_2")
-        self.horizontalLayout_8.addWidget(self.buttonAddTransaction_administrator_2)
         self.verticalLayout_4.addLayout(self.horizontalLayout_8)
         self.graphicsView_3 = QtWidgets.QGraphicsView(self.groupBox_10)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Expanding)
@@ -971,7 +965,7 @@ class Ui_ProjectMainWindow(object):
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_descriptionLine.clear) # type: ignore
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_amountLine.clear) # type: ignore
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_schoolIdLine.clear) # type: ignore
@@ -1058,7 +1052,6 @@ class Ui_ProjectMainWindow(object):
         self.groupBox_7.setTitle(_translate("ProjectMainWindow", "Analytics"))
         self.label_19.setText(_translate("ProjectMainWindow", "Balance:"))
         self.lineBalance_business.setText(_translate("ProjectMainWindow", "0"))
-        self.businessWindow_chart_refresh.setText(_translate("ProjectMainWindow", "Refresh"))
         self.pushButton_3.setText(_translate("ProjectMainWindow", "Export"))
         self.groupBox_6.setTitle(_translate("ProjectMainWindow", "Transactions"))
         self.label_12.setText(_translate("ProjectMainWindow", "To"))
@@ -1173,7 +1166,6 @@ class Ui_ProjectMainWindow(object):
         self.groupBox_10.setTitle(_translate("ProjectMainWindow", "Analytics"))
         self.label_17.setText(_translate("ProjectMainWindow", "Total Circulating:"))
         self.lineTotalCirculating_administrator.setText(_translate("ProjectMainWindow", "0"))
-        self.adminWindow_chart_refresh.setText(_translate("ProjectMainWindow", "Refresh"))
         self.buttonAddTransaction_administrator_2.setText(_translate("ProjectMainWindow", "Export"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabTransactions_administrator), _translate("ProjectMainWindow", "Transactions"))
         self.menuFile.setTitle(_translate("ProjectMainWindow", "File"))
