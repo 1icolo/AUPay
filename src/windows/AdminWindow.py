@@ -206,7 +206,6 @@ def open_add_transaction_dialog(self):
     
 def reload_inventory_table(self):
     load_transactions_to_table(self, self.adminWindow_transactions_table)
-    refresh_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.adminWindow_transactions_table.setCurrentItem(None)
     self.adminWindow_transaction_search.setText("")
 

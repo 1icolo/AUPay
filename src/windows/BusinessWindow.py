@@ -38,29 +38,9 @@ def BusinessWindow(self, user):
 
     # update_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
     # self.pushButton_2.clicked.connect(lambda: BusinessWindow(self, user))
-    # self.businessWindow_chart_refresh.clicked.connect(lambda: refresh_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2))
+    self.businessWindow_chart_refresh.clicked.connect(lambda: refresh_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2))
     self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
     self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
-
-def charge(self):
-    #rfid
-    newTransaction = {
-        "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
-        "destination_id": ObjectId(self.lineBusiness_business.text()),
-        "source_id": ObjectId(self.businessWindow_sourceLine.text()),
-        "amount": float(self.businessWindow_amountLine.text()),
-        "description": self.businessWindow_descriptionLine.toPlainText()
-    }
-    charge_transaction(newTransaction)
-    # self.businessWindow_sourceLine.setText("")
-    self.businessWindow_amountLine.setText("")
-    self.businessWindow_descriptionLine.setText("")
-    self.businessWindow_cart_table.clearContents()
-    self.businessWindow_cart_table.setRowCount(0)
-     # Call update_bar_chart after adding a new transaction
-    load_user_transaction_by_id(self.businessWindow_transactions_table, self.lineBusiness_business.text())
-    refresh_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
-        
 
 def charge(self, user):
     if not self.businessWindow_amountLine.text() == "":
