@@ -532,6 +532,23 @@
            <string>Analytics</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_13">
+           <item row="4" column="0" colspan="5">
+            <widget class="QGraphicsView" name="graphicsView"/>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Export</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelSchoolId_user">
+             <property name="text">
+              <string>School ID</string>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="2">
             <widget class="QLabel" name="labelBalance_user">
              <property name="sizePolicy">
@@ -541,28 +558,6 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Balance</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QLineEdit" name="userWindow_balanceLine">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="inputMask">
-              <string/>
-             </property>
-             <property name="text">
-              <string>0</string>
-             </property>
-             <property name="maxLength">
-              <number>30</number>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
               <string>Balance</string>
              </property>
             </widget>
@@ -604,22 +599,27 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="labelSchoolId_user">
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="userWindow_balanceLine">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
              <property name="text">
-              <string>School ID</string>
+              <string>0</string>
+             </property>
+             <property name="maxLength">
+              <number>30</number>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Balance</string>
              </property>
             </widget>
-           </item>
-           <item row="1" column="4">
-            <widget class="QPushButton" name="pushButton">
-             <property name="text">
-              <string>Export</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0" colspan="5">
-            <widget class="QGraphicsView" name="graphicsView"/>
            </item>
           </layout>
          </widget>
@@ -1617,26 +1617,11 @@
             </item>
             <item>
              <widget class="QLineEdit" name="lineTeller_teller">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
-              </property>
-              <property name="inputMask">
-               <string/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="maxLength">
-               <number>30</number>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
               </property>
               <property name="placeholderText">
                <string>Destination</string>
@@ -1652,26 +1637,11 @@
             </item>
             <item>
              <widget class="QLineEdit" name="tellerWindow_schoolIdLine">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
-              </property>
-              <property name="cursor">
-               <cursorShape>ArrowCursor</cursorShape>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::NoFocus</enum>
-              </property>
-              <property name="maxLength">
-               <number>30</number>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
               </property>
               <property name="placeholderText">
                <string>School ID</string>
@@ -2199,70 +2169,6 @@
   <connection>
    <sender>buttonClearFields_teller</sender>
    <signal>clicked()</signal>
-   <receiver>tellerWindow_descriptionLine</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>207</x>
-     <y>550</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>189</x>
-     <y>359</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_teller</sender>
-   <signal>clicked()</signal>
-   <receiver>tellerWindow_amountLine</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>226</x>
-     <y>538</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>190</x>
-     <y>252</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_teller</sender>
-   <signal>clicked()</signal>
-   <receiver>tellerWindow_schoolIdLine</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>148</x>
-     <y>543</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>153</x>
-     <y>188</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_teller</sender>
-   <signal>clicked()</signal>
-   <receiver>lineTeller_teller</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>539</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>87</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_teller</sender>
-   <signal>clicked()</signal>
    <receiver>tellerWindow_transaction_search</receiver>
    <slot>clear()</slot>
    <hints>
@@ -2283,12 +2189,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>559</y>
+     <x>205</x>
+     <y>513</y>
     </hint>
     <hint type="destinationlabel">
-     <x>184</x>
-     <y>497</y>
+     <x>208</x>
+     <y>464</y>
     </hint>
    </hints>
   </connection>
@@ -2299,12 +2205,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>232</x>
-     <y>563</y>
+     <x>255</x>
+     <y>513</y>
     </hint>
     <hint type="destinationlabel">
-     <x>208</x>
-     <y>282</y>
+     <x>232</x>
+     <y>230</y>
     </hint>
    </hints>
   </connection>
@@ -2315,8 +2221,8 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>122</x>
-     <y>575</y>
+     <x>145</x>
+     <y>513</y>
     </hint>
     <hint type="destinationlabel">
      <x>113</x>
@@ -2331,8 +2237,8 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>573</y>
+     <x>280</x>
+     <y>513</y>
     </hint>
     <hint type="destinationlabel">
      <x>481</x>
@@ -2347,12 +2253,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>115</y>
+     <x>181</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>143</x>
-     <y>123</y>
+     <x>100</x>
+     <y>136</y>
     </hint>
    </hints>
   </connection>
@@ -2363,12 +2269,76 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>118</x>
-     <y>83</y>
+     <x>193</x>
+     <y>98</y>
     </hint>
     <hint type="destinationlabel">
      <x>54</x>
      <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_descriptionLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>544</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_amountLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_schoolIdLine</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>145</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearFields_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>lineTeller_teller</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>532</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>94</y>
     </hint>
    </hints>
   </connection>
