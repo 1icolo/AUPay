@@ -1226,6 +1226,29 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_7">
                  <item>
+                  <widget class="QLabel" name="label_19">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Balance:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineBalance_business">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QPushButton" name="businessWindow_chart_refresh">
                    <property name="text">
                     <string>Refresh</string>
@@ -1439,7 +1462,14 @@
            <string>Transactions</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_11">
-           <item row="1" column="0">
+           <item row="0" column="0">
+            <widget class="QLineEdit" name="tellerWindow_transaction_search">
+             <property name="placeholderText">
+              <string>Search</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
             <widget class="QTableWidget" name="tellerWindow_transactions_table">
              <property name="maximumSize">
               <size>
@@ -1557,10 +1587,23 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QLineEdit" name="tellerWindow_transaction_search">
-             <property name="placeholderText">
-              <string>Search</string>
+           <item row="0" column="2">
+            <widget class="QLineEdit" name="lineBalance_teller">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>Balance:</string>
              </property>
             </widget>
            </item>
@@ -1926,9 +1969,18 @@
                 </widget>
                </item>
                <item row="0" column="6">
-                <widget class="QLabel" name="label_16">
+                <widget class="QLineEdit" name="lineTotalUsers_administrator">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>0</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Search</string>
                  </property>
                 </widget>
                </item>
@@ -2088,7 +2140,13 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_18">
+                  <widget class="QLineEdit" name="lineTotalCirculating_administrator">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="text">
                     <string>0</string>
                    </property>
