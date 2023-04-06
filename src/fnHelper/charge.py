@@ -1,6 +1,6 @@
 from dbHelper.add_transaction import add_transaction
 from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency
-from fnHelper.load_tables import load_user_transaction_by_id
+from fnHelper.load_tables import load_user_transaction_by_id, refresh_bar_chart
 from bson import Timestamp, ObjectId
 from datetime import datetime
 from fnHelper.aupCard import AUPCard
@@ -10,13 +10,14 @@ from PyQt5.QtWidgets import QMessageBox
 
 def charge_transaction(Widget, business):
 
-    def refresh():
+    def refresh(self):
         Widget.businessWindow_amountLine.setText("")
         Widget.businessWindow_descriptionLine.setText("")
         Widget.businessWindow_cart_table.clearContents()
         Widget.businessWindow_cart_table.setRowCount(0)
         # Call update_bar_chart after adding a new transaction
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
+        refresh_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
