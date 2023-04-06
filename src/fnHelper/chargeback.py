@@ -7,7 +7,7 @@ from datetime import datetime
 from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency
 from PyQt5.QtWidgets import QMessageBox
 
-def chargeback_transaction(QWidget, transaction):
+def chargeback_transaction(Widget, transaction):
     newTransaction = {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
             "destination_id": transaction['source_id'],
@@ -18,6 +18,6 @@ def chargeback_transaction(QWidget, transaction):
     print(transaction['amount'])
     if checkBalanceSufficiency(transaction['destination_id'], transaction['amount']):
         # add transaction
-        QMessageBox.information(QWidget, "Success", "Chargeback successful.")
+        QMessageBox.information(Widget, "Success", "Chargeback successful.")
         return add_transaction(newTransaction)
-    return QMessageBox.critical(QWidget, "Error", "Insufficient Balance.")
+    return QMessageBox.critical(Widget, "Error", "Insufficient Balance.")
