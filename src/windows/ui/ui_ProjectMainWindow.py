@@ -548,6 +548,7 @@ class Ui_ProjectMainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineBalance_business.sizePolicy().hasHeightForWidth())
         self.lineBalance_business.setSizePolicy(sizePolicy)
+        self.lineBalance_business.setReadOnly(True)
         self.lineBalance_business.setObjectName("lineBalance_business")
         self.horizontalLayout_7.addWidget(self.lineBalance_business)
         self.businessWindow_chart_refresh = QtWidgets.QPushButton(self.groupBox_7)
@@ -705,6 +706,7 @@ class Ui_ProjectMainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineBalance_teller.sizePolicy().hasHeightForWidth())
         self.lineBalance_teller.setSizePolicy(sizePolicy)
+        self.lineBalance_teller.setReadOnly(True)
         self.lineBalance_teller.setObjectName("lineBalance_teller")
         self.gridLayout_11.addWidget(self.lineBalance_teller, 0, 2, 1, 1)
         self.label_20 = QtWidgets.QLabel(self.groupBox)
@@ -872,6 +874,7 @@ class Ui_ProjectMainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineTotalUsers_administrator.sizePolicy().hasHeightForWidth())
         self.lineTotalUsers_administrator.setSizePolicy(sizePolicy)
+        self.lineTotalUsers_administrator.setReadOnly(True)
         self.lineTotalUsers_administrator.setObjectName("lineTotalUsers_administrator")
         self.gridLayout_18.addWidget(self.lineTotalUsers_administrator, 0, 6, 1, 1)
         self.horizontalLayout_4.addWidget(self.groupBox_3)
@@ -952,6 +955,7 @@ class Ui_ProjectMainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineTotalCirculating_administrator.sizePolicy().hasHeightForWidth())
         self.lineTotalCirculating_administrator.setSizePolicy(sizePolicy)
+        self.lineTotalCirculating_administrator.setReadOnly(True)
         self.lineTotalCirculating_administrator.setObjectName("lineTotalCirculating_administrator")
         self.horizontalLayout_9.addWidget(self.lineTotalCirculating_administrator)
         self.verticalLayout_4.addLayout(self.horizontalLayout_9)
@@ -991,8 +995,8 @@ class Ui_ProjectMainWindow(object):
 
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
-        self.tabWidget_2.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(1)
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_descriptionLine.clear) # type: ignore
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_amountLine.clear) # type: ignore
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_schoolIdLine.clear) # type: ignore
