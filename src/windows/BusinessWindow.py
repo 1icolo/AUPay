@@ -17,7 +17,6 @@ from fnHelper.hashEncryption import encrypt
 from fnHelper.chargeback import chargeback_transaction
 from dbHelper.compute_user_balance import compute_user_balance
 
-
 def BusinessWindow(self, user):
     print(__name__)
     self.lineBusiness_business.setText(str(user['_id']))
@@ -38,6 +37,11 @@ def BusinessWindow(self, user):
     self.lineBalance_business.setText(str(compute_user_balance(user['_id'])))
     
 
+    # update_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
+    # self.pushButton_2.clicked.connect(lambda: BusinessWindow(self, user))
+    self.businessWindow_chart_refresh.clicked.connect(lambda: refresh_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2))
+    self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
+    self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
 
 def charge(self):
     #rfid
@@ -49,12 +53,15 @@ def charge(self):
         "description": self.businessWindow_descriptionLine.toPlainText()
     }
     charge_transaction(newTransaction)
-    self.businessWindow_sourceLine.setText("")
+    # self.businessWindow_sourceLine.setText("")
     self.businessWindow_amountLine.setText("")
     self.businessWindow_descriptionLine.setText("")
     self.businessWindow_cart_table.clearContents()
     self.businessWindow_cart_table.setRowCount(0)
+     # Call update_bar_chart after adding a new transaction
     load_user_transaction_by_id(self.businessWindow_transactions_table, self.lineBusiness_business.text())
+        
+
 
     # print(newTransaction)
 def search_inventory(self, text):
@@ -325,7 +332,7 @@ def remove_from_cart(self):
 def add_item_shortcut(self, event):
     for row in range(self.businessWindow_inventory_table.rowCount()):
         if row <= 12:
-            item_price = float(self.businessWindow_inventory_table.item(row, 0).text())
+            item_price = self.businessWindow_inventory_table.item(row, 0).text()
             item_name = self.businessWindow_inventory_table.item(row, 1).text()
             
             if event.key() == Qt.Key_F1:

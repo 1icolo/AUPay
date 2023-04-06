@@ -221,6 +221,9 @@ def AdminWindow(self):
     self.adminWindow_user_search.textChanged.connect(lambda text: search_users(text, self.adminWindow_users_table))
     self.adminWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.adminWindow_transactions_table))
     load_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
+    self.adminWindow_chart_refresh.clicked.connect(lambda: refresh_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3))
+    self.dateFrom_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
+    self.dateTo_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
 
 
 

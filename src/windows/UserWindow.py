@@ -7,6 +7,7 @@ from fnHelper.load_tables import *
 from fnHelper.textSearch import *
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
+from datetime import *
 
 
 def UserWindow(self, user):
@@ -15,8 +16,17 @@ def UserWindow(self, user):
     self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.userWindow_transactions_table))
     load_user_transaction_by_id(self.userWindow_transactions_table, user['_id'])
     load_bar_chart(self.userWindow_transactions_table, self.graphicsView)
+    # self.dateFrom_user.textChanged.connect(lambda text, selected_date: search_date_transactions(self, text, selected_date, self.userWindow_transactions_table))
+    self.dateFrom_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
+    self.dateTo_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
+
+
 
 def load_user_data(self, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
-    # self.userWindow_balanceLine.setText(str(user['balance']))
     self.userWindow_balanceLine.setText(str(compute_user_balance(user['_id'])))
+    # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date
+
+
+
+
