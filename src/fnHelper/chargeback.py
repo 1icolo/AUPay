@@ -18,5 +18,6 @@ def chargeback_transaction(QWidget, transaction):
     print(transaction['amount'])
     if checkBalanceSufficiency(transaction['destination_id'], transaction['amount']):
         # add transaction
+        QMessageBox.information(QWidget, "Success", "Chargeback successful.")
         return add_transaction(newTransaction)
     return QMessageBox.critical(QWidget, "Error", "Insufficient Balance.")

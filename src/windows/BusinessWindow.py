@@ -123,7 +123,7 @@ class ChargebackDialog(QDialog):
             self.table_updated.emit()
             self.close()
         else:
-            QMessageBox.critical(self, "Error", "Business and User verification required")
+            QMessageBox.warning(self, "Error", "Business and User verification required")
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):
