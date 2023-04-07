@@ -13,6 +13,8 @@ from fnHelper.aupCard import AUPCard
 from fnHelper import hashEncryption
 from datetime import *
 from fnHelper.textSearch import *
+from fnHelper.export_to_csv import *
+
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -224,6 +226,8 @@ def AdminWindow(self):
     load_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.dateFrom_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
     self.dateTo_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
+
+    self.export_administrator.clicked.connect(lambda: export_chart_to_csv(self.adminWindow_transactions_table, "admin.csv"))
 
 
 

@@ -536,7 +536,7 @@
             <widget class="QGraphicsView" name="graphicsView"/>
            </item>
            <item row="1" column="4">
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="export_user">
              <property name="text">
               <string>Export</string>
              </property>
@@ -1216,7 +1216,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="export_business">
                    <property name="text">
                     <string>Export</string>
                    </property>
@@ -2092,7 +2092,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="buttonAddTransaction_administrator_2">
+                  <widget class="QPushButton" name="export_administrator">
                    <property name="text">
                     <string>Export</string>
                    </property>

@@ -8,6 +8,7 @@ from fnHelper.textSearch import *
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
 from datetime import *
+from fnHelper.export_to_csv import *
 
 
 def UserWindow(self, user):
@@ -20,13 +21,9 @@ def UserWindow(self, user):
     self.dateFrom_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
     self.dateTo_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
 
-
+    self.export_user.clicked.connect(lambda: export_chart_to_csv(self.userWindow_transactions_table, f"{user['_id']}.csv"))
 
 def load_user_data(self, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
     self.userWindow_balanceLine.setText(str(compute_user_balance(user['_id'])))
     # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date
-
-
-
-
