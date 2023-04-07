@@ -177,19 +177,20 @@ class DeleteUserDialog(QDialog):
         self.close()
 class AddTransactionDialog(QDialog):
     table_updated = pyqtSignal()
-    def __init__(self, parent=None):
+    def __init__(self, user, parent=None):
         super(AddTransactionDialog, self).__init__(parent)
         self.ui = AddTransaction_Dialog()
         self.ui.setupUi(self)
-        self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.addTransaction())
+        self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.addTransaction(user))
         self.ui.buttonCancel_addTransaction.clicked.connect(lambda: self.close())
         self.ui.adminWindow_addTransactionTimestamp.setEnabled(False)
+        self.ui.adminWindow_addTransactionSourceId.setText(str(user['_id']))
 
-    def addTransaction(self):
+    def addTransaction(self, user):
         newTransaction =  {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
-            "source_id": ObjectId('641d186605e44f1dfd91f8e4'),
-            "destination_id": ObjectId('64215a454b7061dacce3ae90'),
+            "source_id": ObjectId(self.ui.adminWindow_addTransactionSourceId.text()),
+            "destination_id": ObjectId(self.ui.adminWindow_addDestinationId.text()),
             "amount": float(self.ui.adminWindow_addTransactionAmount.text()),
             "description": self.ui.adminWindow_addTransactionDescription.text()
         }
@@ -197,13 +198,13 @@ class AddTransactionDialog(QDialog):
         self.table_updated.emit()
         self.close()
 
-def open_add_transaction_dialog(self):
+def open_add_transaction_dialog(self, user):
     # Check if there is a selected row
     selected_items = self.adminWindow_transactions_table.selectedItems()
     if selected_items:
         # Clear the selection
         self.adminWindow_transactions_table.clearSelection()
-    self.add_transaction_dialog = AddTransactionDialog()
+    self.add_transaction_dialog = AddTransactionDialog(user)
     self.add_transaction_dialog.ui.buttonSave_addTransaction.clicked.connect(lambda: reload_inventory_table(self))
     self.add_transaction_dialog.exec_()
     
@@ -214,12 +215,12 @@ def reload_inventory_table(self):
     self.adminWindow_transaction_search.setText("")
 
 
-def AdminWindow(self):
+def AdminWindow(self, user):
     print(__name__)
     self.buttonAddUser_administrator.clicked.connect(lambda: open_add_user_dialog(self))
     self.buttonEditUser_administrator.clicked.connect(lambda: editUser(self))
     self.buttonDeleteUser_administrator.clicked.connect(lambda: deleteUser(self))
-    self.buttonAddTransaction_administrator.clicked.connect(lambda: open_add_transaction_dialog(self))
+    self.buttonAddTransaction_administrator.clicked.connect(lambda: open_add_transaction_dialog(self, user))
     load_users_to_table(self, self.adminWindow_users_table)
     load_transactions_to_table(self, self.adminWindow_transactions_table)
     self.adminWindow_user_search.textChanged.connect(lambda text: search_users(text, self.adminWindow_users_table))

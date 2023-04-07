@@ -35,7 +35,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
                 case 'admin':
                     self.stackedWidget.setCurrentIndex(4)
                     from windows.AdminWindow import AdminWindow
-                    AdminWindow(self)
+                    AdminWindow(self, user)
                 case 'user':
                     self.stackedWidget.setCurrentIndex(1)
                     from windows.UserWindow import UserWindow
