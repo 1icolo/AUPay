@@ -16,6 +16,8 @@ from dbHelper.find_user import find_user_by_id
 from fnHelper.hashEncryption import encrypt
 from fnHelper.chargeback import chargeback_transaction
 from dbHelper.compute_user_balance import compute_user_balance
+from fnHelper.export_to_csv import *
+
 
 def BusinessWindow(self, user):
     print(__name__)
@@ -34,12 +36,12 @@ def BusinessWindow(self, user):
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
     load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
     self.lineBalance_business.setText(str(compute_user_balance(user['_id'])))
-    
 
-    # update_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
-    # self.pushButton_2.clicked.connect(lambda: BusinessWindow(self, user))
     self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
     self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
+
+    self.export_business.clicked.connect(lambda: export_chart_to_csv(self.businessWindow_transactions_table, f"{user['_id']}.csv"))
+
 
 def charge(self, user):
     if not self.businessWindow_amountLine.text() == "":
