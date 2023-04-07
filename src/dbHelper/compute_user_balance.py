@@ -24,7 +24,7 @@ def compute_user_balance(user_id):
                                 '$eq': [
                                     '$source_id', '$destination_id'
                                 ]
-                            }, 0, {
+                            }, float(0.00), {
                                 '$cond': [
                                     {
                                         '$eq': [
