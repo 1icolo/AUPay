@@ -1585,7 +1585,7 @@
            <number>20</number>
           </property>
           <property name="topMargin">
-           <number>20</number>
+           <number>0</number>
           </property>
           <property name="rightMargin">
            <number>20</number>
@@ -1594,6 +1594,31 @@
            <number>20</number>
           </property>
           <item>
+           <widget class="QGroupBox" name="groupBox_8">
+            <property name="title">
+             <string>Teller Information</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_17">
+             <item row="0" column="0">
+              <widget class="QLineEdit" name="lineTeller_teller">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Teller Name</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <layout class="QVBoxLayout" name="verticalLayout_9">
             <property name="spacing">
              <number>6</number>
@@ -1601,46 +1626,6 @@
             <property name="topMargin">
              <number>0</number>
             </property>
-            <item>
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>Name</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineTeller_teller">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="placeholderText">
-               <string>Destination</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_6">
-              <property name="text">
-               <string>School ID</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="tellerWindow_schoolIdLine">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="placeholderText">
-               <string>School ID</string>
-              </property>
-             </widget>
-            </item>
             <item>
              <widget class="QLabel" name="label_7">
               <property name="text">
@@ -1675,6 +1660,13 @@
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="placeholderText">
                <string>Description</string>
@@ -2238,12 +2230,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>181</x>
-     <y>137</y>
+     <x>101</x>
+     <y>89</y>
     </hint>
     <hint type="destinationlabel">
-     <x>100</x>
-     <y>136</y>
+     <x>101</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -2292,38 +2284,6 @@
     <hint type="destinationlabel">
      <x>155</x>
      <y>252</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_teller</sender>
-   <signal>clicked()</signal>
-   <receiver>tellerWindow_schoolIdLine</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>99</x>
-     <y>540</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>145</x>
-     <y>176</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_teller</sender>
-   <signal>clicked()</signal>
-   <receiver>lineTeller_teller</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>82</x>
-     <y>532</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>94</y>
     </hint>
    </hints>
   </connection>

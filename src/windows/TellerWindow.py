@@ -30,10 +30,12 @@ def TellerWindow(self, user):
     load_user_transaction_by_id(self.tellerWindow_transactions_table, user['_id'])
     self.tellerWindow_transactions_table.itemSelectionChanged.connect(lambda: selected_row_to_textbox(self))
     self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.tellerWindow_transactions_table))
-    self.buttonTransact_teller.clicked.connect(lambda: transact(self, user))
+    self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
     self.lineBalance_teller.setText(compute_user_balance(user['_id']))
 
         
-
+def transactAttempt(self, user):
+    if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
+        transact(self,user)
 
 
