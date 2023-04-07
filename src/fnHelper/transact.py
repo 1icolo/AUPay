@@ -22,16 +22,20 @@ def transact(Widget, teller):
         "amount": float(Widget.tellerWindow_amountLine.text()),
         "description": Widget.tellerWindow_descriptionLine.toPlainText()
     }
-
+    
+    checkBalance = None
     match Widget.comboTransaction_teller.currentText():
+        
         case "Deposit":
             newTransaction['source_id'] = ObjectId(teller['_id'])
             newTransaction['destination_id'] = ObjectId(user['_id'])
+            checkBalance = teller['_id']
         case "Withdraw":
             newTransaction['source_id'] = ObjectId(user['_id'])
             newTransaction['destination_id'] = ObjectId(teller['_id'])
+            checkBalance = user['_id']
 
-    if checkBalanceSufficiency(user['_id'], newTransaction['amount']):
+    if checkBalanceSufficiency(checkBalance, newTransaction['amount']):
         add_transaction(newTransaction)
         load_user_transaction_by_id(
             Widget.tellerWindow_transactions_table, teller['_id']
