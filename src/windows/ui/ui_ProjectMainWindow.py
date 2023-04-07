@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.resize(1149, 810)
         ProjectMainWindow.setMinimumSize(QtCore.QSize(205, 176))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\src\\windows\\ui\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProjectMainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ProjectMainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -687,35 +687,27 @@ class Ui_ProjectMainWindow(object):
         self.gridLayout_9.addWidget(self.groupBox, 0, 1, 1, 1)
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
-        self.verticalLayout_5.setContentsMargins(20, 20, 20, 20)
+        self.verticalLayout_5.setContentsMargins(20, 0, 20, 20)
         self.verticalLayout_5.setSpacing(20)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_9.setContentsMargins(-1, 0, -1, -1)
-        self.verticalLayout_9.setSpacing(6)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.label_5 = QtWidgets.QLabel(self.pageTeller)
-        self.label_5.setObjectName("label_5")
-        self.verticalLayout_9.addWidget(self.label_5)
-        self.lineTeller_teller = QtWidgets.QLineEdit(self.pageTeller)
+        self.groupBox_8 = QtWidgets.QGroupBox(self.pageTeller)
+        self.groupBox_8.setObjectName("groupBox_8")
+        self.gridLayout_17 = QtWidgets.QGridLayout(self.groupBox_8)
+        self.gridLayout_17.setObjectName("gridLayout_17")
+        self.lineTeller_teller = QtWidgets.QLineEdit(self.groupBox_8)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineTeller_teller.sizePolicy().hasHeightForWidth())
         self.lineTeller_teller.setSizePolicy(sizePolicy)
+        self.lineTeller_teller.setReadOnly(True)
         self.lineTeller_teller.setObjectName("lineTeller_teller")
-        self.verticalLayout_9.addWidget(self.lineTeller_teller)
-        self.label_6 = QtWidgets.QLabel(self.pageTeller)
-        self.label_6.setObjectName("label_6")
-        self.verticalLayout_9.addWidget(self.label_6)
-        self.tellerWindow_schoolIdLine = QtWidgets.QLineEdit(self.pageTeller)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.tellerWindow_schoolIdLine.sizePolicy().hasHeightForWidth())
-        self.tellerWindow_schoolIdLine.setSizePolicy(sizePolicy)
-        self.tellerWindow_schoolIdLine.setObjectName("tellerWindow_schoolIdLine")
-        self.verticalLayout_9.addWidget(self.tellerWindow_schoolIdLine)
+        self.gridLayout_17.addWidget(self.lineTeller_teller, 0, 0, 1, 1)
+        self.verticalLayout_5.addWidget(self.groupBox_8)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_9.setContentsMargins(-1, 0, -1, -1)
+        self.verticalLayout_9.setSpacing(6)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.label_7 = QtWidgets.QLabel(self.pageTeller)
         self.label_7.setObjectName("label_7")
         self.verticalLayout_9.addWidget(self.label_7)
@@ -955,7 +947,7 @@ class Ui_ProjectMainWindow(object):
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_transaction_search.clear) # type: ignore
         self.buttonClearFields_business.clicked.connect(self.businessWindow_descriptionLine.clear) # type: ignore
         self.buttonClearFields_business.clicked.connect(self.businessWindow_amountLine.clear) # type: ignore
@@ -965,8 +957,6 @@ class Ui_ProjectMainWindow(object):
         self.buttonClearTransactions_user.clicked.connect(self.userWindow_transaction_search.clear) # type: ignore
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_descriptionLine.clear) # type: ignore
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_amountLine.clear) # type: ignore
-        self.buttonClearFields_teller.clicked.connect(self.tellerWindow_schoolIdLine.clear) # type: ignore
-        self.buttonClearFields_teller.clicked.connect(self.lineTeller_teller.clear) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(ProjectMainWindow)
 
     def retranslateUi(self, ProjectMainWindow):
@@ -1098,13 +1088,16 @@ class Ui_ProjectMainWindow(object):
         self.tellerWindow_transactions_table.setSortingEnabled(__sortingEnabled)
         self.lineBalance_teller.setText(_translate("ProjectMainWindow", "0"))
         self.label_20.setText(_translate("ProjectMainWindow", "Balance:"))
-        self.label_5.setText(_translate("ProjectMainWindow", "Name"))
-        self.lineTeller_teller.setPlaceholderText(_translate("ProjectMainWindow", "Destination"))
-        self.label_6.setText(_translate("ProjectMainWindow", "School ID"))
-        self.tellerWindow_schoolIdLine.setPlaceholderText(_translate("ProjectMainWindow", "School ID"))
+        self.groupBox_8.setTitle(_translate("ProjectMainWindow", "Teller Information"))
+        self.lineTeller_teller.setPlaceholderText(_translate("ProjectMainWindow", "Teller Name"))
         self.label_7.setText(_translate("ProjectMainWindow", "Amount"))
         self.tellerWindow_amountLine.setPlaceholderText(_translate("ProjectMainWindow", "Amount"))
         self.label_8.setText(_translate("ProjectMainWindow", "Description"))
+        self.tellerWindow_descriptionLine.setHtml(_translate("ProjectMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:16pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.tellerWindow_descriptionLine.setPlaceholderText(_translate("ProjectMainWindow", "Description"))
         self.buttonClearFields_teller.setText(_translate("ProjectMainWindow", "Clear"))
         self.comboTransaction_teller.setItemText(0, _translate("ProjectMainWindow", "Deposit"))
