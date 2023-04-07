@@ -7,7 +7,7 @@ def calculate_total_circulating_supply():
 
     for user in Database().collection['users'].find():
         user_id = user['_id']
-        pipeline = [
+        result = Database().collection['transactions'].aggregate([
             {
                 '$match': {
                     '$or': [
@@ -28,7 +28,7 @@ def calculate_total_circulating_supply():
                                     '$eq': [
                                         '$source_id', '$destination_id'
                                     ]
-                                }, 0, {
+                                }, float(0.00), {
                                     '$cond': [
                                         {
                                             '$eq': [
@@ -47,9 +47,7 @@ def calculate_total_circulating_supply():
                     }
                 }
             }
-        ]
-        result = Database().collection['transactions'].aggregate(pipeline)
+        ])
         for doc in result:
-            total_circulation_supply += doc['balance']
-
-    print(f'Total: {total_circulation_supply}')
+            total_circulation_supply += doc['balance']*-1
+            return total_circulation_supply

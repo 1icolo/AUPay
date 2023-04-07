@@ -14,6 +14,7 @@ from fnHelper import hashEncryption
 from datetime import *
 from fnHelper.textSearch import *
 from fnHelper.export_to_csv import *
+from dbHelper.calculate_total_circulating_supply import calculate_total_circulating_supply
 
 
 def editUser(self):
@@ -187,8 +188,8 @@ class AddTransactionDialog(QDialog):
     def addTransaction(self):
         newTransaction =  {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
-            "source_id": ObjectId(self.ui.adminWindow_addTransactionSourceId.text()),
-            "destination_id": ObjectId(self.ui.adminWindow_addDestinationId.text()),
+            "source_id": ObjectId('641d186605e44f1dfd91f8e4'),
+            "destination_id": ObjectId('64215a454b7061dacce3ae90'),
             "amount": float(self.ui.adminWindow_addTransactionAmount.text()),
             "description": self.ui.adminWindow_addTransactionDescription.text()
         }
@@ -226,7 +227,7 @@ def AdminWindow(self):
     load_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.dateFrom_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
     self.dateTo_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
-
+    self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
     self.export_administrator.clicked.connect(lambda: export_chart_to_csv(self.adminWindow_transactions_table, "admin.csv"))
 
 
