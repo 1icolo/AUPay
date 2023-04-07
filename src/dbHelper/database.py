@@ -27,19 +27,20 @@ class Database:
     def __create_database(self):
         documents = {
             'user': {
+                '_id': ObjectId('641d186605e44f1dfd91f8e4'),
                 'card_id': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
                 'school_id': "",
                 'password': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-                'otp_key': "D9SADSDJER3D",
+                'otp_key': "AUP52023BSIT",
                 'user_type': 'admin',
-                'balance': 0.00,
+                'balance': float(0.00),
             },
             'transaction': {
                 '_id': ObjectId("64283b50a7a5063923cf424b"),
                 'timestamp': Timestamp(1651363200, 0),
-                'source_id': ObjectId("64283b50a7a5063923cf424b"),
-                'destination_id': ObjectId("64283b50a7a5063923cf424b"),
-                'amount': 100.00,
+                'source_id': ObjectId("641d186605e44f1dfd91f8e4"),
+                'destination_id': ObjectId("641d186605e44f1dfd91f8e4"),
+                'amount': float(0.00),
                 'description': "Initial transaction",
             }
         }
