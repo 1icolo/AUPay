@@ -26,7 +26,7 @@ def TellerWindow(self, user):
     # load_user_transaction_data(self)
     self.lineTeller_teller.setText(str(user['school_id']))
     # testing school id only
-    load_transactions_to_table(self, self.tellerWindow_transactions_table)
+    # load_transactions_to_table(self, self.tellerWindow_transactions_table)
     load_user_transaction_by_id(self.tellerWindow_transactions_table, user['_id'])
     self.tellerWindow_transactions_table.itemSelectionChanged.connect(lambda: selected_row_to_textbox(self))
     self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.tellerWindow_transactions_table))
