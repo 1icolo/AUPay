@@ -17,6 +17,7 @@ class Database:
             'users': self.database['users'],
             'transactions': self.database['transactions']
         }
+        
         try:
             if not self.client.list_database_names().__contains__('aupaydb'):
                 self.__create_database()
@@ -25,23 +26,25 @@ class Database:
 
     # Initial collection documents
     def __create_database(self):
+        coinbase = ObjectId('ffffffffffffffffffffffff')
+        admin = ObjectId('000000000000000000000000')
+        
         documents = {
             'user': {
-                '_id': ObjectId('641d186605e44f1dfd91f8e4'),
+                '_id': admin,
                 'card_id': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-                'school_id': "",
+                'school_id': "AUP52023BSIT",
                 'password': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-                'otp_key': "AUP52023BSIT",
+                'otp_key': "d1d3b9e6f7a4a8c8d3f5e2c3b2a1d0c7f6e5d4c3b2a190807060504030201000",
                 'user_type': 'admin',
                 'balance': float(0.00),
             },
             'transaction': {
-                '_id': ObjectId("64283b50a7a5063923cf424b"),
                 'timestamp': Timestamp(1651363200, 0),
-                'source_id': ObjectId("641d186605e44f1dfd91f8e4"),
-                'destination_id': ObjectId("641d186605e44f1dfd91f8e4"),
+                'source_id': coinbase,
+                'destination_id': admin,
                 'amount': float(0.00),
-                'description': "Initial transaction",
+                'description': "Coinbase transaction",
             }
         }
         self.collection['users'].insert_one(documents['user'])
