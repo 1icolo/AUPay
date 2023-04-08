@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1149</width>
+    <width>1218</width>
     <height>810</height>
    </rect>
   </property>
@@ -125,6 +125,9 @@
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
            <number>10</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMaximumSize</enum>
           </property>
           <property name="leftMargin">
            <number>50</number>
@@ -561,24 +564,44 @@
            <string>Analytics</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_13">
-           <item row="4" column="0" colspan="5">
+           <item row="1" column="4">
+            <widget class="QLabel" name="userWindow_balanceLine">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="7">
             <widget class="QGraphicsView" name="graphicsView"/>
            </item>
-           <item row="1" column="4">
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelSchoolId_user">
+             <property name="text">
+              <string>School ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
             <widget class="QPushButton" name="export_user">
              <property name="text">
               <string>Export</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="labelSchoolId_user">
-             <property name="text">
-              <string>School ID</string>
+           <item row="1" column="5">
+            <spacer name="horizontalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
-            </widget>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
-           <item row="1" column="2">
+           <item row="1" column="3">
             <widget class="QLabel" name="labelBalance_user">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -587,68 +610,29 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Balance</string>
+              <string>Balance:</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QLineEdit" name="userWindow_schoolIdLine">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI</family>
-               <pointsize>16</pointsize>
-              </font>
-             </property>
-             <property name="cursor">
-              <cursorShape>ArrowCursor</cursorShape>
-             </property>
-             <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
-             </property>
-             <property name="contextMenuPolicy">
-              <enum>Qt::DefaultContextMenu</enum>
-             </property>
+            <widget class="QLabel" name="userWindow_schoolIdLine">
              <property name="text">
-              <string/>
-             </property>
-             <property name="maxLength">
-              <number>30</number>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
-              <string>User ID</string>
-             </property>
-             <property name="clearButtonEnabled">
-              <bool>false</bool>
+              <string>2000000</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="3">
-            <widget class="QLineEdit" name="userWindow_balanceLine">
-             <property name="enabled">
-              <bool>true</bool>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_13">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
-             <property name="inputMask">
-              <string/>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
              </property>
-             <property name="text">
-              <string>0</string>
-             </property>
-             <property name="maxLength">
-              <number>30</number>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-             <property name="placeholderText">
-              <string>Balance</string>
-             </property>
-            </widget>
+            </spacer>
            </item>
           </layout>
          </widget>
@@ -731,37 +715,31 @@
                    <string>Business Information</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_15">
-                   <item row="0" column="0">
-                    <widget class="QLineEdit" name="lineBusiness_business">
-                     <property name="enabled">
-                      <bool>true</bool>
-                     </property>
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>Segoe UI</family>
-                       <pointsize>16</pointsize>
-                      </font>
-                     </property>
-                     <property name="inputMask">
-                      <string/>
-                     </property>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="lineBusiness_business">
                      <property name="text">
                       <string>Business Name</string>
                      </property>
-                     <property name="maxLength">
-                      <number>30</number>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_2">
+                     <property name="text">
+                      <string>Name:</string>
                      </property>
-                     <property name="readOnly">
-                      <bool>true</bool>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_29">
+                     <property name="text">
+                      <string>Balance:</string>
                      </property>
-                     <property name="placeholderText">
-                      <string>Destination</string>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="lineBalance_business">
+                     <property name="text">
+                      <string>0</string>
                      </property>
                     </widget>
                    </item>
@@ -1214,44 +1192,11 @@
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_7">
-                 <item>
-                  <widget class="QLabel" name="label_19">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>Balance:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineBalance_business">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="readOnly">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="export_business">
-                   <property name="text">
-                    <string>Export</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+                <widget class="QPushButton" name="export_business">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QGraphicsView" name="graphicsView_2"/>
@@ -1451,13 +1396,6 @@
            <string>Transactions</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_11">
-           <item row="0" column="0">
-            <widget class="QLineEdit" name="tellerWindow_transaction_search">
-             <property name="placeholderText">
-              <string>Search</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="0" colspan="3">
             <widget class="QTableWidget" name="tellerWindow_transactions_table">
              <property name="maximumSize">
@@ -1576,26 +1514,10 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="2">
-            <widget class="QLineEdit" name="lineBalance_teller">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>0</string>
-             </property>
-             <property name="readOnly">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="label_20">
-             <property name="text">
-              <string>Balance:</string>
+           <item row="0" column="0" colspan="3">
+            <widget class="QLineEdit" name="tellerWindow_transaction_search">
+             <property name="placeholderText">
+              <string>Search</string>
              </property>
             </widget>
            </item>
@@ -1628,19 +1550,31 @@
              <string>Teller Information</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_17">
-             <item row="0" column="0">
-              <widget class="QLineEdit" name="lineTeller_teller">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-               <property name="placeholderText">
+             <item row="1" column="1">
+              <widget class="QLabel" name="lineTeller_teller">
+               <property name="text">
                 <string>Teller Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="labelname">
+               <property name="text">
+                <string>Name:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_20">
+               <property name="text">
+                <string>Balance:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="lineBalance_teller">
+               <property name="text">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1800,10 +1734,37 @@ p, li { white-space: pre-wrap; }
                <string>Users</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_18">
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="adminWindow_user_search">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Search</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="1">
                 <widget class="QPushButton" name="buttonAddUser_administrator">
                  <property name="text">
                   <string>Add User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="buttonEditUser_administrator">
+                 <property name="text">
+                  <string>Edit User</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="buttonDeleteUser_administrator">
+                 <property name="text">
+                  <string>Delete User</string>
                  </property>
                 </widget>
                </item>
@@ -1822,6 +1783,9 @@ p, li { white-space: pre-wrap; }
                  </property>
                  <property name="editTriggers">
                   <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>false</bool>
                  </property>
                  <property name="selectionMode">
                   <enum>QAbstractItemView::SingleSelection</enum>
@@ -1869,20 +1833,7 @@ p, li { white-space: pre-wrap; }
                  </column>
                 </widget>
                </item>
-               <item row="0" column="0">
-                <widget class="QLineEdit" name="adminWindow_user_search">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Search</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
+               <item row="0" column="5">
                 <spacer name="horizontalSpacer_6">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
@@ -1895,49 +1846,10 @@ p, li { white-space: pre-wrap; }
                  </property>
                 </spacer>
                </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="buttonEditUser_administrator">
+               <item row="0" column="4">
+                <widget class="QPushButton" name="buttonDeleteUser_administrator_3">
                  <property name="text">
-                  <string>Edit User</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="5">
-                <widget class="QLabel" name="label_15">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Total Users:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="buttonDeleteUser_administrator">
-                 <property name="text">
-                  <string>Delete User</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="6">
-                <widget class="QLineEdit" name="lineTotalUsers_administrator">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Search</string>
+                  <string>Refresh Balance</string>
                  </property>
                 </widget>
                </item>
@@ -2080,51 +1992,28 @@ p, li { white-space: pre-wrap; }
               <property name="title">
                <string>Analytics</string>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_9">
-                 <item>
-                  <widget class="QLabel" name="label_17">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>Total Circulating:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineTotalCirculating_administrator">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="readOnly">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="export_administrator">
-                   <property name="text">
-                    <string>Export</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+              <layout class="QGridLayout" name="gridLayout_36">
+               <item row="0" column="3">
+                <widget class="QPushButton" name="export_administrator">
+                 <property name="text">
+                  <string>Export</string>
+                 </property>
+                </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_8"/>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Total Circulating:</string>
+                 </property>
+                </widget>
                </item>
-               <item>
+               <item row="2" column="0" colspan="4">
                 <widget class="QGraphicsView" name="graphicsView_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
@@ -2133,6 +2022,35 @@ p, li { white-space: pre-wrap; }
                   </sizepolicy>
                  </property>
                 </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineTotalCirculating_administrator">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <spacer name="horizontalSpacer_11">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -2152,7 +2070,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1149</width>
+     <width>1218</width>
      <height>21</height>
     </rect>
    </property>
@@ -2179,8 +2097,8 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>546</y>
+     <x>260</x>
+     <y>493</y>
     </hint>
     <hint type="destinationlabel">
      <x>425</x>
@@ -2223,22 +2141,6 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>buttonClearFields_business</sender>
    <signal>clicked()</signal>
-   <receiver>lineBusiness_business</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>145</x>
-     <y>513</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>113</x>
-     <y>131</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonClearFields_business</sender>
-   <signal>clicked()</signal>
    <receiver>businessWindow_inventory_search</receiver>
    <slot>clear()</slot>
    <hints>
@@ -2259,12 +2161,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>101</x>
-     <y>89</y>
+     <x>17</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>89</y>
+     <x>11</x>
+     <y>99</y>
     </hint>
    </hints>
   </connection>
@@ -2291,12 +2193,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>176</x>
-     <y>544</y>
+     <x>196</x>
+     <y>493</y>
     </hint>
     <hint type="destinationlabel">
-     <x>181</x>
-     <y>466</y>
+     <x>202</x>
+     <y>434</y>
     </hint>
    </hints>
   </connection>
@@ -2307,12 +2209,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>150</x>
-     <y>541</y>
+     <x>170</x>
+     <y>493</y>
     </hint>
     <hint type="destinationlabel">
-     <x>155</x>
-     <y>252</y>
+     <x>176</x>
+     <y>200</y>
     </hint>
    </hints>
   </connection>
