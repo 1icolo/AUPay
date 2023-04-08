@@ -10,14 +10,14 @@ from PyQt5.QtWidgets import QMessageBox
 
 def charge_transaction(Widget, business):
 
-    def refresh(self):
+    def refresh():
         Widget.businessWindow_amountLine.setText("")
         Widget.businessWindow_descriptionLine.setText("")
         Widget.businessWindow_cart_table.clearContents()
         Widget.businessWindow_cart_table.setRowCount(0)
         # Call update_bar_chart after adding a new transaction
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
-        refresh_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
+        refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
