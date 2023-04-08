@@ -33,20 +33,40 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
                 return
             match user['user_type']:
                 case 'admin':
-                    self.stackedWidget.setCurrentIndex(4)
-                    from windows.AdminWindow import AdminWindow
-                    AdminWindow(self, user)
+                    if self.checkBoxLoginAsClient_login.isChecked():
+                        self.stackedWidget.setCurrentIndex(1)
+                        from windows.UserWindow import UserWindow
+                        UserWindow(self, user)
+                    else:
+                        self.stackedWidget.setCurrentIndex(4)
+                        from windows.AdminWindow import AdminWindow
+                        AdminWindow(self, user)
                 case 'user':
-                    self.stackedWidget.setCurrentIndex(1)
-                    from windows.UserWindow import UserWindow
-                    UserWindow(self, user)
+                    if self.checkBoxLoginAsClient_login.isChecked():
+                        self.stackedWidget.setCurrentIndex(1)
+                        from windows.UserWindow import UserWindow
+                        UserWindow(self, user)
+                    else:
+                        self.stackedWidget.setCurrentIndex(1)
+                        from windows.UserWindow import UserWindow
+                        UserWindow(self, user)
                 case 'business':
-                    self.stackedWidget.setCurrentIndex(2)
-                    from windows.BusinessWindow import BusinessWindow
-                    BusinessWindow(self, user)
+                    if self.checkBoxLoginAsClient_login.isChecked():
+                        self.stackedWidget.setCurrentIndex(1)
+                        from windows.UserWindow import UserWindow
+                        UserWindow(self, user)
+                    else:
+                        self.stackedWidget.setCurrentIndex(2)
+                        from windows.BusinessWindow import BusinessWindow
+                        BusinessWindow(self, user)
                 case 'teller':
-                    self.stackedWidget.setCurrentIndex(3)
-                    from windows.TellerWindow import TellerWindow
-                    TellerWindow(self, user)
+                    if self.checkBoxLoginAsClient_login.isChecked():
+                        self.stackedWidget.setCurrentIndex(1)
+                        from windows.UserWindow import UserWindow
+                        UserWindow(self, user)
+                    else:
+                        self.stackedWidget.setCurrentIndex(3)
+                        from windows.TellerWindow import TellerWindow
+                        TellerWindow(self, user)
         except Exception:
             print('No RFID detected.')
