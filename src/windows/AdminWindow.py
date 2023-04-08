@@ -183,8 +183,8 @@ class AddTransactionDialog(QDialog):
         self.ui.setupUi(self)
         self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.addTransaction(user))
         self.ui.buttonCancel_addTransaction.clicked.connect(lambda: self.close())
-        self.ui.adminWindow_addTransactionTimestamp.setEnabled(False)
-        self.ui.adminWindow_addTransactionSourceId.setText(str(user['_id']))
+        self.ui.adminWindow_addTransactionSourceId.setText('ffffffffffffffffffffffff') # coinbase id
+        self.ui.buttonEditSourceID.clicked.connect(lambda: self.ui.adminWindow_addTransactionSourceId.setReadOnly(False))
 
     def addTransaction(self, user):
         newTransaction =  {
