@@ -16,7 +16,6 @@ def selected_row_to_textbox(self):
     description = self.tellerWindow_transactions_table.item(selected_row, 5)
     if school_id and amount and description is not None:
         # put the data in the line edit/textbox
-        self.tellerWindow_schoolIdLine.setText(school_id.text())
         self.tellerWindow_amountLine.setText(amount.text())
         self.tellerWindow_descriptionLine.setText(description.text())
 
