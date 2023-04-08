@@ -19,30 +19,6 @@ from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.export_to_csv import *
 
 
-def BusinessWindow(self, user):
-    print(__name__)
-    self.lineBusiness_business.setText(str(user['school_id']))
-    #sample source id
-    self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
-    self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
-    self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
-    self.buttonCharge.clicked.connect(lambda: charge(self, user))
-    # load_transactions_to_table(self, self.businessWindow_transactions_table)
-    load_inventory_to_table(self.businessWindow_inventory_table)
-    load_user_transaction_by_id(self.businessWindow_transactions_table, user['_id'])
-    self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
-    self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
-    self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
-    self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
-    load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
-    self.lineBalance_business.setText(str(compute_user_balance(user['_id'])))
-
-    self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
-    self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
-
-    self.export_business.clicked.connect(lambda: export_chart_to_csv(self.businessWindow_transactions_table, f"{user['_id']}.csv"))
-
-
 def charge(self, user):
     if not self.businessWindow_amountLine.text() == "":
         charge_transaction(self, user)
@@ -356,3 +332,27 @@ def add_item_shortcut(self, event):
                 cart_table.setItem(row_count, 0, QTableWidgetItem(str(item_price)))
             get_cart_data(self)
 
+
+def BusinessWindow(self, user):
+    print(__name__)
+    self.lineBalance_business.setText(str(compute_user_balance(user['_id'])))
+    self.lineBusiness_business.setText(str(user['school_id']))
+    #sample source id
+    self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
+    self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
+    self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
+    self.buttonCharge.clicked.connect(lambda: charge(self, user))
+    # load_transactions_to_table(self, self.businessWindow_transactions_table)
+    load_inventory_to_table(self.businessWindow_inventory_table)
+    load_user_transaction_by_id(self.businessWindow_transactions_table, user['_id'])
+    self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
+    self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.businessWindow_transactions_table))
+    self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
+    self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
+    load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
+    
+
+    self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
+    self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
+
+    self.export_business.clicked.connect(lambda: export_chart_to_csv(self.businessWindow_transactions_table, f"{user['_id']}.csv"))
