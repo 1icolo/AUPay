@@ -19,13 +19,9 @@ class AUPCard:
             # get the UID of the card
             GET_UID = [0xFF, 0xCA, 0x00, 0x00, 0x00]
             self.data, sw1, sw2 = cardservice.connection.transmit(GET_UID)
-
-            # return UID
-            self.get_uid()
             
-        except Exception:
-            pass
-
+        except Exception as e:
+            print(e)
 
     def get_uid(self):
         try:
@@ -33,5 +29,5 @@ class AUPCard:
             uid = toHexString(self.data)
             # print(uid)
             return uid
-        except:
-            pass
+        except Exception as e:
+            print(e)
