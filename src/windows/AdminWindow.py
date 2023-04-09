@@ -103,10 +103,10 @@ def open_add_user_dialog(self):
         # Clear the selection
         self.adminWindow_users_table.clearSelection()
     self.add_user_dialog = AddUserDialog()
-    self.add_user_dialog.ui.buttonSave_addUser.clicked.connect(lambda: reload_inventory_table(self))
+    self.add_user_dialog.ui.buttonSave_addUser.clicked.connect(lambda: reload_users_table(self))
     self.add_user_dialog.exec_()
     
-def reload_inventory_table(self):
+def reload_users_table(self):
     load_users_to_table(self, self.adminWindow_users_table)
     self.adminWindow_users_table.setCurrentItem(None)
     self.adminWindow_user_search.setText("")
@@ -205,10 +205,10 @@ def open_add_transaction_dialog(self, user):
         # Clear the selection
         self.adminWindow_transactions_table.clearSelection()
     self.add_transaction_dialog = AddTransactionDialog(user)
-    self.add_transaction_dialog.ui.buttonSave_addTransaction.clicked.connect(lambda: reload_inventory_table(self))
+    self.add_transaction_dialog.ui.buttonSave_addTransaction.clicked.connect(lambda: reload_transactions_table(self))
     self.add_transaction_dialog.exec_()
     
-def reload_inventory_table(self):
+def reload_transactions_table(self):
     load_transactions_to_table(self, self.adminWindow_transactions_table)
     refresh_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.adminWindow_transactions_table.setCurrentItem(None)
@@ -228,8 +228,10 @@ def AdminWindow(self, user):
     load_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.dateFrom_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
     self.dateTo_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
+    self.export_administrator.clicked.connect(lambda: export_chart_to_csv(self.adminWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
+    self.buttonClearTransactions_administrator.clicked.connect(lambda: clear_date(self.dateFrom_administrator, self.dateTo_administrator))
     self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
-    self.export_administrator.clicked.connect(lambda: export_chart_to_csv(self.adminWindow_transactions_table, "admin.csv"))
+    
 
 
 

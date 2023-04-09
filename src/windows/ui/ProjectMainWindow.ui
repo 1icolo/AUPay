@@ -392,6 +392,13 @@
            </item>
            <item row="0" column="4">
             <widget class="QDateEdit" name="dateFrom_user">
+             <property name="minimumDate">
+              <date>
+               <year>2000</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
              <property name="displayFormat">
               <string>MM/dd/yyyy</string>
              </property>
@@ -406,6 +413,13 @@
            </item>
            <item row="0" column="6">
             <widget class="QDateEdit" name="dateTo_user">
+             <property name="minimumDate">
+              <date>
+               <year>2000</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
              <property name="displayFormat">
               <string>MM/dd/yyyy</string>
              </property>
@@ -1240,6 +1254,13 @@
                </item>
                <item row="0" column="3">
                 <widget class="QDateEdit" name="dateFrom_business">
+                 <property name="minimumDate">
+                  <date>
+                   <year>2000</year>
+                   <month>1</month>
+                   <day>1</day>
+                  </date>
+                 </property>
                  <property name="displayFormat">
                   <string>MM/dd/yyyy</string>
                  </property>
@@ -1254,6 +1275,13 @@
                </item>
                <item row="0" column="5">
                 <widget class="QDateEdit" name="dateTo_business">
+                 <property name="minimumDate">
+                  <date>
+                   <year>2000</year>
+                   <month>1</month>
+                   <day>1</day>
+                  </date>
+                 </property>
                  <property name="displayFormat">
                   <string>MM/dd/yyyy</string>
                  </property>
@@ -1884,34 +1912,6 @@ p, li { white-space: pre-wrap; }
                <string>Transactions</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
-               <item row="0" column="6">
-                <widget class="QPushButton" name="buttonAddTransaction_administrator">
-                 <property name="text">
-                  <string>Add Transaction</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QLabel" name="label_13">
-                 <property name="text">
-                  <string>From</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="5">
-                <widget class="QDateEdit" name="dateTo_administrator">
-                 <property name="displayFormat">
-                  <string>MM/dd/yyyy</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QDateEdit" name="dateFrom_administrator">
-                 <property name="displayFormat">
-                  <string>MM/dd/yyyy</string>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="0" colspan="7">
                 <widget class="QTableWidget" name="adminWindow_transactions_table">
                  <property name="font">
@@ -1963,6 +1963,41 @@ p, li { white-space: pre-wrap; }
                  </column>
                 </widget>
                </item>
+               <item row="0" column="4">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>To</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QDateEdit" name="dateTo_administrator">
+                 <property name="minimumDate">
+                  <date>
+                   <year>2000</year>
+                   <month>1</month>
+                   <day>1</day>
+                  </date>
+                 </property>
+                 <property name="displayFormat">
+                  <string>MM/dd/yyyy</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>From</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="6">
+                <widget class="QPushButton" name="buttonAddTransaction_administrator">
+                 <property name="text">
+                  <string>Add Transaction</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QLineEdit" name="adminWindow_transaction_search">
                  <property name="placeholderText">
@@ -1970,17 +2005,24 @@ p, li { white-space: pre-wrap; }
                  </property>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <widget class="QDateEdit" name="dateFrom_administrator">
+                 <property name="minimumDate">
+                  <date>
+                   <year>2000</year>
+                   <month>1</month>
+                   <day>1</day>
+                  </date>
+                 </property>
+                 <property name="displayFormat">
+                  <string>MM/dd/yyyy</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="1">
                 <widget class="QPushButton" name="buttonClearTransactions_administrator">
                  <property name="text">
                   <string>Clear</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QLabel" name="label_14">
-                 <property name="text">
-                  <string>To</string>
                  </property>
                 </widget>
                </item>
@@ -2097,12 +2139,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>260</x>
-     <y>493</y>
+     <x>29</x>
+     <y>486</y>
     </hint>
     <hint type="destinationlabel">
-     <x>425</x>
-     <y>89</y>
+     <x>337</x>
+     <y>61</y>
     </hint>
    </hints>
   </connection>
@@ -2161,12 +2203,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>17</x>
-     <y>99</y>
+     <x>236</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>11</x>
-     <y>99</y>
+     <x>23</x>
+     <y>136</y>
     </hint>
    </hints>
   </connection>
@@ -2177,7 +2219,7 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>193</x>
+     <x>291</x>
      <y>98</y>
     </hint>
     <hint type="destinationlabel">
@@ -2193,12 +2235,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>196</x>
-     <y>493</y>
+     <x>29</x>
+     <y>486</y>
     </hint>
     <hint type="destinationlabel">
-     <x>202</x>
-     <y>434</y>
+     <x>28</x>
+     <y>273</y>
     </hint>
    </hints>
   </connection>
@@ -2209,12 +2251,28 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>170</x>
-     <y>493</y>
+     <x>29</x>
+     <y>486</y>
     </hint>
     <hint type="destinationlabel">
-     <x>176</x>
-     <y>200</y>
+     <x>28</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearTransactions_administrator</sender>
+   <signal>clicked()</signal>
+   <receiver>adminWindow_transaction_search</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>74</x>
+     <y>128</y>
     </hint>
    </hints>
   </connection>

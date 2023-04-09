@@ -170,11 +170,22 @@ def refresh_bar_chart(tableWidget, graphicsView):
     # Load the new chart and add it to the layout
     load_bar_chart(tableWidget, graphicsView)
 
+# define the default date
+DEFAULT_DATE = datetime.strptime("01/01/2000", "%m/%d/%Y").date()
+
 def search_transactions_by_date(tablewidget, date_from_edit, date_to_edit):
+    # get the selected date range
     date_from = date_from_edit.date().toPyDate()
     date_to = date_to_edit.date().toPyDate()
 
-    date_range = range((date_to - date_from).days + 1)
+    # check if the selected date range is the same as the default date range
+    if date_from == DEFAULT_DATE and date_to == DEFAULT_DATE:
+        # if yes, reset the date range to the default date range
+        date_from = DEFAULT_DATE
+        date_to = DEFAULT_DATE
+    else:
+        # otherwise, continue with the selected date range
+        date_range = range((date_to - date_from).days + 1)
 
     # iterate over each row in the inventory table
     for row in range(tablewidget.rowCount()):
@@ -182,7 +193,13 @@ def search_transactions_by_date(tablewidget, date_from_edit, date_to_edit):
         timestamp = datetime.strptime(timestamp_str, "%m/%d/%Y").date()
 
         # check if the timestamp falls within the date range
-        if timestamp in (date_from + timedelta(n) for n in date_range):
+        if date_from == DEFAULT_DATE and date_to == DEFAULT_DATE:
+            # if the default date range is selected, show all rows
+            tablewidget.setRowHidden(row, False)
+        elif timestamp in (date_from + timedelta(n) for n in date_range):
+            # otherwise, show rows that fall within the selected date range
             tablewidget.setRowHidden(row, False)
         else:
+            # hide rows that do not fall within the selected date range
             tablewidget.setRowHidden(row, True)
+

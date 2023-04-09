@@ -350,9 +350,7 @@ def BusinessWindow(self, user):
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
     load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
-    
-
     self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
     self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
-
-    self.export_business.clicked.connect(lambda: export_chart_to_csv(self.businessWindow_transactions_table, f"{user['_id']}.csv"))
+    self.export_business.clicked.connect(lambda: export_chart_to_csv(self.businessWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
+    self.buttonClearTransactions_business.clicked.connect(lambda: clear_date(self.dateFrom_business, self.dateTo_business))
