@@ -15,6 +15,7 @@ from datetime import *
 from fnHelper.textSearch import *
 from fnHelper.export_to_csv import *
 from dbHelper.calculate_total_circulating_supply import calculate_total_circulating_supply
+from fnHelper.refresh_clear import *
 
 
 def editUser(self):

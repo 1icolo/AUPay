@@ -1,4 +1,3 @@
-from PyQt5.QtCore import *
 import re
 
 def countKeyword(searchBar, paragraph):
@@ -42,8 +41,4 @@ def search_transactions(self, text, tablewidget):
         else:
             tablewidget.setRowHidden(row, True)
 
-def clear_date(dateFrom, dateTo):
-    # set QDateEdit to default position
-    default_date = QDate(2000, 1, 1)
-    dateFrom.setDate(default_date)
-    dateTo.setDate(default_date)
+

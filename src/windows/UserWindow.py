@@ -9,6 +9,8 @@ from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
 from datetime import *
 from fnHelper.export_to_csv import *
+from fnHelper.refresh_clear import *
+
 
 
 def UserWindow(self, user):

@@ -17,6 +17,8 @@ from fnHelper.hashEncryption import encrypt
 from fnHelper.chargeback import chargeback_transaction
 from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.export_to_csv import *
+from fnHelper.refresh_clear import *
+
 
 
 def charge(self, user):
