@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-09T06:33:18.843Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" etag="2TsUvCy-jPFZiRueDBzu" version="21.1.5" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-04-09T12:59:49.530Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" etag="DRj1pZEQ5VXuQOwEqZWs" version="21.1.5" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
-    <mxGraphModel dx="1114" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
+    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -20,11 +20,6 @@
         <object label="Specify the things that need to be refreshed and put them on a single function.&lt;br&gt;Example: user balance, table, clearing of textboxes&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="Xeq5jiCpRNsJAAs52J9S-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
             <mxGeometry x="20" y="130" width="180" height="89" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="In every table ROW color is GREEN if destination_id is user. RED if not.&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="oyqHOn3WB7ZzpWvyffXY-1">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
-            <mxGeometry x="20" y="239" width="180" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="NICO" status="In progress" id="jk4ZuAFncWzifWcSEG9R-6">
@@ -67,9 +62,14 @@
             <mxGeometry x="20" y="130" width="150" height="89" as="geometry" />
           </mxCell>
         </object>
+        <object label="In every table ROW color is GREEN if destination_id is user. RED if not.&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="oyqHOn3WB7ZzpWvyffXY-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="A4bzXRDnEpqqfuXnQtNc-31" vertex="1">
+            <mxGeometry x="20" y="239" width="150" height="89" as="geometry" />
+          </mxCell>
+        </object>
         <object label="DONE" status="Completed" id="sQsjrjN2aDBts0AqB7bt-9">
           <mxCell style="swimlane;strokeWidth=2;fontFamily=Permanent Marker;html=0;startSize=1;verticalAlign=bottom;spacingBottom=5;points=[];childLayout=stackLayout;stackBorder=20;stackSpacing=20;resizeLast=0;resizeParent=1;horizontalStack=0;collapsible=0;sketch=1;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;" parent="sQsjrjN2aDBts0AqB7bt-1" vertex="1">
-            <mxGeometry x="790" y="28" width="230" height="5954" as="geometry" />
+            <mxGeometry x="790" y="28" width="230" height="5952" as="geometry" />
           </mxCell>
         </object>
         <object label="Clear cart in business&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%status%&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;" placeholders="1" id="SzQH15_k728x-Xl6D1VM-59">
