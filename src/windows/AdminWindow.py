@@ -223,7 +223,7 @@ def AdminWindow(self, user):
     self.buttonDeleteUser_administrator.clicked.connect(lambda: deleteUser(self))
     self.buttonAddTransaction_administrator.clicked.connect(lambda: open_add_transaction_dialog(self, user))
     load_users_to_table(self, self.adminWindow_users_table)
-    load_transactions_to_table(self, self.adminWindow_transactions_table)
+    load_transactions_to_table(self, self.adminWindow_transactions_table, user)
     self.adminWindow_user_search.textChanged.connect(lambda text: search_users(text, self.adminWindow_users_table))
     self.adminWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.adminWindow_transactions_table))
     load_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)

@@ -32,7 +32,7 @@ def load_users_to_table(self, tableWidget):
         _id = tableWidget.item(selected_row, 0).text()
         print(_id)
 
-def load_transactions_to_table(self,tableWidget):
+def load_transactions_to_table(self, tableWidget, user):
     transactions = find_all_transactions()
     transaction_data = []
     transactions_data = []
@@ -52,6 +52,15 @@ def load_transactions_to_table(self,tableWidget):
         for column in range(columns):
             item = QTableWidgetItem(str(transactions_data[row][column]))
             tableWidget.setItem(row, column, item)
+            destination_id = transactions_data[row][3]
+            if destination_id == user:
+                color = QColor(51, 255, 153)  # light green
+            else:
+                color = QColor(255, 102, 102)  # light red
+            for column in range(columns):
+                item = QTableWidgetItem(str(transactions_data[row][column]))
+                item.setBackground(color)
+                tableWidget.setItem(row, column, item)
     tableWidget.itemSelectionChanged.connect(lambda: id_of_selected_row_transaction(self))
 
     def id_of_selected_row_transaction(self):
