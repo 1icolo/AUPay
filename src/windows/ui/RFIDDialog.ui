@@ -32,13 +32,13 @@
    <string>RFID</string>
   </property>
   <property name="toolTip">
-   <string/>
+   <string>bro</string>
+  </property>
+  <property name="toolTipDuration">
+   <number>2</number>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
-  </property>
-  <property name="inputMethodHints">
-   <set>Qt::ImhHiddenText</set>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
@@ -53,25 +53,6 @@
    <property name="bottomMargin">
     <number>20</number>
    </property>
-   <item row="0" column="0">
-    <widget class="QLabel" name="message">
-     <property name="font">
-      <font>
-       <family>Segoe UI</family>
-       <pointsize>16</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Waiting fsor RFID</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-     </property>
-     <property name="textInteractionFlags">
-      <set>Qt::NoTextInteraction</set>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="seconds">
      <property name="font">
@@ -85,6 +66,28 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="message">
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>RFID detected</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignHCenter</set>
      </property>
      <property name="textInteractionFlags">
       <set>Qt::NoTextInteraction</set>
