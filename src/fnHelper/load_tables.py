@@ -100,9 +100,9 @@ def load_user_transaction_by_id(tableWidget, user):
     for row in range(rows):
         destination_id = transactions_data[row][3]
         if destination_id == user:
-            color = QColor(51, 255, 153)  # light green
+            color = QColor(198, 239, 206)  # light green
         else:
-            color = QColor(255, 102, 102)  # light red
+            color = QColor(255, 199, 206)  # light red
         for column in range(columns):
             item = QTableWidgetItem(str(transactions_data[row][column]))
             item.setBackground(color)
