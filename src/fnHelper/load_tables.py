@@ -89,9 +89,17 @@ def load_user_transaction_by_id(tableWidget, user):
     tableWidget.setRowCount(len(transactions_data))
     # Add the user data to the table
     for row in range(rows):
+        destination_id = transactions_data[row][3]
+        if destination_id == user:
+            color = QColor(51, 255, 153)  # light green
+        else:
+            color = QColor(255, 102, 102)  # light red
         for column in range(columns):
             item = QTableWidgetItem(str(transactions_data[row][column]))
+            item.setBackground(color)
             tableWidget.setItem(row, column, item)
+
+
 
 def load_bar_chart(tableWidget, graphicsView):
     # Remove the existing layout from the graphicsView
