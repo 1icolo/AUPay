@@ -1875,7 +1875,7 @@ p, li { white-space: pre-wrap; }
                 </spacer>
                </item>
                <item row="0" column="4">
-                <widget class="QPushButton" name="buttonDeleteUser_administrator_3">
+                <widget class="QPushButton" name="refresh_administrator">
                  <property name="text">
                   <string>Refresh Balance</string>
                  </property>
