@@ -206,11 +206,11 @@ def open_add_transaction_dialog(self, user):
         # Clear the selection
         self.adminWindow_transactions_table.clearSelection()
     self.add_transaction_dialog = AddTransactionDialog(user)
-    self.add_transaction_dialog.ui.buttonSave_addTransaction.clicked.connect(lambda: reload_transactions_table(self))
+    self.add_transaction_dialog.ui.buttonSave_addTransaction.clicked.connect(lambda: reload_transactions_table(self, user))
     self.add_transaction_dialog.exec_()
     
-def reload_transactions_table(self):
-    load_transactions_to_table(self, self.adminWindow_transactions_table)
+def reload_transactions_table(self, user):
+    load_transactions_to_table(self, self.adminWindow_transactions_table, user)
     refresh_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.adminWindow_transactions_table.setCurrentItem(None)
     self.adminWindow_transaction_search.setText("")
