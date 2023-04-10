@@ -13,6 +13,7 @@ class Database:
     def __init__(self):
         self.client = MongoClient(connection_string)
         self.database = self.client['aupaydb']
+
         self.collection = {
             'users': self.database['users'],
             'transactions': self.database['transactions']
@@ -21,18 +22,20 @@ class Database:
         try:
             if not self.client.list_database_names().__contains__('aupaydb'):
                 self.__create_database()
-        except Exception:
-            print("Error: " + Exception)
+        except Exception as e:
+            print(f"Error: \n{e}")
 
     # Initial collection documents
     def __create_database(self):
         coinbase = ObjectId('ffffffffffffffffffffffff')
         admin = ObjectId('000000000000000000000000')
+        self.database.create_collection('users', validator=user_schema)
+        self.database.create_collection('transactions', validator=transaction_schema)
         
         documents = {
             'user': {
                 '_id': admin,
-                'card_id': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                'card_id': "7f453b1936a11e152d5cd96c66cdd4caf13024c390509f71daf5410c1d742986",
                 'school_id': "AUP52023BSIT",
                 'password': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
                 'otp_key': "d1d3b9e6f7a4a8c8d3f5e2c3b2a1d0c7f6e5d4c3b2a190807060504030201000",
@@ -52,16 +55,63 @@ class Database:
         print("Initial database created.")
 
 
-user_validator = {
+user_schema = {
     '$jsonSchema': {
         'bsonType': 'object',
-        'required': ['card_id', 'school_id', 'password', 'otp_key', 'user_type'],
+        'required': ['_id', 'card_id', 'school_id', 'password', 'otp_key', 'user_type'],
         'properties': {
-            'card_id': {},
-            'school_id': {},
-            'password': {},
-            'otp_key': {},
-            'user_type': {},
+            '_id': {
+                'bsonType': 'objectId'
+            },
+            'card_id': {
+                'bsonType': 'string',
+                'pattern': '^[a-fA-F0-9]{64}$'
+            },
+            'school_id': {
+                'bsonType': 'string',
+            },
+            'password': {
+                'bsonType': 'string',
+                'pattern': '^[a-fA-F0-9]{64}$'
+            },
+            'otp_key': {
+                'bsonType': 'string',
+                'pattern': '^[a-fA-F0-9]{64}$'
+            },
+            'user_type': {
+                'enum': ['admin', 'user', 'business', 'teller']
+            },
+            'balance': {
+                'bsonType': 'double',
+                'minimum': 0,
+                'default': 0
+            }
+        }
+    }
+}
+
+transaction_schema = {
+    '$jsonSchema': {
+        'bsonType': 'object',
+        'required': ['timestamp', 'source_id', 'destination_id', 'amount', 'description'],
+        'properties': {
+            'timestamp': {
+                # 'bsonType': 'int'
+            },
+            'source_id': {
+                'bsonType': 'objectId'
+            },
+            'destination_id': {
+                'bsonType': 'objectId'
+            },
+            'amount': {
+                'bsonType': 'double',
+                'minimum': 0
+            },
+            'description': {
+                'bsonType': 'string',
+                'minLength': 1
+            }
         }
     }
 }
