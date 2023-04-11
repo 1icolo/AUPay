@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-11T15:09:50.205Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" etag="tCTJhLrBE__EN0UgMGmq" version="21.1.5" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-04-11T15:10:39.225Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" etag="C-O7lA34UjJIaz7x2_Bz" version="21.1.5" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
-    <mxGraphModel dx="1764" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
+    <mxGraphModel dx="1499" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -15,11 +15,6 @@
         <object label="&lt;font style=&quot;&quot;&gt;Making a dialog box for RFID waiting time.&lt;br&gt;Difficulty: 999&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="gXdsMopc5fdj0eWPFYr9-1">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="sQsjrjN2aDBts0AqB7bt-2" vertex="1">
             <mxGeometry x="20" y="21" width="180" height="89" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="&lt;font style=&quot;&quot;&gt;Add and Edit User in Admin Window: No field should be left blank.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="CxJtw1EiGpN4ea2KCKJC-1">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="sQsjrjN2aDBts0AqB7bt-2">
-            <mxGeometry x="20" y="130" width="180" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="NICO" status="In progress" id="jk4ZuAFncWzifWcSEG9R-6">
@@ -48,8 +43,13 @@
           </mxCell>
         </object>
         <object label="&lt;font style=&quot;&quot;&gt;After the being able to update the user balances, all user balance labels should be based on&amp;nbsp;&lt;br&gt;user[&#39;balance&#39;]&lt;br&gt;and replace the&amp;nbsp;&lt;br&gt;compute_user_balance(user[&#39;_id&#39;]&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="CxJtw1EiGpN4ea2KCKJC-2">
-          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="dP4nEb0FnnbFnyhw3xI3-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="dP4nEb0FnnbFnyhw3xI3-1" vertex="1">
             <mxGeometry x="20" y="130" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Add and Edit User in Admin Window: No field should be left blank.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="CxJtw1EiGpN4ea2KCKJC-1">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" parent="dP4nEb0FnnbFnyhw3xI3-1" vertex="1">
+            <mxGeometry x="20" y="270" width="180" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="KENNETH" status="In progress" id="A4bzXRDnEpqqfuXnQtNc-31">
