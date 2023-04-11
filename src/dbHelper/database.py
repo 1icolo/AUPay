@@ -37,7 +37,7 @@ class Database:
                 '_id': admin,
                 'card_id': "7f453b1936a11e152d5cd96c66cdd4caf13024c390509f71daf5410c1d742986",
                 'school_id': "AUP52023BSIT",
-                'password': "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                'password': "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
                 'otp_key': "d1d3b9e6f7a4a8c8d3f5e2c3b2a1d0c7f6e5d4c3b2a190807060504030201000",
                 'user_type': 'admin',
                 'balance': float(0.00),
