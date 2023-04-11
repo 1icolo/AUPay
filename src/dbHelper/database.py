@@ -84,7 +84,6 @@ user_schema = {
             'balance': {
                 'bsonType': 'double',
                 'minimum': 0,
-                'default': 0
             }
         }
     }
