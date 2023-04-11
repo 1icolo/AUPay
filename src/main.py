@@ -4,7 +4,7 @@ from windows.ProjectMainWindow import ProjectMainWindow
 
 def main():
     app = QApplication([])
-    ProjectMainWindow().show()
+    ProjectMainWindow().showFullScreen()
     app.exec()
 
 
