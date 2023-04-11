@@ -14,8 +14,16 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.setupUi(self)
         self.loginAttempt('rfid')
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
+        self.actionExit.triggered.connect(lambda: QApplication.quit())
+        self.actionFullscreen.triggered.connect(lambda: self.toggleFullscreen())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt('password'))
         self.buttonRFIDLogin_login.clicked.connect(lambda: self.loginAttempt('rfid'))
+
+    def toggleFullscreen(self):
+        if self.actionFullscreen.isChecked():
+            self.showFullScreen()
+        else:
+            self.showNormal()
         
     def logoutAttempt(self):
         QApplication.quit()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.resize(1218, 810)
         ProjectMainWindow.setMinimumSize(QtCore.QSize(205, 176))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Nico\\AUPay\\src\\windows\\ui\\../src/resources/aupay-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ProjectMainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ProjectMainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -897,11 +897,22 @@ class Ui_ProjectMainWindow(object):
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
+        self.menuView = QtWidgets.QMenu(self.menubar)
+        self.menuView.setObjectName("menuView")
         ProjectMainWindow.setMenuBar(self.menubar)
         self.actionLogout = QtWidgets.QAction(ProjectMainWindow)
         self.actionLogout.setObjectName("actionLogout")
+        self.actionFullscreen = QtWidgets.QAction(ProjectMainWindow)
+        self.actionFullscreen.setCheckable(True)
+        self.actionFullscreen.setChecked(True)
+        self.actionFullscreen.setObjectName("actionFullscreen")
+        self.actionExit = QtWidgets.QAction(ProjectMainWindow)
+        self.actionExit.setObjectName("actionExit")
         self.menuFile.addAction(self.actionLogout)
+        self.menuFile.addAction(self.actionExit)
+        self.menuView.addAction(self.actionFullscreen)
         self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuView.menuAction())
 
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
@@ -1110,4 +1121,7 @@ class Ui_ProjectMainWindow(object):
         self.lineTotalCirculating_administrator.setText(_translate("ProjectMainWindow", "0"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabTransactions_administrator), _translate("ProjectMainWindow", "Transactions"))
         self.menuFile.setTitle(_translate("ProjectMainWindow", "File"))
+        self.menuView.setTitle(_translate("ProjectMainWindow", "View"))
         self.actionLogout.setText(_translate("ProjectMainWindow", "Logout"))
+        self.actionFullscreen.setText(_translate("ProjectMainWindow", "Fullscreen"))
+        self.actionExit.setText(_translate("ProjectMainWindow", "Exit"))
