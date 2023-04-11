@@ -1,16 +1,12 @@
 # Package Imports
 from pymongo import MongoClient
 from bson import Timestamp, ObjectId
-from dotenv import load_dotenv
-
-from os import getenv
-
-load_dotenv()
-connection_string = getenv('DB_URI')
-
+from json import load
 
 class Database:
     def __init__(self):
+        with open('config.json', 'r') as f:
+            connection_string = load(f)['uri']
         self.client = MongoClient(connection_string)
         self.database = self.client['aupaydb']
 
