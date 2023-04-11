@@ -11,21 +11,22 @@ def update_user(user):
     )
     print(f"User {user['_id']} updated.")
     return True
+
 def update_balance(user):
-    Database().collection['users'].update_one(
-        {"_id": user['_id']},
-        {"$set": {
-            "balance": compute_user_balance(user['_id'])}
-        }
-    )
-    print(f"User {user['_id']} updated.")
-    return True
-def update_all_balance(user):
-    updated = Database().collection['users'].update_many(
-        {"_id": user['_id']},
-        {"$set": {
-            "balance": compute_user_balance(user['_id'])}
-        }
-    )
-    print(f"{updated.modified_count} balance updated.")
-    return True
+    try:
+        Database().collection['users'].update_one(
+            {"_id": user['_id']},
+            {"$set": {
+                "balance": compute_user_balance(user['_id'])}
+            }
+        )
+        print(f"User {user['_id']} balance updated.")
+    except Exception as e:
+        print(e)
+
+def update_all_balance():
+    for user in Database().collection['users'].find():
+        result = update_balance(user)
+        if result is None:
+            result = float(0.0)
+    print("All user balance updated.")

@@ -16,7 +16,7 @@ from fnHelper.textSearch import *
 from fnHelper.export_to_csv import *
 from dbHelper.calculate_total_circulating_supply import calculate_total_circulating_supply
 from fnHelper.refresh_clear import *
-
+from fnHelper.refreshUserBalance import *
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -233,6 +233,7 @@ def AdminWindow(self, user):
     self.buttonClearTransactions_administrator.clicked.connect(lambda: clear_date(self.dateFrom_administrator, self.dateTo_administrator))
     # self.refresh_administrator.clicked.connect(lambda: resfresh_table(self, self.adminWindow_users_table))
     self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
+    self.refresh_administrator.clicked.connect(lambda: refreshUserBalance())
     
     
 

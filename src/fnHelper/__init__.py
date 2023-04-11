@@ -9,6 +9,7 @@ __all__ = ['login',
            'chargeback',
            'charge',
            'transact',
+           'refreshUserBalance',
            ]
 
 from .aupCard import *
@@ -22,3 +23,4 @@ from .output_to_dict import *
 from .chargeback import *
 from .charge import *
 from .transact import *
+from .refreshUserBalance import *
