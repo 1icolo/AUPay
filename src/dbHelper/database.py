@@ -29,7 +29,7 @@ class Database:
             'transactions', validator=transaction_schema)
         initial_user = {
             'card_id': "7f453b1936a11e152d5cd96c66cdd4caf13024c390509f71daf5410c1d742986",
-            'school_id': "AUP52023BSIT",
+            'school_id': "AUP52623BSIT",
             'password': "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
             'otp_key': "d1d3b9e6f7a4a8c8d3f5e2c3b2a1d0c7f6e5d4c3b2a190807060504030201000",
             'user_type': 'admin',
@@ -39,7 +39,7 @@ class Database:
         user = self.collection['users'].insert_one(initial_user)
 
         initial_transaction = {
-            'timestamp': Timestamp(1651363200, 0),
+            'timestamp': Timestamp(1685084400, 0),
             'source_id': coinbase,
             'destination_id': user.inserted_id,
             'amount': float(0.00),
