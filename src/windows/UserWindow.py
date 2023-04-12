@@ -27,5 +27,5 @@ def UserWindow(self, user):
 
 def load_user_data(self, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
-    self.userWindow_balanceLine.setText(str(compute_user_balance(user['_id'])))
+    self.userWindow_balanceLine.setText(str(user['balance']))
     # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date

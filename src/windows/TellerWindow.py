@@ -21,7 +21,7 @@ def selected_row_to_textbox(self):
 
 def TellerWindow(self, user):
     print(__name__)
-    self.lineBalance_teller.setText(str(compute_user_balance(user['_id'])))
+    self.lineBalance_teller.setText(str(user['balance']))
     # load_user_transaction_data(self)
     self.lineTeller_teller.setText(str(user['school_id']))
     # testing school id only

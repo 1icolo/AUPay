@@ -337,7 +337,7 @@ def add_item_shortcut(self, event):
 
 def BusinessWindow(self, user):
     print(__name__)
-    self.lineBalance_business.setText(str(compute_user_balance(user['_id'])))
+    self.lineBalance_business.setText(str(user['balance']))
     self.lineBusiness_business.setText(str(user['school_id']))
     #sample source id
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
