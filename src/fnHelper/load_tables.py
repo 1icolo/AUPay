@@ -36,9 +36,11 @@ def load_transactions_to_table(self, tableWidget, user):
     transactions = find_all_transactions()
     transaction_data = []
     transactions_data = []
+    count = 0
     for transaction in transactions:
         transaction_data.append([transaction['timestamp']])
-        bson_timestamp = transaction_data[0][0]
+        bson_timestamp = transaction_data[count][0]
+        count += 1
         dt = datetime.fromtimestamp(bson_timestamp.time)
         date_string = dt.strftime("%m/%d/%Y")
         transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
@@ -85,9 +87,11 @@ def load_user_transaction_by_id(tableWidget, user):
     transactions = find_all_transactions_of_user(user)
     transaction_data = []
     transactions_data = []
+    count = 0
     for transaction in transactions:
         transaction_data.append([transaction['timestamp']])
-        bson_timestamp = transaction_data[0][0]
+        bson_timestamp = transaction_data[count][0]
+        count += 1
         dt = datetime.fromtimestamp(bson_timestamp.time)
         date_string = dt.strftime("%m/%d/%Y")
         transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
