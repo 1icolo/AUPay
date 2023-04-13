@@ -2,11 +2,11 @@
 from pymongo import MongoClient
 from bson import Timestamp, ObjectId
 from json import load
+from fnHelper import jsonIO
 
 class Database:
     def __init__(self):
-        with open('config.json', 'r') as f:
-            connection_string = load(f)['uri']
+        connection_string = jsonIO.read_items('config.json')
         self.client = MongoClient(connection_string)
         self.database = self.client['aupaydb']
 

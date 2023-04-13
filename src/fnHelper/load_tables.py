@@ -71,17 +71,20 @@ def load_transactions_to_table(self, tableWidget, user):
         print(_id)
 
 def load_inventory_to_table(tableWidget):
-    items = jsonIO.read_items()
-    items_data = []
-    for item in items:
-        items_data.append([item['price'], item['name']])
-    rows = len(items_data)
-    columns = len(items_data[0])
-    tableWidget.setRowCount(len(items_data))
-    for row in range(rows):
-        for column in range(columns):
-            item = QTableWidgetItem(str(items_data[row][column]))
-            tableWidget.setItem(row, column, item)
+    try:
+        items = jsonIO.read_items()
+        items_data = []
+        for item in items:
+            items_data.append([item['price'], item['name']])
+        rows = len(items_data)
+        columns = len(items_data[0])
+        tableWidget.setRowCount(len(items_data))
+        for row in range(rows):
+            for column in range(columns):
+                item = QTableWidgetItem(str(items_data[row][column]))
+                tableWidget.setItem(row, column, item)
+    except Exception as e:
+        print(f"Exception in load_inventory_to_table\n{e}")
 
 def load_user_transaction_by_id(tableWidget, user):
     transactions = find_all_transactions_of_user(user)
