@@ -234,15 +234,14 @@ class EditItemsDialog(QDialog):
             # Update selection to moved row
             self.ui.businessWindow_edit_dialog_table.selectRow(current_row + 1)
 
-def open_edit_items_dialog(self):
+def open_edit_items_dialog(self, user):
     self.edit_items_dialog = EditItemsDialog()
-    self.edit_items_dialog.ui.saveButton.clicked.connect(lambda: reload_inventory_table(self))
+    self.edit_items_dialog.ui.saveButton.clicked.connect(lambda: reload_inventory_table(self, user))
     self.edit_items_dialog.exec_()
     
 def reload_inventory_table(self, user):
     load_inventory_to_table(self.businessWindow_inventory_table)    
     self.businessWindow_inventory_table.setCurrentItem(None)
-    self.businessWindow_sourceLine.setText("")
     self.businessWindow_descriptionLine.setText("")
     self.businessWindow_amountLine.setText("")
 
@@ -342,7 +341,7 @@ def BusinessWindow(self, user):
     #sample source id
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
     self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
-    self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self))
+    self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self, user))
     self.buttonCharge.clicked.connect(lambda: charge(self, user))
     # load_transactions_to_table(self, self.businessWindow_transactions_table)
     load_inventory_to_table(self.businessWindow_inventory_table)
