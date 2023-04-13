@@ -21,7 +21,7 @@ def charge_transaction(Widget, business):
 
         # Reload the balance
         user = find_user_by_card_id(encrypt(AUPCard().get_uid()))              
-        Widget.userWindow_balanceLine.setText(str(user['balance']))
+        Widget.lineBalance_business.setText(str(user['balance']))
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
