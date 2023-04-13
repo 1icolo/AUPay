@@ -19,7 +19,7 @@ def charge_transaction(Widget, business):
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
         refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
 
-        # Reload the balance
+         # Reload the balance
         user = find_user_by_card_id(encrypt(AUPCard().get_uid()))              
         Widget.lineBalance_business.setText(str(user['balance']))
 

@@ -7,6 +7,4 @@ def clear_date(dateFrom, dateTo):
     dateFrom.setDate(QDate(2000, 1, 1))
     dateTo.setDate(QDate.currentDate())
 
-def resfresh_table(self, tableWidget):
-    load_users_to_table(self, tableWidget)
-    print("Table refreshed")
+

@@ -115,7 +115,7 @@ def load_user_transaction_by_id(tableWidget, user):
             item.setBackground(color)
             tableWidget.setItem(row, column, item)
 
-
+from PyQt5.QtCore import QPropertyAnimation
 
 def load_bar_chart(tableWidget, graphicsView):
     # Remove the existing layout from the graphicsView
@@ -129,8 +129,12 @@ def load_bar_chart(tableWidget, graphicsView):
 
     series = QHorizontalBarSeries()
 
-    # Clean up the descriptions by stripping extra spaces and converting to lowercase
-    descriptions = [tableWidget.item(row, 5).text().strip().title() for row in range(tableWidget.rowCount())]
+    # Get the descriptions of the visible rows in the table
+    descriptions = []
+    for row in range(tableWidget.rowCount()):
+        if not tableWidget.isRowHidden(row):
+            description = tableWidget.item(row, 5).text().strip().title()
+            descriptions.append(description)
 
     # Split multi-item descriptions into individual items
     items = []
@@ -165,6 +169,7 @@ def load_bar_chart(tableWidget, graphicsView):
     chart.addSeries(series)
     chart.createDefaultAxes()
     chart.setAxisY(axis_y, series)
+    chart.setAnimationOptions(QChart.SeriesAnimations)
 
     # Set the alignment of the legend
     chart.legend().hide()
@@ -174,9 +179,15 @@ def load_bar_chart(tableWidget, graphicsView):
 
     # Clear the existing layout before adding a new one
     graphicsView.setLayout(QVBoxLayout())
-    
+
     # Add chartView to the layout
     graphicsView.layout().addWidget(chartView)
+
+
+
+
+
+
 
 
 def refresh_bar_chart(tableWidget, graphicsView):
@@ -194,36 +205,29 @@ def refresh_bar_chart(tableWidget, graphicsView):
     # Load the new chart and add it to the layout
     load_bar_chart(tableWidget, graphicsView)
 
-# define the default date
-DEFAULT_DATE = datetime.strptime("01/01/2000", "%m/%d/%Y").date()
 
-def search_transactions_by_date(tablewidget, date_from_edit, date_to_edit):
+
+def search_transactions_by_date(tableWidget, date_from_edit, date_to_edit, graphicsView):
     # get the selected date range
     date_from = date_from_edit.date().toPyDate()
     date_to = date_to_edit.date().toPyDate()
 
-    # check if the selected date range is the same as the default date range
-    if date_from == DEFAULT_DATE and date_to == DEFAULT_DATE:
-        # if yes, reset the date range to the default date range
-        date_from = DEFAULT_DATE
-        date_to = DEFAULT_DATE
-    else:
-        # otherwise, continue with the selected date range
-        date_range = range((date_to - date_from).days + 1)
-
     # iterate over each row in the inventory table
-    for row in range(tablewidget.rowCount()):
-        timestamp_str = tablewidget.item(row, 1).text()
+    descriptions = []
+    for row in range(tableWidget.rowCount()):
+        timestamp_str = tableWidget.item(row, 1).text()
         timestamp = datetime.strptime(timestamp_str, "%m/%d/%Y").date()
 
         # check if the timestamp falls within the date range
-        if date_from == DEFAULT_DATE and date_to == DEFAULT_DATE:
-            # if the default date range is selected, show all rows
-            tablewidget.setRowHidden(row, False)
-        elif timestamp in (date_from + timedelta(n) for n in date_range):
-            # otherwise, show rows that fall within the selected date range
-            tablewidget.setRowHidden(row, False)
+        if timestamp >= date_from and timestamp <= date_to:
+            # show rows that fall within the selected date range
+            tableWidget.setRowHidden(row, False)
+            descriptions.append(tableWidget.item(row, 5).text().strip().title())
         else:
             # hide rows that do not fall within the selected date range
-            tablewidget.setRowHidden(row, True)
+            tableWidget.setRowHidden(row, True)
+
+    refresh_bar_chart(tableWidget, graphicsView)
+    return descriptions
+
 
