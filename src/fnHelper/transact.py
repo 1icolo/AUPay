@@ -7,10 +7,11 @@ from fnHelper.hashEncryption import encrypt
 from dbHelper.find_user import find_user_by_card_id
 from fnHelper.output_to_dict import output_to_dict
 from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency
+from fnHelper.otpAuth import verify_otp
 from PyQt5.QtWidgets import QMessageBox
 
 
-def transact(Widget, teller):
+def transact(Widget, teller, OTP):
     user = find_user_by_card_id(encrypt(AUPCard().get_uid()))
     if user is None:
         return print("No RFID detected.")
@@ -31,9 +32,12 @@ def transact(Widget, teller):
             newTransaction['destination_id'] = ObjectId(user['_id'])
             checkBalance = teller['_id']
         case "Withdraw":
-            newTransaction['source_id'] = ObjectId(user['_id'])
-            newTransaction['destination_id'] = ObjectId(teller['_id'])
-            checkBalance = user['_id']
+            if(verify_otp(encrypt(user['otp_key']), OTP)):
+                newTransaction['source_id'] = ObjectId(user['_id'])
+                newTransaction['destination_id'] = ObjectId(teller['_id'])
+                checkBalance = user['_id']
+            else:
+                return QMessageBox.critical(Widget, "Error", "Incorrect OTP")
 
     if checkBalanceSufficiency(checkBalance, newTransaction['amount']):
         add_transaction(newTransaction)

@@ -8,6 +8,7 @@ from datetime import *
 from dbHelper.add_transaction import add_transaction
 from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.transact import transact
+from windows.ui.ui_OTPWithdrawalDialog import Ui_Dialog as Ui_OTPWithdrawalDialog
 
 def selected_row_to_textbox(self):
     selected_row = self.tellerWindow_transactions_table.currentRow()
@@ -18,6 +19,21 @@ def selected_row_to_textbox(self):
         # put the data in the line edit/textbox
         self.tellerWindow_amountLine.setText(amount.text())
         self.tellerWindow_descriptionLine.setText(description.text())
+def openOTPDialog(self, user): 
+    self.OTPDialog = OTPWithdrawalDialog(user)
+    self.OTPDialog.exec_()
+class OTPWithdrawalDialog(QDialog):
+    def __init__(self, user, parent=None):
+        print(__name__)
+        super(OTPWithdrawalDialog, self).__init__(parent)
+        self.OTPDialog(user)
+    def OTPDialog(self, user):
+        self.ui = Ui_OTPWithdrawalDialog()
+        self.ui.setupUi(self)
+        self.ui.buttonBox.accepted.connect(lambda: self.verifyOTP(self.ui.otp_Withdraw.text(), user))
+        self.ui.buttonBox.rejected.connect(self.reject)
+    def verifyOTP(self, OTP, user):
+        transact(self, user, OTP)
 
 def TellerWindow(self, user):
     print(__name__)
@@ -31,10 +47,11 @@ def TellerWindow(self, user):
     self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.tellerWindow_transactions_table))
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
     self.lineBalance_teller.setText(str(compute_user_balance(user['_id'])))
-
         
 def transactAttempt(self, user):
+    if(self.comboTransaction_teller.currentText() == "Withdraw"):
+        openOTPDialog(self,user)
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
-        transact(self,user)
+        transact(self,user, OTP=None)
 
 
