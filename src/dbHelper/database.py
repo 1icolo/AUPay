@@ -6,7 +6,7 @@ from fnHelper import jsonIO
 
 class Database:
     def __init__(self):
-        connection_string = jsonIO.read_items('config.json')
+        connection_string = jsonIO.read_items('config.json')['uri']
         self.client = MongoClient(connection_string)
         self.database = self.client['aupaydb']
 
