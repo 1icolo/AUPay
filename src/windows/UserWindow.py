@@ -15,6 +15,7 @@ from fnHelper.refresh_clear import *
 
 def UserWindow(self, user):
     print(__name__)
+    self.dateTo_user.setDate(QDate.currentDate())
     load_user_data(self, user)
     self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(self, text, self.userWindow_transactions_table))
     load_user_transaction_by_id(self.userWindow_transactions_table, user['_id'])

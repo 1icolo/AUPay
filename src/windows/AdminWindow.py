@@ -218,6 +218,7 @@ def reload_transactions_table(self, user):
 
 def AdminWindow(self, user):
     print(__name__)
+    self.dateTo_administrator.setDate(QDate.currentDate())
     self.buttonAddUser_administrator.clicked.connect(lambda: open_add_user_dialog(self))
     self.buttonEditUser_administrator.clicked.connect(lambda: editUser(self))
     self.buttonDeleteUser_administrator.clicked.connect(lambda: deleteUser(self))

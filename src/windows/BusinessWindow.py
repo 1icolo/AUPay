@@ -336,6 +336,7 @@ def add_item_shortcut(self, event):
 
 def BusinessWindow(self, user):
     print(__name__)
+    self.dateTo_business.setDate(QDate.currentDate())
     self.lineBalance_business.setText(str(user['balance']))
     self.lineBusiness_business.setText(str(user['school_id']))
     #sample source id
