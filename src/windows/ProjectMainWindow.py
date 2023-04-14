@@ -12,6 +12,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
         super(ProjectMainWindow, self).__init__(parent)
         self.setupUi(self)
+        self.LoginWindow()
         self.loginAttempt('rfid')
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.actionExit.triggered.connect(lambda: QApplication.quit())
@@ -33,3 +34,11 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
 
     def loginAttempt(self, mode):
         login(self, mode)
+
+    def LoginWindow(self):
+        scene = QGraphicsScene()
+        self.graphicsView_login.setScene(scene)
+        backgroundPixmap  = QPixmap("src/resources/login-wallpaper.jpg")
+        backgroundItem = QGraphicsPixmapItem(backgroundPixmap)
+        self.graphicsView_login.scene().addItem(backgroundItem)
+        backgroundItem.setZValue(-1)
