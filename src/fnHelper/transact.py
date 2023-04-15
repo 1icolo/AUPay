@@ -4,7 +4,7 @@ from dbHelper import add_transaction
 from fnHelper import load_user_transaction_by_id
 from fnHelper.aupCard import AUPCard
 from fnHelper.hashEncryption import encrypt
-from dbHelper.find_user import find_user_by_card_id
+from dbHelper.find_user import find_user_by_card_id , find_user_by_id
 from fnHelper.output_to_dict import output_to_dict
 from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency
 from fnHelper.otpAuth import verify_otp
@@ -12,6 +12,13 @@ from PyQt5.QtWidgets import QMessageBox
 
 
 def transact(Widget, teller, OTP):
+
+    def refresh(teller):
+        # Reload the balance
+        teller = find_user_by_id(teller['_id'])
+        balance = teller['balance']
+        Widget.lineBalance_teller.setText(str(balance))
+
     user = find_user_by_card_id(encrypt(AUPCard().get_uid()))
     if user is None:
         return print("No RFID detected.")
@@ -41,6 +48,7 @@ def transact(Widget, teller, OTP):
 
     if checkBalanceSufficiency(checkBalance, newTransaction['amount']):
         add_transaction(newTransaction)
+        refresh(teller)
         load_user_transaction_by_id(
             Widget.tellerWindow_transactions_table, teller['_id']
         )
