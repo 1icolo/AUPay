@@ -23,7 +23,7 @@ from fnHelper.refresh_clear import *
 
 def charge(self, user):
     if not self.businessWindow_amountLine.text() == "":
-        charge_transaction(self, user, self.lineBalance_business)
+        charge_transaction(self, user)
 
     # print(newTransaction)
 def search_inventory(self, text):
