@@ -8,7 +8,7 @@ from dbHelper.find_user import find_user_by_card_id
 from fnHelper.hashEncryption import encrypt
 from PyQt5.QtWidgets import QMessageBox
 
-def charge_transaction(Widget, business):
+def charge_transaction(Widget, business, business_balance):
 
     def refresh():
         Widget.businessWindow_amountLine.setText("")
@@ -19,7 +19,7 @@ def charge_transaction(Widget, business):
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
         refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
          # Reload the balance
-        Widget.lineBalance_business.setText(str(business['balance']))
+        business_balance.setText(str(business['balance']))
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
