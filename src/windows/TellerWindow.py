@@ -35,11 +35,20 @@ class OTPWithdrawalDialog(QDialog):
     def verifyOTP(self, OTP, user):
         transact(self, user, OTP)
 
+
+def navbar(self, user):
+    self.navHome_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(0))
+    self.navDashboard_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(1))
+    self.navAnalytics_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(2))
+    self.navTransactions_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(3))
+    
+
 def TellerWindow(self, user):
     print(__name__)
+    navbar(self, user)
     self.lineBalance_teller.setText(str(user['balance']))
-    # load_user_transaction_data(self)
     self.lineTeller_teller.setText(str(user['school_id']))
+    # load_user_transaction_data(self)
     # testing school id only
     # load_transactions_to_table(self, self.tellerWindow_transactions_table)
     load_user_transaction_by_id(self.tellerWindow_transactions_table, user['_id'])
@@ -49,9 +58,10 @@ def TellerWindow(self, user):
     self.lineBalance_teller.setText(str(compute_user_balance(user['_id'])))
         
 def transactAttempt(self, user):
-    if(self.comboTransaction_teller.currentText() == "Withdraw"):
-        openOTPDialog(self,user)
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
-        transact(self,user, OTP=None)
+        if(self.comboTransaction_teller.currentText() == "Withdraw"):
+            openOTPDialog(self,user)
+        elif(self.comboTransaction_teller.currentText() == "Deposit"):
+            transact(self,user, OTP=None)
 
 

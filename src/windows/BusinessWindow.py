@@ -334,11 +334,19 @@ def add_item_shortcut(self, event):
             get_cart_data(self)
 
 
+def navbar(self, user):
+    self.navHome_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(0))
+    self.navDashboard_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(1))
+    self.navAnalytics_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(2))
+    self.navTransactions_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(3))
+
+
 def BusinessWindow(self, user):
     print(__name__)
-    self.dateTo_business.setDate(QDate.currentDate())
+    navbar(self, user)
     self.lineBalance_business.setText(str(user['balance']))
     self.lineBusiness_business.setText(str(user['school_id']))
+    self.dateTo_business.setDate(QDate.currentDate())
     #sample source id
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
     self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
