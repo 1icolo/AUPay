@@ -204,39 +204,21 @@ QLineEdit {
         <property name="spacing">
          <number>0</number>
         </property>
-        <item row="0" column="4" rowspan="2">
-         <widget class="QGraphicsView" name="graphicsView_login">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-          <property name="minimumSize">
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
            <size>
-            <width>1100</width>
-            <height>0</height>
+            <width>50</width>
+            <height>20</height>
            </size>
           </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Plain</enum>
-          </property>
-          <property name="lineWidth">
-           <number>0</number>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-         </widget>
+         </spacer>
         </item>
         <item row="0" column="2">
          <layout class="QVBoxLayout" name="verticalLayout">
@@ -250,11 +232,30 @@ QLineEdit {
            <number>50</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>50</number>
           </property>
           <property name="rightMargin">
            <number>50</number>
           </property>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image:url(:/highres-logo/aupay-logo/highres/a-u-pay-high-resolution-logo-color-on-transparent-background.png)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item>
            <spacer name="verticalSpacer_2">
             <property name="orientation">
@@ -498,22 +499,6 @@ color: black;
           </item>
          </layout>
         </item>
-        <item row="0" column="1">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>50</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="0" column="3">
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
@@ -530,12 +515,37 @@ color: black;
           </property>
          </spacer>
         </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="label_16">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>1500</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">image:url(:/wallpaper/login-wallpaper.jpg)</string>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="pageUser">
        <layout class="QGridLayout" name="gridLayout_3">
         <property name="leftMargin">
-         <number>0</number>
+         <number>50</number>
         </property>
         <property name="topMargin">
          <number>0</number>
@@ -549,7 +559,86 @@ color: black;
         <property name="spacing">
          <number>0</number>
         </property>
-        <item row="0" column="0">
+        <item row="0" column="3">
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Analytics</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_13">
+           <item row="1" column="6">
+            <widget class="QLabel" name="userWindow_balanceLine">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="7">
+            <spacer name="horizontalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="4" column="2" colspan="7">
+            <widget class="QGraphicsView" name="graphicsView"/>
+           </item>
+           <item row="1" column="5">
+            <widget class="QLabel" name="labelBalance_user">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Balance:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="8">
+            <widget class="QPushButton" name="export_user">
+             <property name="text">
+              <string>Export</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="labelSchoolId_user">
+             <property name="text">
+              <string>School ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="userWindow_schoolIdLine">
+             <property name="text">
+              <string>2000000</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <spacer name="horizontalSpacer_13">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
          <widget class="QGroupBox" name="groupBox_2">
           <property name="title">
            <string>Transactions</string>
@@ -569,64 +658,6 @@ color: black;
             <widget class="QPushButton" name="buttonClearTransactions_user">
              <property name="text">
               <string>Clear</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>From</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="4">
-            <widget class="QDateEdit" name="dateFrom_user">
-             <property name="minimumDate">
-              <date>
-               <year>2000</year>
-               <month>1</month>
-               <day>1</day>
-              </date>
-             </property>
-             <property name="displayFormat">
-              <string>MM/dd/yyyy</string>
-             </property>
-             <property name="calendarPopup">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="5">
-            <widget class="QLabel" name="label_9">
-             <property name="text">
-              <string>To</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="6">
-            <widget class="QDateEdit" name="dateTo_user">
-             <property name="minimumDate">
-              <date>
-               <year>2000</year>
-               <month>1</month>
-               <day>1</day>
-              </date>
-             </property>
-             <property name="displayFormat">
-              <string>MM/dd/yyyy</string>
-             </property>
-             <property name="calendarPopup">
-              <bool>true</bool>
-             </property>
-             <property name="timeSpec">
-              <enum>Qt::LocalTime</enum>
-             </property>
-             <property name="date">
-              <date>
-               <year>2000</year>
-               <month>1</month>
-               <day>4</day>
-              </date>
              </property>
             </widget>
            </item>
@@ -775,87 +806,111 @@ color: black;
              </item>
             </widget>
            </item>
+           <item row="0" column="4">
+            <widget class="QDateEdit" name="dateFrom_user">
+             <property name="minimumDate">
+              <date>
+               <year>2000</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="displayFormat">
+              <string>MM/dd/yyyy</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>From</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>To</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QDateEdit" name="dateTo_user">
+             <property name="minimumDate">
+              <date>
+               <year>2000</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="displayFormat">
+              <string>MM/dd/yyyy</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="timeSpec">
+              <enum>Qt::LocalTime</enum>
+             </property>
+             <property name="date">
+              <date>
+               <year>2000</year>
+               <month>1</month>
+               <day>4</day>
+              </date>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QGroupBox" name="groupBox_5">
-          <property name="title">
-           <string>Analytics</string>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="topMargin">
+           <number>0</number>
           </property>
-          <layout class="QGridLayout" name="gridLayout_13">
-           <item row="1" column="4">
-            <widget class="QLabel" name="userWindow_balanceLine">
-             <property name="text">
-              <string>0</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0" colspan="7">
-            <widget class="QGraphicsView" name="graphicsView"/>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="labelSchoolId_user">
-             <property name="text">
-              <string>School ID:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="6">
-            <widget class="QPushButton" name="export_user">
-             <property name="text">
-              <string>Export</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="5">
-            <spacer name="horizontalSpacer_12">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="1" column="3">
-            <widget class="QLabel" name="labelBalance_user">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Balance:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLabel" name="userWindow_schoolIdLine">
-             <property name="text">
-              <string>2000000</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <spacer name="horizontalSpacer_13">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>../../resources/aupay-icon-50x50.jpg</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -2388,7 +2443,9 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonClearFields_teller</sender>
