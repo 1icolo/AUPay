@@ -1,0 +1,32 @@
+<RCC>
+  <qresource prefix="favicon">
+    <file>aupay-logo/favicon/a-u-pay-website-favicon-black.png</file>
+    <file>aupay-logo/favicon/a-u-pay-website-favicon-color.png</file>
+    <file>aupay-logo/favicon/a-u-pay-website-favicon-white.png</file>
+  </qresource>
+  <qresource prefix="lowres-logo">
+    <file>aupay-logo/lowres/a-u-pay-low-resolution-color-logo.png</file>
+    <file>aupay-logo/lowres/a-u-pay-low-resolution-logo-black-on-transparent-background.png</file>
+    <file>aupay-logo/lowres/a-u-pay-low-resolution-logo-black-on-white-background.png</file>
+    <file>aupay-logo/lowres/a-u-pay-low-resolution-logo-color-on-transparent-background.png</file>
+    <file>aupay-logo/lowres/a-u-pay-low-resolution-logo-white-on-black-background.png</file>
+    <file>aupay-logo/lowres/a-u-pay-low-resolution-logo-white-on-transparent-background.png</file>
+  </qresource>
+  <qresource prefix="midres-logo">
+    <file>aupay-logo/midres/logo-black.png</file>
+    <file>aupay-logo/midres/logo-color.png</file>
+    <file>aupay-logo/midres/logo-no-background.png</file>
+    <file>aupay-logo/midres/logo-white.png</file>
+  </qresource>
+  <qresource prefix="highres-logo">
+    <file>aupay-logo/highres/a-u-pay-high-resolution-color-logo.png</file>
+    <file>aupay-logo/highres/a-u-pay-high-resolution-logo-black-on-transparent-background.png</file>
+    <file>aupay-logo/highres/a-u-pay-high-resolution-logo-black-on-white-background.png</file>
+    <file>aupay-logo/highres/a-u-pay-high-resolution-logo-color-on-transparent-background.png</file>
+    <file>aupay-logo/highres/a-u-pay-high-resolution-logo-white-on-black-background.png</file>
+    <file>aupay-logo/highres/a-u-pay-high-resolution-logo-white-on-transparent-background.png</file>
+  </qresource>
+  <qresource prefix="wallpaper">
+    <file>login-wallpaper.jpg</file>
+  </qresource>
+</RCC>
