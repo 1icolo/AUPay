@@ -10,19 +10,20 @@ from PyQt5.QtWidgets import QMessageBox
 
 def charge_transaction(Widget, business):
 
-    def refresh():
+    def refresh(business):
         Widget.businessWindow_amountLine.setText("")
         Widget.businessWindow_descriptionLine.setText("")
         Widget.businessWindow_cart_table.clearContents()
         Widget.businessWindow_cart_table.setRowCount(0)
-        # Call update_bar_chart after adding a new transaction
-        load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
-        refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
-
-         # Reload the balance
+        
+        # Reload the balance
         business = find_user_by_id(business['_id'])
         balance = business['balance']
         Widget.lineBalance_business.setText(str(balance))
+
+        # Call update_bar_chart after adding a new transaction
+        load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
+        refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
@@ -40,7 +41,7 @@ def charge_transaction(Widget, business):
     if transaction['source_id'] is not None:
         if checkBalanceSufficiency(transaction['source_id'], transaction['amount']):
             add_transaction(transaction)
-            refresh()
+            refresh(business)
             return QMessageBox.information(Widget, "Success", "Charge successful.")
         return QMessageBox.critical(Widget, "Error", "Insufficient Balance.")
         
