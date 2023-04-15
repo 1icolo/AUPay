@@ -18,10 +18,8 @@ def charge_transaction(Widget, business):
         # Call update_bar_chart after adding a new transaction
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
         refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
-
          # Reload the balance
-        user = find_user_by_card_id(encrypt(AUPCard().get_uid()))              
-        Widget.lineBalance_business.setText(str(user['balance']))
+        Widget.lineBalance_business.setText(str(business['balance']))
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
