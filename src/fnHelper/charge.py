@@ -19,7 +19,8 @@ def charge_transaction(Widget, business):
         # Reload the balance
         # business = find_user_by_id(business['_id'])
         # balance = business['balance']
-        Widget.lineBalance_business.setText(business['_id'])
+        # Widget.lineBalance_business.setText(str(balance))
+        Widget.lineBalance_business.setText(str(business['_id']))
 
         # Call update_bar_chart after adding a new transaction
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business['_id'])
