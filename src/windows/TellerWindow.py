@@ -30,6 +30,7 @@ class OTPWithdrawalDialog(QDialog):
     def OTPDialog(self, ProjectMainWindow, user):
         self.ui = Ui_OTPWithdrawalDialog()
         self.ui.setupUi(self)
+        self.ui.otp_Withdraw.setValidator(QIntValidator())
         self.ui.buttonBox.accepted.connect(lambda: self.verifyOTP(ProjectMainWindow, self.ui.otp_Withdraw.text(), user))
         self.ui.buttonBox.rejected.connect(self.reject)
     def verifyOTP(self, ProjectMainWindow, OTP, user):

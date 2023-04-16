@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'OTPWithdrawalDialog.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\OTPWithdrawalDialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -14,35 +14,27 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(451, 123)
-        self.verticalLayoutWidget = QtWidgets.QWidget(Dialog)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 431, 101))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.label_6 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        Dialog.resize(239, 123)
+        self.gridLayout = QtWidgets.QGridLayout(Dialog)
+        self.gridLayout.setObjectName("gridLayout")
+        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        font.setPointSize(16)
-        self.label_6.setFont(font)
-        self.label_6.setObjectName("label_6")
-        self.horizontalLayout_2.addWidget(self.label_6)
-        self.otp_Withdraw = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        font.setPointSize(12)
+        self.buttonBox.setFont(font)
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName("buttonBox")
+        self.gridLayout.addWidget(self.buttonBox, 1, 0, 1, 1)
+        self.otp_Withdraw = QtWidgets.QLineEdit(Dialog)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(16)
         self.otp_Withdraw.setFont(font)
+        self.otp_Withdraw.setMaxLength(6)
+        self.otp_Withdraw.setClearButtonEnabled(False)
         self.otp_Withdraw.setObjectName("otp_Withdraw")
-        self.horizontalLayout_2.addWidget(self.otp_Withdraw)
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.buttonBox = QtWidgets.QDialogButtonBox(self.verticalLayoutWidget)
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-        self.verticalLayout.addWidget(self.buttonBox)
+        self.gridLayout.addWidget(self.otp_Withdraw, 0, 0, 1, 1)
 
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept) # type: ignore
@@ -52,14 +44,4 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "OTP"))
-        self.label_6.setText(_translate("Dialog", "OTP:"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())
+        self.otp_Withdraw.setPlaceholderText(_translate("Dialog", "Enter OTP"))
