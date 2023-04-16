@@ -10,7 +10,7 @@ from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
 from windows.ui.ui_AddTransactionDialog import Ui_Dialog as AddTransaction_Dialog
 from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
-from fnHelper import hashEncryption
+from fnHelper import cryptography
 from datetime import *
 from fnHelper.textSearch import *
 from fnHelper.export_to_csv import *
@@ -79,10 +79,10 @@ class AddUserDialog(QDialog):
 
     def saveButton(self):
         newUser = {
-            'card_id': hashEncryption.encrypt(self.ui.cardID_addUser.text()),
+            'card_id': cryptography.hash(self.ui.cardID_addUser.text()),
             'school_id': self.ui.schoolID_addUser.text(),
-            'password': hashEncryption.encrypt(self.ui.password_addUser.text()),
-            'otp_key': hashEncryption.encrypt(self.ui.secret_addUser.text()),
+            'password': cryptography.hash(self.ui.password_addUser.text()),
+            'otp_key': self.ui.secret_addUser.text(),
             'user_type': self.ui.userType_addUser.currentText().lower(),
             'balance': 0.00,
         }
@@ -138,10 +138,10 @@ class EditUserDialog(QDialog):
     def updateUser(self, id):
             userData = {
                 '_id': ObjectId(id),
-                'card_id': (lambda: self.ui.cardID_editUser.text(), lambda: hashEncryption.encrypt(self.ui.cardID_editUser.text()))[self.ui.cardID_editUser.isEnabled()](),
+                'card_id': (lambda: self.ui.cardID_editUser.text(), lambda: cryptography.hash(self.ui.cardID_editUser.text()))[self.ui.cardID_editUser.isEnabled()](),
                 'school_id': self.ui.schoolID_editUser.text(),
-                'password': hashEncryption.encrypt(self.ui.password_editUser.text()),
-                'otp_key': (lambda: self.ui.otpSecret_editUser.text(), lambda: hashEncryption.encrypt(self.ui.otpSecret_editUser.text()))[self.ui.otpSecret_editUser.isEnabled()](),
+                'password': cryptography.hash(self.ui.password_editUser.text()),
+                'otp_key': self.ui.otpSecret_editUser.text(),
                 'user_type': self.ui.userType_editUser.currentText().lower(),
             }
             update_user(userData)

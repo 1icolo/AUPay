@@ -1,6 +1,6 @@
 from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
-from fnHelper.hashEncryption import encrypt
+from fnHelper.cryptography import hash
 from dbHelper.add_transaction import add_transaction
 from bson import Timestamp
 from datetime import datetime

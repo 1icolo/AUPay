@@ -20,20 +20,20 @@ def selected_row_to_textbox(self):
         self.tellerWindow_amountLine.setText(amount.text())
         self.tellerWindow_descriptionLine.setText(description.text())
 def openOTPDialog(self, user): 
-    self.OTPDialog = OTPWithdrawalDialog(user)
+    self.OTPDialog = OTPWithdrawalDialog(self, user)
     self.OTPDialog.exec_()
 class OTPWithdrawalDialog(QDialog):
-    def __init__(self, user, parent=None):
+    def __init__(self, ProjectMainWindow, user, parent=None):
         print(__name__)
         super(OTPWithdrawalDialog, self).__init__(parent)
-        self.OTPDialog(user)
-    def OTPDialog(self, user):
+        self.OTPDialog(ProjectMainWindow, user)
+    def OTPDialog(self, ProjectMainWindow, user):
         self.ui = Ui_OTPWithdrawalDialog()
         self.ui.setupUi(self)
-        self.ui.buttonBox.accepted.connect(lambda: self.verifyOTP(self.ui.otp_Withdraw.text(), user))
+        self.ui.buttonBox.accepted.connect(lambda: self.verifyOTP(ProjectMainWindow, self.ui.otp_Withdraw.text(), user))
         self.ui.buttonBox.rejected.connect(self.reject)
-    def verifyOTP(self, OTP, user):
-        transact(self, user, OTP)
+    def verifyOTP(self, ProjectMainWindow, OTP, user):
+        transact(ProjectMainWindow, user, OTP)
 
 
 def navbar(self, user):

@@ -5,7 +5,7 @@ from bson import Timestamp, ObjectId
 from datetime import datetime
 from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_card_id, find_user_by_id
-from fnHelper.hashEncryption import encrypt
+from fnHelper.cryptography import hash
 from PyQt5.QtWidgets import QMessageBox
 
 def charge_transaction(Widget, business):
@@ -34,7 +34,7 @@ def charge_transaction(Widget, business):
         "description": Widget.businessWindow_descriptionLine.toPlainText()
     }
     try:
-        transaction['source_id'] = find_user_by_card_id(encrypt(AUPCard().get_uid()))['_id']
+        transaction['source_id'] = find_user_by_card_id(hash(AUPCard().get_uid()))['_id']
     except:
         QMessageBox.critical(Widget, "Error", "No RFID detected.")
 

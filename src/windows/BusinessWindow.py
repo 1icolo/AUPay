@@ -13,7 +13,7 @@ from fnHelper.charge import charge_transaction
 from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_id
-from fnHelper.hashEncryption import encrypt
+from fnHelper.cryptography import hash
 from fnHelper.chargeback import chargeback_transaction
 from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.export_to_csv import *
@@ -70,12 +70,12 @@ class ChargebackDialog(QDialog):
         match user_type:
             case 'business':
                 user = find_user_by_id(transaction_data['destination_id'])
-                if encrypt(AUPCard().get_uid()) == user['card_id']:
+                if hash(AUPCard().get_uid()) == user['card_id']:
                     print("Business verified")
                     self.ui.checkBoxBusiness.setChecked(True)
             case 'user': 
                 user = find_user_by_id(transaction_data['source_id'])
-                if encrypt(AUPCard().get_uid()) == user['card_id']:
+                if hash(AUPCard().get_uid()) == user['card_id']:
                     print("User verified")
                     self.ui.checkBoxUser.setChecked(True)
 

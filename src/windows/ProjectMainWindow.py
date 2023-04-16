@@ -5,7 +5,7 @@ from fnHelper import login
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
 from fnHelper.aupCard import AUPCard
 import sys, os
-from fnHelper import hashEncryption
+from fnHelper import cryptography
 from fnHelper.login import login
 
 class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
