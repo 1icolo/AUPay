@@ -70,7 +70,6 @@ user_schema = {
             },
             'otp_key': {
                 'bsonType': 'string',
-                'pattern': '^[a-fA-F0-9]{64}$'
             },
             'user_type': {
                 'enum': ['admin', 'user', 'business', 'teller']
