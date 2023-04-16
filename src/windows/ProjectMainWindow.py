@@ -13,6 +13,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         super(ProjectMainWindow, self).__init__(parent)
         self.setupUi(self)
         self.loginAttempt('rfid')
+        self.stackedWidget.setStyleSheet("QStackedWidget {background-color: white;}")
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
         self.actionExit.triggered.connect(lambda: QApplication.quit())
         self.actionFullscreen.triggered.connect(lambda: self.toggleFullscreen())
