@@ -10,6 +10,7 @@ from dbHelper.find_transaction import *
 from datetime import *
 from fnHelper.export_to_csv import *
 from fnHelper.refresh_clear import *
+from dbHelper.find_user import *
 
 
 def navBar(self, user):
@@ -20,6 +21,10 @@ def navBar(self, user):
 def UserWindow(self, user):
     print(__name__)
     navBar(self, user)
+    # Reload the balance
+    # user = find_user_by_id(user['_id'])
+    # balance = user['balance']
+    # self.userWindow_balanceLine.setText(str(balance))
     self.userWindow_schoolIdLine.setText(user['school_id'])
     self.userWindow_balanceLine.setText(str(user['balance']))
     # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date
