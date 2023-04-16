@@ -34,8 +34,8 @@
    <string>AUPay</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../src/resources/aupay-icon.png</normaloff>../src/resources/aupay-icon.png</iconset>
+   <iconset resource="../../resources_rc/resources.qrc">
+    <normaloff>:/favicon/aupay-logo/favicon/a-u-pay-website-favicon-color.png</normaloff>:/favicon/aupay-logo/favicon/a-u-pay-website-favicon-color.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: white;</string>
@@ -578,62 +578,150 @@ background-position: center;</string>
               <property name="flat">
                <bool>false</bool>
               </property>
-              <widget class="QGroupBox" name="groupBox_31">
-               <property name="geometry">
-                <rect>
-                 <x>80</x>
-                 <y>100</y>
-                 <width>274</width>
-                 <height>210</height>
-                </rect>
+              <layout class="QGridLayout" name="gridLayout_30">
+               <property name="topMargin">
+                <number>70</number>
                </property>
-               <property name="title">
-                <string/>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_11">
-                <item>
-                 <widget class="QGraphicsView" name="graphicsView"/>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QGroupBox" name="groupBox_32">
-               <property name="geometry">
-                <rect>
-                 <x>920</x>
-                 <y>70</y>
-                 <width>120</width>
-                 <height>80</height>
-                </rect>
-               </property>
-               <property name="title">
-                <string/>
-               </property>
-               <widget class="QPushButton" name="export_user">
-                <property name="geometry">
-                 <rect>
-                  <x>30</x>
-                  <y>30</y>
-                  <width>65</width>
-                  <height>30</height>
-                 </rect>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Segoe UI Semibold</family>
-                  <pointsize>16</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Export</string>
-                </property>
-               </widget>
-              </widget>
+               <item row="0" column="3" rowspan="3">
+                <widget class="QGroupBox" name="groupBox_32">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_13">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="export_user">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>16</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Export</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <spacer name="verticalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_33">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>16</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Item Frequency</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <widget class="QGraphicsView" name="transaction_distribution_user"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1" colspan="2">
+                <widget class="QGroupBox" name="groupBox_31">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>16</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Monthly Amount Transaction</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <widget class="QGraphicsView" name="transaction_monthly_user"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_35">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>16</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Balance Over Time</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_14">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <widget class="QGraphicsView" name="transaction_monthly_user_3"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QGroupBox" name="groupBox_34">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>16</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Transaction Breakdown by Source and Destination</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <widget class="QGraphicsView" name="transaction_monthly_user_2"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -3815,12 +3903,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>29</x>
-     <y>35</y>
+     <x>188</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
-     <x>90</x>
-     <y>32</y>
+     <x>81</x>
+     <y>187</y>
     </hint>
    </hints>
   </connection>
@@ -3831,12 +3919,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>26</x>
-     <y>31</y>
+     <x>68</x>
+     <y>503</y>
     </hint>
     <hint type="destinationlabel">
-     <x>25</x>
-     <y>34</y>
+     <x>68</x>
+     <y>315</y>
     </hint>
    </hints>
   </connection>
@@ -3847,12 +3935,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>26</x>
-     <y>31</y>
+     <x>68</x>
+     <y>503</y>
     </hint>
     <hint type="destinationlabel">
-     <x>25</x>
-     <y>30</y>
+     <x>68</x>
+     <y>277</y>
     </hint>
    </hints>
   </connection>
@@ -3863,12 +3951,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>26</x>
-     <y>31</y>
+     <x>68</x>
+     <y>503</y>
     </hint>
     <hint type="destinationlabel">
-     <x>266</x>
-     <y>29</y>
+     <x>448</x>
+     <y>278</y>
     </hint>
    </hints>
   </connection>
@@ -3879,12 +3967,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>14</x>
-     <y>32</y>
+     <x>32</x>
+     <y>445</y>
     </hint>
     <hint type="destinationlabel">
-     <x>8</x>
-     <y>32</y>
+     <x>28</x>
+     <y>248</y>
     </hint>
    </hints>
   </connection>
@@ -3911,12 +3999,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>29</x>
-     <y>35</y>
+     <x>188</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
-     <x>28</x>
-     <y>35</y>
+     <x>188</x>
+     <y>391</y>
     </hint>
    </hints>
   </connection>
@@ -3927,12 +4015,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>29</x>
-     <y>35</y>
+     <x>188</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
-     <x>28</x>
-     <y>31</y>
+     <x>188</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>
@@ -3943,12 +4031,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>14</x>
-     <y>32</y>
+     <x>16</x>
+     <y>82</y>
     </hint>
     <hint type="destinationlabel">
-     <x>8</x>
-     <y>32</y>
+     <x>10</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>

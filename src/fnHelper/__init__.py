@@ -11,6 +11,7 @@ __all__ = [
     'charge',
     'transact',
     'refreshUserBalance',
+    'charts',
 ]
 
 from .aupCard import *
@@ -25,3 +26,4 @@ from .chargeback import *
 from .charge import *
 from .transact import *
 from .refreshUserBalance import *
+from .charts import *
