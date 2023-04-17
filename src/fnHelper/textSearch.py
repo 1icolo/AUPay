@@ -26,7 +26,7 @@ def search_users(text, tablewidget):
             tablewidget.setRowHidden(row, True)
 
 
-def search_transactions(text, tablewidget, graphicsView):
+def search_transactions(text, tablewidget):
     # iterate over each row in the inventory table
     for row in range(tablewidget.rowCount()):
         _id = tablewidget.item(row, 0).text()
@@ -41,7 +41,7 @@ def search_transactions(text, tablewidget, graphicsView):
             tablewidget.setRowHidden(row, False)
         else:
             tablewidget.setRowHidden(row, True)
-    refresh_bar_chart(tablewidget, graphicsView)
+    # refresh_bar_chart(tablewidget, graphicsView)
         
 
 

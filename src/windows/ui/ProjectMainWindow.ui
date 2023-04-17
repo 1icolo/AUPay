@@ -1705,7 +1705,7 @@ color: white;</string>
            </font>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="pageHome_business">
            <layout class="QGridLayout" name="gridLayout_25">
@@ -2904,7 +2904,7 @@ color: #f27d7d;</string>
            </font>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="page">
            <layout class="QGridLayout" name="gridLayout_28">
@@ -3265,7 +3265,7 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item row="5" column="0">
-                   <widget class="QPushButton" name="buttonClearTransactions_business_2">
+                   <widget class="QPushButton" name="buttonClearTransactions_teller">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -3303,7 +3303,7 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item row="4" column="0">
-                   <widget class="QDateEdit" name="dateTo_business_2">
+                   <widget class="QDateEdit" name="dateTo_teller">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -3351,7 +3351,7 @@ p, li { white-space: pre-wrap; }
                    </widget>
                   </item>
                   <item row="2" column="0">
-                   <widget class="QDateEdit" name="dateFrom_business_2">
+                   <widget class="QDateEdit" name="dateFrom_teller">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -4272,8 +4272,8 @@ p, li { white-space: pre-wrap; }
      <y>516</y>
     </hint>
     <hint type="destinationlabel">
-     <x>81</x>
-     <y>187</y>
+     <x>108</x>
+     <y>258</y>
     </hint>
    </hints>
   </connection>
@@ -4284,8 +4284,8 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>68</x>
-     <y>503</y>
+     <x>86</x>
+     <y>492</y>
     </hint>
     <hint type="destinationlabel">
      <x>68</x>
@@ -4300,12 +4300,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>68</x>
-     <y>503</y>
+     <x>86</x>
+     <y>492</y>
     </hint>
     <hint type="destinationlabel">
-     <x>68</x>
-     <y>277</y>
+     <x>86</x>
+     <y>202</y>
     </hint>
    </hints>
   </connection>
@@ -4316,12 +4316,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>68</x>
-     <y>503</y>
+     <x>86</x>
+     <y>492</y>
     </hint>
     <hint type="destinationlabel">
-     <x>448</x>
-     <y>278</y>
+     <x>746</x>
+     <y>738</y>
     </hint>
    </hints>
   </connection>
@@ -4332,8 +4332,8 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>32</x>
-     <y>445</y>
+     <x>59</x>
+     <y>429</y>
     </hint>
     <hint type="destinationlabel">
      <x>28</x>
@@ -4348,12 +4348,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>570</x>
-     <y>214</y>
+     <x>99</x>
+     <y>138</y>
     </hint>
     <hint type="destinationlabel">
      <x>63</x>
-     <y>215</y>
+     <y>138</y>
     </hint>
    </hints>
   </connection>
@@ -4368,8 +4368,8 @@ p, li { white-space: pre-wrap; }
      <y>516</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>391</y>
+     <x>206</x>
+     <y>501</y>
     </hint>
    </hints>
   </connection>
@@ -4396,12 +4396,28 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>16</x>
-     <y>82</y>
+     <x>18</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>10</x>
-     <y>82</y>
+     <x>12</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearTransactions_teller</sender>
+   <signal>clicked()</signal>
+   <receiver>tellerWindow_transaction_search</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>241</y>
     </hint>
    </hints>
   </connection>

@@ -31,10 +31,10 @@ def UserWindow(self: ProjectMainWindow, user):
     
     # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date
     self.dateTo_user.setDate(QDate.currentDate())
-    self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.userWindow_transactions_table, self.graphicsView_2))
+    self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.userWindow_transactions_table))
     
     # self.dateFrom_user.textChanged.connect(lambda text, selected_date: search_date_transactions(self, text, selected_date, self.userWindow_transactions_table))
-    self.dateFrom_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user, self.graphicsView_2))
-    self.dateTo_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user, self.graphicsView_2))
+    self.dateFrom_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
+    self.dateTo_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
     self.export_user.clicked.connect(lambda: export_chart_to_csv(self.userWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
     self.buttonClearTransactions_user.clicked.connect(lambda: clear_date(self.dateFrom_user, self.dateTo_user))

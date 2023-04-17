@@ -101,7 +101,11 @@ def load_user_transaction_by_id(tableWidget, user):
                                  transaction['destination_id'], transaction['amount'], transaction['description']])
     # print(transactions_data)
     rows = len(transactions_data)
-    columns = len(transactions_data[0])
+    # columns = len(transactions_data[0])
+    if transactions_data:
+        columns = len(transactions_data[0])
+    else:
+        columns = 0
     tableWidget.setRowCount(len(transactions_data))
     # Add the user data to the table
     for row in range(rows):
@@ -115,7 +119,7 @@ def load_user_transaction_by_id(tableWidget, user):
             item.setBackground(color)
             tableWidget.setItem(row, column, item)
 
-from PyQt5.QtCore import QPropertyAnimation
+# from PyQt5.QtCore import QPropertyAnimation
 
 def load_bar_chart(tableWidget, graphicsView):
     # Remove the existing layout from the graphicsView
@@ -207,7 +211,7 @@ def refresh_bar_chart(tableWidget, graphicsView):
 
 
 
-def search_transactions_by_date(tableWidget, date_from_edit, date_to_edit, graphicsView):
+def search_transactions_by_date(tableWidget, date_from_edit, date_to_edit):
     # get the selected date range
     date_from = date_from_edit.date().toPyDate()
     date_to = date_to_edit.date().toPyDate()
@@ -227,7 +231,7 @@ def search_transactions_by_date(tableWidget, date_from_edit, date_to_edit, graph
             # hide rows that do not fall within the selected date range
             tableWidget.setRowHidden(row, True)
 
-    refresh_bar_chart(tableWidget, graphicsView)
+    # refresh_bar_chart(tableWidget, graphicsView)
     return descriptions
 
 
