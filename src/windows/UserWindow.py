@@ -10,7 +10,7 @@ from dbHelper.find_transaction import *
 from datetime import *
 from fnHelper.export_to_csv import *
 from fnHelper.refresh_clear import *
-from fnHelper.charts import *
+from fnHelper.charts import item_frequency_pie_chart
 from windows.ProjectMainWindow import ProjectMainWindow
 
 def navBar(self, user):
