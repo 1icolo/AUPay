@@ -12,6 +12,7 @@ __all__ = [
     'transact',
     'refreshUserBalance',
     'charts',
+    'export_window_to_pdf',
 ]
 
 from .aupCard import *
@@ -27,3 +28,4 @@ from .charge import *
 from .transact import *
 from .refreshUserBalance import *
 from .charts import *
+from .export_window_to_pdf import export_window_to_pdf
