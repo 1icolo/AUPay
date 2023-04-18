@@ -1,6 +1,7 @@
+from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtChart import *
 from bson import *
 from datetime import *
 from fnHelper import jsonIO
@@ -18,7 +19,7 @@ from fnHelper.chargeback import chargeback_transaction
 from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.export_to_csv import *
 from fnHelper.refresh_clear import *
-
+from fnHelper.charts import item_frequency_pie_chart
 
 
 def charge(self, user):
@@ -359,8 +360,138 @@ def BusinessWindow(self, user):
     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.businessWindow_transactions_table))
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
-    load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
+    # business_line_chart(self.businessWindow_transactions_table, self.graphicsView_business_1)
+    analytics(self)
+    # load_bar_chart(self.businessWindow_transactions_table, self.graphicsView_2)
     self.dateFrom_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
     self.dateTo_business.dateChanged.connect(lambda: search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business))
     self.export_business.clicked.connect(lambda: export_chart_to_csv(self.businessWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
-    self.buttonClearTransactions_business.clicked.connect(lambda: clear_date(self.dateFrom_business, self.dateTo_business))
+    self.buttonClearTransactions_business.clicked.connect(lambda: clear_date(self.dateFrom_business, self.dateTo_business, self.businessWindow_transactions_table))
+
+def analytics(self):
+    # business_line_chart(self.businessWindow_transactions_table, self.graphicsView_business_1)
+    item_frequency_pie_chart(self.businessWindow_transactions_table, self.graphicsView_business_1)
+    business_bar_chart(self.businessWindow_transactions_table, self.graphicsView_business_2)
+    business_pie_chart(self.businessWindow_transactions_table, self.graphicsView_business_3)
+    business_stack_chart(self.businessWindow_transactions_table, self.graphicsView_business_4)
+    # item_frequency_pie_chart(self.businessWindow_transactions_table, self.graphicsView_business_4)
+
+
+def business_line_chart(tableWidget, graphicsView):
+    series = QLineSeries()
+    for row in range(tableWidget.rowCount()):
+        timestamp = QDateTime.fromString(tableWidget.item(row, 1).text(), "MM/dd/yyyy").toMSecsSinceEpoch()
+        amount = float(tableWidget.item(row, 4).text())
+        series.append(timestamp, amount)
+    # Create a chart and add the pie series to it
+    chart = QChart()
+    chart.addSeries(series)
+    chart.createDefaultAxes()
+    chart.setTitle("Transaction Count per Day")
+    # Set the alignment of the legend to the right
+    # chart.legend().setAlignment(Qt.AlignRight)
+    # Set the animation options for the chart
+    chart.setAnimationOptions(QChart.SeriesAnimations)
+    # Create a chart view and set its render hint to antialiasing
+    chartView = QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+    # Set the layout of the graphics view to a vertical box layout
+    graphicsView.setLayout(QVBoxLayout())
+    # Add the chart view to the layout of the graphics view
+    graphicsView.layout().addWidget(chartView)
+
+def business_bar_chart(tableWidget, graphicsView):
+    series = QBarSeries()
+    dates = set()
+    for row in range(tableWidget.rowCount()):
+        timestamp = QDateTime.fromString(tableWidget.item(row, 1).text(), "MM/dd/yyyy").toMSecsSinceEpoch()
+        date = QDateTime.fromMSecsSinceEpoch(timestamp).toString("MM/yyyy")
+        dates.add(date)
+    for date in sorted(dates):
+        count = sum(1 for row in range(tableWidget.rowCount()) if QDateTime.fromString(tableWidget.item(row, 1).text(), "MM/dd/yyyy").toString("MM/yyyy") == date)
+        bar_set = QBarSet(date)
+        bar_set.append(count)
+        series.append(bar_set)
+    chart = QChart()
+    chart.addSeries(series)
+    chart.createDefaultAxes()
+    chart.axisX().setCategories(list(sorted(dates)))
+    chart.setTitle("Transaction Count per Month")
+    # Set the alignment of the legend to the right
+    # chart.legend().setAlignment(Qt.AlignRight)
+    # Set the animation options for the chart
+    chart.setAnimationOptions(QChart.SeriesAnimations)
+    # Create a chart view and set its render hint to antialiasing
+    chartView = QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+    # Set the layout of the graphics view to a vertical box layout
+    graphicsView.setLayout(QVBoxLayout())
+    # Add the chart view to the layout of the graphics view
+    graphicsView.layout().addWidget(chartView)
+
+    
+def business_pie_chart(tableWidget, graphicsView):
+    series = QPieSeries()
+    sources = set(tableWidget.item(row, 2).text() for row in range(tableWidget.rowCount()))
+    total_transactions = tableWidget.rowCount()
+    for source in sorted(sources):
+        count = sum(1 for row in range(tableWidget.rowCount()) if tableWidget.item(row, 2).text() == source)
+        percentage = round((count / total_transactions) * 100, 2)
+        label = f"{source} ({percentage}%)"
+        slice = QPieSlice(label, count)
+        series.append(slice)
+    series.setLabelsVisible(True)
+    chart = QChart()
+    chart.addSeries(series)
+    chart.setTitle("Transactions by Source Account")
+    
+    chart.legend().setVisible(False)
+    chart.legend().setAlignment(Qt.AlignRight)
+    # Set the animation options for the chart
+    chart.setAnimationOptions(QChart.SeriesAnimations)
+    # Create a chart view and set its render hint to antialiasing
+    chartView = QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+    # Set the layout of the graphics view to a vertical box layout
+    graphicsView.setLayout(QVBoxLayout())
+    # Add the chart view to the layout of the graphics view
+    graphicsView.layout().addWidget(chartView)
+
+
+
+
+    
+
+def business_stack_chart(tableWidget, graphicsView):
+    series = QStackedBarSeries()
+    dates = set()
+    sources = set(tableWidget.item(row, 2).text() for row in range(tableWidget.rowCount()))
+    destinations = set(tableWidget.item(row, 3).text() for row in range(tableWidget.rowCount()))
+    for row in range(tableWidget.rowCount()):
+        timestamp = QDateTime.fromString(tableWidget.item(row, 1).text(), "MM/dd/yyyy").toMSecsSinceEpoch()
+        date = QDateTime.fromMSecsSinceEpoch(timestamp).toString("MM/dd/yyyy")
+        dates.add(date)
+    for source in sorted(sources):
+        set1 = QBarSet(source)
+        for date in sorted(dates):
+            count = sum(1 for row in range(tableWidget.rowCount()) if tableWidget.item(row, 1).text() == date and tableWidget.item(row, 2).text() == source)
+            set1.append(count)
+        series.append(set1)
+    chart = QChart()
+    chart.addSeries(series)
+    chart.createDefaultAxes()
+    chart.axisX().setCategories(list(sorted(dates)))
+    chart.setTitle("Transactions by Source Account and Date")
+    # chart.legend().setVisible(True)
+    # chart.legend().setAlignment(Qt.AlignBottom)
+    # Set the alignment of the legend to the right
+    # chart.legend().setAlignment(Qt.AlignRight)
+    # Set the animation options for the chart
+    chart.setAnimationOptions(QChart.SeriesAnimations)
+    # Create a chart view and set its render hint to antialiasing
+    chartView = QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+    # Set the layout of the graphics view to a vertical box layout
+    graphicsView.setLayout(QVBoxLayout())
+    # Add the chart view to the layout of the graphics view
+    graphicsView.layout().addWidget(chartView)

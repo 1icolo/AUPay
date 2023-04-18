@@ -1,0 +1,17 @@
+from PyQt5.QtWidgets import *
+from PyQt5.QtChart import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+
+
+def create_line_chart_business(tableWidget, graphicsView):
+    series = QLineSeries()
+    for row in range(tableWidget.rowCount()):
+        timestamp = QDateTime.fromString(tableWidget.item(row, 1).text(), "MM/dd/yyyy").toMSecsSinceEpoch()
+        amount = float(tableWidget.item(row, 4).text())
+        series.append(timestamp, amount)
+    chart = QChart()
+    chart.addSeries(series)
+    chart.createDefaultAxes()
+    chart.setTitle("Transaction Amount over Time")
+    graphicsView.setChart(chart)
