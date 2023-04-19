@@ -97,6 +97,8 @@ def load_user_transaction_by_id(tableWidget, user):
         count += 1
         dt = datetime.fromtimestamp(bson_timestamp.time)
         date_string = dt.strftime("%m/%d/%Y")
+        if transaction['source_id'] == user['school_id']:
+            transaction['amount'] = transaction['amount'] * -1
         transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
                                  transaction['destination_id'], transaction['amount'], transaction['description']])
     # print(transactions_data)
