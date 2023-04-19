@@ -13,16 +13,20 @@ from fnHelper.refresh_clear import *
 from fnHelper.charts import item_frequency_pie_chart
 from windows.ProjectMainWindow import ProjectMainWindow
 from fnHelper import export_window_to_pdf
+from fnHelper.charts import balance_line_chart, monthly_transaction_amounts_chart, transaction_breakdown_chart
 
-def navBar(self, user):
+def navBar(self: ProjectMainWindow, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
     self.userWindow_balanceLine.setText(str(user['balance']))
     self.navHome_user.clicked.connect(lambda: self.stackedWidget_user.setCurrentIndex(0))
     self.navAnalytics_user.clicked.connect(lambda: self.stackedWidget_user.setCurrentIndex(1))
     self.navTransactions_user.clicked.connect(lambda: self.stackedWidget_user.setCurrentIndex(2))
 
-def analytics(self, user):
+def analytics(self: ProjectMainWindow, user):
     item_frequency_pie_chart(self.userWindow_transactions_table, self.transaction_distribution_user)
+    balance_line_chart(self.userWindow_transactions_table, self.balance_over_time_user)
+    monthly_transaction_amounts_chart(self.userWindow_transactions_table, self.monthly_transaction_amount_user)
+    transaction_breakdown_chart(self.userWindow_transactions_table, self.transaction_breakdown_user)
 
 def UserWindow(self: ProjectMainWindow, user):
     print(__name__)
