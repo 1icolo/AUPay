@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -304,9 +304,9 @@ class Ui_ProjectMainWindow(object):
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.groupBox_34)
         self.verticalLayout_13.setContentsMargins(-1, 40, -1, -1)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.transaction_monthly_user_2 = QtWidgets.QGraphicsView(self.groupBox_34)
-        self.transaction_monthly_user_2.setObjectName("transaction_monthly_user_2")
-        self.verticalLayout_13.addWidget(self.transaction_monthly_user_2)
+        self.transaction_breakdown_user = QtWidgets.QGraphicsView(self.groupBox_34)
+        self.transaction_breakdown_user.setObjectName("transaction_breakdown_user")
+        self.verticalLayout_13.addWidget(self.transaction_breakdown_user)
         self.gridLayout_30.addWidget(self.groupBox_34, 1, 1, 1, 1)
         self.groupBox_32 = QtWidgets.QGroupBox(self.groupBox_5)
         self.groupBox_32.setTitle("")
@@ -340,9 +340,9 @@ class Ui_ProjectMainWindow(object):
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.groupBox_31)
         self.verticalLayout_11.setContentsMargins(-1, 40, -1, -1)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.transaction_monthly_user = QtWidgets.QGraphicsView(self.groupBox_31)
-        self.transaction_monthly_user.setObjectName("transaction_monthly_user")
-        self.verticalLayout_11.addWidget(self.transaction_monthly_user)
+        self.monthly_transaction_amount_user = QtWidgets.QGraphicsView(self.groupBox_31)
+        self.monthly_transaction_amount_user.setObjectName("monthly_transaction_amount_user")
+        self.verticalLayout_11.addWidget(self.monthly_transaction_amount_user)
         self.gridLayout_30.addWidget(self.groupBox_31, 0, 1, 1, 2)
         self.groupBox_35 = QtWidgets.QGroupBox(self.groupBox_5)
         font = QtGui.QFont()
@@ -355,9 +355,9 @@ class Ui_ProjectMainWindow(object):
         self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.groupBox_35)
         self.verticalLayout_14.setContentsMargins(-1, 40, -1, -1)
         self.verticalLayout_14.setObjectName("verticalLayout_14")
-        self.transaction_monthly_user_3 = QtWidgets.QGraphicsView(self.groupBox_35)
-        self.transaction_monthly_user_3.setObjectName("transaction_monthly_user_3")
-        self.verticalLayout_14.addWidget(self.transaction_monthly_user_3)
+        self.balance_over_time_user = QtWidgets.QGraphicsView(self.groupBox_35)
+        self.balance_over_time_user.setObjectName("balance_over_time_user")
+        self.verticalLayout_14.addWidget(self.balance_over_time_user)
         self.gridLayout_30.addWidget(self.groupBox_35, 1, 0, 1, 1)
         self.groupBox_32.raise_()
         self.groupBox_33.raise_()

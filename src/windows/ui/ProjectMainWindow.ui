@@ -614,7 +614,7 @@ background-position: center;</string>
                    <number>40</number>
                   </property>
                   <item>
-                   <widget class="QGraphicsView" name="transaction_monthly_user_2"/>
+                   <widget class="QGraphicsView" name="transaction_breakdown_user"/>
                   </item>
                  </layout>
                 </widget>
@@ -684,7 +684,7 @@ background-position: center;</string>
                    <number>40</number>
                   </property>
                   <item>
-                   <widget class="QGraphicsView" name="transaction_monthly_user"/>
+                   <widget class="QGraphicsView" name="monthly_transaction_amount_user"/>
                   </item>
                  </layout>
                 </widget>
@@ -707,7 +707,7 @@ background-position: center;</string>
                    <number>40</number>
                   </property>
                   <item>
-                   <widget class="QGraphicsView" name="transaction_monthly_user_3"/>
+                   <widget class="QGraphicsView" name="balance_over_time_user"/>
                   </item>
                  </layout>
                 </widget>
