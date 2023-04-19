@@ -33,7 +33,7 @@ def load_users_to_table(self, tableWidget):
         print(_id)
 
 def load_transactions_to_table(self, tableWidget, user):
-    transactions = find_all_transactions()
+    transactions = find_all_transactions_aggregated()
     transaction_data = []
     transactions_data = []
     count = 0
@@ -55,7 +55,7 @@ def load_transactions_to_table(self, tableWidget, user):
             item = QTableWidgetItem(str(transactions_data[row][column]))
             tableWidget.setItem(row, column, item)
             destination_id = transactions_data[row][3]
-            if destination_id == user['_id']:
+            if destination_id == user['school_id']:
                 color = QColor(51, 255, 153)  # light green
             else:
                 color = QColor(255, 255, 255)  # light red
@@ -87,7 +87,7 @@ def load_inventory_to_table(tableWidget):
         print(f"Exception in load_inventory_to_table\n{e}")
 
 def load_user_transaction_by_id(tableWidget, user):
-    transactions = find_all_transactions_of_user(user)
+    transactions = find_all_transactions_of_user_aggregated(user['_id'])
     transaction_data = []
     transactions_data = []
     count = 0
@@ -110,7 +110,7 @@ def load_user_transaction_by_id(tableWidget, user):
     # Add the user data to the table
     for row in range(rows):
         destination_id = transactions_data[row][3]
-        if destination_id == user:
+        if destination_id == user['school_id']:
             color = QColor(198, 239, 206)  # light green
         else:
             color = QColor(255, 199, 206)  # light red
@@ -195,19 +195,20 @@ def load_bar_chart(tableWidget, graphicsView):
 
 
 def refresh_bar_chart(tableWidget, graphicsView):
-    # Remove any existing chart view from the layout
-    chartView = None
-    for i in range(graphicsView.layout().count()):
-        widget = graphicsView.layout().itemAt(i).widget()
-        if isinstance(widget, QChartView):
-            chartView = widget
-            graphicsView.layout().removeWidget(chartView)
-            break
-    if chartView is not None:
-        chartView.deleteLater()
+    pass
+    # # Remove any existing chart view from the layout
+    # chartView = None
+    # for i in range(graphicsView.layout().count()):
+    #     widget = graphicsView.layout().itemAt(i).widget()
+    #     if isinstance(widget, QChartView):
+    #         chartView = widget
+    #         graphicsView.layout().removeWidget(chartView)
+    #         break
+    # if chartView is not None:
+    #     chartView.deleteLater()
 
-    # Load the new chart and add it to the layout
-    load_bar_chart(tableWidget, graphicsView)
+    # # Load the new chart and add it to the layout
+    # load_bar_chart(tableWidget, graphicsView)
 
 
 
