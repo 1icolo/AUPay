@@ -79,13 +79,13 @@ def find_all_transactions_aggregated():
         return None
 
 
-def find_all_transactions_of_user(_id):
-    _id = ObjectId(_id)
+def find_all_transactions_of_user(user):
+    user['_id'] = ObjectId(user['_id'])
     try:
         transactions = Database().collection['transactions'].find({
             "$or": [
-                {'source_id': _id},
-                {'destination_id': _id}
+                {'source_id': user['_id']},
+                {'destination_id': user['_id']}
             ]
         })
         return transactions
