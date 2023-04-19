@@ -50,34 +50,5 @@ def total_amount_chart(tableWidget, graphicsView, user=None):
     # Clear the existing layout before adding a new one
     graphicsView.setLayout(QVBoxLayout())
 
-
-
-    # # Create a bar series and add the bar sets to it
-    # series = QBarSeries()
-    # series.append(bar_set)
-    # # series.append(withdrawals_set)
-    
-    # # Create a chart and add the bar series to it
-    # chart = QChart()
-    # chart.addSeries(series)
-
-    # # Create and configure the x-axis
-    # axisX = QBarCategoryAxis()
-    # axisX.append(labels)
-    # chart.addAxis(axisX, Qt.AlignBottom)
-    # series.attachAxis(axisX)
-
-    # # Create and configure the y-axis (amounts)
-    # axisY = QValueAxis()
-    # chart.addAxis(axisY, Qt.AlignLeft)
-    # series.attachAxis(axisY)
-
-    # # Set the alignment of the legend
-    # chartView = QChartView(chart)
-    # chartView.setRenderHint(QPainter.Antialiasing)
-
-    # # Clear the existing layout before adding a new one
-    # graphicsView.setLayout(QVBoxLayout())
-
     # Add chartView to the layout
     graphicsView.layout().addWidget(chartView)
