@@ -9,7 +9,7 @@ def login(self, mode):
         if mode == 'password':
             user = find_user_by_login(self.lineSchoolId_login.text(), hash(self.linePassword_login.text()))
         elif mode == 'rfid':
-            user = find_user_by_card_id(hash(AUPCard(0.001).get_uid()))
+            user = find_user_by_card_id(hash(AUPCard(2).get_uid()))
 
         if user is None:
             return
