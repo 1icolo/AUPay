@@ -231,7 +231,7 @@ def AdminWindow(self, user):
     self.dateFrom_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
     self.dateTo_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
     self.export_administrator.clicked.connect(lambda: export_chart_to_csv(self.adminWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
-    self.buttonClearTransactions_administrator.clicked.connect(lambda: clear_date(self.dateFrom_administrator, self.dateTo_administrator))
+    self.buttonClearTransactions_administrator.clicked.connect(lambda: clear_date(self.dateFrom_administrator, self.dateTo_administrator, self.adminWindow_transactions_table))
     # self.refresh_administrator.clicked.connect(lambda: resfresh_table(self, self.adminWindow_users_table))
     self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
     self.refresh_administrator.clicked.connect(lambda: refreshUserBalance())

@@ -65,7 +65,7 @@ def TellerWindow(self, user):
     self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.tellerWindow_transactions_table))
     self.dateFrom_teller.dateChanged.connect(lambda: search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller))
     self.dateTo_teller.dateChanged.connect(lambda: search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller))
-    self.buttonClearTransactions_teller.clicked.connect(lambda: clear_date(self.dateFrom_teller, self.dateTo_teller))
+    self.buttonClearTransactions_teller.clicked.connect(lambda: clear_date(self.dateFrom_teller, self.dateTo_teller, self.tellerWindow_transactions_table))
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
     self.lineBalance_teller.setText(str(compute_user_balance(user['_id'])))
         

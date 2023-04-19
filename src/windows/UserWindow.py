@@ -43,4 +43,4 @@ def UserWindow(self: ProjectMainWindow, user):
     self.dateTo_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
     # self.export_user.clicked.connect(lambda: export_chart_to_csv(self.userWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
     self.export_user.clicked.connect(lambda: export_window_to_pdf(self, user))
-    self.buttonClearTransactions_user.clicked.connect(lambda: clear_date(self.dateFrom_user, self.dateTo_user))
+    self.buttonClearTransactions_user.clicked.connect(lambda: clear_date(self.dateFrom_user, self.dateTo_user, self.userWindow_transactions_table))
