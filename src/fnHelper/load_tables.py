@@ -87,7 +87,7 @@ def load_inventory_to_table(tableWidget):
         print(f"Exception in load_inventory_to_table\n{e}")
 
 def load_user_transaction_by_id(tableWidget, user):
-    transactions = find_all_transactions_of_user_aggregated(user['_id'])
+    transactions = find_all_transactions_of_user_aggregated(user)
     transaction_data = []
     transactions_data = []
     count = 0
@@ -97,11 +97,6 @@ def load_user_transaction_by_id(tableWidget, user):
         count += 1
         dt = datetime.fromtimestamp(bson_timestamp.time)
         date_string = dt.strftime("%m/%d/%Y")
-
-        # conversion to negative if source is the user
-        if transaction['source_id'] == user['school_id']:
-            transaction['amount'] = transaction['amount'] * -1
-            
         transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
                                  transaction['destination_id'], transaction['amount'], transaction['description']])
     # print(transactions_data)

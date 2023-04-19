@@ -94,15 +94,15 @@ def find_all_transactions_of_user(_id):
         return None
 
 
-def find_all_transactions_of_user_aggregated(_id):
-    _id = ObjectId(_id)
+def find_all_transactions_of_user_aggregated(user):
+    user['_id'] = ObjectId(user['_id'])
     try:
         pipeline = [
             {
                 '$match': {
                     "$or": [
-                        {'source_id': _id},
-                        {'destination_id': _id}
+                        {'source_id': user['_id']},
+                        {'destination_id': user['_id']}
                     ]
                 }
             },
@@ -154,7 +154,19 @@ def find_all_transactions_of_user_aggregated(_id):
                         ]
                     }
                 }
+            },
+            {
+                '$addFields': {
+                    'amount': {
+                        '$cond': [
+                            {'$eq': ['$source_id', user['school_id']]},
+                            {'$multiply': ['$amount', -1]},
+                            '$amount'
+                        ]
+                    }
+                }
             }
+
         ]
         transactions = Database(
         ).collection['transactions'].aggregate(pipeline)
