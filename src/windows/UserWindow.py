@@ -31,7 +31,7 @@ def analytics(self: ProjectMainWindow, user):
 def UserWindow(self: ProjectMainWindow, user):
     print(__name__)
     navBar(self, user)
-    load_user_transaction_by_id(self.userWindow_transactions_table, user['_id'])
+    load_user_transaction_by_id(self.userWindow_transactions_table, user)
     analytics(self, user)
     
     # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date
