@@ -13,7 +13,7 @@ from fnHelper.refresh_clear import *
 from fnHelper.charts import item_frequency_pie_chart
 from windows.ProjectMainWindow import ProjectMainWindow
 from fnHelper import export_window_to_pdf
-from fnHelper.charts import balance_line_chart, monthly_transaction_amounts_chart, transaction_breakdown_chart
+from fnHelper.charts import balance_line_chart, transaction_breakdown_chart, total_spending_amount_chart, transaction_amounts_chart
 
 def navBar(self: ProjectMainWindow, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
@@ -25,19 +25,24 @@ def navBar(self: ProjectMainWindow, user):
 def analytics(self: ProjectMainWindow, user):
     item_frequency_pie_chart(self.userWindow_transactions_table, self.transaction_distribution_user)
     balance_line_chart(self.userWindow_transactions_table, self.balance_over_time_user)
-    monthly_transaction_amounts_chart(self.userWindow_transactions_table, self.monthly_transaction_amount_user)
+    total_spending_amount_chart(self.userWindow_transactions_table, self.monthly_transaction_amount_user)
     transaction_breakdown_chart(self.userWindow_transactions_table, self.transaction_breakdown_user)
+
+def transactions(self: ProjectMainWindow, user):
+    load_user_transaction_by_id(self.userWindow_transactions_table, user)
+    self.dateTo_user.setDate(QDate.currentDate())
+
+def refresh(self: ProjectMainWindow, user):
+    navBar(self, user)
+    transactions(self, user)
+    analytics(self, user)
 
 def UserWindow(self: ProjectMainWindow, user):
     print(__name__)
-    navBar(self, user)
-    load_user_transaction_by_id(self.userWindow_transactions_table, user)
-    analytics(self, user)
-    
+    refresh(self, user)
+    self.navRefresh_user.clicked.connect(lambda: refresh(self, user))
     # self.dateFrom_user.setDate(QDate.currentDate())  # set default search date
-    self.dateTo_user.setDate(QDate.currentDate())
     self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.userWindow_transactions_table))
-    
     # self.dateFrom_user.textChanged.connect(lambda text, selected_date: search_date_transactions(self, text, selected_date, self.userWindow_transactions_table))
     self.dateFrom_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
     self.dateTo_user.dateChanged.connect(lambda: search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user))
