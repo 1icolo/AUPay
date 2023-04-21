@@ -69,7 +69,13 @@ def find_all_transactions_aggregated():
                         ]
                     }
                 }
+            },
+            {
+                '$sort': {
+                    'timestamp': 1
+                }
             }
+
         ]
         transactions = Database(
         ).collection['transactions'].aggregate(pipeline)
@@ -164,6 +170,11 @@ def find_all_transactions_of_user_aggregated(user):
                             '$amount'
                         ]
                     }
+                }
+            },
+            {
+                '$sort': {
+                    'timestamp': 1
                 }
             }
 
