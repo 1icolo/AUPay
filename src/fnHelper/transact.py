@@ -50,7 +50,7 @@ def transact(Widget, teller, OTP):
         add_transaction(newTransaction)
         refresh(teller)
         load_user_transaction_by_id(
-            Widget.tellerWindow_transactions_table, teller['_id']
+            Widget.tellerWindow_transactions_table, teller
         )
         Widget.tellerWindow_transactions_table.setCurrentItem(None)
         Widget.buttonClearFields_teller.click()
