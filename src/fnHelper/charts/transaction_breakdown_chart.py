@@ -29,6 +29,7 @@ def transaction_breakdown_chart(tableWidget, graphicsView):
             source = tableWidget.item(row, 2).text().strip()
             destination = tableWidget.item(row, 3).text().strip()
             amount = float(tableWidget.item(row, 4).text().strip())
+            amount = abs(amount) # Convert any negative values to positive
 
             # Add the transaction amount to the source and destination totals
             source_amounts[source] += amount

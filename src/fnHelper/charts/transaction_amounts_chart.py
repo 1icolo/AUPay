@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter
 from PyQt5.QtWidgets import QVBoxLayout
 
-def monthly_transaction_amounts_chart(tableWidget, graphicsView):
+def transaction_amounts_chart(tableWidget, graphicsView):
     # Clear any existing content in the graphicsView
     layout = graphicsView.layout()
     if layout is not None:
@@ -28,6 +28,7 @@ def monthly_transaction_amounts_chart(tableWidget, graphicsView):
             # Get the date and amount from the tableWidget
             date = tableWidget.item(row, 1).text().strip()
             amount = float(tableWidget.item(row, 4).text().strip())
+            amount = abs(amount) # Convert any negative values to positive
 
             # Convert the date to a datetime object
             date = datetime.strptime(date, '%m/%d/%Y')
