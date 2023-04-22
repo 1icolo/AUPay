@@ -53,7 +53,7 @@ def transactions(self: ProjectMainWindow, user):
 def dateChanged(self: ProjectMainWindow, user):
     search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
     analytics(self, user)
-    
+
 def refresh(self: ProjectMainWindow, user):
     navbar(self, user)
     transactions(self, user)
@@ -75,6 +75,6 @@ def transactAttempt(self: ProjectMainWindow, user):
         if(self.comboTransaction_teller.currentText() == "Withdraw"):
             openOTPDialog(self,user)
         elif(self.comboTransaction_teller.currentText() == "Deposit"):
-            transact(self,user, OTP=None)
+            transact(self,user)
 
 

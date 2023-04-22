@@ -11,7 +11,7 @@ from fnHelper.otpAuth import verify_otp, get_totp
 from PyQt5.QtWidgets import QMessageBox
 
 
-def transact(Widget, teller, OTP):
+def transact(Widget, teller, OTP=None):
 
     def refresh(teller):
         # Reload the balance
