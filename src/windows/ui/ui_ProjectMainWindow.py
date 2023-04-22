@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -1719,11 +1719,11 @@ class Ui_ProjectMainWindow(object):
         self.gridLayout_43 = QtWidgets.QGridLayout(self.groupBox_461)
         self.gridLayout_43.setContentsMargins(-1, 40, -1, -1)
         self.gridLayout_43.setObjectName("gridLayout_43")
-        self.deposit_frequency_teller = QtWidgets.QGraphicsView(self.groupBox_461)
-        self.deposit_frequency_teller.setObjectName("deposit_frequency_teller")
-        self.gridLayout_43.addWidget(self.deposit_frequency_teller, 1, 0, 1, 1)
+        self.deposit_and_withdrawal_frequency_teller = QtWidgets.QGraphicsView(self.groupBox_461)
+        self.deposit_and_withdrawal_frequency_teller.setObjectName("deposit_and_withdrawal_frequency_teller")
+        self.gridLayout_43.addWidget(self.deposit_and_withdrawal_frequency_teller, 1, 0, 1, 1)
         self.groupBox_50 = QtWidgets.QGroupBox(self.groupBox_27)
-        self.groupBox_50.setGeometry(QtCore.QRect(540, 380, 501, 281))
+        self.groupBox_50.setGeometry(QtCore.QRect(10, 370, 1031, 281))
         font = QtGui.QFont()
         font.setFamily("Segoe UI Semibold")
         font.setPointSize(14)
@@ -2443,8 +2443,7 @@ class Ui_ProjectMainWindow(object):
         self.groupBox_27.setTitle(_translate("ProjectMainWindow", "Analytics"))
         self.groupBox_28.setTitle(_translate("ProjectMainWindow", "Transaction Frequency"))
         self.export_business_2.setText(_translate("ProjectMainWindow", "Export"))
-        self.groupBox_451.setTitle(_translate("ProjectMainWindow", "Withdrawal Frequency"))
-        self.groupBox_461.setTitle(_translate("ProjectMainWindow", "Deposit Frequency"))
+        self.groupBox_461.setTitle(_translate("ProjectMainWindow", "Deposit and Withdrawal Frequency"))
         self.groupBox_50.setTitle(_translate("ProjectMainWindow", "Total Amount of Deposits and Withdrawals"))
         self.groupBox.setTitle(_translate("ProjectMainWindow", "Transactions"))
         self.groupBox_38.setTitle(_translate("ProjectMainWindow", "Filter"))

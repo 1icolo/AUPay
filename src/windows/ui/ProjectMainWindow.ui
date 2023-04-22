@@ -3358,35 +3358,6 @@ p, li { white-space: pre-wrap; }
                 </item>
                </layout>
               </widget>
-              <widget class="QGroupBox" name="groupBox_45">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>380</y>
-                 <width>501</width>
-                 <height>281</height>
-                </rect>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Segoe UI Semibold</family>
-                 <pointsize>14</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="title">
-                <string>Withdrawal Frequency</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_40">
-                <property name="topMargin">
-                 <number>40</number>
-                </property>
-                <item row="1" column="0">
-                 <widget class="QGraphicsView" name="withdrawal_frequency_teller"/>
-                </item>
-               </layout>
-              </widget>
               <widget class="QGroupBox" name="groupBox_46">
                <property name="geometry">
                 <rect>
@@ -3405,23 +3376,23 @@ p, li { white-space: pre-wrap; }
                 </font>
                </property>
                <property name="title">
-                <string>Deposit Frequency</string>
+                <string>Deposit and Withdrawal Frequency</string>
                </property>
                <layout class="QGridLayout" name="gridLayout_43">
                 <property name="topMargin">
                  <number>40</number>
                 </property>
                 <item row="1" column="0">
-                 <widget class="QGraphicsView" name="deposit_frequency_teller"/>
+                 <widget class="QGraphicsView" name="deposit_and_withdrawal_frequency_teller"/>
                 </item>
                </layout>
               </widget>
               <widget class="QGroupBox" name="groupBox_50">
                <property name="geometry">
                 <rect>
-                 <x>540</x>
-                 <y>380</y>
-                 <width>501</width>
+                 <x>10</x>
+                 <y>370</y>
+                 <width>1031</width>
                  <height>281</height>
                 </rect>
                </property>
