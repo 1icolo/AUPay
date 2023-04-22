@@ -15,12 +15,12 @@ def total_amount_chart(tableWidget, graphicsView, user=None):
                 widget.deleteLater()
 
     total_amount = defaultdict(float)
-
     for row in range(tableWidget.rowCount()):
-        if(str(user) == tableWidget.item(row, 3).text()):
-            total_amount["Deposit"] += float(tableWidget.item(row, 4).text().strip())
-        elif(str(user) == tableWidget.item(row, 2).text()):
-            total_amount["Withdrawal"] += (float(tableWidget.item(row, 4).text().strip()) * -1)
+        if not tableWidget.isRowHidden(row):
+            if(str(user['school_id']) == tableWidget.item(row, 3).text()):
+                total_amount["Deposit"] += float(tableWidget.item(row, 4).text().strip())
+            elif(str(user['school_id']) == tableWidget.item(row, 2).text()):
+                total_amount["Withdrawal"] += (float(tableWidget.item(row, 4).text().strip()) * -1)
     # Create bar sets
     labels = []
     bar_set = QBarSet("Item")

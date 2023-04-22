@@ -5,3 +5,5 @@ from .transaction_amounts_chart import transaction_amounts_chart
 from .transaction_breakdown_chart import transaction_breakdown_chart
 from .total_spending_amount_chart import total_spending_amount_chart
 from .transaction_volume_bar_chart import transaction_volume_bar_chart
+from .total_withdrawal_and_deposit_chart import total_withdrawal_and_deposit_chart
+from .transaction_frequency_chart import transaction_frequency

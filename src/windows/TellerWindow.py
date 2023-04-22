@@ -2,29 +2,24 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from fnHelper.load_tables import *
-from fnHelper.textSearch import *
+from fnHelper.textSearch import search_transactions
 from bson import *
 from datetime import *
-from dbHelper.add_transaction import add_transaction
-from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.transact import transact
 from windows.ui.ui_OTPWithdrawalDialog import Ui_Dialog as Ui_OTPWithdrawalDialog
-from fnHelper.refresh_clear import *
-from dbHelper.find_user import *
+from windows.ProjectMainWindow import ProjectMainWindow
+from fnHelper.refresh_clear import clear_date
+from dbHelper.find_user import find_user_by_id
 from fnHelper.charts.total_amount_chart import total_amount_chart
+from fnHelper.charts.total_withdrawal_and_deposit_chart import total_withdrawal_and_deposit_chart
+from fnHelper.charts.transaction_frequency_chart import transaction_frequency
+from fnHelper import export_window_to_pdf
+from fnHelper.export_to_csv import *
 
-def selected_row_to_textbox(self):
-    selected_row = self.tellerWindow_transactions_table.currentRow()
-    school_id = self.tellerWindow_transactions_table.item(selected_row, 2)
-    amount = self.tellerWindow_transactions_table.item(selected_row, 4)
-    description = self.tellerWindow_transactions_table.item(selected_row, 5)
-    if school_id and amount and description is not None:
-        # put the data in the line edit/textbox
-        self.tellerWindow_amountLine.setText(amount.text())
-        self.tellerWindow_descriptionLine.setText(description.text())
-def openOTPDialog(self, user): 
+def openOTPDialog(self: ProjectMainWindow, user): 
     self.OTPDialog = OTPWithdrawalDialog(self, user)
     self.OTPDialog.exec_()
+
 class OTPWithdrawalDialog(QDialog):
     def __init__(self, ProjectMainWindow, user, parent=None):
         print(__name__)
@@ -40,44 +35,51 @@ class OTPWithdrawalDialog(QDialog):
         transact(ProjectMainWindow, user, OTP)
 
 
-def navbar(self, user):
+def navbar(self: ProjectMainWindow, user):
+    teller = find_user_by_id(user['_id'])
+    self.lineBalance_teller.setText(str(teller['balance']))
+    self.lineTeller_teller.setText(str(user['school_id']))
     self.navHome_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(0))
     self.navDashboard_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(1))
     self.navAnalytics_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(2))
     self.navTransactions_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(3))
 
-def analytics(self, user):
+def analytics(self: ProjectMainWindow, user):
     total_amount_chart(self.tellerWindow_transactions_table, self.total_amount_teller, user)
+    total_withdrawal_and_deposit_chart(self.tellerWindow_transactions_table, self.deposit_and_withdrawal_frequency_teller, user)
+    transaction_frequency(self.tellerWindow_transactions_table, self.transaction_frequency_teller)
 
-def TellerWindow(self, user):
-    print(__name__)
-    navbar(self, user)
-    # Reload the balance
-    teller = find_user_by_id(user['_id'])
-    balance = teller['balance']
-    self.lineBalance_teller.setText(str(balance))
-    # self.lineBalance_teller.setText(str(user['balance']))
-    self.lineTeller_teller.setText(str(user['school_id']))
-    self.dateTo_teller.setDate(QDate.currentDate())
-    # load_user_transaction_data(self)
-    # load_transactions_to_table(self, self.tellerWindow_transactions_table)
+def transactions(self: ProjectMainWindow, user):
     load_user_transaction_by_id(self.tellerWindow_transactions_table, user)
-    load_bar_chart(self.tellerWindow_transactions_table, self.transaction_frequency_teller)
-    self.tellerWindow_transactions_table.itemSelectionChanged.connect(lambda: selected_row_to_textbox(self))
+
+def dateChanged(self: ProjectMainWindow, user):
+    search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
+    analytics(self, user)
+
+def refresh(self: ProjectMainWindow, user):
+    navbar(self, user)
+    transactions(self, user)
+    analytics(self, user)
+
+
+def TellerWindow(self: ProjectMainWindow, user):
+    print(__name__)
+    refresh(self, user)
+    self.dateTo_teller.setDate(QDate.currentDate())
     self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.tellerWindow_transactions_table))
-    self.dateFrom_teller.dateChanged.connect(lambda: search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller))
-    self.dateTo_teller.dateChanged.connect(lambda: search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller))
+    self.dateFrom_teller.dateChanged.connect(lambda: dateChanged(self, user))
+    self.dateTo_teller.dateChanged.connect(lambda: dateChanged(self, user))
     self.buttonClearTransactions_teller.clicked.connect(lambda: clear_date(self.dateFrom_teller, self.dateTo_teller, self.tellerWindow_transactions_table))
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
-    self.lineBalance_teller.setText(str(compute_user_balance(user['_id'])))
-    analytics(self, user['school_id'])
+    self.refreshButton_teller.clicked.connect(lambda: refresh(self, user))
+    self.exportToCSVButton_teller.clicked.connect(lambda: export_to_csv(self.tellerWindow_transactions_table, user))
+    self.exportToPDFButton_teller.clicked.connect(lambda: export_window_to_pdf(self, user))
     
-        
-def transactAttempt(self, user):
+def transactAttempt(self: ProjectMainWindow, user):
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
         if(self.comboTransaction_teller.currentText() == "Withdraw"):
             openOTPDialog(self,user)
         elif(self.comboTransaction_teller.currentText() == "Deposit"):
-            transact(self,user, OTP=None)
+            transact(self,user)
 
 
