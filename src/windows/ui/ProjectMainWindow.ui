@@ -2984,9 +2984,9 @@ p, li { white-space: pre-wrap; }
               <widget class="QGroupBox" name="groupBox_29">
                <property name="geometry">
                 <rect>
-                 <x>1060</x>
+                 <x>1040</x>
                  <y>70</y>
-                 <width>91</width>
+                 <width>161</width>
                  <height>591</height>
                 </rect>
                </property>
@@ -2995,7 +2995,7 @@ p, li { white-space: pre-wrap; }
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
-                 <widget class="QPushButton" name="export_business_2">
+                 <widget class="QPushButton" name="exportToPDFButton_teller">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -3009,7 +3009,7 @@ p, li { white-space: pre-wrap; }
                    </font>
                   </property>
                   <property name="text">
-                   <string>Export</string>
+                   <string>Export to PDF</string>
                   </property>
                  </widget>
                 </item>
@@ -3130,6 +3130,19 @@ p, li { white-space: pre-wrap; }
                   <property name="topMargin">
                    <number>40</number>
                   </property>
+                  <item row="6" column="0">
+                   <spacer name="verticalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                   <item row="3" column="0">
                    <widget class="QLabel" name="label_24">
                     <property name="sizePolicy">
@@ -3146,44 +3159,6 @@ p, li { white-space: pre-wrap; }
                     </property>
                     <property name="text">
                      <string>To</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="0">
-                   <widget class="QPushButton" name="buttonClearTransactions_teller">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Clear</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_23">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>From</string>
                     </property>
                    </widget>
                   </item>
@@ -3235,6 +3210,44 @@ p, li { white-space: pre-wrap; }
                     </property>
                    </widget>
                   </item>
+                  <item row="5" column="0">
+                   <widget class="QPushButton" name="buttonClearTransactions_teller">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Clear</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_23">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>From</string>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="2" column="0">
                    <widget class="QDateEdit" name="dateFrom_teller">
                     <property name="sizePolicy">
@@ -3264,18 +3277,20 @@ p, li { white-space: pre-wrap; }
                     </property>
                    </widget>
                   </item>
-                  <item row="6" column="0">
-                   <spacer name="verticalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
+                  <item row="7" column="0">
+                   <widget class="QPushButton" name="exportToCSVButton_teller">
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
                     </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
+                    <property name="text">
+                     <string>Export to CSV</string>
                     </property>
-                   </spacer>
+                   </widget>
                   </item>
                  </layout>
                 </widget>

@@ -13,6 +13,8 @@ from dbHelper.find_user import find_user_by_id
 from fnHelper.charts.total_amount_chart import total_amount_chart
 from fnHelper.charts.total_withdrawal_and_deposit_chart import total_withdrawal_and_deposit_chart
 from fnHelper.charts.transaction_frequency_chart import transaction_frequency
+from fnHelper import export_window_to_pdf
+from fnHelper.export_to_csv import *
 
 def openOTPDialog(self: ProjectMainWindow, user): 
     self.OTPDialog = OTPWithdrawalDialog(self, user)
@@ -70,6 +72,8 @@ def TellerWindow(self: ProjectMainWindow, user):
     self.buttonClearTransactions_teller.clicked.connect(lambda: clear_date(self.dateFrom_teller, self.dateTo_teller, self.tellerWindow_transactions_table))
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
     self.refreshButton_teller.clicked.connect(lambda: refresh(self, user))
+    self.exportToCSVButton_teller.clicked.connect(lambda: export_to_csv(self.tellerWindow_transactions_table, user))
+    self.exportToPDFButton_teller.clicked.connect(lambda: export_window_to_pdf(self, user))
     
 def transactAttempt(self: ProjectMainWindow, user):
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
