@@ -16,6 +16,9 @@ def balance_line_chart(tableWidget, graphicsView):
     # Create a line series to hold the data
     series = QLineSeries()
 
+    # Keep track of the last known balance
+    last_balance = float(0.00)
+
     # Iterate over the rows of the tableWidget
     for row in range(tableWidget.rowCount()):
         if not tableWidget.isRowHidden(row):
@@ -23,8 +26,11 @@ def balance_line_chart(tableWidget, graphicsView):
             date = tableWidget.item(row, 1).text().strip()
             balance = float(tableWidget.item(row, 4).text().strip())
 
+            last_balance = balance + last_balance
+
             # Add the data to the line series
-            series.append(QDateTime.fromString(date, 'MM/dd/yyyy').toMSecsSinceEpoch(), balance)
+            series.append(QDateTime.fromString(date, 'MM/dd/yyyy').toMSecsSinceEpoch(), last_balance)
+
 
     # Create a chart and add the line series to it
     chart = QChart()
@@ -38,6 +44,9 @@ def balance_line_chart(tableWidget, graphicsView):
 
     # Create and configure the y-axis (balance)
     axisY = QValueAxis()
+    axisY.setMin(0)  # Set minimum value of y-axis to 0
+    max_y = max([point.y() for point in series.points()]) # Find the maximum y-value in the series
+    axisY.setMax(max_y)
     chart.addAxis(axisY, Qt.AlignLeft)
     series.attachAxis(axisY)
 
