@@ -2312,7 +2312,7 @@ class Ui_ProjectMainWindow(object):
         self.groupBox_13.setTitle(_translate("ProjectMainWindow", "Home"))
         self.groupBox_5.setTitle(_translate("ProjectMainWindow", "Analytics"))
         self.groupBox_33.setTitle(_translate("ProjectMainWindow", "Item Frequency"))
-        self.groupBox_34.setTitle(_translate("ProjectMainWindow", "Transaction Breakdown"))
+        self.groupBox_34.setTitle(_translate("ProjectMainWindow", "Top Spending Destinations"))
         self.groupBox_31.setTitle(_translate("ProjectMainWindow", "Monthly Spending"))
         self.groupBox_35.setTitle(_translate("ProjectMainWindow", "Balance Over Time"))
         self.groupBox_2.setTitle(_translate("ProjectMainWindow", "Transactions"))

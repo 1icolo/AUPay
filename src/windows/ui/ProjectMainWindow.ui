@@ -607,7 +607,7 @@ background-position: center;</string>
                   </font>
                  </property>
                  <property name="title">
-                  <string>Transaction Breakdown</string>
+                  <string>Top Spending Destinations</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <property name="topMargin">
