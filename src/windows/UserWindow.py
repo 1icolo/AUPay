@@ -5,12 +5,11 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
-from fnHelper import export_window_to_pdf, login, setDateRangeFields
-from fnHelper.charts import (balance_line_chart, item_frequency_pie_chart,
+from fnHelper import export_window_to_pdf, setDateRangeFields
+from fnHelper.charts import (balance_line_chart, 
+                             item_frequency_pie_chart,
                              total_spending_amount_chart,
-                             transaction_amounts_chart,
-                             transaction_breakdown_chart,
-                             transaction_volume_bar_chart)
+                             top_spending_destinations_chart)
 from fnHelper.export_to_csv import *
 from fnHelper.load_tables import *
 from fnHelper.refresh_clear import *
@@ -30,7 +29,7 @@ def refresh_analytics(self: ProjectMainWindow, user):
     item_frequency_pie_chart(self.userWindow_transactions_table, self.transaction_distribution_user)
     balance_line_chart(self.userWindow_transactions_table, self.balance_over_time_user)
     total_spending_amount_chart(self.userWindow_transactions_table, self.monthly_transaction_amount_user)
-    transaction_volume_bar_chart(self.userWindow_transactions_table, self.transaction_breakdown_user)
+    top_spending_destinations_chart(self.userWindow_transactions_table, self.transaction_breakdown_user, user)
 
 
 def refresh_transactions(self: ProjectMainWindow, user):
