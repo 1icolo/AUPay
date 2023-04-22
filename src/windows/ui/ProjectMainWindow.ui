@@ -502,7 +502,7 @@ color: black;
            </font>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="pageHome_user">
            <layout class="QGridLayout" name="gridLayout_22">
@@ -573,52 +573,6 @@ background-position: center;</string>
                <property name="topMargin">
                 <number>70</number>
                </property>
-               <item row="1" column="0">
-                <widget class="QGroupBox" name="groupBox_35">
-                 <property name="font">
-                  <font>
-                   <family>Segoe UI Semibold</family>
-                   <pointsize>16</pointsize>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="title">
-                  <string>Balance Over Time</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <property name="topMargin">
-                   <number>40</number>
-                  </property>
-                  <item>
-                   <widget class="QGraphicsView" name="balance_over_time_user"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item row="0" column="1" colspan="2">
-                <widget class="QGroupBox" name="groupBox_31">
-                 <property name="font">
-                  <font>
-                   <family>Segoe UI Semibold</family>
-                   <pointsize>16</pointsize>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="title">
-                  <string>Monthly Spending</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_11">
-                  <property name="topMargin">
-                   <number>40</number>
-                  </property>
-                  <item>
-                   <widget class="QGraphicsView" name="monthly_transaction_amount_user"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
                <item row="0" column="0">
                 <widget class="QGroupBox" name="groupBox_33">
                  <property name="font">
@@ -665,55 +619,53 @@ background-position: center;</string>
                  </layout>
                 </widget>
                </item>
-               <item row="0" column="3" rowspan="3">
-                <widget class="QGroupBox" name="groupBox_32">
-                 <property name="title">
-                  <string/>
+               <item row="0" column="1" colspan="2">
+                <widget class="QGroupBox" name="groupBox_31">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>16</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_13">
-                  <item row="0" column="0">
-                   <widget class="QPushButton" name="exportPDF_user">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>100</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>16</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Export to PDF</string>
-                    </property>
-                   </widget>
+                 <property name="title">
+                  <string>Monthly Spending</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <widget class="QGraphicsView" name="monthly_transaction_amount_user"/>
                   </item>
-                  <item row="1" column="0">
-                   <spacer name="verticalSpacer">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_35">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>16</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Balance Over Time</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_14">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
+                  <item>
+                   <widget class="QGraphicsView" name="balance_over_time_user"/>
                   </item>
                  </layout>
                 </widget>
                </item>
               </layout>
-              <zorder>groupBox_32</zorder>
               <zorder>groupBox_33</zorder>
               <zorder>groupBox_31</zorder>
               <zorder>groupBox_34</zorder>
@@ -1093,6 +1045,31 @@ color: white;</string>
                    </spacer>
                   </item>
                   <item>
+                   <widget class="QPushButton" name="exportPDF_user">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Export Analytics</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPushButton" name="exportCSV_user">
                     <property name="font">
                      <font>
@@ -1103,7 +1080,7 @@ color: white;</string>
                      </font>
                     </property>
                     <property name="text">
-                     <string>Export to CSV</string>
+                     <string>Export to Table</string>
                     </property>
                    </widget>
                   </item>
@@ -1902,8 +1879,8 @@ color: #f27d7d;</string>
                <property name="topMargin">
                 <number>70</number>
                </property>
-               <item row="0" column="0">
-                <widget class="QGroupBox" name="groupBox_18">
+               <item row="1" column="1">
+                <widget class="QGroupBox" name="groupBox_46">
                  <property name="font">
                   <font>
                    <family>Segoe UI Semibold</family>
@@ -1915,12 +1892,12 @@ color: #f27d7d;</string>
                  <property name="title">
                   <string>Buying Frequency</string>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_18">
+                 <layout class="QVBoxLayout" name="verticalLayout_20">
                   <property name="topMargin">
                    <number>40</number>
                   </property>
                   <item>
-                   <widget class="QGraphicsView" name="graphicsView_business_1"/>
+                   <widget class="QGraphicsView" name="graphicsView_business_4"/>
                   </item>
                  </layout>
                 </widget>
@@ -1948,43 +1925,25 @@ color: #f27d7d;</string>
                  </layout>
                 </widget>
                </item>
-               <item row="0" column="2" rowspan="2">
-                <widget class="QGroupBox" name="groupBox_19">
-                 <property name="title">
-                  <string/>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_18">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>14</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <property name="title">
+                  <string>Buying Frequency</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_18">
+                  <property name="topMargin">
+                   <number>40</number>
+                  </property>
                   <item>
-                   <widget class="QPushButton" name="export_business">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>16</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Export</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="verticalSpacer_10">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
+                   <widget class="QGraphicsView" name="graphicsView_business_1"/>
                   </item>
                  </layout>
                 </widget>
@@ -2008,29 +1967,6 @@ color: #f27d7d;</string>
                   </property>
                   <item>
                    <widget class="QGraphicsView" name="graphicsView_business_3"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QGroupBox" name="groupBox_46">
-                 <property name="font">
-                  <font>
-                   <family>Segoe UI Semibold</family>
-                   <pointsize>14</pointsize>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="title">
-                  <string>Buying Frequency</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_20">
-                  <property name="topMargin">
-                   <number>40</number>
-                  </property>
-                  <item>
-                   <widget class="QGraphicsView" name="graphicsView_business_4"/>
                   </item>
                  </layout>
                 </widget>
@@ -2221,6 +2157,38 @@ color: #f27d7d;</string>
                     </property>
                    </spacer>
                   </item>
+                  <item>
+                   <widget class="QPushButton" name="exportPDF_business">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Export Analytics</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="exportCSV_business">
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Export Table</string>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -2384,10 +2352,7 @@ color: #f27d7d;</string>
           <property name="flat">
            <bool>true</bool>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_9">
-           <property name="spacing">
-            <number>40</number>
-           </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <widget class="QLabel" name="label_19">
              <property name="sizePolicy">
@@ -2574,6 +2539,40 @@ color: #f27d7d;</string>
               </size>
              </property>
             </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="refreshButton_business">
+             <property name="font">
+              <font>
+               <family>Segoe UI Semibold</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../resources_rc/resources.qrc">
+               <normaloff>:/nav-icons/nav-icons/refresh.png</normaloff>:/nav-icons/nav-icons/refresh.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="Line" name="line">
@@ -2952,140 +2951,80 @@ p, li { white-space: pre-wrap; }
               <property name="title">
                <string>Analytics</string>
               </property>
-              <widget class="QGroupBox" name="groupBox_28">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>70</y>
-                 <width>501</width>
-                 <height>281</height>
-                </rect>
+              <layout class="QGridLayout" name="gridLayout_40">
+               <property name="topMargin">
+                <number>70</number>
                </property>
-               <property name="font">
-                <font>
-                 <family>Segoe UI Semibold</family>
-                 <pointsize>14</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="title">
-                <string>Transaction Frequency</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_17">
-                <property name="topMargin">
-                 <number>40</number>
-                </property>
-                <item row="1" column="0">
-                 <widget class="QGraphicsView" name="transaction_frequency_teller"/>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QGroupBox" name="groupBox_29">
-               <property name="geometry">
-                <rect>
-                 <x>1040</x>
-                 <y>70</y>
-                 <width>161</width>
-                 <height>591</height>
-                </rect>
-               </property>
-               <property name="title">
-                <string/>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_9">
-                <item>
-                 <widget class="QPushButton" name="exportToPDFButton_teller">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
+               <item row="1" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_50">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>14</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Total Amount of Deposits and Withdrawals</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_44">
+                  <property name="topMargin">
+                   <number>40</number>
                   </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI Semibold</family>
-                    <pointsize>16</pointsize>
-                   </font>
+                  <item row="1" column="0">
+                   <widget class="QGraphicsView" name="total_amount_teller"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_28">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>14</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Transaction Frequency</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_17">
+                  <property name="topMargin">
+                   <number>40</number>
                   </property>
-                  <property name="text">
-                   <string>Export to PDF</string>
+                  <item row="1" column="0">
+                   <widget class="QGraphicsView" name="transaction_frequency_teller"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="groupBox_46">
+                 <property name="font">
+                  <font>
+                   <family>Segoe UI Semibold</family>
+                   <pointsize>14</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="title">
+                  <string>Deposit and Withdrawal Frequency</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_43">
+                  <property name="topMargin">
+                   <number>40</number>
                   </property>
-                 </widget>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_10">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QGroupBox" name="groupBox_46">
-               <property name="geometry">
-                <rect>
-                 <x>540</x>
-                 <y>70</y>
-                 <width>501</width>
-                 <height>281</height>
-                </rect>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Segoe UI Semibold</family>
-                 <pointsize>14</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="title">
-                <string>Deposit and Withdrawal Frequency</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_43">
-                <property name="topMargin">
-                 <number>40</number>
-                </property>
-                <item row="1" column="0">
-                 <widget class="QGraphicsView" name="deposit_and_withdrawal_frequency_teller"/>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QGroupBox" name="groupBox_50">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>370</y>
-                 <width>1031</width>
-                 <height>281</height>
-                </rect>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Segoe UI Semibold</family>
-                 <pointsize>14</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="title">
-                <string>Total Amount of Deposits and Withdrawals</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_44">
-                <property name="topMargin">
-                 <number>40</number>
-                </property>
-                <item row="1" column="0">
-                 <widget class="QGraphicsView" name="total_amount_teller"/>
-                </item>
-               </layout>
-              </widget>
+                  <item row="1" column="0">
+                   <widget class="QGraphicsView" name="deposit_and_withdrawal_frequency_teller"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -3126,72 +3065,11 @@ p, li { white-space: pre-wrap; }
                  <property name="title">
                   <string>Filter</string>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_33">
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
                   <property name="topMargin">
                    <number>40</number>
                   </property>
-                  <item row="6" column="0">
-                   <spacer name="verticalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_24">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>To</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QDateEdit" name="dateTo_teller">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="minimumDate">
-                     <date>
-                      <year>2000</year>
-                      <month>1</month>
-                      <day>1</day>
-                     </date>
-                    </property>
-                    <property name="displayFormat">
-                     <string>MM/dd/yyyy</string>
-                    </property>
-                    <property name="calendarPopup">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
+                  <item>
                    <widget class="QLineEdit" name="tellerWindow_transaction_search">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -3210,26 +3088,7 @@ p, li { white-space: pre-wrap; }
                     </property>
                    </widget>
                   </item>
-                  <item row="5" column="0">
-                   <widget class="QPushButton" name="buttonClearTransactions_teller">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Clear</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
+                  <item>
                    <widget class="QLabel" name="label_23">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3248,7 +3107,7 @@ p, li { white-space: pre-wrap; }
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="0">
+                  <item>
                    <widget class="QDateEdit" name="dateFrom_teller">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -3277,7 +3136,106 @@ p, li { white-space: pre-wrap; }
                     </property>
                    </widget>
                   </item>
-                  <item row="7" column="0">
+                  <item>
+                   <widget class="QLabel" name="label_24">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>To</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDateEdit" name="dateTo_teller">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="minimumDate">
+                     <date>
+                      <year>2000</year>
+                      <month>1</month>
+                      <day>1</day>
+                     </date>
+                    </property>
+                    <property name="displayFormat">
+                     <string>MM/dd/yyyy</string>
+                    </property>
+                    <property name="calendarPopup">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="buttonClearTransactions_teller">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Clear</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="exportToPDFButton_teller">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Semibold</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Export Analytics</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPushButton" name="exportToCSVButton_teller">
                     <property name="font">
                      <font>
@@ -3626,6 +3584,22 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QPushButton" name="refreshButton_teller">
              <property name="font">
               <font>
@@ -3670,14 +3644,11 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox_24">
+            <widget class="QGroupBox" name="groupBox_19">
              <property name="title">
               <string/>
              </property>
-             <property name="flat">
-              <bool>true</bool>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
                <widget class="QLabel" name="labelBalance_user_3">
                 <property name="sizePolicy">
@@ -3705,7 +3676,7 @@ p, li { white-space: pre-wrap; }
               <item>
                <widget class="QLabel" name="lineBalance_teller">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
