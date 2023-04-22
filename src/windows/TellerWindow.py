@@ -69,6 +69,7 @@ def TellerWindow(self: ProjectMainWindow, user):
     self.dateTo_teller.dateChanged.connect(lambda: dateChanged(self, user))
     self.buttonClearTransactions_teller.clicked.connect(lambda: clear_date(self.dateFrom_teller, self.dateTo_teller, self.tellerWindow_transactions_table))
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
+    self.refreshButton_teller.clicked.connect(lambda: refresh(self, user))
     
 def transactAttempt(self: ProjectMainWindow, user):
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
