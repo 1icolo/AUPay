@@ -64,8 +64,8 @@ class ChangeOTPDialog(QDialog):
         self.totp = get_totp(self.secret_key)
         # self.ui.qrcodeimg.setPixmap(QPixmap(generate_qr(self.secret_key, user['school_id'])))
         generate_qr(self.secret_key, user['school_id'])
-        self.ui.qrcodeimg.setPixmap(QPixmap('temp/qr_code.png'))
-        os.remove('temp/qr_code.png')
+        self.ui.qrcodeimg.setPixmap(QPixmap('qr_code.png'))
+        os.remove('qr_code.png')
 
     def change_otp(self, user):
         verification_otp = verify_otp(self.totp, self.ui.line_otp.text())

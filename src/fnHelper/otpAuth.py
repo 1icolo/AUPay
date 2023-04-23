@@ -28,6 +28,6 @@ def generate_qr(secret_key, school_id, issuer="AUP"):
     qr.make(fit=True)
 
     img = qr.make_image(fill_color="black", back_color="white")
-    img.save('temp/qr_code.png')
+    img.save('qr_code.png')
     qimg = ImageQt(img)
     return QtGui.QImage(qimg)
