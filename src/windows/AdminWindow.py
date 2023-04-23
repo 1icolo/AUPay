@@ -8,6 +8,7 @@ from windows.ui.ui_AddUserDialog import Ui_Dialog as AddUserUi_Dialog
 from windows.ui.ui_EditUserDialog import Ui_Dialog as EditUserUi_Dialog
 from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
 from windows.ui.ui_AddTransactionDialog import Ui_Dialog as AddTransaction_Dialog
+from windows.ui.ui_AddUserShortDialog import Ui_Dialog as AddUserShortUi_Dialog
 from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
 from fnHelper import cryptography
@@ -17,6 +18,7 @@ from fnHelper.export_to_csv import *
 from dbHelper.calculate_total_circulating_supply import calculate_total_circulating_supply
 from fnHelper.refresh_clear import *
 from fnHelper.refreshUserBalance import *
+from windows.ProjectMainWindow import ProjectMainWindow
 
 def editUser(self):
     selected_row = self.adminWindow_users_table.currentRow()
@@ -114,6 +116,7 @@ def reload_users_table(self):
     
 def addTransaction(self):
     AddTransactionDialog().exec()
+
 class EditUserDialog(QDialog):
     table_updated = pyqtSignal()
     def __init__(self, id, parent=None):
@@ -174,8 +177,34 @@ class DeleteUserDialog(QDialog):
     def deleteUser(self, id):
         delete_user(ObjectId(id))
         self.table_updated.emit()
-        
         self.close()
+
+class AddUserShortDialog(QDialog):
+    def __init__(self, user, parent=None):
+        super(AddUserShortDialog, self).__init__(parent)
+        self.ui = AddUserShortUi_Dialog()
+        self.ui.setupUi(self)
+        self.ui.button_add_user.clicked.connect(lambda: self.add_user())
+
+    def add_user(self):
+        if self.ui.line_school_id.text() != "":
+            new_user = {
+                'card_id': cryptography.hash(AUPCard().get_uid()),
+                'school_id': self.ui.line_school_id.text(),
+                'password': cryptography.hash('Shine On, Dear AUP!'),
+                'otp_key': "",
+                'user_type': self.ui.combo_user_type.currentText().lower(),
+                'balance': 0.00,
+            }
+            if new_user['card_id']:
+                add_user(new_user)
+                QMessageBox.information(self, "Success", f"User {new_user['school_id']} added") 
+                self.close()
+            else:
+               QMessageBox.critical(self, "Error", "No RFID Detected") 
+        else:
+            QMessageBox.critical(self, "Error", "School ID Required")
+
 class AddTransactionDialog(QDialog):
     table_updated = pyqtSignal()
     def __init__(self, user, parent=None):
@@ -215,8 +244,23 @@ def reload_transactions_table(self, user):
     self.adminWindow_transactions_table.setCurrentItem(None)
     self.adminWindow_transaction_search.setText("")
 
+def refresh_analytics(self: ProjectMainWindow, user):
+    pass
 
-def AdminWindow(self, user):
+def refresh_transactions(self: ProjectMainWindow, user):
+    pass
+
+def dateChanged(self: ProjectMainWindow, user):
+    pass
+
+def searchChanged(self: ProjectMainWindow, user, text):
+    pass
+
+def refresh_all(self: ProjectMainWindow, user):
+    refresh_transactions(self, user)
+    refresh_analytics(self, user)
+
+def AdminWindow(self: ProjectMainWindow, user):
     print(__name__)
     self.dateTo_administrator.setDate(QDate.currentDate())
     self.buttonAddUser_administrator.clicked.connect(lambda: open_add_user_dialog(self))
@@ -230,12 +274,12 @@ def AdminWindow(self, user):
     load_bar_chart(self.adminWindow_transactions_table, self.graphicsView_3)
     self.dateFrom_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
     self.dateTo_administrator.dateChanged.connect(lambda: search_transactions_by_date(self.adminWindow_transactions_table, self.dateFrom_administrator, self.dateTo_administrator))
-    self.export_administrator.clicked.connect(lambda: export_chart_to_csv(self.adminWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
+    self.export_administrator.clicked.connect(lambda: export_to_csv(self.adminWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
     self.buttonClearTransactions_administrator.clicked.connect(lambda: clear_date(self.dateFrom_administrator, self.dateTo_administrator, self.adminWindow_transactions_table))
     # self.refresh_administrator.clicked.connect(lambda: resfresh_table(self, self.adminWindow_users_table))
     self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
     self.refresh_administrator.clicked.connect(lambda: refreshUserBalance())
-    
+    self.buttonAddUser_short_administrator.clicked.connect(lambda: AddUserShortDialog(user).exec())
     
 
 
