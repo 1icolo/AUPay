@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>336</width>
-    <height>313</height>
+    <width>414</width>
+    <height>358</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,41 @@
    <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Segoe UI Semibold</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Scan this QR Code in the authenticator app on your mobile phone.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string> (Authy, Google Authenticator, Microsoft Authenticator, etc.)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QLabel" name="qrcodeimg">
      <property name="text">
@@ -76,7 +111,7 @@
     <widget class="QPushButton" name="button_confirm_otp">
      <property name="font">
       <font>
-       <family>Segoe UI</family>
+       <family>Segoe UI Semibold</family>
        <pointsize>14</pointsize>
       </font>
      </property>
