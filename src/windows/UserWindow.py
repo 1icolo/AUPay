@@ -28,10 +28,12 @@ class ChangePasswordDialog(QDialog):
         self.ui = ChangePasswordUi_Dialog()
         self.ui.setupUi(self)
         self.ui.button_change_password.clicked.connect(lambda: self.change_password(user))
+        if user['password'] == cryptography.hash('Shine On, Dear AUP!'):
+            self.ui.line_old_password.setHidden(True)
 
     def change_password(self, user):
-        if self.ui.line_new_password.text() != "" and self.ui.line_confirm_password.text() != "" and self.ui.line_old_password.text() != "":
-            if user['password'] == cryptography.hash(self.ui.line_old_password.text()):
+        if self.ui.line_new_password.text() != "" and self.ui.line_confirm_password.text() != "":
+            if user['password'] == cryptography.hash(self.ui.line_old_password.text()) or user['password'] == cryptography.hash('Shine On, Dear AUP!'):
                 if self.ui.line_new_password.text() == self.ui.line_confirm_password.text():
                     userData = {
                         '_id': ObjectId(user['_id']),
@@ -70,7 +72,6 @@ class ChangeOTPDialog(QDialog):
     def change_otp(self, user):
         verification_otp = verify_otp(self.totp, self.ui.line_otp.text())
         verification_password = user['password'] == cryptography.hash(self.ui.line_password.text())
-        print(verification_password)
         if verification_otp and verification_password:
             userData = {
                         '_id': ObjectId(user['_id']),
@@ -82,7 +83,7 @@ class ChangeOTPDialog(QDialog):
                     }
             update_user(userData)
             QMessageBox.information(self, "Success", "OTP updated")
-            # self.close()
+            self.close()
         else:
             QMessageBox.warning(self, "Warning", "Password or OTP is incorrect")
 
