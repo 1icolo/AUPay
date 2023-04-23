@@ -255,7 +255,8 @@ class Ui_ProjectMainWindow(object):
         self.gridLayout_21.setObjectName("gridLayout_21")
         self.label_18 = QtWidgets.QLabel(self.groupBox_13)
         self.label_18.setStyleSheet("background-image: url(:/wallpaper/aupgategabi.jpg);\n"
-"background-position: center;")
+"background-position: center;\n"
+"background-repeat: no-repeat;")
         self.label_18.setText("")
         self.label_18.setObjectName("label_18")
         self.gridLayout_21.addWidget(self.label_18, 1, 0, 1, 1)
@@ -850,7 +851,8 @@ class Ui_ProjectMainWindow(object):
         self.gridLayout_24.setObjectName("gridLayout_24")
         self.label_21 = QtWidgets.QLabel(self.groupBox_14)
         self.label_21.setStyleSheet("background-image: url(:/wallpaper/aupgategabi.jpg);\n"
-"background-position: center;")
+"background-position: center;\n"
+"background-repeat: no-repeat;")
         self.label_21.setText("")
         self.label_21.setObjectName("label_21")
         self.gridLayout_24.addWidget(self.label_21, 1, 0, 1, 1)
@@ -1519,7 +1521,8 @@ class Ui_ProjectMainWindow(object):
         self.gridLayout_27.setObjectName("gridLayout_27")
         self.label_20 = QtWidgets.QLabel(self.groupBox_30)
         self.label_20.setStyleSheet("background-image: url(:/wallpaper/aupgategabi.jpg);\n"
-"background-position: center;")
+"background-position: center;\n"
+"background-repeat: no-repeat;")
         self.label_20.setText("")
         self.label_20.setObjectName("label_20")
         self.gridLayout_27.addWidget(self.label_20, 1, 0, 1, 1)
@@ -2424,9 +2427,9 @@ class Ui_ProjectMainWindow(object):
 
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
-        self.stackedWidget_user.setCurrentIndex(3)
-        self.stackedWidget_business.setCurrentIndex(2)
-        self.stackedWidget_teller.setCurrentIndex(1)
+        self.stackedWidget_user.setCurrentIndex(0)
+        self.stackedWidget_business.setCurrentIndex(0)
+        self.stackedWidget_teller.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_transaction_search.clear) # type: ignore
         self.buttonClearFields_business.clicked.connect(self.businessWindow_descriptionLine.clear) # type: ignore
