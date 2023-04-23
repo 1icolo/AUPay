@@ -5,6 +5,7 @@
     <file>aupay-logo/favicon/a-u-pay-website-favicon-white.png</file>
   </qresource>
   <qresource prefix="nav-icons">
+    <file>nav-icons/account.png</file>
     <file>nav-icons/refresh.png</file>
     <file>nav-icons/dashboard.png</file>
     <file>nav-icons/data-analytics.png</file>
