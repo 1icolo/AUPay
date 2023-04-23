@@ -7,3 +7,5 @@ from .total_spending_amount_chart import total_spending_amount_chart
 from .transaction_volume_bar_chart import transaction_volume_bar_chart
 from .total_withdrawal_and_deposit_chart import total_withdrawal_and_deposit_chart
 from .transaction_frequency_chart import transaction_frequency
+from .transactions_count_per_month import transactions_count_per_month
+from .transactions_top_contributors import transactions_top_contributors
