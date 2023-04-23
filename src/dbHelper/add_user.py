@@ -11,7 +11,7 @@ def add_user(user):
         )
         print(f"User {user['school_id']} added.")
         return new_user.inserted_id
-    except:
-        print("Add user failed.")
+    except Exception as e:
+        print(f"Add user failed. \n{e}")
         return None
     
