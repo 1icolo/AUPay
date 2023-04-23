@@ -45,8 +45,9 @@ def balance_line_chart(tableWidget, graphicsView):
     # Create and configure the y-axis (balance)
     axisY = QValueAxis()
     axisY.setMin(0)  # Set minimum value of y-axis to 0
-    max_y = max([point.y() for point in series.points()]) # Find the maximum y-value in the series
-    axisY.setMax(max_y)
+    # max_y = max((lambda: 0, lambda: [point.y() for point in series.points()]) [series.points()]()) # Find the maximum y-value in the series
+    # print(max_y)
+    # axisY.setMax(max_y)
     chart.addAxis(axisY, Qt.AlignLeft)
     series.attachAxis(axisY)
 
