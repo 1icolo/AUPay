@@ -1,25 +1,28 @@
 # Package Imports
 from pymongo import MongoClient
 from bson import Timestamp, ObjectId
-from json import load
 from fnHelper import jsonIO
 
 class Database:
     def __init__(self):
-        connection_string = jsonIO.read_items('config.json')['uri']
-        self.client = MongoClient(connection_string)
-        self.database = self.client['aupaydb']
-
-        self.collection = {
-            'users': self.database['users'],
-            'transactions': self.database['transactions']
-        }
-
         try:
-            if not self.client.list_database_names().__contains__('aupaydb'):
-                self.__create_database()
-        except Exception as e:
-            print(f"Error: \n{e}")
+            connection_string = jsonIO.read_items('config.json')['uri']
+            
+            self.client = MongoClient(connection_string)
+            self.database = self.client['aupaydb']
+
+            self.collection = {
+                'users': self.database['users'],
+                'transactions': self.database['transactions']
+            }
+
+            try:
+                if not self.client.list_database_names().__contains__('aupaydb'):
+                    self.__create_database()
+            except Exception as e:
+                print(f"Error: \n{e}")
+        except:
+            print("Configure URI in config.json")
 
     # Initial collection documents
     def __create_database(self):
