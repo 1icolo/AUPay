@@ -1278,7 +1278,7 @@ color: white;</string>
               </layout>
              </widget>
             </item>
-            <item row="0" column="1">
+            <item row="0" column="2">
              <spacer name="horizontalSpacer_8">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -1290,6 +1290,25 @@ color: white;</string>
                </size>
               </property>
              </spacer>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_warning">
+              <property name="font">
+               <font>
+                <family>Segoe UI Black</family>
+                <pointsize>40</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: red;</string>
+              </property>
+              <property name="text">
+               <string>Please Change Your Password and then your OTP by clicking the buttons on the 'Security Information' area on the left.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
