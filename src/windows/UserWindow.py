@@ -129,7 +129,11 @@ def check_otp_and_password(self: ProjectMainWindow, user):
         self.password_status_client.setText("Already Set")
     if not user['otp_key'] == "":
         self.secret_status_client.setText("Already Set")
-
+        self.label_warning.setHidden(True)
+    else:
+        self.stackedWidget_user.setCurrentIndex(3)
+    
+    
 
 def UserWindow(self: ProjectMainWindow, user):
     print(__name__)
