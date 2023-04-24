@@ -1,26 +1,26 @@
+import os
 from datetime import *
+
 from PyQt5.QtChart import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
-from fnHelper import cryptography, export_window_to_pdf, logout, setDateRangeFields
-from fnHelper.charts import (balance_line_chart, 
-                             item_frequency_pie_chart,
-                             total_spending_amount_chart,
-                             top_spending_destinations_chart)
+from fnHelper import (cryptography, export_window_to_pdf, logoutAttempt,
+                      setDateRangeFields, update_user)
+from fnHelper.charts import (balance_line_chart, item_frequency_pie_chart,
+                             top_spending_destinations_chart,
+                             total_spending_amount_chart)
 from fnHelper.export_to_csv import *
 from fnHelper.load_tables import *
+from fnHelper.otpAuth import *
 from fnHelper.refresh_clear import *
 from fnHelper.textSearch import *
 from windows.ProjectMainWindow import ProjectMainWindow
-from windows.ui.ui_ChangePasswordDialog import Ui_Dialog as ChangePasswordUi_Dialog
 from windows.ui.ui_ChangeOTPDialog import Ui_Dialog as ChangeOTPUi_Dialog
-from fnHelper.otpAuth import *
-import os
-from fnHelper import update_user
-from fnHelper import logoutAttempt
+from windows.ui.ui_ChangePasswordDialog import Ui_Dialog as ChangePasswordUi_Dialog
 
 
 class ChangePasswordDialog(QDialog):
@@ -33,14 +33,14 @@ class ChangePasswordDialog(QDialog):
             self.ui.line_old_password.setHidden(True)
 
     def change_password(self, user):
-        if self.ui.line_new_password.text() != "" and self.ui.line_confirm_password.text() != "":
-            if user['password'] == cryptography.hash(self.ui.line_old_password.text()) or user['password'] == cryptography.hash('Shine On, Dear AUP!'):
-                if self.ui.line_new_password.text() == self.ui.line_confirm_password.text():
+        if self.ui.line_new_password.text().strip() != "" and self.ui.line_confirm_password.text().strip() != "":
+            if user['password'] == cryptography.hash(self.ui.line_old_password.text().strip()) or user['password'] == cryptography.hash('Shine On, Dear AUP!'):
+                if self.ui.line_new_password.text().strip() == self.ui.line_confirm_password.text().strip():
                     userData = {
                         '_id': ObjectId(user['_id']),
                         'card_id': user['card_id'],
                         'school_id': user['school_id'],
-                        'password': cryptography.hash(self.ui.line_confirm_password.text()),
+                        'password': cryptography.hash(self.ui.line_confirm_password.text().strip()),
                         'otp_key': user['otp_key'],
                         'user_type': user['user_type'],
                     }
@@ -73,8 +73,8 @@ class ChangeOTPDialog(QDialog):
         os.remove('qr_code.png')
 
     def change_otp(self, user):
-        verification_otp = verify_otp(self.totp, self.ui.line_otp.text())
-        verification_password = user['password'] == cryptography.hash(self.ui.line_password.text())
+        verification_otp = verify_otp(self.totp, self.ui.line_otp.text().strip())
+        verification_password = user['password'] == cryptography.hash(self.ui.line_password.text().strip())
         if verification_otp and verification_password:
             userData = {
                         '_id': ObjectId(user['_id']),
