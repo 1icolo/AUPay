@@ -63,19 +63,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="line_otp">
-     <property name="font">
-      <font>
-       <family>Segoe UI</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Enter 6-Digit OTP</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLineEdit" name="line_password">
      <property name="font">
       <font>
@@ -83,11 +70,30 @@
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="maxLength">
+      <number>100</number>
+     </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Password</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="line_otp">
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="maxLength">
+      <number>6</number>
+     </property>
+     <property name="placeholderText">
+      <string>6-Digit OTP</string>
      </property>
     </widget>
    </item>
