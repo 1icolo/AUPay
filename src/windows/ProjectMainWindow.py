@@ -19,7 +19,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.actionFullscreen.triggered.connect(lambda: self.toggleFullscreen())
         self.buttonLogin_login.clicked.connect(lambda: self.loginAttempt('password'))
         self.buttonRFIDLogin_login.clicked.connect(lambda: self.loginAttempt('rfid'))
-        self.actionFullscreen.setChecked(False)
+        self.actionFullscreen.setChecked(True)
 
     def toggleFullscreen(self):
         if self.actionFullscreen.isChecked():
