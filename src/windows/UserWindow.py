@@ -5,7 +5,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
-from fnHelper import cryptography, export_window_to_pdf, setDateRangeFields
+from fnHelper import cryptography, export_window_to_pdf, logout, setDateRangeFields
 from fnHelper.charts import (balance_line_chart, 
                              item_frequency_pie_chart,
                              total_spending_amount_chart,
@@ -20,6 +20,7 @@ from windows.ui.ui_ChangeOTPDialog import Ui_Dialog as ChangeOTPUi_Dialog
 from fnHelper.otpAuth import *
 import os
 from fnHelper import update_user
+from fnHelper import logoutAttempt
 
 
 class ChangePasswordDialog(QDialog):
@@ -44,7 +45,9 @@ class ChangePasswordDialog(QDialog):
                         'user_type': user['user_type'],
                     }
                     update_user(userData)
-                    QMessageBox.information(self, "Success", f"Password Changed")
+                    QMessageBox.information(self, "Success", f"Password Changed\nYou will be signed out.")
+
+                    logoutAttempt(self)
                     self.close()
                 else:
                     QMessageBox.warning(self, "Warning", "New password must be the same with the confirmation")
@@ -82,7 +85,8 @@ class ChangeOTPDialog(QDialog):
                         'user_type': user['user_type'],
                     }
             update_user(userData)
-            QMessageBox.information(self, "Success", "OTP updated")
+            QMessageBox.information(self, "Success", "OTP updated.\nYou will be signed out.")
+            logoutAttempt(self)
             self.close()
         else:
             QMessageBox.warning(self, "Warning", "Password or OTP is incorrect")
