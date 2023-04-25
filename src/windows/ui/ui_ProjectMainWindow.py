@@ -194,6 +194,7 @@ class Ui_ProjectMainWindow(object):
 "color: white;")
         self.buttonLogin_login.setCheckable(False)
         self.buttonLogin_login.setChecked(False)
+        self.buttonLogin_login.setAutoDefault(True)
         self.buttonLogin_login.setObjectName("buttonLogin_login")
         self.verticalLayout.addWidget(self.buttonLogin_login)
         self.label_2 = QtWidgets.QLabel(self.pageLogin)
@@ -2417,6 +2418,9 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(ProjectMainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1366, 21))
+        self.menubar.setStyleSheet("background-color: #1e2128;\n"
+"color: white;")
+        self.menubar.setDefaultUp(False)
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")

@@ -390,6 +390,9 @@ color: white;</string>
             <property name="checked">
              <bool>false</bool>
             </property>
+            <property name="autoDefault">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -4797,6 +4800,13 @@ p, li { white-space: pre-wrap; }
      <width>1366</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #1e2128;
+color: white;</string>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">

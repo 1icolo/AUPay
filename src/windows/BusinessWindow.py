@@ -56,22 +56,28 @@ def chargebackTransaction(self):
 
 
 class ChargebackDialog(QDialog):
-    table_updated = pyqtSignal()
     def __init__(self, transaction_data, parent=None):
         print(__name__)
         super(ChargebackDialog, self).__init__(parent)
         self.chargebackDialog()
-        self.ui.amountLineEdit.setValue(transaction_data['amount'])
         self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.chargeback(transaction_data))
         self.ui.buttonScanBusiness.clicked.connect(lambda: self.scanId('business', transaction_data))
         self.ui.buttonScanUser.clicked.connect(lambda: self.scanId('user', transaction_data))
         self.ui.amountLineEdit.valueChanged.connect(lambda: self.chargeback_enable_checker())
-        self.valid_amount = 50
-        # self.ui.amountLineEdit.setValidator(QDoubleValidator().setRange(0.0, 100.0, 5))
+        self.valid_amount = transaction_data['amount'] - self.compute_valid_amount(transaction_data['_id'])
+        self.ui.amountLineEdit.setValue(self.valid_amount)
+        print(self.valid_amount)
     
     def chargebackDialog(self):
         self.ui = Ui_ChargebackTransactionDialog()
         self.ui.setupUi(self)
+
+    def compute_valid_amount(self, transaction_id):
+        transactions = find_chargeback_transactions(transaction_id)
+        total_valid_amount = float(0)
+        for transaction in transactions:
+            total_valid_amount = float(transaction['amount']) + total_valid_amount
+        return total_valid_amount
 
     def scanId(self, user_type, transaction_data):
         match user_type:
@@ -87,10 +93,11 @@ class ChargebackDialog(QDialog):
                     self.ui.buttonScanUser.setText("User Verified")
         self.chargeback_enable_checker()
 
-
     def chargeback_enable_checker(self):
         if not self.ui.buttonScanUser.isEnabled() and not self.ui.buttonScanBusiness.isEnabled() and self.ui.amountLineEdit.value() <= self.valid_amount:
             self.ui.buttonSave_addTransaction.setEnabled(True)
+        else:
+            self.ui.buttonSave_addTransaction.setEnabled(False)
 
     def chargeback(self, transaction_data):
         chargeback_transaction(self, transaction_data)
