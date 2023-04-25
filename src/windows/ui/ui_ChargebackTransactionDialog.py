@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(694, 339)
+        Dialog.resize(516, 339)
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
         self.line = QtWidgets.QFrame(Dialog)
@@ -66,7 +66,7 @@ class Ui_Dialog(object):
         font.setFamily("Segoe UI")
         font.setPointSize(16)
         self.amountLineEdit.setFont(font)
-        self.amountLineEdit.setReadOnly(True)
+        self.amountLineEdit.setReadOnly(False)
         self.amountLineEdit.setObjectName("amountLineEdit")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.amountLineEdit)
         self.descriptionLabel = QtWidgets.QLabel(Dialog)
