@@ -163,6 +163,11 @@ def find_all_transactions_of_user_aggregated(user):
                         '$ifNull': [
                             '$source_id', 'COINBASE'
                         ]
+                    },
+                    'destination_id': {
+                        '$ifNull': [
+                            '$destination_id', 'COINBASE'
+                        ]
                     }
                 }
             },
