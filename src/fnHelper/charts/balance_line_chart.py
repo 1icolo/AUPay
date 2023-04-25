@@ -19,18 +19,37 @@ def balance_line_chart(tableWidget, graphicsView):
     # Keep track of the last known balance
     last_balance = float(0.00)
 
+    # Set the interval to 1 minute
+    interval = 1 * 60 * 1000
+
+    # Initialize variables for tracking the current interval
+    current_interval_start = None
+    current_balance = None
+
     # Iterate over the rows of the tableWidget
     for row in range(tableWidget.rowCount()):
         if not tableWidget.isRowHidden(row):
             # Get the date and balance from the tableWidget
-            date = tableWidget.item(row, 1).text().strip()
+            date_str = tableWidget.item(row, 1).text().strip()
+            date = QDateTime.fromString(date_str, 'MM/dd/yyyy')
+            timestamp = date.toMSecsSinceEpoch()
             balance = float(tableWidget.item(row, 4).text().strip())
 
-            last_balance = balance + last_balance
+            last_balance += balance
 
-            # Add the data to the line series
-            series.append(QDateTime.fromString(date, 'MM/dd/yyyy').toMSecsSinceEpoch(), last_balance)
+            # Check if this is the first row or if we have moved to a new interval
+            if current_interval_start is None or timestamp >= current_interval_start + interval:
+                # If this is not the first row, add the data for the previous interval to the series
+                if current_interval_start is not None:
+                    series.append(current_interval_start, current_balance)
 
+                # Start a new interval
+                current_interval_start = timestamp - (timestamp % interval)
+                current_balance = last_balance
+
+    # Add the data for the last interval to the series
+    if current_interval_start is not None:
+        series.append(current_interval_start, current_balance)
 
     # Create a chart and add the line series to it
     chart = QChart()
@@ -45,9 +64,6 @@ def balance_line_chart(tableWidget, graphicsView):
     # Create and configure the y-axis (balance)
     axisY = QValueAxis()
     axisY.setMin(0)  # Set minimum value of y-axis to 0
-    # max_y = max((lambda: 0, lambda: [point.y() for point in series.points()]) [series.points()]()) # Find the maximum y-value in the series
-    # print(max_y)
-    # axisY.setMax(max_y)
     chart.addAxis(axisY, Qt.AlignLeft)
     series.attachAxis(axisY)
 
@@ -55,8 +71,10 @@ def balance_line_chart(tableWidget, graphicsView):
     chart.legend().hide()
     chart.setAnimationOptions(QChart.SeriesAnimations)
 
-    # Create a chart view and add it to the graphicsView
+    # Create a chart view and set its render hint to antialiasing
     chartView = QChartView(chart)
     chartView.setRenderHint(QPainter.Antialiasing)
+
+    # Add the chart view to the graphics view's layout
     graphicsView.setLayout(QVBoxLayout())
     graphicsView.layout().addWidget(chartView)
