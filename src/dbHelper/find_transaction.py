@@ -195,3 +195,23 @@ def find_all_transactions_of_user_aggregated(user):
     except Exception as e:
         print(f"Finding transactions failed.\n{e}")
         return None
+
+
+def find_chargeback_transactions(id):
+    try:
+        pipeline = [
+            {
+                "$match": {
+                    "description": {
+                        "$regex": f"chargeback {id}",
+                        "$options": "i"
+                    }
+                }
+            }
+        ]
+        transactions = Database(
+            ).collection['transactions'].aggregate(pipeline)
+        return transactions
+    except Exception as e:
+        print(f"Finding chargeback transactions failed.\n{e}")
+        return None
