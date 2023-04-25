@@ -36,9 +36,9 @@ class OTPWithdrawalDialog(QDialog):
 
 
 def navbar(self: ProjectMainWindow, user):
-    teller = find_user_by_id(user['_id'])
-    self.lineBalance_teller.setText(str(teller['balance']))
+    self.lineBalance_teller.setText(str(user['balance']))
     self.lineTeller_teller.setText(str(user['school_id']))
+    self.navLogout_teller.clicked.connect(lambda: self.logoutAttempt())
     self.navHome_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(0))
     self.navDashboard_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(1))
     self.navAnalytics_teller.clicked.connect(lambda: self.stackedWidget_teller.setCurrentIndex(2))

@@ -94,6 +94,7 @@ class ChangeOTPDialog(QDialog):
 def refresh_navbar(self: ProjectMainWindow, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
     self.userWindow_balanceLine.setText(str(user['balance']))
+    self.navLogout_user.clicked.connect(lambda: self.logoutAttempt())
     self.navHome_user.clicked.connect(lambda: self.stackedWidget_user.setCurrentIndex(0))
     self.navAnalytics_user.clicked.connect(lambda: self.stackedWidget_user.setCurrentIndex(1))
     self.navTransactions_user.clicked.connect(lambda: self.stackedWidget_user.setCurrentIndex(2))

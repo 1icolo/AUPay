@@ -357,6 +357,7 @@ def navbar(self: ProjectMainWindow, business):
     self.dateTo_business.setDate(QDate.currentDate())
     self.lineBalance_business.setText(str(business['balance']))
     self.lineBusiness_business.setText(business['school_id'])
+    self.navLogout_business.clicked.connect(lambda: self.logoutAttempt())
     self.navHome_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(0))
     self.navDashboard_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(1))
     self.navAnalytics_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(2))
