@@ -61,13 +61,13 @@ class ChargebackDialog(QDialog):
         print(__name__)
         super(ChargebackDialog, self).__init__(parent)
         self.chargebackDialog()
-        self.ui.sourceIDLineEdit.setText(str(transaction_data['destination_id']))
-        self.ui.destinationIDLineEdit.setText(str(transaction_data['source_id']))
-        self.ui.amountLineEdit.setText(str(transaction_data['amount']))
-        self.ui.descriptionLineEdit.setText(f'chargeback transaction {transaction_data["_id"]}')
+        self.ui.amountLineEdit.setValue(transaction_data['amount'])
         self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.chargeback(transaction_data))
         self.ui.buttonScanBusiness.clicked.connect(lambda: self.scanId('business', transaction_data))
         self.ui.buttonScanUser.clicked.connect(lambda: self.scanId('user', transaction_data))
+        self.ui.amountLineEdit.valueChanged.connect(lambda: self.chargeback_enable_checker())
+        self.valid_amount = 50
+        # self.ui.amountLineEdit.setValidator(QDoubleValidator().setRange(0.0, 100.0, 5))
     
     def chargebackDialog(self):
         self.ui = Ui_ChargebackTransactionDialog()
@@ -78,21 +78,24 @@ class ChargebackDialog(QDialog):
             case 'business':
                 user = find_user_by_id(transaction_data['destination_id'])
                 if hash(AUPCard().get_uid()) == user['card_id']:
-                    print("Business verified")
-                    self.ui.checkBoxBusiness.setChecked(True)
-            case 'user': 
+                    self.ui.buttonScanBusiness.setEnabled(False)
+                    self.ui.buttonScanBusiness.setText("Business Verified")
+            case 'user':    
                 user = find_user_by_id(transaction_data['source_id'])
                 if hash(AUPCard().get_uid()) == user['card_id']:
-                    print("User verified")
-                    self.ui.checkBoxUser.setChecked(True)
+                    self.ui.buttonScanUser.setEnabled(False)
+                    self.ui.buttonScanUser.setText("User Verified")
+        self.chargeback_enable_checker()
+
+
+    def chargeback_enable_checker(self):
+        if not self.ui.buttonScanUser.isEnabled() and not self.ui.buttonScanBusiness.isEnabled() and self.ui.amountLineEdit.value() <= self.valid_amount:
+            self.ui.buttonSave_addTransaction.setEnabled(True)
 
     def chargeback(self, transaction_data):
-        if self.ui.checkBoxBusiness.isChecked() and self.ui.checkBoxUser.isChecked():
-            chargeback_transaction(self, transaction_data)
-            self.table_updated.emit()
-            self.close()
-        else:
-            QMessageBox.warning(self, "Error", "Business and User verification required")
+        chargeback_transaction(self, transaction_data)
+        self.close()
+        # QMessageBox.warning(self, "Error", "Business and User verification required")
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):

@@ -1,3 +1,6 @@
+from re import A
+
+from numpy import add
 from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
 from fnHelper.cryptography import hash
@@ -17,7 +20,20 @@ def chargeback_transaction(Widget, transaction):
         }
     print(transaction['amount'])
     if checkBalanceSufficiency(transaction['destination_id'], transaction['amount']):
-        # add transaction
-        QMessageBox.information(Widget, "Success", "Chargeback successful.")
-        return add_transaction(newTransaction)
-    return QMessageBox.critical(Widget, "Error", "Insufficient Balance.")
+        # if transaction['amount'] == newTransaction['amount']:
+        #     QMessageBox.information(Widget, "Success", "Chargeback successful.")
+        #     add_transaction(newTransaction)
+        # else:
+            # add_transaction(newTransaction)
+            if float(Widget.ui.amountLineEdit.value()) < transaction['amount']:
+                newTransaction['amount'] = float(Widget.ui.amountLineEdit.value())
+                print(f"New transaction amount: {newTransaction['amount']}")
+                if add_transaction(newTransaction):
+                    QMessageBox.information(Widget, "Success", "Chargeback successful.")
+            elif float(Widget.ui.amountLineEdit.value()) == transaction['amount']:
+                if add_transaction(newTransaction):
+                    QMessageBox.information(Widget, "Success", "Chargeback successful.")
+            else:
+                QMessageBox.critical(Widget, "Failed", "Chargeback failed\nAmount should be less than or equal to the transaction.")
+    else:
+        QMessageBox.critical(Widget, "Error", "Insufficient Balance.")
