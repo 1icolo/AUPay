@@ -42,6 +42,13 @@ def search_inventory(self, text):
         else:
             self.businessWindow_inventory_table.setRowHidden(row, True)
 
+def compute_valid_amount(transaction_id):
+        transactions = find_chargeback_transactions(transaction_id)
+        total_valid_amount = float(0)
+        for transaction in transactions:
+            total_valid_amount = float(transaction['amount']) + total_valid_amount
+        return total_valid_amount
+
 def chargebackTransaction(self):
     selected_row = self.businessWindow_transactions_table.currentRow()
     item = self.businessWindow_transactions_table.item(selected_row, 0)
@@ -52,32 +59,28 @@ def chargebackTransaction(self):
     if current_transaction_data['description'].__contains__("chargeback"):
         QMessageBox.warning(self, "Error", "This transaction is a chargeback transaction.")
     else:
-        ChargebackDialog(current_transaction_data).exec()
-
+        valid_amount = current_transaction_data['amount'] - compute_valid_amount(current_transaction_data['_id'])
+        if valid_amount > 0:
+            ChargebackDialog(current_transaction_data, valid_amount).exec_()
+        else:
+            QMessageBox.warning(self, "Error", "Transaction cannot be chargedback.")
+            
 
 class ChargebackDialog(QDialog):
-    def __init__(self, transaction_data, parent=None):
+    def __init__(self, transaction_data, valid_amount, parent=None):
         print(__name__)
         super(ChargebackDialog, self).__init__(parent)
         self.chargebackDialog()
+        self.valid_amount = valid_amount
         self.ui.buttonSave_addTransaction.clicked.connect(lambda: self.chargeback(transaction_data))
         self.ui.buttonScanBusiness.clicked.connect(lambda: self.scanId('business', transaction_data))
         self.ui.buttonScanUser.clicked.connect(lambda: self.scanId('user', transaction_data))
         self.ui.amountLineEdit.valueChanged.connect(lambda: self.chargeback_enable_checker())
-        self.valid_amount = transaction_data['amount'] - self.compute_valid_amount(transaction_data['_id'])
-        self.ui.amountLineEdit.setValue(self.valid_amount)
-        print(self.valid_amount)
-    
+        self.ui.amountLineEdit.setValue(valid_amount)
+            
     def chargebackDialog(self):
         self.ui = Ui_ChargebackTransactionDialog()
         self.ui.setupUi(self)
-
-    def compute_valid_amount(self, transaction_id):
-        transactions = find_chargeback_transactions(transaction_id)
-        total_valid_amount = float(0)
-        for transaction in transactions:
-            total_valid_amount = float(transaction['amount']) + total_valid_amount
-        return total_valid_amount
 
     def scanId(self, user_type, transaction_data):
         match user_type:
@@ -102,7 +105,6 @@ class ChargebackDialog(QDialog):
     def chargeback(self, transaction_data):
         chargeback_transaction(self, transaction_data)
         self.close()
-        # QMessageBox.warning(self, "Error", "Business and User verification required")
 
 class EditItemsDialog(QDialog):
     def __init__(self, parent=None):
