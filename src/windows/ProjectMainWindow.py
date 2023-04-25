@@ -21,6 +21,13 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.buttonRFIDLogin_login.clicked.connect(lambda: self.loginAttempt('rfid'))
         self.actionFullscreen.setChecked(True)
 
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Alt:
+            self.menubar = self.findChild(QMenuBar, "menubar")
+            if self.menubar:
+                self.menubar.setVisible(not self.menubar.isVisible())
+        super().keyPressEvent(event)
+
     def toggleFullscreen(self):
         if self.actionFullscreen.isChecked():
             self.showFullScreen()

@@ -2418,8 +2418,6 @@ class Ui_ProjectMainWindow(object):
         ProjectMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(ProjectMainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1366, 21))
-        self.menubar.setStyleSheet("background-color: #1e2128;\n"
-"color: white;")
         self.menubar.setDefaultUp(False)
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)

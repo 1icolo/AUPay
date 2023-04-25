@@ -4801,10 +4801,6 @@ p, li { white-space: pre-wrap; }
      <height>21</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #1e2128;
-color: white;</string>
-   </property>
    <property name="defaultUp">
     <bool>false</bool>
    </property>
