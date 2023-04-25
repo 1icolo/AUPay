@@ -73,7 +73,6 @@ def TellerWindow(self: ProjectMainWindow, user):
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
     self.refreshButton_teller.clicked.connect(lambda: refresh(self, user))
     self.exportToCSVButton_teller.clicked.connect(lambda: export_to_csv(self.tellerWindow_transactions_table, user))
-    self.exportToPDFButton_teller.clicked.connect(lambda: export_window_to_pdf(self, user))
     
 def transactAttempt(self: ProjectMainWindow, user):
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":

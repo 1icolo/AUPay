@@ -148,7 +148,6 @@ def UserWindow(self: ProjectMainWindow, user):
     self.userWindow_transaction_search.textChanged.connect(lambda text: searchChanged(self, user, text))
     self.dateFrom_user.dateChanged.connect(lambda: dateChanged(self, user))
     self.dateTo_user.dateChanged.connect(lambda: dateChanged(self, user))
-    self.exportPDF_user.clicked.connect(lambda: export_window_to_pdf(self, user))
     self.exportCSV_user.clicked.connect(lambda: export_to_csv(self.userWindow_transactions_table, user))
     self.buttonClearTransactions_user.clicked.connect(lambda: refresh_transactions(self, user))
     self.change_password_client.clicked.connect(lambda: ChangePasswordDialog(user).exec())

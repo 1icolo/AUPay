@@ -398,7 +398,6 @@ def BusinessWindow(self: ProjectMainWindow, business):
     self.dateTo_business.dateChanged.connect(lambda: dateChanged(self, business))
     self.buttonClearTransactions_business.clicked.connect(lambda: clearField(self, business))
     self.exportCSV_business.clicked.connect(lambda: export_to_csv(self.businessWindow_transactions_table, business))
-    self.exportPDF_business.clicked.connect(lambda: export_window_to_pdf(self, business))
 
     #business
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))

@@ -1086,31 +1086,6 @@ color: white;</string>
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="exportPDF_user">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>100</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Export Analytics</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
                    <widget class="QPushButton" name="exportCSV_user">
                     <property name="font">
                      <font>
@@ -2009,7 +1984,7 @@ background-repeat: no-repeat;</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+                      <family>Segoe UI Black</family>
                       <pointsize>16</pointsize>
                      </font>
                     </property>
@@ -2150,7 +2125,7 @@ color: #0c642a;</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Segoe UI</family>
+                      <family>Segoe UI Black</family>
                       <pointsize>16</pointsize>
                      </font>
                     </property>
@@ -2479,25 +2454,6 @@ color: #f27d7d;</string>
                      </size>
                     </property>
                    </spacer>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="exportPDF_business">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Export Analytics</string>
-                    </property>
-                   </widget>
                   </item>
                   <item>
                    <widget class="QPushButton" name="exportCSV_business">
@@ -3635,25 +3591,6 @@ p, li { white-space: pre-wrap; }
                      </size>
                     </property>
                    </spacer>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="exportToPDFButton_teller">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Segoe UI Semibold</family>
-                      <pointsize>14</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Export Analytics</string>
-                    </property>
-                   </widget>
                   </item>
                   <item>
                    <widget class="QPushButton" name="exportToCSVButton_teller">
@@ -4948,6 +4885,7 @@ p, li { white-space: pre-wrap; }
      <string>View</string>
     </property>
     <addaction name="actionFullscreen"/>
+    <addaction name="actionHideMenu"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -4973,6 +4911,11 @@ p, li { white-space: pre-wrap; }
     <string>Exit</string>
    </property>
   </action>
+  <action name="actionHideMenu">
+   <property name="text">
+    <string>Hide Menu</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../../resources_rc/resources.qrc"/>
@@ -4985,12 +4928,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>206</x>
-     <y>467</y>
+     <x>65</x>
+     <y>151</y>
     </hint>
     <hint type="destinationlabel">
      <x>37</x>
-     <y>154</y>
+     <y>227</y>
     </hint>
    </hints>
   </connection>
@@ -5050,7 +4993,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>37</x>
-     <y>204</y>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
      <x>37</x>
@@ -5065,12 +5008,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>126</x>
-     <y>429</y>
+     <x>37</x>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
-     <x>90</x>
-     <y>258</y>
+     <x>37</x>
+     <y>227</y>
     </hint>
    </hints>
   </connection>
@@ -5081,12 +5024,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>206</x>
-     <y>467</y>
+     <x>65</x>
+     <y>151</y>
     </hint>
     <hint type="destinationlabel">
-     <x>224</x>
-     <y>428</y>
+     <x>65</x>
+     <y>160</y>
     </hint>
    </hints>
   </connection>
@@ -5097,12 +5040,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>206</x>
-     <y>467</y>
+     <x>65</x>
+     <y>151</y>
     </hint>
     <hint type="destinationlabel">
-     <x>206</x>
-     <y>315</y>
+     <x>65</x>
+     <y>169</y>
     </hint>
    </hints>
   </connection>
@@ -5113,11 +5056,11 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>38</x>
+     <x>39</x>
      <y>132</y>
     </hint>
     <hint type="destinationlabel">
-     <x>32</x>
+     <x>39</x>
      <y>152</y>
     </hint>
    </hints>
@@ -5130,11 +5073,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>37</x>
-     <y>131</y>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
      <x>37</x>
-     <y>154</y>
+     <y>227</y>
     </hint>
    </hints>
   </connection>
