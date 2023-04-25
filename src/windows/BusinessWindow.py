@@ -49,7 +49,10 @@ def chargebackTransaction(self):
         return print("select row to chargeback")
     id = ObjectId(self.businessWindow_transactions_table.item(selected_row, 0).text())
     current_transaction_data = find_transaction(id)
-    ChargebackDialog(current_transaction_data).exec()
+    if current_transaction_data['description'].__contains__("chargeback"):
+        QMessageBox.warning(self, "Error", "This transaction is a chargeback transaction.")
+    else:
+        ChargebackDialog(current_transaction_data).exec()
 
 
 class ChargebackDialog(QDialog):
