@@ -67,6 +67,11 @@ def find_all_transactions_aggregated():
                         '$ifNull': [
                             '$source_id', 'COINBASE'
                         ]
+                    },
+                    'destination_id': {
+                        '$ifNull': [
+                            '$destination_id', 'COINBASE'
+                        ]
                     }
                 }
             },
