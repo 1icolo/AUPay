@@ -241,7 +241,7 @@ class Ui_ProjectMainWindow(object):
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem2)
         self.gridLayout.addLayout(self.verticalLayout, 0, 2, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem3, 0, 3, 1, 1)
         self.stackedWidget.addWidget(self.pageLogin)
         self.pageUser = QtWidgets.QWidget()
@@ -2466,8 +2466,8 @@ class Ui_ProjectMainWindow(object):
         self.buttonLogin_login.setText(_translate("ProjectMainWindow", "Login"))
         self.buttonLogin_login.setShortcut(_translate("ProjectMainWindow", "Return"))
         self.label_2.setText(_translate("ProjectMainWindow", "or"))
-        self.buttonRFIDLogin_login.setText(_translate("ProjectMainWindow", "Click me then tap your \n"
-"ID on the scanner"))
+        self.buttonRFIDLogin_login.setText(_translate("ProjectMainWindow", "   Click me then tap your \n"
+"   ID on the scanner"))
         self.buttonRFIDLogin_login.setShortcut(_translate("ProjectMainWindow", "Shift+Return"))
         self.groupBox_13.setTitle(_translate("ProjectMainWindow", "Home"))
         self.groupBox_5.setTitle(_translate("ProjectMainWindow", "Analytics"))

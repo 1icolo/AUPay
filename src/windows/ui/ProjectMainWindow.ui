@@ -448,8 +448,8 @@ color: white;</string>
 </string>
             </property>
             <property name="text">
-             <string>Click me then tap your 
-ID on the scanner</string>
+             <string>   Click me then tap your 
+   ID on the scanner</string>
             </property>
             <property name="icon">
              <iconset resource="../../resources_rc/resources.qrc">
@@ -506,7 +506,7 @@ ID on the scanner</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>20</width>
             <height>20</height>
            </size>
           </property>
