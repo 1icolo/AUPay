@@ -113,7 +113,6 @@ def refresh_transactions(self: ProjectMainWindow, user):
     self.userWindow_transaction_search.setText("")
     setDateRangeFields.semestral(self.dateFrom_user, self.dateTo_user)
     load_user_transaction_by_id(self.userWindow_transactions_table, user)
-    search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
     
 
 def dateChanged(self: ProjectMainWindow, user):
