@@ -19,7 +19,7 @@ def load_users_to_table(self, tableWidget):
     rows = len(users_data)
     columns = len(users_data[0])
     tableWidget.setRowCount(len(users_data))
-    tableWidget.hideColumn(0)
+    # tableWidget.hideColumn(0)
     # Add the user data to the table
     for row in range(rows):
         for column in range(columns):
