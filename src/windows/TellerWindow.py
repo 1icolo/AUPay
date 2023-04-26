@@ -15,6 +15,8 @@ from fnHelper.charts.total_withdrawal_and_deposit_chart import total_withdrawal_
 from fnHelper.charts.transaction_frequency_chart import transaction_frequency
 from fnHelper import export_window_to_pdf
 from fnHelper.export_to_csv import *
+from fnHelper.setDateRangeFields import weekly
+
 
 def openOTPDialog(self: ProjectMainWindow, user): 
     self.OTPDialog = OTPWithdrawalDialog(self, user)
@@ -50,7 +52,9 @@ def analytics(self: ProjectMainWindow, user):
     transaction_frequency(self.tellerWindow_transactions_table, self.transaction_frequency_teller)
 
 def transactions(self: ProjectMainWindow, user):
+    weekly(self.dateFrom_teller, self.dateTo_teller)
     load_user_transaction_by_id(self.tellerWindow_transactions_table, user)
+    
 
 def dateChanged(self: ProjectMainWindow, user):
     search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)

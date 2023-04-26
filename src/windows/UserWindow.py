@@ -91,6 +91,7 @@ class ChangeOTPDialog(QDialog):
         else:
             QMessageBox.warning(self, "Warning", "Password or OTP is incorrect")
 
+
 def refresh_navbar(self: ProjectMainWindow, user):
     self.userWindow_schoolIdLine.setText(user['school_id'])
     self.userWindow_balanceLine.setText(str(user['balance']))
@@ -109,10 +110,11 @@ def refresh_analytics(self: ProjectMainWindow, user):
 
 
 def refresh_transactions(self: ProjectMainWindow, user):
-    load_user_transaction_by_id(self.userWindow_transactions_table, user)
-    setDateRangeFields(self.dateFrom_user, self.dateTo_user)
     self.userWindow_transaction_search.setText("")
-
+    setDateRangeFields(self.dateFrom_user, self.dateTo_user)
+    load_user_transaction_by_id(self.userWindow_transactions_table, user)
+    search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
+    
 
 def dateChanged(self: ProjectMainWindow, user):
     search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
@@ -129,6 +131,7 @@ def refresh_all(self: ProjectMainWindow, user):
     refresh_transactions(self, user)
     refresh_analytics(self, user)
 
+
 def check_otp_and_password(self: ProjectMainWindow, user):
     if not user['password'] == cryptography.hash('Shine On, Dear AUP!'):
         self.password_status_client.setText("Already Set")
@@ -137,7 +140,6 @@ def check_otp_and_password(self: ProjectMainWindow, user):
         self.label_warning.setHidden(True)
     else:
         self.stackedWidget_user.setCurrentIndex(3)
-    
     
 
 def UserWindow(self: ProjectMainWindow, user):

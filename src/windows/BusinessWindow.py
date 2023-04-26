@@ -22,7 +22,7 @@ from fnHelper import export_window_to_pdf
 from fnHelper.refresh_clear import *
 from fnHelper.charts import item_frequency_pie_chart, transactions_top_contributors, transactions_count_per_month
 from windows.ProjectMainWindow import ProjectMainWindow
-
+from fnHelper.setDateRangeFields import *
 
 
 def charge(self, user):
@@ -374,6 +374,8 @@ def analytics(self: ProjectMainWindow):
     transactions_top_contributors(self.businessWindow_transactions_table, self.graphicsView_business_3)
 
 def tables(self: ProjectMainWindow, business):
+    self.userWindow_transaction_search.setText("")
+    daily(self.dateFrom_business, self.dateTo_business)
     load_user_transaction_by_id(self.businessWindow_transactions_table, business)
     load_inventory_to_table(self.businessWindow_inventory_table)
 
