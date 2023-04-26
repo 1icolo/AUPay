@@ -352,6 +352,11 @@ def add_item_shortcut(self, event):
                 cart_table.setItem(row_count, 0, QTableWidgetItem(str(item_price)))
             get_cart_data(self)
 
+def clear_fields(self):
+    self.businessWindow_amountLine.setText("")
+    self.businessWindow_descriptionLine.setText("")
+    self.businessWindow_cart_table.clearContents()
+    self.businessWindow_cart_table.setRowCount(0)
 
 def navbar(self: ProjectMainWindow, business):
     self.dateTo_business.setDate(QDate.currentDate())
@@ -407,4 +412,5 @@ def BusinessWindow(self: ProjectMainWindow, business):
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
+    self.buttonClearFields_business.clicked.connect(lambda: clear_fields(self))
 
