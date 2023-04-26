@@ -106,7 +106,7 @@ def refresh_analytics(self: ProjectMainWindow, user):
     item_frequency_pie_chart(self.userWindow_transactions_table, self.transaction_distribution_user)
     balance_line_chart(self.userWindow_transactions_table, self.balance_over_time_user)
     total_spending_amount_chart(self.userWindow_transactions_table, self.monthly_transaction_amount_user)
-    top_spending_destinations_chart(self.userWindow_transactions_table, self.transaction_breakdown_user, user)
+    # top_spending_destinations_chart(self.userWindow_transactions_table, self.transaction_breakdown_user, user)
 
 
 def refresh_transactions(self: ProjectMainWindow, user):
