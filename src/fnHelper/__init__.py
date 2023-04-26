@@ -32,7 +32,5 @@ from .refreshUserBalance import *
 from .charts import *
 from .export_to_csv import export_to_csv
 from .export_window_to_pdf import export_window_to_pdf
-from .setDateRangeFields import setDateRangeFields
-from .setDateRangeFields import daily
-from .setDateRangeFields import weekly
+from .setDateRangeFields import *
 from .logout import logoutAttempt
