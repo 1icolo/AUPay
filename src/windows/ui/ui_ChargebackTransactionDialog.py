@@ -37,6 +37,7 @@ class Ui_Dialog(object):
         font.setPointSize(14)
         self.amountLineEdit.setFont(font)
         self.amountLineEdit.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
+        self.amountLineEdit.setMaximum(100000.0)
         self.amountLineEdit.setObjectName("amountLineEdit")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.amountLineEdit)
         self.buttonScanBusiness = QtWidgets.QPushButton(Dialog)

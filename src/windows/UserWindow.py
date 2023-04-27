@@ -112,11 +112,22 @@ def refresh_analytics(self: ProjectMainWindow, user):
 def refresh_transactions(self: ProjectMainWindow, user):
     self.userWindow_transaction_search.setText("")
     setDateRangeFields.semestral(self.dateFrom_user, self.dateTo_user)
+    self.comboBox_date_range_user.setCurrentText("Semestral")
     load_user_transaction_by_id(self.userWindow_transactions_table, user)
+    search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
     
 
-def dateChanged(self: ProjectMainWindow, user):
-    search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
+def dateChanged(self: ProjectMainWindow, object_type, user):
+    match object_type:
+        case "date_picker":
+            search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
+        case "combo_box":
+            match self.comboBox_date_range_user.currentText():
+                case "Semestral": setDateRangeFields.semestral(self.dateFrom_user, self.dateTo_user)
+                case "Daily": setDateRangeFields.daily(self.dateFrom_user, self.dateTo_user)
+                case "Weekly": setDateRangeFields.weekly(self.dateFrom_user, self.dateTo_user)
+                case "Monthly": setDateRangeFields.monthly(self.dateFrom_user, self.dateTo_user)
+                case "All Time": search_transactions("", self.userWindow_transactions_table)
     refresh_analytics(self, user)
 
 
@@ -147,9 +158,10 @@ def UserWindow(self: ProjectMainWindow, user):
     check_otp_and_password(self, user)
     self.navRefresh_user.clicked.connect(lambda: refresh_all(self, user))
     self.userWindow_transaction_search.textChanged.connect(lambda text: searchChanged(self, user, text))
-    self.dateFrom_user.dateChanged.connect(lambda: dateChanged(self, user))
-    self.dateTo_user.dateChanged.connect(lambda: dateChanged(self, user))
+    self.dateFrom_user.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
+    self.dateTo_user.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
     self.exportCSV_user.clicked.connect(lambda: export_to_csv(self.userWindow_transactions_table, user))
     self.buttonClearTransactions_user.clicked.connect(lambda: refresh_transactions(self, user))
     self.change_password_client.clicked.connect(lambda: ChangePasswordDialog(user).exec())
     self.change_otp_client.clicked.connect(lambda: ChangeOTPDialog(user).exec())
+    self.comboBox_date_range_user.currentTextChanged.connect(lambda: dateChanged(self, "combo_box", user))
