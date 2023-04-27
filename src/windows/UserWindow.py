@@ -118,25 +118,28 @@ def refresh_transactions(self: ProjectMainWindow, user):
     refresh_analytics(self, user)
     
 
-def dateChanged(self: ProjectMainWindow, object_type, user):
-    match object_type:
-        case "date_picker":
-            search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
-        case "combo_box":
-            match self.comboBox_date_range_user.currentText():
-                case "Semestral": setDateRangeFields.semestral(self.dateFrom_user, self.dateTo_user)
-                case "Daily": setDateRangeFields.daily(self.dateFrom_user, self.dateTo_user)
-                case "Weekly": setDateRangeFields.weekly(self.dateFrom_user, self.dateTo_user)
-                case "Monthly": setDateRangeFields.monthly(self.dateFrom_user, self.dateTo_user)
-                case "All Time":
-                    setDateRangeFields.quadrennialy(self.dateFrom_user, self.dateTo_user)
-                    search_transactions("", self.userWindow_transactions_table)
-        case "text_search":
-            self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.userWindow_transactions_table))
+def date_changed(self: ProjectMainWindow, user):
+    search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
     refresh_analytics(self, user)
 
 
-def searchChanged(self: ProjectMainWindow, user, text):
+def range_changed(self: ProjectMainWindow, date_range, user):
+    date_range = self.comboBox_date_range_user.currentText()
+    if date_range == "Semestral":
+        setDateRangeFields.semestral(self.dateFrom_user, self.dateTo_user)
+    elif date_range == "Daily":
+        setDateRangeFields.daily(self.dateFrom_user, self.dateTo_user)
+    elif date_range == "Weekly":
+        setDateRangeFields.weekly(self.dateFrom_user, self.dateTo_user)
+    elif date_range == "Monthly":
+        setDateRangeFields.monthly(self.dateFrom_user, self.dateTo_user)
+    elif date_range == "All Time":
+        setDateRangeFields.quadrennialy(self.dateFrom_user, self.dateTo_user)
+        search_transactions("", self.userWindow_transactions_table)
+    refresh_analytics(self, user)
+
+
+def search_changed(self: ProjectMainWindow, text, user):
     search_transactions(text, self.userWindow_transactions_table)
     refresh_analytics(self, user)
 
@@ -162,11 +165,11 @@ def UserWindow(self: ProjectMainWindow, user):
     refresh_all(self, user)
     check_otp_and_password(self, user)
     self.navRefresh_user.clicked.connect(lambda: refresh_all(self, user))
-    self.userWindow_transaction_search.textChanged.connect(lambda: dateChanged(self, "text_search", user))
-    self.dateFrom_user.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
-    self.dateTo_user.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
+    self.userWindow_transaction_search.textChanged.connect(lambda text: search_changed(self, text, user))
+    self.dateFrom_user.dateChanged.connect(lambda: date_changed(self, user))
+    self.dateTo_user.dateChanged.connect(lambda: date_changed(self,  user))
     self.exportCSV_user.clicked.connect(lambda: export_to_csv(self.userWindow_transactions_table, user))
     self.buttonClearTransactions_user.clicked.connect(lambda: refresh_transactions(self, user))
     self.change_password_client.clicked.connect(lambda: ChangePasswordDialog(user).exec())
     self.change_otp_client.clicked.connect(lambda: ChangeOTPDialog(user).exec())
-    self.comboBox_date_range_user.currentTextChanged.connect(lambda: dateChanged(self, "combo_box", user))
+    self.comboBox_date_range_user.currentTextChanged.connect(lambda text: range_changed(self, text, user))

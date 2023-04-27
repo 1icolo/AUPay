@@ -59,24 +59,30 @@ def refresh_transactions(self: ProjectMainWindow, user):
     search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
     refresh_analytics(self, user)
 
-# def dateChanged(self: ProjectMainWindow, user):
-#     search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
-#     analytics(self, user)
-def dateChanged(self: ProjectMainWindow, object_type, user):
-    match object_type:
-        case "date_picker":
-            search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
-        case "combo_box":
-            match self.comboBox_date_range_teller.currentText():
-                case "Semestral": setDateRangeFields.semestral(self.dateFrom_teller, self.dateTo_teller)
-                case "Daily": setDateRangeFields.daily(self.dateFrom_teller, self.dateTo_teller)
-                case "Weekly": setDateRangeFields.weekly(self.dateFrom_teller, self.dateTo_teller)
-                case "Monthly": setDateRangeFields.monthly(self.dateFrom_teller, self.dateTo_teller)
-                case "All Time":
-                    setDateRangeFields.quadrennialy(self.dateFrom_teller, self.dateTo_teller)
-                    search_transactions("", self.tellerWindow_transactions_table)
-        case "text_search":
-            self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.tellerWindow_transactions_table))
+
+def date_changed(self: ProjectMainWindow, user):
+    search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
+    refresh_analytics(self, user)
+
+
+def range_changed(self: ProjectMainWindow, date_range, user):
+    date_range = self.comboBox_date_range_teller.currentText()
+    if date_range == "Semestral":
+        setDateRangeFields.semestral(self.dateFrom_teller, self.dateTo_teller)
+    elif date_range == "Daily":
+        setDateRangeFields.daily(self.dateFrom_teller, self.dateTo_teller)
+    elif date_range == "Weekly":
+        setDateRangeFields.weekly(self.dateFrom_teller, self.dateTo_teller)
+    elif date_range == "Monthly":
+        setDateRangeFields.monthly(self.dateFrom_teller, self.dateTo_teller)
+    elif date_range == "All Time":
+        setDateRangeFields.quadrennialy(self.dateFrom_teller, self.dateTo_teller)
+        search_transactions("", self.tellerWindow_transactions_table)
+    refresh_analytics(self, user)
+
+
+def search_changed(self: ProjectMainWindow, text, user):
+    search_transactions(text, self.tellerWindow_transactions_table)
     refresh_analytics(self, user)
 
 def refresh_all(self: ProjectMainWindow, user):
@@ -89,14 +95,14 @@ def TellerWindow(self: ProjectMainWindow, user):
     print(__name__)
     refresh_all(self, user)
     self.dateTo_teller.setDate(QDate.currentDate())
-    self.tellerWindow_transaction_search.textChanged.connect(lambda: dateChanged(self, "text_search", user))
-    self.dateFrom_teller.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
-    self.dateTo_teller.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
+    self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_changed(self, text, user))
+    self.dateFrom_teller.dateChanged.connect(lambda: date_changed(self, user))
+    self.dateTo_teller.dateChanged.connect(lambda: date_changed(self, user))
     self.buttonClearTransactions_teller.clicked.connect(lambda: refresh_transactions(self, user))
     self.buttonTransact_teller.clicked.connect(lambda: transactAttempt(self, user))
     self.refreshButton_teller.clicked.connect(lambda: refresh_all(self, user))
     self.exportToCSVButton_teller.clicked.connect(lambda: export_to_csv(self.tellerWindow_transactions_table, user))
-    self.comboBox_date_range_teller.currentTextChanged.connect(lambda: dateChanged(self, "combo_box", user))
+    self.comboBox_date_range_teller.currentTextChanged.connect(lambda text: range_changed(self, text, user))
     
 def transactAttempt(self: ProjectMainWindow, user):
     if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":

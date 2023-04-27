@@ -382,29 +382,30 @@ def refresh_transactions(self: ProjectMainWindow, business):
     search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
     refresh_analytics(self, business)
 
-# def dateChanged(self: ProjectMainWindow, business):
-#     search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
-#     analytics(self)
-def dateChanged(self: ProjectMainWindow, object_type, user):
-    match object_type:
-        case "date_picker":
-            search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
-        case "combo_box":
-            match self.comboBox_date_range_business.currentText():
-                case "Semestral": setDateRangeFields.semestral(self.dateFrom_business, self.dateTo_business)
-                case "Daily": setDateRangeFields.daily(self.dateFrom_business, self.dateTo_business)
-                case "Weekly": setDateRangeFields.weekly(self.dateFrom_business, self.dateTo_business)
-                case "Monthly": setDateRangeFields.monthly(self.dateFrom_business, self.dateTo_business)
-                case "All Time":
-                    setDateRangeFields.quadrennialy(self.dateFrom_business, self.dateTo_business)
-                    search_transactions("", self.businessWindow_transactions_table)
-        case "text_search":
-            self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.businessWindow_transactions_table))
+def date_changed(self: ProjectMainWindow, user):
+    search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
     refresh_analytics(self, user)
 
-# def searchChanged(self: ProjectMainWindow):
-#     self.businessWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.businessWindow_transactions_table))
-#     refresh_analytics(self, business)
+
+def range_changed(self: ProjectMainWindow, range, user):
+    date_range = self.comboBox_date_range_business.currentText()
+    if date_range == "Semestral":
+        setDateRangeFields.semestral(self.dateFrom_business, self.dateTo_business)
+    elif date_range == "Daily":
+        setDateRangeFields.daily(self.dateFrom_business, self.dateTo_business)
+    elif date_range == "Weekly":
+        setDateRangeFields.weekly(self.dateFrom_business, self.dateTo_business)
+    elif date_range == "Monthly":
+        setDateRangeFields.monthly(self.dateFrom_business, self.dateTo_business)
+    elif date_range == "All Time":
+        setDateRangeFields.quadrennialy(self.dateFrom_business, self.dateTo_business)
+        search_transactions("", self.businessWindow_transactions_table)
+    refresh_analytics(self, user)
+
+
+def search_changed(self: ProjectMainWindow, text, user):
+    search_transactions(text, self.businessWindow_transactions_table)
+    refresh_analytics(self, user)
 
 def clearField(self: ProjectMainWindow, business):
     self.buttonClearTransactions_business.clicked.connect(lambda: clear_date(self.dateFrom_business, self.dateTo_business, self.businessWindow_transactions_table))
@@ -420,9 +421,9 @@ def BusinessWindow(self: ProjectMainWindow, business):
     print(__name__)
     refresh_all(self, business)
     self.refreshButton_business.clicked.connect(lambda: refresh_all(self, business))
-    self.businessWindow_transaction_search.textChanged.connect(lambda: dateChanged(self, "text_search", business))
-    self.dateFrom_business.dateChanged.connect(lambda: dateChanged(self, "date_picker", business))
-    self.dateTo_business.dateChanged.connect(lambda: dateChanged(self, "date_picker", business))
+    self.businessWindow_transaction_search.textChanged.connect(lambda text: search_changed(self, text, business))
+    self.dateFrom_business.dateChanged.connect(lambda: date_changed(self, business))
+    self.dateTo_business.dateChanged.connect(lambda: date_changed(self, business))
     self.buttonClearTransactions_business.clicked.connect(lambda: refresh_transactions(self, business))
     self.exportCSV_business.clicked.connect(lambda: export_to_csv(self.businessWindow_transactions_table, business))
 
@@ -435,5 +436,6 @@ def BusinessWindow(self: ProjectMainWindow, business):
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
     self.buttonClearFields_business.clicked.connect(lambda: clear_fields(self))
-    self.comboBox_date_range_business.currentTextChanged.connect(lambda: dateChanged(self, "combo_box", business))
+    self.comboBox_date_range_business.currentTextChanged.connect(lambda text: range_changed(self, text, business))
+    # self.businessWindow_transactions_table.selectionChanged(lambda selected: print(selected))
 
