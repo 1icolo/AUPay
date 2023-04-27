@@ -56,7 +56,8 @@ def refresh_transactions(self: ProjectMainWindow, user):
     setDateRangeFields.semestral(self.dateFrom_teller, self.dateTo_teller)
     self.comboBox_date_range_teller.setCurrentText("Semestral")
     load_user_transaction_by_id(self.tellerWindow_transactions_table, user)
-    search_transactions("", self.tellerWindow_transactions_table)
+    search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
+    refresh_analytics(self, user)
 
 # def dateChanged(self: ProjectMainWindow, user):
 #     search_transactions_by_date(self.tellerWindow_transactions_table, self.dateFrom_teller, self.dateTo_teller)
@@ -72,6 +73,8 @@ def dateChanged(self: ProjectMainWindow, object_type, user):
                 case "Weekly": setDateRangeFields.weekly(self.dateFrom_teller, self.dateTo_teller)
                 case "Monthly": setDateRangeFields.monthly(self.dateFrom_teller, self.dateTo_teller)
                 case "All Time": search_transactions("", self.tellerWindow_transactions_table)
+        case "text_search":
+            self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.tellerWindow_transactions_table))
     refresh_analytics(self, user)
 
 def refresh_all(self: ProjectMainWindow, user):
@@ -84,7 +87,7 @@ def TellerWindow(self: ProjectMainWindow, user):
     print(__name__)
     refresh_all(self, user)
     self.dateTo_teller.setDate(QDate.currentDate())
-    self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.tellerWindow_transactions_table))
+    self.tellerWindow_transaction_search.textChanged.connect(lambda: dateChanged(self, "text_search", user))
     self.dateFrom_teller.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
     self.dateTo_teller.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
     self.buttonClearTransactions_teller.clicked.connect(lambda: refresh_transactions(self, user))

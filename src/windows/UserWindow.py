@@ -115,6 +115,7 @@ def refresh_transactions(self: ProjectMainWindow, user):
     self.comboBox_date_range_user.setCurrentText("Semestral")
     load_user_transaction_by_id(self.userWindow_transactions_table, user)
     search_transactions_by_date(self.userWindow_transactions_table, self.dateFrom_user, self.dateTo_user)
+    refresh_analytics(self, user)
     
 
 def dateChanged(self: ProjectMainWindow, object_type, user):
@@ -128,6 +129,8 @@ def dateChanged(self: ProjectMainWindow, object_type, user):
                 case "Weekly": setDateRangeFields.weekly(self.dateFrom_user, self.dateTo_user)
                 case "Monthly": setDateRangeFields.monthly(self.dateFrom_user, self.dateTo_user)
                 case "All Time": search_transactions("", self.userWindow_transactions_table)
+        case "text_search":
+            self.userWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.userWindow_transactions_table))
     refresh_analytics(self, user)
 
 
@@ -157,7 +160,7 @@ def UserWindow(self: ProjectMainWindow, user):
     refresh_all(self, user)
     check_otp_and_password(self, user)
     self.navRefresh_user.clicked.connect(lambda: refresh_all(self, user))
-    self.userWindow_transaction_search.textChanged.connect(lambda text: searchChanged(self, user, text))
+    self.userWindow_transaction_search.textChanged.connect(lambda: dateChanged(self, "text_search", user))
     self.dateFrom_user.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
     self.dateTo_user.dateChanged.connect(lambda: dateChanged(self, "date_picker", user))
     self.exportCSV_user.clicked.connect(lambda: export_to_csv(self.userWindow_transactions_table, user))

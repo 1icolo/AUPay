@@ -379,6 +379,8 @@ def refresh_transactions(self: ProjectMainWindow, business):
     self.comboBox_date_range_business.setCurrentText("Semestral")
     load_user_transaction_by_id(self.businessWindow_transactions_table, business)
     load_inventory_to_table(self.businessWindow_inventory_table)
+    search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
+    refresh_analytics(self, business)
 
 # def dateChanged(self: ProjectMainWindow, business):
 #     search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
