@@ -72,7 +72,9 @@ def dateChanged(self: ProjectMainWindow, object_type, user):
                 case "Daily": setDateRangeFields.daily(self.dateFrom_teller, self.dateTo_teller)
                 case "Weekly": setDateRangeFields.weekly(self.dateFrom_teller, self.dateTo_teller)
                 case "Monthly": setDateRangeFields.monthly(self.dateFrom_teller, self.dateTo_teller)
-                case "All Time": search_transactions("", self.tellerWindow_transactions_table)
+                case "All Time":
+                    setDateRangeFields.quadrennialy(self.dateFrom_teller, self.dateTo_teller)
+                    search_transactions("", self.tellerWindow_transactions_table)
         case "text_search":
             self.tellerWindow_transaction_search.textChanged.connect(lambda text: search_transactions(text, self.tellerWindow_transactions_table))
     refresh_analytics(self, user)

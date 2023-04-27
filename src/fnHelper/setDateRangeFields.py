@@ -13,6 +13,12 @@ def semestral(dateFrom: QDateEdit, dateTo: QDateEdit):
     dateTo.setDate(QDate.currentDate())
     
 
+def quadrennialy(dateFrom: QDateEdit, dateTo: QDateEdit):
+    current_year = QDate.currentDate().year()
+    dateFrom.setDate(QDate(current_year - 4, 1, 1))
+    dateTo.setDate(QDate.currentDate())
+
+
 def monthly(dateFrom: QDateEdit, dateTo: QDateEdit):
     current_month = QDate.currentDate().month()
     current_year = QDate.currentDate().year()
