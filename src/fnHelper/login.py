@@ -1,6 +1,6 @@
 from dbHelper import find_user_by_login
 from dbHelper import find_user_by_card_id
-from fnHelper.cryptography import hash
+from fnHelper.cryptography.sha256_hash import hash
 from fnHelper.aupCard import AUPCard
 
 def login(self, mode):
@@ -12,7 +12,7 @@ def login(self, mode):
             user = find_user_by_card_id(hash(AUPCard(2).get_uid()))
 
         if user is None:
-            return
+            return False
 
         if self.checkBoxLoginAsClient_login.isChecked():
             self.stackedWidget.setCurrentIndex(1)
@@ -35,5 +35,9 @@ def login(self, mode):
                 self.stackedWidget.setCurrentIndex(3)
                 from windows.TellerWindow import TellerWindow
                 TellerWindow(self, user)
+            else:
+                return False
+        return True
     except Exception as e:
-        print(f"Login Failed. \n{e}")
+        print(f"Login Failed.")
+        return False

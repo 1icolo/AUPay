@@ -8,7 +8,8 @@ from PyQt5.QtWidgets import *
 
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
-from fnHelper import (cryptography, export_window_to_pdf, logoutAttempt,
+from fnHelper.cryptography import hash
+from fnHelper import (export_window_to_pdf, logoutAttempt,
                       setDateRangeFields, update_user)
 from fnHelper.charts import (balance_line_chart, item_frequency_pie_chart,
                              top_spending_destinations_chart,
@@ -29,18 +30,18 @@ class ChangePasswordDialog(QDialog):
         self.ui = ChangePasswordUi_Dialog()
         self.ui.setupUi(self)
         self.ui.button_change_password.clicked.connect(lambda: self.change_password(user))
-        if user['password'] == cryptography.hash('Shine On, Dear AUP!'):
+        if user['password'] == hash('Shine On, Dear AUP!'):
             self.ui.line_old_password.setHidden(True)
 
     def change_password(self, user):
         if self.ui.line_new_password.text().strip() != "" and self.ui.line_confirm_password.text().strip() != "":
-            if user['password'] == cryptography.hash(self.ui.line_old_password.text().strip()) or user['password'] == cryptography.hash('Shine On, Dear AUP!'):
+            if user['password'] == hash(self.ui.line_old_password.text().strip()) or user['password'] == hash('Shine On, Dear AUP!'):
                 if self.ui.line_new_password.text().strip() == self.ui.line_confirm_password.text().strip():
                     userData = {
                         '_id': ObjectId(user['_id']),
                         'card_id': user['card_id'],
                         'school_id': user['school_id'],
-                        'password': cryptography.hash(self.ui.line_confirm_password.text().strip()),
+                        'password': hash(self.ui.line_confirm_password.text().strip()),
                         'otp_key': user['otp_key'],
                         'user_type': user['user_type'],
                     }
@@ -74,7 +75,7 @@ class ChangeOTPDialog(QDialog):
 
     def change_otp(self, user):
         verification_otp = verify_otp(self.totp, self.ui.line_otp.text().strip())
-        verification_password = user['password'] == cryptography.hash(self.ui.line_password.text().strip())
+        verification_password = user['password'] == hash(self.ui.line_password.text().strip())
         if verification_otp and verification_password:
             userData = {
                         '_id': ObjectId(user['_id']),
@@ -151,7 +152,7 @@ def refresh_all(self: ProjectMainWindow, user):
 
 
 def check_otp_and_password(self: ProjectMainWindow, user):
-    if not user['password'] == cryptography.hash('Shine On, Dear AUP!'):
+    if not user['password'] == hash('Shine On, Dear AUP!'):
         self.password_status_client.setText("Already Set")
     if not user['otp_key'] == "":
         self.secret_status_client.setText("Already Set")

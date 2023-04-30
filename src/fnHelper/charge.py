@@ -5,7 +5,7 @@ from bson import Timestamp, ObjectId
 from datetime import datetime
 from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_card_id, find_user_by_id
-from fnHelper.cryptography import hash
+from fnHelper.cryptography.sha256_hash import hash
 from PyQt5.QtWidgets import QMessageBox
 
 def charge_transaction(Widget, business):

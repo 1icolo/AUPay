@@ -3,7 +3,7 @@ from datetime import datetime
 from dbHelper import add_transaction
 from fnHelper import load_user_transaction_by_id
 from fnHelper.aupCard import AUPCard
-from fnHelper.cryptography import hash
+from fnHelper.cryptography.sha256_hash import hash
 from dbHelper.find_user import find_user_by_card_id , find_user_by_id
 from fnHelper.output_to_dict import output_to_dict
 from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency

@@ -3,7 +3,7 @@ from re import A
 from numpy import add
 from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
-from fnHelper.cryptography import hash
+from fnHelper.cryptography.sha256_hash import hash
 from dbHelper.add_transaction import add_transaction
 from bson import Timestamp
 from datetime import datetime

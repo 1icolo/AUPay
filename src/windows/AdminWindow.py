@@ -11,7 +11,7 @@ from windows.ui.ui_AddTransactionDialog import Ui_Dialog as AddTransaction_Dialo
 from windows.ui.ui_AddUserShortDialog import Ui_Dialog as AddUserShortUi_Dialog
 from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
-from fnHelper import cryptography
+from fnHelper.cryptography import hash
 from datetime import *
 from fnHelper.textSearch import *
 from fnHelper.export_to_csv import *
@@ -81,9 +81,9 @@ class AddUserDialog(QDialog):
 
     def saveButton(self):
         newUser = {
-            'card_id': cryptography.hash(self.ui.cardID_addUser.text()),
+            'card_id': hash(self.ui.cardID_addUser.text()),
             'school_id': self.ui.schoolID_addUser.text(),
-            'password': cryptography.hash(self.ui.password_addUser.text()),
+            'password': hash(self.ui.password_addUser.text()),
             'otp_key': self.ui.secret_addUser.text(),
             'user_type': self.ui.userType_addUser.currentText().lower(),
             'balance': 0.00,
@@ -141,9 +141,9 @@ class EditUserDialog(QDialog):
     def updateUser(self, id):
             userData = {
                 '_id': ObjectId(id),
-                'card_id': (lambda: self.ui.cardID_editUser.text(), lambda: cryptography.hash(self.ui.cardID_editUser.text()))[self.ui.cardID_editUser.isEnabled()](),
+                'card_id': (lambda: self.ui.cardID_editUser.text(), lambda: hash(self.ui.cardID_editUser.text()))[self.ui.cardID_editUser.isEnabled()](),
                 'school_id': self.ui.schoolID_editUser.text(),
-                'password': cryptography.hash(self.ui.password_editUser.text()),
+                'password': hash(self.ui.password_editUser.text()),
                 'otp_key': self.ui.otpSecret_editUser.text(),
                 'user_type': self.ui.userType_editUser.currentText().lower(),
             }
@@ -189,9 +189,9 @@ class AddUserShortDialog(QDialog):
     def add_user(self):
         if self.ui.line_school_id.text() != "":
             new_user = {
-                'card_id': cryptography.hash(AUPCard().get_uid()),
+                'card_id': hash(AUPCard().get_uid()),
                 'school_id': self.ui.line_school_id.text(),
-                'password': cryptography.hash('Shine On, Dear AUP!'),
+                'password': hash('Shine On, Dear AUP!'),
                 'otp_key': "",
                 'user_type': self.ui.combo_user_type.currentText().lower(),
                 'balance': 0.00,

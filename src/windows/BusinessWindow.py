@@ -14,7 +14,7 @@ from fnHelper.charge import charge_transaction
 from dbHelper.find_transaction import find_transaction
 from fnHelper.aupCard import AUPCard
 from dbHelper.find_user import find_user_by_id
-from fnHelper.cryptography import hash
+from fnHelper.cryptography.sha256_hash import hash
 from fnHelper.chargeback import chargeback_transaction
 from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.export_to_csv import *
