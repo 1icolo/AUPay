@@ -3,15 +3,14 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from fnHelper import login
 from windows.ui.ui_ProjectMainWindow import Ui_ProjectMainWindow
-from fnHelper.aupCard import AUPCard
 import sys, os
-from fnHelper import cryptography
 from fnHelper.login import login
 
 class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
     def __init__(self, parent=None):
         super(ProjectMainWindow, self).__init__(parent)
         self.setupUi(self)
+        self.firstTime = True
         self.loginAttempt('rfid')
         self.stackedWidget.setStyleSheet("QStackedWidget {background-color: white;}")
         self.actionLogout.triggered.connect(lambda: self.logoutAttempt())
@@ -22,6 +21,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         self.actionFullscreen.setChecked(True)
         self.menubar.setVisible(False)
         self.actionHideMenu.triggered.connect(lambda: self.menubar.setVisible(False))
+        
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Alt:
@@ -42,4 +42,16 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
         os.execl(python, python, *sys.argv)
 
     def loginAttempt(self, mode):
-        login(self, mode)
+        if self.firstTime:
+            self.firstTime = False
+            return
+        
+        if not login(self, mode):
+            QMessageBox.warning(self, "Error", "Login Failed.")
+
+        if mode == "password":
+            self.buttonLogin_login.setEnabled(False)
+            QTimer.singleShot(5000, lambda: self.buttonLogin_login.setEnabled(True))
+        else:
+            self.buttonRFIDLogin_login.setEnabled(False)
+            QTimer.singleShot(5000, lambda: self.buttonRFIDLogin_login.setEnabled(True))
