@@ -47,7 +47,7 @@ class ProjectMainWindow(QMainWindow, Ui_ProjectMainWindow):
             return
         
         if not login(self, mode):
-            QMessageBox.warning(self, "Error", "Login Failed.")
+            QMessageBox.warning(self, "Error", "Login Failed.\n5 seconds cooldown")
 
         if mode == "password":
             self.buttonLogin_login.setEnabled(False)
