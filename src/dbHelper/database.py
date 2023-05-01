@@ -28,34 +28,32 @@ class Database:
     def __create_database(self):
         coinbase = ObjectId('ffffffffffffffffffffffff')
         self.database.create_collection('users', validator=user_schema)
-        self.database.create_collection(
-            'transactions', validator=transaction_schema)
+        self.database.create_collection('transactions', validator=transaction_schema)
         initial_user = {
             'card_id': "7f453b1936a11e152d5cd96c66cdd4caf13024c390509f71daf5410c1d742986",
             'school_id': "AUP52623BSIT",
             'password': "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
-            'otp_key': "AUP52623BSIT",
+            'secret_key': "AUP52623BSITAUP52623BSITAUP52623",
             'user_type': 'admin',
             'balance': float(0.00),
-
         }
         user = self.collection['users'].insert_one(initial_user)
 
-        initial_transaction = {
-            'timestamp': Timestamp(1685084400, 0),
-            'source_id': coinbase,
-            'destination_id': user.inserted_id,
-            'amount': float(0.00),
-            'description': "Coinbase transaction",
-        }
-        transaction = self.collection['transactions'].insert_one(initial_transaction)
+        # initial_transaction = {
+        #     'timestamp': Timestamp(1685084400, 0),
+        #     'source_id': coinbase,
+        #     'destination_id': user.inserted_id,
+        #     'amount': float(0.00),
+        #     'description': "Coinbase transaction",
+        # }
+        # transaction = self.collection['transactions'].insert_one(initial_transaction)
 
         print("Initial database created.")
 
 user_schema = {
     '$jsonSchema': {
         'bsonType': 'object',
-        'required': ['_id', 'card_id', 'school_id', 'password', 'otp_key', 'user_type'],
+        'required': ['_id', 'card_id', 'school_id', 'password', 'secret_key', 'user_type'],
         'properties': {
             '_id': {
                 'bsonType': 'objectId'
@@ -71,7 +69,7 @@ user_schema = {
                 'bsonType': 'string',
                 'pattern': '^[a-fA-F0-9]{64}$'
             },
-            'otp_key': {
+            'secret_key': {
                 'bsonType': 'string',
                 # 'pattern': '^[A-Z2-7]+=*$'
             },
@@ -101,7 +99,7 @@ transaction_schema = {
             },
             'amount': {
                 'bsonType': 'double',
-                'minimum': 0
+                'minimum': 1
             },
             'description': {
                 'bsonType': 'string',

@@ -358,10 +358,10 @@ def clear_fields(self):
     self.businessWindow_cart_table.clearContents()
     self.businessWindow_cart_table.setRowCount(0)
 
-def refresh_navbar(self: ProjectMainWindow, business):
+def refresh_navbar(self: ProjectMainWindow, user):
     self.dateTo_business.setDate(QDate.currentDate())
-    self.lineBalance_business.setText(str(business['balance']))
-    self.lineBusiness_business.setText(business['school_id'])
+    self.lineBalance_business.setText(str(user['balance']))
+    self.lineBusiness_business.setText(user['school_id'])
     self.navLogout_business.clicked.connect(lambda: self.logoutAttempt())
     self.navHome_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(0))
     self.navDashboard_business.clicked.connect(lambda: self.stackedWidget_business.setCurrentIndex(1))
@@ -373,21 +373,21 @@ def refresh_analytics(self: ProjectMainWindow, user):
     transactions_count_per_month(self.businessWindow_transactions_table, self.graphicsView_business_2)
     transactions_top_contributors(self.businessWindow_transactions_table, self.graphicsView_business_3)
 
-def refresh_transactions(self: ProjectMainWindow, business):
+def refresh_transactions(self: ProjectMainWindow, user):
     self.userWindow_transaction_search.setText("")
     setDateRangeFields.semestral(self.dateFrom_business, self.dateTo_business)
     self.comboBox_date_range_business.setCurrentText("Semestral")
-    load_user_transaction_by_id(self.businessWindow_transactions_table, business)
+    load_user_transaction_by_id(self.businessWindow_transactions_table, user)
     load_inventory_to_table(self.businessWindow_inventory_table)
     search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
-    refresh_analytics(self, business)
+    refresh_analytics(self, user)
 
 def date_changed(self: ProjectMainWindow, user):
     search_transactions_by_date(self.businessWindow_transactions_table, self.dateFrom_business, self.dateTo_business)
     refresh_analytics(self, user)
 
 
-def range_changed(self: ProjectMainWindow, range, user):
+def range_changed(self: ProjectMainWindow, user):
     date_range = self.comboBox_date_range_business.currentText()
     if date_range == "Semestral":
         setDateRangeFields.semestral(self.dateFrom_business, self.dateTo_business)
@@ -407,35 +407,35 @@ def search_changed(self: ProjectMainWindow, text, user):
     search_transactions(text, self.businessWindow_transactions_table)
     refresh_analytics(self, user)
 
-def clearField(self: ProjectMainWindow, business):
+def clearField(self: ProjectMainWindow, user):
     self.buttonClearTransactions_business.clicked.connect(lambda: clear_date(self.dateFrom_business, self.dateTo_business, self.businessWindow_transactions_table))
     search_transactions("", self.businessWindow_transactions_table)
-    refresh_analytics(self, business)
+    refresh_analytics(self, user)
 
-def refresh_all(self: ProjectMainWindow, business):
-    refresh_navbar(self, business)
-    refresh_transactions(self, business)
-    refresh_analytics(self, business)
+def refresh_all(self: ProjectMainWindow, user):
+    refresh_navbar(self, user)
+    refresh_transactions(self, user)
+    refresh_analytics(self, user)
 
-def BusinessWindow(self: ProjectMainWindow, business):
+def BusinessWindow(self: ProjectMainWindow, user):
     print(__name__)
-    refresh_all(self, business)
-    self.refreshButton_business.clicked.connect(lambda: refresh_all(self, business))
-    self.businessWindow_transaction_search.textChanged.connect(lambda text: search_changed(self, text, business))
-    self.dateFrom_business.dateChanged.connect(lambda: date_changed(self, business))
-    self.dateTo_business.dateChanged.connect(lambda: date_changed(self, business))
-    self.buttonClearTransactions_business.clicked.connect(lambda: refresh_transactions(self, business))
-    self.exportCSV_business.clicked.connect(lambda: export_to_csv(self.businessWindow_transactions_table, business))
+    refresh_all(self, user)
+    self.refreshButton_business.clicked.connect(lambda: refresh_all(self, user))
+    self.businessWindow_transaction_search.textChanged.connect(lambda text: search_changed(self, text, user))
+    self.dateFrom_business.dateChanged.connect(lambda: date_changed(self, user))
+    self.dateTo_business.dateChanged.connect(lambda: date_changed(self, user))
+    self.buttonClearTransactions_business.clicked.connect(lambda: refresh_transactions(self, user))
+    self.exportCSV_business.clicked.connect(lambda: export_to_csv(self.businessWindow_transactions_table, user))
 
     #business
     self.buttonAddToCart_business.clicked.connect(lambda: add_to_cart(self))
     self.buttonRemoveFromCart_business.clicked.connect(lambda: remove_from_cart(self))
-    self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self, business))
-    self.buttonCharge.clicked.connect(lambda: charge(self, business))
+    self.buttonEditItems_business.clicked.connect(lambda: open_edit_items_dialog(self, user))
+    self.buttonCharge.clicked.connect(lambda: charge(self, user))
     self.businessWindow_inventory_search.textChanged.connect(lambda text: search_inventory(self, text))
     self.keyPressEvent = (lambda event: add_item_shortcut(self, event))
     self.buttonChargeback_business.clicked.connect(lambda: chargebackTransaction(self))
     self.buttonClearFields_business.clicked.connect(lambda: clear_fields(self))
-    self.comboBox_date_range_business.currentTextChanged.connect(lambda text: range_changed(self, text, business))
+    self.comboBox_date_range_business.currentTextChanged.connect(lambda: range_changed(self, user))
     # self.businessWindow_transactions_table.selectionChanged(lambda selected: print(selected))
 

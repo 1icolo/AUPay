@@ -14,13 +14,13 @@ def search_users(text, tablewidget):
         card_id = tablewidget.item(row, 1).text()
         school_id = tablewidget.item(row, 2).text()
         password = tablewidget.item(row, 3).text()
-        otp_key = tablewidget.item(row, 4).text()
+        secret_key = tablewidget.item(row, 4).text()
         user_type = tablewidget.item(row, 5).text()
         balance = tablewidget.item(row, 6).text()
 
         
         # check if the search text is a substring of any of the items in the row
-        if text.lower() in _id.lower() or text.lower() in card_id.lower() or text.lower() in school_id.lower() or text.lower() in password.lower() or text.lower() in otp_key.lower() or text.lower() in user_type.lower() or text.lower() in balance.lower():
+        if text.lower() in _id.lower() or text.lower() in card_id.lower() or text.lower() in school_id.lower() or text.lower() in password.lower() or text.lower() in secret_key.lower() or text.lower() in user_type.lower() or text.lower() in balance.lower():
             tablewidget.setRowHidden(row, False)
         else:
             tablewidget.setRowHidden(row, True)

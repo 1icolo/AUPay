@@ -9,6 +9,8 @@ from bson import Timestamp
 from datetime import datetime
 from fnHelper.checkBalanceSufficiency import checkBalanceSufficiency
 from PyQt5.QtWidgets import QMessageBox
+from fnHelper.load_tables import load_user_transaction_by_id
+from dbHelper import find_user_by_id
 
 def chargeback_transaction(Widget, transaction):
     newTransaction = {
@@ -19,7 +21,7 @@ def chargeback_transaction(Widget, transaction):
             "description": (f'chargeback {transaction["_id"]}')
         }
     print(transaction['amount'])
-    if checkBalanceSufficiency(transaction['destination_id'], transaction['amount']):
+    if checkBalanceSufficiency(transaction['destination_id'], Widget.ui.amountLineEdit.value()):
         # if transaction['amount'] == newTransaction['amount']:
         #     QMessageBox.information(Widget, "Success", "Chargeback successful.")
         #     add_transaction(newTransaction)
@@ -30,6 +32,7 @@ def chargeback_transaction(Widget, transaction):
                 print(f"New transaction amount: {newTransaction['amount']}")
                 if add_transaction(newTransaction):
                     QMessageBox.information(Widget, "Success", "Chargeback successful.")
+                    # refresh(user)
             elif float(Widget.ui.amountLineEdit.value()) == transaction['amount']:
                 if add_transaction(newTransaction):
                     QMessageBox.information(Widget, "Success", "Chargeback successful.")

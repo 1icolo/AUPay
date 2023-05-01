@@ -14,7 +14,7 @@ def load_users_to_table(self, tableWidget):
     users = find_all_users()
     users_data = []
     for user in users:
-        users_data.append([user['_id'],user['card_id'],user['school_id'],user['password'],user['otp_key'],user['user_type'],user['balance']])
+        users_data.append([user['_id'],user['card_id'],user['school_id'],user['password'],user['secret_key'],user['user_type'],user['balance']])
     # print(users_data)
     rows = len(users_data)
     columns = len(users_data[0])
@@ -37,33 +37,37 @@ def load_transactions_to_table(self, tableWidget, user):
     transaction_data = []
     transactions_data = []
     count = 0
-    for transaction in transactions:
-        transaction_data.append([transaction['timestamp']])
-        bson_timestamp = transaction_data[count][0]
-        count += 1
-        dt = datetime.fromtimestamp(bson_timestamp.time)
-        date_string = dt.strftime("%m/%d/%Y")
-        transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
-                                 transaction['destination_id'], transaction['amount'], transaction['description']])
-    # print(transactions_data)
-    rows = len(transactions_data)
-    columns = len(transactions_data[0])
-    tableWidget.setRowCount(len(transactions_data))
-    # Add the user data to the table
-    for row in range(rows):
-        for column in range(columns):
-            item = QTableWidgetItem(str(transactions_data[row][column]))
-            tableWidget.setItem(row, column, item)
-            destination_id = transactions_data[row][3]
-            if destination_id == user['school_id']:
-                color = QColor(51, 255, 153)  # light green
-            else:
-                color = QColor(255, 255, 255)  # light red
+    try:
+        for transaction in transactions:
+            transaction_data.append([transaction['timestamp']])
+            bson_timestamp = transaction_data[count][0]
+            count += 1
+            dt = datetime.fromtimestamp(bson_timestamp.time)
+            date_string = dt.strftime("%m/%d/%Y")
+            transactions_data.append([transaction['_id'], date_string, transaction['source_id'],
+                                    transaction['destination_id'], transaction['amount'], transaction['description']])
+        # print(transactions_data)
+        rows = len(transactions_data)
+        if transactions_data: columns = len(transactions_data[0])
+        else: columns = 0
+        tableWidget.setRowCount(len(transactions_data))
+        # Add the user data to the table
+        for row in range(rows):
             for column in range(columns):
                 item = QTableWidgetItem(str(transactions_data[row][column]))
-                item.setBackground(color)
                 tableWidget.setItem(row, column, item)
-    tableWidget.itemSelectionChanged.connect(lambda: id_of_selected_row_transaction(self))
+                destination_id = transactions_data[row][3]
+                if destination_id == user['school_id']:
+                    color = QColor(51, 255, 153)  # light green
+                else:
+                    color = QColor(255, 255, 255)  # light red
+                for column in range(columns):
+                    item = QTableWidgetItem(str(transactions_data[row][column]))
+                    item.setBackground(color)
+                    tableWidget.setItem(row, column, item)
+        tableWidget.itemSelectionChanged.connect(lambda: id_of_selected_row_transaction(self))
+    except Exception as e:
+        print(f"Error in load_tables.\n{e}")
 
     def id_of_selected_row_transaction(self):
         selected_row = tableWidget.currentRow()

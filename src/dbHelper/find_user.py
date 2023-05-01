@@ -45,3 +45,12 @@ def find_all_users():
     except:
         print("No user exists in the database.")
         return None
+    
+
+def find_all_tellers():
+    try:
+        users = Database().collection['users'].find({'user_type': 'teller'})
+        return users
+    except:
+        print("No teller exists in the database.")
+        return None

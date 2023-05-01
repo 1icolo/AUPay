@@ -39,5 +39,5 @@ def login(self, mode):
                 return False
         return True
     except Exception as e:
-        print(f"Login Failed.")
+        print(f"Login Failed.\n{e}")
         return False

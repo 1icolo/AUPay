@@ -2,12 +2,14 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from dbHelper import add_user, find_user_by_id, update_user, delete_user, add_transaction
+from dbHelper.find_user import find_all_tellers
 from fnHelper import get_random_secret, get_totp, verify_otp
 from fnHelper.load_tables import *
 from windows.ui.ui_AddUserDialog import Ui_Dialog as AddUserUi_Dialog
 from windows.ui.ui_EditUserDialog import Ui_Dialog as EditUserUi_Dialog
 from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
 from windows.ui.ui_AddTransactionDialog import Ui_Dialog as AddTransaction_Dialog
+from windows.ui.ui_AddSupplyDialog import Ui_Dialog as AddSupply_Dialog
 from windows.ui.ui_AddUserShortDialog import Ui_Dialog as AddUserShortUi_Dialog
 from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
@@ -31,7 +33,7 @@ def editUser(self):
     edit_dialog.table_updated.connect(lambda: load_users_to_table(self, self.adminWindow_users_table))
     edit_dialog.ui.cardID_editUser.setText(current_user_data['card_id'])
     edit_dialog.ui.schoolID_editUser.setText(current_user_data['school_id'])
-    edit_dialog.ui.otpSecret_editUser.setText(current_user_data['otp_key'])
+    edit_dialog.ui.otpSecret_editUser.setText(current_user_data['secret_key'])
     def current_user_type(user_type):
         if user_type == 'user':
             return "User"
@@ -84,7 +86,7 @@ class AddUserDialog(QDialog):
             'card_id': hash(self.ui.cardID_addUser.text()),
             'school_id': self.ui.schoolID_addUser.text(),
             'password': hash(self.ui.password_addUser.text()),
-            'otp_key': self.ui.secret_addUser.text(),
+            'secret_key': self.ui.secret_addUser.text(),
             'user_type': self.ui.userType_addUser.currentText().lower(),
             'balance': 0.00,
         }
@@ -144,7 +146,7 @@ class EditUserDialog(QDialog):
                 'card_id': (lambda: self.ui.cardID_editUser.text(), lambda: hash(self.ui.cardID_editUser.text()))[self.ui.cardID_editUser.isEnabled()](),
                 'school_id': self.ui.schoolID_editUser.text(),
                 'password': hash(self.ui.password_editUser.text()),
-                'otp_key': self.ui.otpSecret_editUser.text(),
+                'secret_key': self.ui.otpSecret_editUser.text(),
                 'user_type': self.ui.userType_editUser.currentText().lower(),
             }
             update_user(userData)
@@ -192,7 +194,7 @@ class AddUserShortDialog(QDialog):
                 'card_id': hash(AUPCard().get_uid()),
                 'school_id': self.ui.line_school_id.text(),
                 'password': hash('Shine On, Dear AUP!'),
-                'otp_key': "",
+                'secret_key': "",
                 'user_type': self.ui.combo_user_type.currentText().lower(),
                 'balance': 0.00,
             }
@@ -227,6 +229,32 @@ class AddTransactionDialog(QDialog):
         add_transaction(newTransaction)
         self.table_updated.emit()
         self.close()
+
+class AddSupplyDialog(QDialog):
+    table_updated = pyqtSignal()
+    def __init__(self, parent=None):
+        super(AddSupplyDialog, self).__init__(parent)
+        self.ui = AddSupply_Dialog()
+        self.ui.setupUi(self)
+
+        for teller in find_all_tellers():
+            self.ui.comboBox.addItem(teller['school_id'], teller['_id'])
+
+        self.ui.pushButton.clicked.connect(lambda: self.addTransaction())
+
+    def addTransaction(self):
+        newTransaction =  {
+            "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
+            "source_id": ObjectId('ffffffffffffffffffffffff'),
+            "destination_id": ObjectId(self.ui.comboBox.currentData()),
+            "amount": float(self.ui.doubleSpinBox.value()),
+            "description": 'coinbase transaction'
+        }
+        print(newTransaction)
+        add_transaction(newTransaction)
+        self.close()
+
+
 
 def open_add_transaction_dialog(self, user):
     # Check if there is a selected row
@@ -280,6 +308,7 @@ def AdminWindow(self: ProjectMainWindow, user):
     self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
     self.refresh_administrator.clicked.connect(lambda: refreshUserBalance())
     self.buttonAddUser_short_administrator.clicked.connect(lambda: AddUserShortDialog(user).exec())
+    self.buttonAddSupply_administrator.clicked.connect(lambda: AddSupplyDialog().exec_())
     
 
 

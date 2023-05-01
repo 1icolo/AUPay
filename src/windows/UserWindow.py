@@ -22,6 +22,7 @@ from fnHelper.textSearch import *
 from windows.ProjectMainWindow import ProjectMainWindow
 from windows.ui.ui_ChangeOTPDialog import Ui_Dialog as ChangeOTPUi_Dialog
 from windows.ui.ui_ChangePasswordDialog import Ui_Dialog as ChangePasswordUi_Dialog
+import re
 
 
 class ChangePasswordDialog(QDialog):
@@ -29,10 +30,18 @@ class ChangePasswordDialog(QDialog):
         super(ChangePasswordDialog, self).__init__(parent)
         self.ui = ChangePasswordUi_Dialog()
         self.ui.setupUi(self)
+        self.ui.button_change_password.setEnabled(False)
+        self.ui.line_new_password.textChanged.connect(lambda: self.password_guidelines())
         self.ui.button_change_password.clicked.connect(lambda: self.change_password(user))
         if user['password'] == hash('Shine On, Dear AUP!'):
             self.ui.line_old_password.setHidden(True)
-
+    
+    def password_guidelines(self):
+        regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$'
+        if re.match(regex, self.ui.line_new_password.text()):
+            return self.ui.button_change_password.setEnabled(True)
+        return self.ui.button_change_password.setEnabled(False)
+        
     def change_password(self, user):
         if self.ui.line_new_password.text().strip() != "" and self.ui.line_confirm_password.text().strip() != "":
             if user['password'] == hash(self.ui.line_old_password.text().strip()) or user['password'] == hash('Shine On, Dear AUP!'):
@@ -42,7 +51,7 @@ class ChangePasswordDialog(QDialog):
                         'card_id': user['card_id'],
                         'school_id': user['school_id'],
                         'password': hash(self.ui.line_confirm_password.text().strip()),
-                        'otp_key': user['otp_key'],
+                        'secret_key': user['secret_key'],
                         'user_type': user['user_type'],
                     }
                     update_user(userData)
@@ -82,7 +91,7 @@ class ChangeOTPDialog(QDialog):
                         'card_id': user['card_id'],
                         'school_id': user['school_id'],
                         'password': user['password'],
-                        'otp_key': self.secret_key,
+                        'secret_key': self.secret_key,
                         'user_type': user['user_type'],
                     }
             update_user(userData)
@@ -154,7 +163,7 @@ def refresh_all(self: ProjectMainWindow, user):
 def check_otp_and_password(self: ProjectMainWindow, user):
     if not user['password'] == hash('Shine On, Dear AUP!'):
         self.password_status_client.setText("Already Set")
-    if not user['otp_key'] == "":
+    if not user['secret_key'] == "":
         self.secret_status_client.setText("Already Set")
         self.label_warning.setHidden(True)
     else:
