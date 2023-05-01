@@ -196,6 +196,7 @@ class AddUserShortDialog(QDialog):
                 'password': hash('Shine On, Dear AUP!'),
                 'secret_key': "",
                 'user_type': self.ui.combo_user_type.currentText().lower(),
+                'max_credit': 0.00,
                 'balance': 0.00,
             }
             if new_user['card_id']:

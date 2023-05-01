@@ -22,7 +22,6 @@ def charge_transaction(Widget, business):
 
         # Call update_bar_chart after adding a new transaction
         load_user_transaction_by_id(Widget.businessWindow_transactions_table, business)
-        # refresh_bar_chart(Widget.businessWindow_transactions_table, Widget.graphicsView_2)
 
     transaction = {
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),

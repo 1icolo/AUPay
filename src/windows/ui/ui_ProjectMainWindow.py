@@ -2319,7 +2319,7 @@ class Ui_ProjectMainWindow(object):
         self.adminWindow_users_table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.adminWindow_users_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.adminWindow_users_table.setObjectName("adminWindow_users_table")
-        self.adminWindow_users_table.setColumnCount(7)
+        self.adminWindow_users_table.setColumnCount(8)
         self.adminWindow_users_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.adminWindow_users_table.setHorizontalHeaderItem(0, item)
@@ -2335,6 +2335,8 @@ class Ui_ProjectMainWindow(object):
         self.adminWindow_users_table.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.adminWindow_users_table.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.adminWindow_users_table.setHorizontalHeaderItem(7, item)
         self.adminWindow_users_table.horizontalHeader().setStretchLastSection(True)
         self.gridLayout_35.addWidget(self.adminWindow_users_table, 0, 0, 1, 1)
         self.gridLayout_18.addWidget(self.groupBox_41, 0, 1, 1, 1)
@@ -2629,7 +2631,7 @@ class Ui_ProjectMainWindow(object):
         self.stackedWidget_user.setCurrentIndex(0)
         self.stackedWidget_business.setCurrentIndex(0)
         self.stackedWidget_teller.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_transaction_search.clear) # type: ignore
         self.buttonClearFields_business.clicked.connect(self.businessWindow_descriptionLine.clear) # type: ignore
         self.buttonClearFields_business.clicked.connect(self.businessWindow_amountLine.clear) # type: ignore
@@ -2872,6 +2874,8 @@ class Ui_ProjectMainWindow(object):
         item = self.adminWindow_users_table.horizontalHeaderItem(5)
         item.setText(_translate("ProjectMainWindow", "user_type"))
         item = self.adminWindow_users_table.horizontalHeaderItem(6)
+        item.setText(_translate("ProjectMainWindow", "max_credit"))
+        item = self.adminWindow_users_table.horizontalHeaderItem(7)
         item.setText(_translate("ProjectMainWindow", "balance"))
         self.groupBox_40.setTitle(_translate("ProjectMainWindow", "Options"))
         self.adminWindow_user_search.setPlaceholderText(_translate("ProjectMainWindow", "Search"))

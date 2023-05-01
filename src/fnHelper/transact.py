@@ -46,7 +46,7 @@ def transact(Widget, teller, OTP=None):
             else:
                 return QMessageBox.critical(Widget, "Error", "Incorrect OTP")
 
-    if checkBalanceSufficiency(checkBalance, newTransaction['amount']):
+    if checkBalanceSufficiency(checkBalance, newTransaction['amount'], credit = False):
         add_transaction(newTransaction)
         refresh(teller)
         load_user_transaction_by_id(

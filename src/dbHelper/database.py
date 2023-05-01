@@ -76,6 +76,9 @@ user_schema = {
             'user_type': {
                 'enum': ['admin', 'user', 'business', 'teller']
             },
+            'max_credit': {
+                'bsonType': 'double',
+            },
             'balance': {
                 'bsonType': 'double',
             }

@@ -4287,7 +4287,7 @@ p, li { white-space: pre-wrap; }
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tabDashboard_administrator">
            <attribute name="title">
@@ -4657,6 +4657,11 @@ p, li { white-space: pre-wrap; }
                     <column>
                      <property name="text">
                       <string>user_type</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>max_credit</string>
                      </property>
                     </column>
                     <column>

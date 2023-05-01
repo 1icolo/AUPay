@@ -14,7 +14,7 @@ def load_users_to_table(self, tableWidget):
     users = find_all_users()
     users_data = []
     for user in users:
-        users_data.append([user['_id'],user['card_id'],user['school_id'],user['password'],user['secret_key'],user['user_type'],user['balance']])
+        users_data.append([user['_id'],user['card_id'],user['school_id'],user['password'],user['secret_key'],user['user_type'],user['max_credit'],user['balance']])
     # print(users_data)
     rows = len(users_data)
     columns = len(users_data[0])
