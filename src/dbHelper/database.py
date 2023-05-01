@@ -1,12 +1,14 @@
 # Package Imports
+from multiprocessing import connection
 from pymongo import MongoClient
 from bson import Timestamp, ObjectId
 from fnHelper import jsonIO
+from fnHelper.cryptography.aes256_encryption import *
 
 class Database:
     def __init__(self):
         try:
-            connection_string = jsonIO.read_items('config.json')['uri']
+            connection_string = decrypt(jsonIO.read_items('config.json')['uri'], "AUP52326BSIT")
             
             self.client = MongoClient(connection_string)
             self.database = self.client['aupaydb']
