@@ -44,5 +44,7 @@ def compute_user_balance(user_id):
             }
         }
     ])
-    for result in balance:
-        return result['balance']
+    if balance:
+        for result in balance:
+            return result['balance']
+    return float(0.00)
