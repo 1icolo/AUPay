@@ -10,6 +10,7 @@ from windows.ui.ui_EditUserDialog import Ui_Dialog as EditUserUi_Dialog
 from windows.ui.ui_DeleteUserDialog import Ui_Dialog as DeleteUserUi_Dialog
 from windows.ui.ui_AddTransactionDialog import Ui_Dialog as AddTransaction_Dialog
 from windows.ui.ui_AddSupplyDialog import Ui_Dialog as AddSupply_Dialog
+from windows.ui.ui_EditMaxCreditDialog import Ui_Dialog as EditMaxCredit_Dialog
 from windows.ui.ui_AddUserShortDialog import Ui_Dialog as AddUserShortUi_Dialog
 from bson import ObjectId, Timestamp
 from fnHelper.aupCard import AUPCard
@@ -255,6 +256,28 @@ class AddSupplyDialog(QDialog):
         add_transaction(newTransaction)
         self.close()
 
+class EditMaxCreditDialog(QDialog):
+    table_updated = pyqtSignal()
+    def __init__(self, main_widget, user, parent=None):
+        super(EditMaxCreditDialog, self).__init__(parent)
+        self.ui = EditMaxCredit_Dialog()
+        self.ui.setupUi(self)
+
+        for teller in find_all_users():
+            self.ui.comboBox.addItem(teller['school_id'], teller['_id'])
+        self.ui.pushButton.clicked.connect(lambda: self.edit_max_credit(main_widget))
+
+    def edit_max_credit(self, main_widget):
+        userData = {
+            '_id': self.ui.comboBox.currentData(),
+            'max_credit': self.ui.doubleSpinBox.value(),
+        }
+        if update_user(userData):
+            QMessageBox.information(self, "Success", "User updated.")
+            self.close()
+        else:
+            QMessageBox.warning(self, "Failed", "Update user failed.")
+
 
 
 def open_add_transaction_dialog(self, user):
@@ -279,6 +302,13 @@ def refresh_analytics(self: ProjectMainWindow, user):
 def refresh_transactions(self: ProjectMainWindow, user):
     pass
 
+def refresh_dashboard(self: ProjectMainWindow, user):
+    self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
+    self.refresh_administrator.clicked.connect(lambda: refreshUserBalance())
+    self.buttonAddUser_short_administrator.clicked.connect(lambda: AddUserShortDialog(user).exec())
+    self.buttonAddSupply_administrator.clicked.connect(lambda: AddSupplyDialog().exec_())
+    self.buttonEditMaxCredit_administrator.clicked.connect(lambda: EditMaxCreditDialog(self, user).exec_())
+
 def dateChanged(self: ProjectMainWindow, user):
     pass
 
@@ -286,11 +316,13 @@ def searchChanged(self: ProjectMainWindow, user, text):
     pass
 
 def refresh_all(self: ProjectMainWindow, user):
+    refresh_dashboard(self, user)
     refresh_transactions(self, user)
     refresh_analytics(self, user)
 
 def AdminWindow(self: ProjectMainWindow, user):
     print(__name__)
+    refresh_all(self, user)
     self.dateTo_administrator.setDate(QDate.currentDate())
     self.buttonAddUser_administrator.clicked.connect(lambda: open_add_user_dialog(self))
     self.buttonEditUser_administrator.clicked.connect(lambda: editUser(self))
@@ -306,10 +338,8 @@ def AdminWindow(self: ProjectMainWindow, user):
     self.export_administrator.clicked.connect(lambda: export_to_csv(self.adminWindow_transactions_table, f"{user['school_id']}_{datetime.now().strftime('%m-%d-%Y_%H-%M-%S')}.csv"))
     self.buttonClearTransactions_administrator.clicked.connect(lambda: clear_date(self.dateFrom_administrator, self.dateTo_administrator, self.adminWindow_transactions_table))
     # self.refresh_administrator.clicked.connect(lambda: resfresh_table(self, self.adminWindow_users_table))
-    self.lineTotalCirculating_administrator.setText(str(calculate_total_circulating_supply()))
-    self.refresh_administrator.clicked.connect(lambda: refreshUserBalance())
-    self.buttonAddUser_short_administrator.clicked.connect(lambda: AddUserShortDialog(user).exec())
-    self.buttonAddSupply_administrator.clicked.connect(lambda: AddSupplyDialog().exec_())
+    
+ 
     
 
 

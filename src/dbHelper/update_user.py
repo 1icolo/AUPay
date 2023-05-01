@@ -3,14 +3,18 @@ from .compute_user_balance import compute_user_balance
 
 
 def update_user(user):
-    Database().collection['users'].update_one(
-        {"_id": user['_id']},
-        {"$set": 
-            user
-        }
-    )
-    print(f"User {user['_id']} updated.")
-    return True
+    try:
+        Database().collection['users'].update_one(
+            {"_id": user['_id']},
+            {"$set": 
+                user
+            }
+        )
+        print(f"User {user['_id']} updated.")
+        return True
+    except Exception as e:
+        print(f"Update user failed.\n{e}")
+        return False
 
 def update_balance(user):
     user_balance = compute_user_balance(user['_id'])

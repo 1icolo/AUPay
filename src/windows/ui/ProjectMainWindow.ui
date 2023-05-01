@@ -4358,7 +4358,7 @@ p, li { white-space: pre-wrap; }
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabDashboard_administrator">
            <attribute name="title">
@@ -4594,7 +4594,7 @@ p, li { white-space: pre-wrap; }
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="buttonChangeMaxCredit_administrator">
+                 <widget class="QPushButton" name="buttonEditMaxCredit_administrator">
                   <property name="font">
                    <font>
                     <family>Segoe UI Semibold</family>
@@ -4602,7 +4602,7 @@ p, li { white-space: pre-wrap; }
                    </font>
                   </property>
                   <property name="text">
-                   <string>Change User's Max Credit</string>
+                   <string>Edit User's Max Credit</string>
                   </property>
                  </widget>
                 </item>
@@ -5177,7 +5177,7 @@ p, li { white-space: pre-wrap; }
                <property name="topMargin">
                 <number>70</number>
                </property>
-               <item row="1" column="0" colspan="3">
+               <item row="1" column="0" colspan="2">
                 <widget class="QGroupBox" name="groupBox_42">
                  <property name="font">
                   <font>
@@ -5205,7 +5205,7 @@ p, li { white-space: pre-wrap; }
                  </layout>
                 </widget>
                </item>
-               <item row="0" column="2">
+               <item row="0" column="0" colspan="2">
                 <widget class="QPushButton" name="export_administrator">
                  <property name="font">
                   <font>
@@ -5217,38 +5217,6 @@ p, li { white-space: pre-wrap; }
                   <string>Export</string>
                  </property>
                 </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_17">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Segoe UI</family>
-                   <pointsize>14</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Total Circulating:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <spacer name="horizontalSpacer_11">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
