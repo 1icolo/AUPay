@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-01T06:44:18.845Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.64" etag="FbEO2CbHGHswgKfbziXJ" version="21.2.1" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2023-05-01T08:09:47.481Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.64" etag="hwY5z9_1v5wcuGnU-EXT" version="21.2.1" type="github" pages="15">
   <diagram id="YNhH0matYlgtwRMePpy-" name="Kanban">
     <mxGraphModel dx="1259" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="1000" math="0" shadow="1">
       <root>
@@ -40,6 +40,21 @@
         <object label="&lt;font style=&quot;&quot;&gt;Password policy in user password change.&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="DKIuxLN2YTdqgYzazyS6-2">
           <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
             <mxGeometry x="20" y="239" width="170" height="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;MongoDB aggregation that calculates user&#39;s credits&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="DKIuxLN2YTdqgYzazyS6-4">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
+            <mxGeometry x="20" y="348" width="170" height="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Function that calculates total credits&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="DKIuxLN2YTdqgYzazyS6-3">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
+            <mxGeometry x="20" y="457" width="170" height="89" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;font style=&quot;&quot;&gt;Update User Balance when doing chargeback&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-style: italic; font-size: 10px;&quot;&gt;%status%&lt;/font&gt;" placeholders="1" id="DKIuxLN2YTdqgYzazyS6-5">
+          <mxCell style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=swimlane;fontStyle=1;spacingTop=0;rounded=1;arcSize=9;points=[];sketch=1;fontFamily=Permanent Marker;hachureGap=8;fillWeight=1;direction=south;" vertex="1" parent="jk4ZuAFncWzifWcSEG9R-6">
+            <mxGeometry x="20" y="566" width="170" height="89" as="geometry" />
           </mxCell>
         </object>
         <object label="" status="In progress" id="dP4nEb0FnnbFnyhw3xI3-1">
