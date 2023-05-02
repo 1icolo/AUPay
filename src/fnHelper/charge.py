@@ -37,7 +37,7 @@ def charge_transaction(Widget, business):
 
 
     if transaction['source_id'] is not None:
-        if checkBalanceSufficiency(transaction['source_id'], transaction['amount']):
+        if checkBalanceSufficiency(transaction['source_id'], transaction['amount'], credit = True):
             add_transaction(transaction)
             refresh(business)
             return QMessageBox.information(Widget, "Success", "Charge successful.")

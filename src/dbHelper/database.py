@@ -8,8 +8,7 @@ from fnHelper.cryptography.aes256_encryption import *
 class Database:
     def __init__(self):
         try:
-            connection_string = decrypt(jsonIO.read_items('config.json')['uri'], "AUP52326BSIT")
-            
+            connection_string = decrypt(jsonIO.read_items('config.json')['uri'], "AUP52623BSIT")
             self.client = MongoClient(connection_string)
             self.database = self.client['aupaydb']
 
@@ -37,6 +36,7 @@ class Database:
             'password': "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
             'secret_key': "AUP52623BSITAUP52623BSITAUP52623",
             'user_type': 'admin',
+            'max_credit': float(0.00),
             'balance': float(0.00),
         }
         user = self.collection['users'].insert_one(initial_user)
