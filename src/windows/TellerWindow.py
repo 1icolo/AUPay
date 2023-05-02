@@ -105,7 +105,7 @@ def TellerWindow(self: ProjectMainWindow, user):
     self.comboBox_date_range_teller.currentTextChanged.connect(lambda text: range_changed(self, text, user))
     
 def transactAttempt(self: ProjectMainWindow, user):
-    if not self.tellerWindow_amountLine.text() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
+    if not self.tellerWindow_amountLine.value() == "" and not self.tellerWindow_descriptionLine.toPlainText() == "":
         if(self.comboTransaction_teller.currentText() == "Withdraw"):
             openOTPDialog(self,user)
         elif(self.comboTransaction_teller.currentText() == "Deposit"):
