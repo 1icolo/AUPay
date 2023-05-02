@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\EditItemsDialog.ui'
+# Form implementation generated from reading ui file 'EditItemsDialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -73,6 +73,13 @@ class Ui_Dialog(object):
         self.removeItemButton.setFont(font)
         self.removeItemButton.setObjectName("removeItemButton")
         self.verticalLayout.addWidget(self.removeItemButton)
+        self.removeAllItemButton = QtWidgets.QPushButton(Dialog)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(16)
+        self.removeAllItemButton.setFont(font)
+        self.removeAllItemButton.setObjectName("removeAllItemButton")
+        self.verticalLayout.addWidget(self.removeAllItemButton)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
@@ -155,6 +162,7 @@ class Ui_Dialog(object):
         self.addItemButton.setText(_translate("Dialog", "Add Item"))
         self.updateItemButton.setText(_translate("Dialog", "Update Item"))
         self.removeItemButton.setText(_translate("Dialog", "Remove Item"))
+        self.removeAllItemButton.setText(_translate("Dialog", "Remove All Items"))
         self.moveUpButton.setText(_translate("Dialog", "▲"))
         self.moveDownButton.setText(_translate("Dialog", "▼"))
         item = self.businessWindow_edit_dialog_table.horizontalHeaderItem(0)

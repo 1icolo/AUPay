@@ -121,6 +121,19 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="removeAllItemButton">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Remove All Items</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="verticalSpacer_2">
        <property name="orientation">
         <enum>Qt::Vertical</enum>

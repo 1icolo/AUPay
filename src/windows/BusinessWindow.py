@@ -118,6 +118,7 @@ class EditItemsDialog(QDialog):
         self.ui.addItemButton.clicked.connect(lambda: self.addItem())
         self.ui.updateItemButton.clicked.connect(lambda: self.updateItem())
         self.ui.removeItemButton.clicked.connect(lambda: self.removeItem())
+        self.ui.removeAllItemButton.clicked.connect(lambda: self.removeAllItems())
         self.ui.saveButton.clicked.connect(lambda: self.saveItems())
         self.ui.cancelButton.clicked.connect(lambda: self.close())
         load_inventory_to_table(self.ui.businessWindow_edit_dialog_table)
@@ -197,6 +198,30 @@ class EditItemsDialog(QDialog):
         else: 
             print("Item removal cancelled")
         self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
+
+    def removeAllItems(self):
+        num_rows = self.ui.businessWindow_edit_dialog_table.rowCount()
+        if num_rows == 0:
+            return print("no items to remove")
+            
+        # Show the confirmation dialog
+        msg_box = QMessageBox(self)
+        msg_box.setWindowTitle("Delete All Items")
+        msg_box.setText(f"Are you sure you want to delete all items?")
+        msg_box.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        msg_box.setDefaultButton(QMessageBox.Cancel)
+        msg_box.setIcon(QMessageBox.Warning)
+        response = msg_box.exec()
+
+        if response == QMessageBox.Ok:
+            self.items.clear()
+            self.ui.businessWindow_edit_dialog_table.setRowCount(0)
+            print("All items removed")
+            self.clear_field()
+        else: 
+            print("Item removal cancelled")
+        self.ui.businessWindow_edit_dialog_table.setCurrentItem(None)
+
 
     def saveItems(self):
         items_data = []

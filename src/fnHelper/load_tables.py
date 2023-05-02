@@ -81,7 +81,10 @@ def load_inventory_to_table(tableWidget):
         for item in items:
             items_data.append([item['price'], item['name']])
         rows = len(items_data)
-        columns = len(items_data[0])
+        if items_data:
+            columns = len(items_data[0])
+        else:
+            columns = 0
         tableWidget.setRowCount(len(items_data))
         for row in range(rows):
             for column in range(columns):
