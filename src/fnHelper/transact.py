@@ -27,7 +27,7 @@ def transact(Widget, teller, OTP=None):
         "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
         "source_id": None,
         "destination_id": None,
-        "amount": float(Widget.tellerWindow_amountLine.text()),
+        "amount": float(Widget.tellerWindow_amountLine.value()),
         "description": Widget.tellerWindow_descriptionLine.toPlainText()
     }
     
