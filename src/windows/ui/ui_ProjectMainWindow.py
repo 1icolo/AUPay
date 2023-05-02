@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -2771,7 +2771,7 @@ class Ui_ProjectMainWindow(object):
         item.setText(_translate("ProjectMainWindow", "Name"))
         self.groupBox_7.setTitle(_translate("ProjectMainWindow", "Analytics"))
         self.groupBox_18.setTitle(_translate("ProjectMainWindow", "Buying Frequency"))
-        self.groupBox_47.setTitle(_translate("ProjectMainWindow", "Top Contributors"))
+        self.groupBox_47.setTitle(_translate("ProjectMainWindow", "Total Amount Of Transactions"))
         self.groupBox_45.setTitle(_translate("ProjectMainWindow", "Top Performing Month "))
         self.groupBox_6.setTitle(_translate("ProjectMainWindow", "Transactions"))
         self.groupBox_22.setTitle(_translate("ProjectMainWindow", "Filter"))

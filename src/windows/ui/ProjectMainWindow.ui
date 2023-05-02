@@ -2334,7 +2334,7 @@ color: #f27d7d;</string>
                   </font>
                  </property>
                  <property name="title">
-                  <string>Top Contributors</string>
+                  <string>Total Amount Of Transactions</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_21">
                   <property name="topMargin">

@@ -20,7 +20,7 @@ from dbHelper.compute_user_balance import compute_user_balance
 from fnHelper.export_to_csv import *
 from fnHelper import export_window_to_pdf
 from fnHelper.refresh_clear import *
-from fnHelper.charts import item_frequency_pie_chart, transactions_top_contributors, transactions_count_per_month
+from fnHelper.charts import item_frequency_pie_chart, transactions_count_per_month, transactions_total
 from windows.ProjectMainWindow import ProjectMainWindow
 from fnHelper import setDateRangeFields
 
@@ -396,7 +396,7 @@ def refresh_navbar(self: ProjectMainWindow, user):
 def refresh_analytics(self: ProjectMainWindow, user):
     item_frequency_pie_chart(self.businessWindow_transactions_table, self.graphicsView_business_1)
     transactions_count_per_month(self.businessWindow_transactions_table, self.graphicsView_business_2)
-    transactions_top_contributors(self.businessWindow_transactions_table, self.graphicsView_business_3)
+    transactions_total(self.businessWindow_transactions_table, self.graphicsView_business_3)
 
 def refresh_transactions(self: ProjectMainWindow, user):
     self.userWindow_transaction_search.setText("")
