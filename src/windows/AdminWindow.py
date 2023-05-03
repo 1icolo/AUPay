@@ -89,6 +89,7 @@ class AddUserDialog(QDialog):
             'password': hash(self.ui.password_addUser.text()),
             'secret_key': self.ui.secret_addUser.text(),
             'user_type': self.ui.userType_addUser.currentText().lower(),
+            'max_credit': 0.00,
             'balance': 0.00,
         }
         if self.checkFields():
