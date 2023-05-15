@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ProjectMainWindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\Nico\AUPay\src\windows\ui\ProjectMainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -382,10 +382,11 @@ class Ui_ProjectMainWindow(object):
         self.userWindow_transactions_table.setMinimumSize(QtCore.QSize(420, 0))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
-        font.setPointSize(16)
+        font.setPointSize(14)
         self.userWindow_transactions_table.setFont(font)
         self.userWindow_transactions_table.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.userWindow_transactions_table.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.userWindow_transactions_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
         self.userWindow_transactions_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.userWindow_transactions_table.setAlternatingRowColors(False)
         self.userWindow_transactions_table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -439,8 +440,10 @@ class Ui_ProjectMainWindow(object):
         self.userWindow_transactions_table.setItem(2, 5, item)
         self.userWindow_transactions_table.horizontalHeader().setDefaultSectionSize(130)
         self.userWindow_transactions_table.horizontalHeader().setStretchLastSection(True)
-        self.userWindow_transactions_table.verticalHeader().setCascadingSectionResizes(False)
+        self.userWindow_transactions_table.verticalHeader().setCascadingSectionResizes(True)
         self.userWindow_transactions_table.verticalHeader().setDefaultSectionSize(60)
+        self.userWindow_transactions_table.verticalHeader().setSortIndicatorShown(False)
+        self.userWindow_transactions_table.verticalHeader().setStretchLastSection(False)
         self.gridLayout_32.addWidget(self.userWindow_transactions_table, 0, 0, 1, 1)
         self.gridLayout_12.addWidget(self.groupBox_37, 0, 1, 1, 1)
         self.groupBox_36 = QtWidgets.QGroupBox(self.groupBox_2)
@@ -987,6 +990,7 @@ class Ui_ProjectMainWindow(object):
         font.setFamily("Segoe UI")
         font.setPointSize(16)
         self.businessWindow_descriptionLine.setFont(font)
+        self.businessWindow_descriptionLine.setReadOnly(True)
         self.businessWindow_descriptionLine.setObjectName("businessWindow_descriptionLine")
         self.verticalLayout_3.addWidget(self.businessWindow_descriptionLine)
         self.buttonClearFields_business = QtWidgets.QPushButton(self.groupBox_4)
@@ -2656,8 +2660,8 @@ class Ui_ProjectMainWindow(object):
 
         self.retranslateUi(ProjectMainWindow)
         self.stackedWidget.setCurrentIndex(0)
-        self.stackedWidget_user.setCurrentIndex(0)
-        self.stackedWidget_business.setCurrentIndex(0)
+        self.stackedWidget_user.setCurrentIndex(2)
+        self.stackedWidget_business.setCurrentIndex(1)
         self.stackedWidget_teller.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         self.buttonClearFields_teller.clicked.connect(self.tellerWindow_transaction_search.clear) # type: ignore
@@ -2753,8 +2757,8 @@ class Ui_ProjectMainWindow(object):
         self.businessWindow_descriptionLine.setPlaceholderText(_translate("ProjectMainWindow", "Description"))
         self.buttonClearFields_business.setText(_translate("ProjectMainWindow", "Clear (Esc)"))
         self.buttonClearFields_business.setShortcut(_translate("ProjectMainWindow", "Esc"))
-        self.buttonCharge.setText(_translate("ProjectMainWindow", "Charge (Enter)"))
-        self.buttonCharge.setShortcut(_translate("ProjectMainWindow", "Return"))
+        self.buttonCharge.setText(_translate("ProjectMainWindow", "Charge (Shift + Enter)"))
+        self.buttonCharge.setShortcut(_translate("ProjectMainWindow", "Shift+Return"))
         self.groupInventory_business.setTitle(_translate("ProjectMainWindow", "Inventory"))
         self.buttonAddToCart_business.setText(_translate("ProjectMainWindow", "+"))
         item = self.businessWindow_inventory_table.horizontalHeaderItem(0)
