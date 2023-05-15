@@ -12,13 +12,13 @@ from PyQt5.QtWidgets import QMessageBox
 from fnHelper.load_tables import load_user_transaction_by_id
 from dbHelper import find_user_by_id
 
-def chargeback_transaction(Widget, transaction):
+def chargeback_transaction(Widget, transaction, description = ""):
     newTransaction = {
             "timestamp": Timestamp(int(datetime.today().timestamp()), 1),
             "destination_id": transaction['source_id'],
             "source_id": transaction['destination_id'],
             "amount": transaction['amount'],
-            "description": (f'chargeback {transaction["_id"]}')
+            "description": description
         }
     print(transaction['amount'])
     if checkBalanceSufficiency(transaction['destination_id'], Widget.ui.amountLineEdit.value()):
