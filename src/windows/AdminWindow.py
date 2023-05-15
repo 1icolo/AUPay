@@ -1,7 +1,7 @@
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from dbHelper import add_user, find_user_by_id, update_user, delete_user, add_transaction
+from dbHelper import add_user, find_user_by_id, update_user, delete_user, add_transaction, find_all_admins
 from dbHelper.find_user import find_all_tellers
 from fnHelper import get_random_secret, get_totp, verify_otp
 from fnHelper.load_tables import *
@@ -239,11 +239,30 @@ class AddSupplyDialog(QDialog):
         super(AddSupplyDialog, self).__init__(parent)
         self.ui = AddSupply_Dialog()
         self.ui.setupUi(self)
-
+        self.verified_admins = []
         for teller in find_all_tellers():
             self.ui.comboBox.addItem(teller['school_id'], teller['_id'])
-
+        self.ui.button_admin1.clicked.connect(lambda: self.verify_admin("admin1"))
+        self.ui.button_admin2.clicked.connect(lambda: self.verify_admin("admin2"))
         self.ui.pushButton.clicked.connect(lambda: self.addTransaction())
+
+    def verify_admin(self, admin_number):
+        current_admin = hash(AUPCard().get_uid())
+        admins = find_all_admins()
+        for admin in admins:
+            if not self.verified_admins.__contains__(current_admin) and admin['card_id'] == current_admin:
+                self.verified_admins.append(admin['card_id'])
+                print(self.verified_admins)
+                match admin_number:
+                    case "admin1": self.ui.button_admin1.setEnabled(False)
+                    case "admin2": self.ui.button_admin2.setEnabled(False)
+                break
+        current_admin = ""
+        self.check_verification()
+
+    def check_verification(self):
+        if not self.ui.button_admin1.isEnabled() and not self.ui.button_admin2.isEnabled():
+            self.ui.pushButton.setEnabled(True)
 
     def addTransaction(self):
         newTransaction =  {
@@ -287,7 +306,7 @@ def open_add_transaction_dialog(self, user):
     if selected_items:
         # Clear the selection
         self.adminWindow_transactions_table.clearSelection()
-    self.add_transaction_dialog = AddTransactionDialog(user)
+    self.   _transaction_dialog = AddTransactionDialog(user)
     self.add_transaction_dialog.ui.buttonSave_addTransaction.clicked.connect(lambda: reload_transactions_table(self, user))
     self.add_transaction_dialog.exec_()
     
