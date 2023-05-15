@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(464, 356)
+        Dialog.resize(464, 400)
         Dialog.setFocusPolicy(QtCore.Qt.NoFocus)
         Dialog.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         Dialog.setAutoFillBackground(False)
@@ -101,7 +101,6 @@ class Ui_Dialog(object):
         self.userType_editUser.setEditable(False)
         self.userType_editUser.setFrame(True)
         self.userType_editUser.setObjectName("userType_editUser")
-        self.userType_editUser.addItem("")
         self.userType_editUser.addItem("")
         self.userType_editUser.addItem("")
         self.userType_editUser.addItem("")
@@ -199,7 +198,6 @@ class Ui_Dialog(object):
         self.userType_editUser.setItemText(0, _translate("Dialog", "User"))
         self.userType_editUser.setItemText(1, _translate("Dialog", "Business"))
         self.userType_editUser.setItemText(2, _translate("Dialog", "Teller"))
-        self.userType_editUser.setItemText(3, _translate("Dialog", "Admin"))
         self.labelSecret.setText(_translate("Dialog", "Secret"))
         self.labelOTP.setText(_translate("Dialog", "OTP"))
         self.buttonGenerate_editUser.setText(_translate("Dialog", "Generate New Secret"))
