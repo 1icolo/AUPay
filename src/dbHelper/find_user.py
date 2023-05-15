@@ -54,3 +54,11 @@ def find_all_tellers():
     except:
         print("No teller exists in the database.")
         return None
+
+def find_all_admins():
+    try:
+        users = Database().collection['users'].find({'user_type': 'admin'})
+        return users
+    except Exception as e:
+        print(e)
+        return None
