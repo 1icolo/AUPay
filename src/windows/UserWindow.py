@@ -5,6 +5,7 @@ from PyQt5.QtChart import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from dbHelper.find_user import *
 
 from dbHelper.compute_user_balance import *
 from dbHelper.find_transaction import *
@@ -54,11 +55,14 @@ class ChangePasswordDialog(QDialog):
                         'secret_key': user['secret_key'],
                         'user_type': user['user_type'],
                     }
-                    update_user(userData)
-                    QMessageBox.information(self, "Success", f"Password Changed\nYou will be signed out.")
+                    if update_user(userData):
+                        QMessageBox.information(self, "Success", f"Password Changed Successfully\nYou will be logged out.")
+                        user = find_user_by_id(user['_id'])
+                        logoutAttempt(self)
+                        self.close()
+                    else:
+                        QMessageBox.information(self, "Success", f"Password Change Failed")
 
-                    logoutAttempt(self)
-                    self.close()
                 else:
                     QMessageBox.warning(self, "Warning", "New password must be the same with the confirmation")
             else:
@@ -94,10 +98,13 @@ class ChangeOTPDialog(QDialog):
                         'secret_key': self.secret_key,
                         'user_type': user['user_type'],
                     }
-            update_user(userData)
-            QMessageBox.information(self, "Success", "OTP updated.\nYou will be signed out.")
-            logoutAttempt(self)
-            self.close()
+            if update_user(userData):
+                QMessageBox.information(self, "Success", f"OTP Updated Successfully.\nYou will be logged out.")
+                user = find_user_by_id(user['_id'])
+                logoutAttempt(self)
+                self.close()
+            else:
+                QMessageBox.information(self, "Success", f"OTP Update Failed")
         else:
             QMessageBox.warning(self, "Warning", "Password or OTP is incorrect")
 
