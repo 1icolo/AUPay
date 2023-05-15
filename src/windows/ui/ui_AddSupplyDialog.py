@@ -29,7 +29,17 @@ class Ui_Dialog(object):
         self.doubleSpinBox.setMaximum(1000000.0)
         self.doubleSpinBox.setObjectName("doubleSpinBox")
         self.verticalLayout.addWidget(self.doubleSpinBox)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.button_admin1 = QtWidgets.QPushButton(Dialog)
+        self.button_admin1.setObjectName("button_admin1")
+        self.horizontalLayout.addWidget(self.button_admin1)
+        self.button_admin2 = QtWidgets.QPushButton(Dialog)
+        self.button_admin2.setObjectName("button_admin2")
+        self.horizontalLayout.addWidget(self.button_admin2)
+        self.verticalLayout.addLayout(self.horizontalLayout)
         self.pushButton = QtWidgets.QPushButton(Dialog)
+        self.pushButton.setEnabled(False)
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
 
@@ -39,4 +49,6 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Add Supply"))
+        self.button_admin1.setText(_translate("Dialog", "Admin 1"))
+        self.button_admin2.setText(_translate("Dialog", "Admin 2"))
         self.pushButton.setText(_translate("Dialog", "Add Supply"))
