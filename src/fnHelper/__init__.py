@@ -15,6 +15,8 @@ __all__ = [
     'export_window_to_pdf',
     'setDateRangeFields',
     'export_to_csv',
+    'item_counter',
+    'item_counter_deductive',
 ]
 
 from .aupCard import *
@@ -34,3 +36,4 @@ from .export_to_csv import export_to_csv
 from .export_window_to_pdf import export_window_to_pdf
 from .setDateRangeFields import *
 from .logout import logoutAttempt
+from .item_counter import item_counter, item_counter_deductive
